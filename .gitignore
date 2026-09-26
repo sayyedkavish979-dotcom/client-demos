@@ -1,0 +1,10 @@
+# Protect against non-web files
+*.py
+*.pyc
+__pycache__/
+*.env*
+*.json
+*.csv
+*.bat
+*.log
+.DS_Store
