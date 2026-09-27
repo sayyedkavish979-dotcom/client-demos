@@ -36,19 +36,37 @@
                 background: rgba(15, 23, 42, 0.94) !important;
             }
         }
-        .security-watermark-grid {
+        #security-watermark-container {
             position: fixed !important;
             top: 0 !important;
             left: 0 !important;
             width: 100vw !important;
             height: 100vh !important;
             pointer-events: none !important;
-            z-index: 999999 !important;
-            opacity: 0.35 !important;
-            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='540' height='280' viewBox='0 0 540 280'><text x='50%' y='50%' font-size='12' font-weight='bold' font-family='Inter,Segoe UI,Arial,sans-serif' fill='rgba(255, 255, 255, 0.45)' text-anchor='middle' transform='rotate(-28 270 140)' letter-spacing='2.5'>DEMO CONCEPT PREVIEW • PROPERTY OF KAVISH MURTUJA • FOR EVALUATION ONLY</text></svg>") !important;
-            background-repeat: repeat !important;
+            z-index: 9999999 !important;
+            overflow: hidden !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-around !important;
+            align-items: center !important;
             user-select: none !important;
             -webkit-user-select: none !important;
+        }
+        .watermark-dom-line {
+            font-size: 15px !important;
+            font-weight: 800 !important;
+            font-family: sans-serif !important;
+            color: rgba(255, 255, 255, 0.40) !important;
+            transform: rotate(-25deg) !important;
+            white-space: nowrap !important;
+            pointer-events: none !important;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6) !important;
+            letter-spacing: 2px !important;
+            user-select: none !important;
+            -webkit-user-select: none !important;
+        }
+        .security-watermark-grid {
+            display: none !important;
         }
         body.window-blurred {
             filter: blur(16px) grayscale(40%) !important;
@@ -57,7 +75,16 @@
     </style>
 </head>
 <body class="p-6 md:p-12 relative">
-    <div class="security-watermark-grid" aria-hidden="true"></div>
+        <!-- Guaranteed Pure CSS DOM Security Watermark Overlay (Mobile Chrome Compatible) -->
+    <div id="security-watermark-container" aria-hidden="true" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999999; overflow: hidden; display: flex; flex-direction: column; justify-content: space-around; align-items: center; user-select: none; -webkit-user-select: none;">
+        <span class="watermark-dom-line" style="font-size: 15px; font-weight: 800; font-family: sans-serif; color: rgba(255, 255, 255, 0.40) !important; transform: rotate(-25deg); white-space: nowrap; pointer-events: none; text-shadow: 1px 1px 2px rgba(0,0,0,0.6); letter-spacing: 2px; user-select: none; -webkit-user-select: none;">DEMO CONCEPT PREVIEW • PROPERTY OF KAVISH MURTUJA • FOR EVALUATION ONLY</span>
+        <span class="watermark-dom-line" style="font-size: 15px; font-weight: 800; font-family: sans-serif; color: rgba(255, 255, 255, 0.40) !important; transform: rotate(-25deg); white-space: nowrap; pointer-events: none; text-shadow: 1px 1px 2px rgba(0,0,0,0.6); letter-spacing: 2px; user-select: none; -webkit-user-select: none;">DEMO CONCEPT PREVIEW • PROPERTY OF KAVISH MURTUJA • FOR EVALUATION ONLY</span>
+        <span class="watermark-dom-line" style="font-size: 15px; font-weight: 800; font-family: sans-serif; color: rgba(255, 255, 255, 0.40) !important; transform: rotate(-25deg); white-space: nowrap; pointer-events: none; text-shadow: 1px 1px 2px rgba(0,0,0,0.6); letter-spacing: 2px; user-select: none; -webkit-user-select: none;">DEMO CONCEPT PREVIEW • PROPERTY OF KAVISH MURTUJA • FOR EVALUATION ONLY</span>
+        <span class="watermark-dom-line" style="font-size: 15px; font-weight: 800; font-family: sans-serif; color: rgba(255, 255, 255, 0.40) !important; transform: rotate(-25deg); white-space: nowrap; pointer-events: none; text-shadow: 1px 1px 2px rgba(0,0,0,0.6); letter-spacing: 2px; user-select: none; -webkit-user-select: none;">DEMO CONCEPT PREVIEW • PROPERTY OF KAVISH MURTUJA • FOR EVALUATION ONLY</span>
+        <span class="watermark-dom-line" style="font-size: 15px; font-weight: 800; font-family: sans-serif; color: rgba(255, 255, 255, 0.40) !important; transform: rotate(-25deg); white-space: nowrap; pointer-events: none; text-shadow: 1px 1px 2px rgba(0,0,0,0.6); letter-spacing: 2px; user-select: none; -webkit-user-select: none;">DEMO CONCEPT PREVIEW • PROPERTY OF KAVISH MURTUJA • FOR EVALUATION ONLY</span>
+        <span class="watermark-dom-line" style="font-size: 15px; font-weight: 800; font-family: sans-serif; color: rgba(255, 255, 255, 0.40) !important; transform: rotate(-25deg); white-space: nowrap; pointer-events: none; text-shadow: 1px 1px 2px rgba(0,0,0,0.6); letter-spacing: 2px; user-select: none; -webkit-user-select: none;">DEMO CONCEPT PREVIEW • PROPERTY OF KAVISH MURTUJA • FOR EVALUATION ONLY</span>
+        <span class="watermark-dom-line" style="font-size: 15px; font-weight: 800; font-family: sans-serif; color: rgba(255, 255, 255, 0.40) !important; transform: rotate(-25deg); white-space: nowrap; pointer-events: none; text-shadow: 1px 1px 2px rgba(0,0,0,0.6); letter-spacing: 2px; user-select: none; -webkit-user-select: none;">DEMO CONCEPT PREVIEW • PROPERTY OF KAVISH MURTUJA • FOR EVALUATION ONLY</span>
+    </div>
 
     <div class="max-w-6xl mx-auto">
         <header class="text-center mb-12">
