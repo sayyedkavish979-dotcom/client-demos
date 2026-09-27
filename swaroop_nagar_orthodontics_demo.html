@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swaroop Nagar Orthodontics | Dental Clinic in Swaroop Nagar, Kanpur</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
     <style id="niche-3d-depth-styles">
         html, body {
             margin: 0;
@@ -19,9 +23,20 @@
             background-attachment: fixed !important;
             color: #f1f5f9 !important;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
-            -webkit-user-select: none;
-            user-select: none;
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
             min-height: 100vh;
+        }
+
+        /* Mobile Performance: Hardware Acceleration & Smooth Scrolling */
+        html, body, main, section, .scrollable-container, .glass-card, .service-card {
+            -webkit-overflow-scrolling: touch;
+            transform: translateZ(0);
+        }
+        .glass-card, .service-card, header, .btn-whatsapp, .btn-call {
+            will-change: transform;
         }
 
         /* Glassmorphic Navbar */
@@ -118,6 +133,51 @@
             border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
         }
 
+        /* Mobile Performance: Disable expensive backdrop-filter on small screens */
+        @media (max-width: 768px) {
+            header, nav, .glass-nav {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                background: rgba(10, 14, 24, 0.96) !important;
+            }
+            .glass-card, .glass-panel, [data-glass="true"],
+            .bg-white, .bg-slate-50, 
+            div[style*="background-color: #ffffff"], 
+            div[style*="background-color: #f8fafc"],
+            .service-card {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                background: rgba(15, 23, 42, 0.94) !important;
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6) !important;
+            }
+            .bg-indigo-100, .bg-indigo-50, div[class*="bg-indigo-100"], .badge-pill {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+        }
+
+        /* Full-Page Diagonal Security Watermark Repeating Grid (Opacity 0.12) */
+        .security-watermark-grid {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            pointer-events: none !important;
+            z-index: 99990 !important;
+            opacity: 0.12 !important;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='540' height='280' viewBox='0 0 540 280'><text x='50%' y='50%' font-size='12' font-weight='800' font-family='Inter,Segoe UI,Arial,sans-serif' fill='%23ffffff' text-anchor='middle' transform='rotate(-28 270 140)' letter-spacing='2.5'>DEMO CONCEPT PREVIEW • PROPERTY OF KAVISH MURTUJA • FOR EVALUATION ONLY</text></svg>") !important;
+            background-repeat: repeat !important;
+            user-select: none !important;
+            -webkit-user-select: none !important;
+        }
+
+        /* Anti-Capture Focus Blur Shield */
+        body.window-blurred {
+            filter: blur(16px) grayscale(40%) !important;
+            transition: filter 0.15s ease-out !important;
+        }
+
         /* Preserved Anti-Theft Watermark & Security Shielding */
         .watermark-overlay {
             position: fixed;
@@ -129,17 +189,18 @@
             align-items: center; justify-content: center;
         }
         .watermark-text {
-            font-size: 2.2rem; font-weight: 800;
-            color: rgba(244, 63, 94, 0.7);
+            font-size: 2rem; font-weight: 800;
+            color: rgba(244, 63, 94, 0.75);
             transform: rotate(-30deg);
-            letter-spacing: 0.25em;
+            letter-spacing: 0.2em;
             pointer-events: none;
             text-transform: uppercase;
             text-align: center;
+            padding: 20px;
         }
         .capture-blind {
             filter: blur(28px) grayscale(100%) !important;
-            opacity: 0.1 !important;
+            opacity: 0.15 !important;
         }
         body.capture-blind .watermark-overlay,
         .capture-blind .watermark-overlay {
@@ -153,6 +214,10 @@
             text-shadow: 0 0 25px rgba(244, 63, 94, 0.8) !important;
         }
         @media print {
+            .security-watermark-grid {
+                opacity: 0.35 !important;
+                background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='540' height='280' viewBox='0 0 540 280'><text x='50%' y='50%' font-size='14' font-weight='800' font-family='Inter,Segoe UI,Arial,sans-serif' fill='%23000000' text-anchor='middle' transform='rotate(-28 270 140)' letter-spacing='2.5'>DEMO CONCEPT PREVIEW • PROPERTY OF KAVISH MURTUJA • FOR EVALUATION ONLY</text></svg>") !important;
+            }
             .watermark-overlay {
                 opacity: 1 !important;
                 display: flex !important;
@@ -166,10 +231,10 @@
             }
             .watermark-text {
                 display: block !important;
-                font-size: 2.2rem; font-weight: 800;
+                font-size: 2rem; font-weight: 800;
                 color: #f43f5e !important;
                 transform: rotate(-30deg);
-                letter-spacing: 0.25em;
+                letter-spacing: 0.2em;
                 text-transform: uppercase;
             }
         }
@@ -306,10 +371,10 @@
 </head>
 <body class="antialiased relative" class="antialiased relative">
 
-    <div class="fixed bottom-4 left-4 z-50 bg-slate-900/80 backdrop-blur-md text-white text-xs px-3.5 py-1.5 rounded-full border border-white/10 shadow-lg pointer-events-none">🔒 Confidential Agency Demo • Unlicensed Work</div>
+    <div class="fixed bottom-4 left-4 z-50 bg-slate-950/85 backdrop-blur-md text-white text-[11px] font-semibold px-3.5 py-1.5 rounded-full border border-white/10 shadow-xl pointer-events-none select-none">🔒 DEMO CONCEPT PREVIEW • PROPERTY OF KAVISH MURTUJA • FOR EVALUATION ONLY</div>
 
     <div class="watermark-overlay">
-        <div class="watermark-text">CONFIDENTIAL PREVIEW • PROPERTY OF AGENCY • UNLICENSED WORK</div>
+        <div class="watermark-text">DEMO CONCEPT PREVIEW • PROPERTY OF KAVISH MURTUJA • FOR EVALUATION ONLY</div>
     </div>
 
     
@@ -375,7 +440,7 @@
 
             <div class="lg:col-span-5">
                 <div  class="rounded-2xl overflow-hidden shadow-sm border border-slate-200 bg-white">
-                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80" alt="Swaroop Nagar Orthodontics" class="w-full h-64 object-cover rounded-2xl pointer-events-none" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80';">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80" alt="Swaroop Nagar Orthodontics" class="w-full h-64 object-cover rounded-2xl pointer-events-none" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80';" loading="lazy" decoding="async">
                     <div  class="p-4 bg-white border-t border-slate-100 flex items-center justify-between">
                         <div>
                             <span class="bg-indigo-50 text-indigo-700 text-[11px] font-bold px-2.5 py-1 rounded uppercase tracking-wide">Advanced Healthcare & Patient Care</span>
@@ -397,7 +462,7 @@
             <p  class="text-2xl font-extrabold text-slate-900 text-center mt-1">Specialized Services in Swaroop Nagar, Kanpur</p>
             <div class="grid sm:grid-cols-3 gap-6 mt-8">
                 <div  class="border border-slate-200 rounded-2xl shadow-sm overflow-hidden text-slate-900">
-                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" alt="Service 1" class="w-full h-64 object-cover pointer-events-none" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80';">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" alt="Service 1" class="w-full h-64 object-cover pointer-events-none" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80';" loading="lazy" decoding="async">
                     <div class="p-4">
                         <h3  class="font-bold text-slate-900 text-sm">Comprehensive Consultations</h3>
                         <p  class="text-slate-600 text-xs mt-1">Tailored solutions matching your precise needs with dedicated support.</p>
@@ -405,7 +470,7 @@
                     </div>
                 </div>
                 <div  class="border border-slate-200 rounded-2xl shadow-sm overflow-hidden text-slate-900">
-                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" alt="Service 2" class="w-full h-64 object-cover pointer-events-none" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80';">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" alt="Service 2" class="w-full h-64 object-cover pointer-events-none" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80';" loading="lazy" decoding="async">
                     <div class="p-4">
                         <h3  class="font-bold text-slate-900 text-sm">Premium Quality Care</h3>
                         <p  class="text-slate-600 text-xs mt-1">Modern methods ensuring swift turnaround and reliable outcomes.</p>
@@ -413,7 +478,7 @@
                     </div>
                 </div>
                 <div  class="border border-slate-200 rounded-2xl shadow-sm overflow-hidden text-slate-900">
-                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80" alt="Service 3" class="w-full h-64 object-cover pointer-events-none" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80';">
+                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80" alt="Service 3" class="w-full h-64 object-cover pointer-events-none" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80';" loading="lazy" decoding="async">
                     <div class="p-4">
                         <h3  class="font-bold text-slate-900 text-sm">Priority Support</h3>
                         <p  class="text-slate-600 text-xs mt-1">Fast-track response for urgent local client requirements.</p>
@@ -437,23 +502,41 @@
         </a>
     </div>
 
-    <script>
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        document.addEventListener('keydown', e => {
-            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key.toUpperCase())) || (e.ctrlKey && ['U','S','P'].includes(e.key.toUpperCase()))) {
+    
+    <!-- Anti-Theft & Screenshot Resistance Shield -->
+    <script id="anti-theft-shield">
+    (function() {
+        document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
+        document.addEventListener('selectstart', function(e) { e.preventDefault(); return false; });
+        document.addEventListener('dragstart', function(e) { e.preventDefault(); return false; });
+        document.addEventListener('keydown', function(e) {
+            const key = (e.key || '').toUpperCase();
+            const isCtrlOrMeta = e.ctrlKey || e.metaKey;
+            if (
+                e.key === 'F12' ||
+                (isCtrlOrMeta && ['S', 'P', 'U'].includes(key)) ||
+                (isCtrlOrMeta && e.shiftKey && ['I', 'J', 'C'].includes(key))
+            ) {
                 e.preventDefault();
+                return false;
             }
             if (e.key === 'PrintScreen') {
                 document.body.classList.add('capture-blind');
-                setTimeout(() => document.body.classList.remove('capture-blind'), 1500);
+                setTimeout(function() { document.body.classList.remove('capture-blind'); }, 2000);
             }
         });
-        window.addEventListener('blur', () => {
-            if (window.self === window.top) {
-                document.body.classList.add('capture-blind');
-                setTimeout(() => document.body.classList.remove('capture-blind'), 1500);
+        window.addEventListener('blur', function() {
+            document.body.classList.add('window-blurred');
+        });
+        window.addEventListener('focus', function() {
+            document.body.classList.remove('window-blurred');
+        });
+        document.addEventListener('mouseenter', function() {
+            if (document.hasFocus()) {
+                document.body.classList.remove('window-blurred');
             }
         });
+    })();
     </script>
 </body>
 </html>
