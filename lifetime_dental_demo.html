@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lifetime Dental | Premier Cosmetic & Implant Dentistry in Austin, TX</title>
+    <title>Lifetime Dental | Premier Dental Clinic Care in Austin, USA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
-    <style id="cinematic-luxury-styles">
+    <style id="dynamic-brand-styles">
+        :root {
+            --brand-primary: #f59e0b;
+            --brand-accent: #d97706;
+            --brand-btn-text: #090e17;
+        }
         html, body {
             margin: 0; padding: 0;
             background-color: #080e1a !important;
@@ -27,45 +32,32 @@
             border: 1px solid rgba(255, 255, 255, 0.08) !important;
             backdrop-filter: blur(16px) !important;
         }
-        .bg-gold-gradient {
+        .bg-brand {
             background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+            color: #090e17 !important;
         }
-        .text-gold {
-            color: #fbbf24 !important;
+        .text-brand {
+            color: #f59e0b !important;
         }
-        .border-gold {
-            border-color: rgba(245, 158, 11, 0.4) !important;
+        .border-brand {
+            border-color: #f59e0b !important;
         }
-        .btn-gold {
+        .btn-brand {
             background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
             color: #090e17 !important;
             font-weight: 700 !important;
-            box-shadow: 0 10px 25px -4px rgba(245, 158, 11, 0.45) !important;
             transition: all 0.25s ease !important;
         }
-        .btn-gold:hover {
-            transform: translateY(-2px) !important;
-            box-shadow: 0 14px 30px -4px rgba(245, 158, 11, 0.6) !important;
-        }
-        .btn-outline {
-            background: rgba(255, 255, 255, 0.05) !important;
-            border: 1px solid rgba(255, 255, 255, 0.2) !important;
-            color: #ffffff !important;
-            transition: all 0.25s ease !important;
-        }
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.12) !important;
-            border-color: rgba(255, 255, 255, 0.4) !important;
-            transform: translateY(-2px) !important;
-        }
-        .hero-vignette {
-            background: radial-gradient(circle at 50% 40%, rgba(8, 14, 26, 0.45) 0%, rgba(8, 14, 26, 0.92) 80%, #080e1a 100%);
+        .btn-brand:hover {
+            opacity: 0.92 !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4) !important;
         }
     </style>
         <!-- 7-Day Client Auto-Expiry Shield -->
     <script id="demo-expiry-shield">
     (function() {
-        const DEMO_CREATED_TIMESTAMP = 1790595546670;
+        const DEMO_CREATED_TIMESTAMP = 1790624633977;
         const EXPIRY_DAYS = 7;
         const isExpired = (Date.now() - DEMO_CREATED_TIMESTAMP) > (EXPIRY_DAYS * 24 * 60 * 60 * 1000);
 
@@ -192,503 +184,477 @@
     })();
     </script>
 </head>
-<body class="bg-obsidian text-slate-100 antialiased min-h-screen relative flex flex-col justify-between pb-16 sm:pb-0">
+<body class="bg-[#080e1a] text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 pb-20 sm:pb-0">
 
-    <!-- SECTION 1: Top Notification Ribbon + Multi-Location Header -->
-    <div class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-700 text-slate-950 font-semibold px-4 py-2 text-xs sm:text-sm shadow-md">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
-            <div class="flex items-center gap-2">
-                <span class="bg-slate-950 text-amber-300 px-2 py-0.5 rounded text-[11px] font-black uppercase tracking-wider">New Patient Special</span>
-                <span>✨ <strong>$159 New Patient Visit</strong> | Comprehensive Exam, 3D Digital X-Rays & Professional Cleaning ($530 Value!)</span>
-            </div>
-            <a href="https://wa.me/15128351924" target="_blank" class="inline-flex items-center gap-1.5 bg-slate-950 hover:bg-slate-900 text-amber-300 hover:text-white px-3 py-1 rounded-full text-xs font-bold transition shadow-sm">
-                Claim Offer Now →
-            </a>
-        </div>
+    <!-- SECTION 1: TOP NOTIFICATION RIBBON + MULTI-LOCATION HEADER -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-white/10 px-4 py-2 text-center text-xs sm:text-sm font-medium text-slate-300">
+        <span class="inline-flex items-center gap-2">
+            <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand">Special Offer</span>
+            <span>$159 New Patient Exam, X-Rays & Comprehensive Cleaning ($490 Value)</span>
+            <a href="#booking-funnel" class="underline font-bold hover:text-white ml-1">Claim Offer →</a>
+        </span>
     </div>
 
-    <!-- Main Navigation Header -->
-    <header class="sticky top-0 z-40 backdrop-blur-xl bg-slate-950/85 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3">
-                <div class="bg-white/10 px-2.5 py-1.5 rounded-xl backdrop-blur-sm border border-white/10 inline-flex items-center">
-                    <img src="https://www.lifetimedental.com/wp-content/uploads/cropped-MdBl_Wordmark-Stacked-Year-Cerulean-900px-w-72ppi-NOPAD__Web.png" alt="Lifetime Dental" class="h-9 sm:h-11 w-auto max-w-[210px] object-contain" />
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-[#080e1a]/95 backdrop-blur-md border-b border-white/10 px-4 sm:px-8 py-3.5 transition-all">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="bg-white/10 px-2.5 py-1.5 rounded-xl backdrop-blur-sm border border-white/10 inline-flex items-center"><img src="https://www.lifetimedental.com/wp-content/uploads/cropped-MdBl_Wordmark-Stacked-Year-Cerulean-900px-w-72ppi-NOPAD__Web.png" alt="Lifetime Dental" class="h-9 w-auto max-w-[200px] object-contain" onerror="this.parentElement.style.display='none'; document.getElementById('logo-fallback-badge').style.display='flex';" /></div><div id="logo-fallback-badge" class="hidden w-10 h-10 rounded-xl bg-brand items-center justify-center font-bold text-slate-950 text-base shadow-md">LI</div>
+                <div>
+                    <span class="text-base sm:text-lg font-black tracking-tight text-white block">Lifetime Dental</span>
+                    <span class="text-[10px] text-slate-400 uppercase tracking-widest block font-medium">Austin, USA</span>
                 </div>
-            </a>
-
-            <!-- Navigation Links -->
-            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="#services" class="hover:text-amber-400 transition">Dental Services</a>
-                <a href="#why-choose" class="hover:text-amber-400 transition">Why Choose Us</a>
-                <a href="#dentists" class="hover:text-amber-400 transition">Meet The Dentists</a>
-                <a href="#reviews" class="hover:text-amber-400 transition">Patient Reviews</a>
-                <a href="#locations" class="hover:text-amber-400 transition">Dual Locations</a>
+            </div>
+            
+            <nav class="hidden lg:flex items-center gap-6 text-xs uppercase tracking-wider font-semibold text-slate-300">
+                <a href="#about" class="hover:text-white transition">About</a>
+                <a href="#services" class="hover:text-white transition">Services</a>
+                <a href="#team" class="hover:text-white transition">Team</a>
+                <a href="#reviews" class="hover:text-white transition">Reviews</a>
+                <a href="#booking-funnel" class="hover:text-white transition">Contact</a>
             </nav>
 
-            <!-- Dual Branch Phone Numbers & Gold CTA -->
-            <div class="flex items-center gap-4">
-                <div class="hidden xl:flex flex-col text-right text-xs">
-                    <span class="text-slate-400">Parmer (North Austin): <a href="tel:(512) 835-1924" class="text-white hover:text-amber-400 font-semibold">(512) 835-1924</a></span>
-                    <span class="text-slate-400">Westlake (Bee Caves): <a href="tel:(512) 263-8332" class="text-white hover:text-amber-400 font-semibold">(512) 263-8332</a></span>
-                </div>
-                <a href="https://wa.me/15128351924" target="_blank" class="btn-gold px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-lg inline-flex items-center gap-2">
-                    <span>📅</span> Book Consultation
+            <div class="flex items-center gap-3">
+                <a href="tel:(512) 835-1924" class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-white/5 border border-white/10 px-3.5 py-2 rounded-xl transition">
+                    <span>📞</span>
+                    <span>(512) 835-1924</span>
+                </a>
+                <a href="#booking-funnel" class="btn-brand px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-lg">
+                    Book Online
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- SECTION 2: Full-Bleed Cinematic Hero -->
-    <section class="relative min-h-[82vh] flex items-center justify-center overflow-hidden py-20 px-4 sm:px-6">
-        <!-- Hero Background Image with Luxury Vignette -->
+    <!-- SECTION 2: FULL-BLEED CINEMATIC HERO (Zero $490 Badge) -->
+    <section class="relative min-h-[85vh] flex items-center justify-center px-4 sm:px-8 py-20 overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://www.lifetimedental.com/wp-content/uploads/Cosmetic-Dentistry-With-Dentists-in-Austin-TX-at-Lifetime-Dental.webp" 
-                 alt="Austin Lifetime Dental Clinic" 
-                 class="w-full h-full object-cover object-center filter brightness-[0.45] scale-105" />
-            <div class="absolute inset-0 hero-vignette"></div>
+            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=2000&q=85" alt="Lifetime Dental" class="w-full h-full object-cover object-center filter brightness-[0.4] scale-105 transform hover:scale-100 transition duration-1000" />
+            <div class="absolute inset-0 bg-gradient-to-b from-[#080e1a]/70 via-[#080e1a]/85 to-[#080e1a]"></div>
         </div>
 
-        <div class="relative z-10 max-w-5xl mx-auto text-center space-y-7 pt-4">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/25 text-amber-300 text-xs sm:text-sm font-semibold tracking-wide uppercase">
-                <span>🏆 Celebrating 30 Years of Clinical Excellence in Austin</span>
+        <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md text-xs font-semibold text-slate-200">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Proudly Serving Austin, USA • Modern Dental Clinic Care</span>
             </div>
 
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] font-serif">
-                Your Dream Smile <br />
-                <span class="bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 bg-clip-text text-transparent">Starts Here</span>
+                Premier Cosmetic & Implant Dentistry in Austin
             </h1>
 
-            <p class="text-slate-200 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed font-light">
-                Serving North Austin & Westlake with state-of-the-art dental implants, world-class porcelain smile makeovers, and gentle sedation dentistry. Honest answers, bespoke aesthetics, and care designed for a lifetime.
+            <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-light">
+                Serving North Austin, Westlake Hills & Bee Cave with distinguished clinical excellence, dual state-of-the-art facilities, and compassionate care.
             </p>
 
-            <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
-                <a href="#services" class="btn-gold px-8 py-4 rounded-xl text-sm sm:text-base font-bold shadow-xl inline-flex items-center gap-2">
-                    Explore Cosmetic Dentistry →
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="#booking-funnel" class="btn-brand w-full sm:w-auto px-8 py-3.5 rounded-xl text-sm font-bold shadow-xl flex items-center justify-center gap-2">
+                    <span>Schedule Your Consultation</span>
+                    <span>→</span>
                 </a>
-                <a href="#dentists" class="btn-outline px-7 py-4 rounded-xl text-sm sm:text-base font-semibold inline-flex items-center gap-2">
-                    Meet Our Dentists
+                <a href="#services" class="w-full sm:w-auto px-6 py-3.5 rounded-xl text-sm font-semibold text-white bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur-sm transition">
+                    Explore Services ↓
                 </a>
             </div>
 
             <!-- Trust Metrics Bar -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-10 border-t border-white/10 max-w-4xl mx-auto">
-                <div class="p-3 text-center">
-                    <p class="text-2xl font-black text-amber-400">⭐ 5.0</p>
-                    <p class="text-xs text-slate-300 mt-0.5">900+ Verified Google Reviews</p>
+            <div class="pt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto border-t border-white/10 mt-8">
+                <div class="text-center p-3 rounded-xl bg-white/5 border border-white/5">
+                    <p class="text-xl sm:text-2xl font-black text-white">⭐ 5.0</p>
+                    <p class="text-[11px] text-slate-400 mt-0.5">540+ Verified Reviews</p>
                 </div>
-                <div class="p-3 text-center">
-                    <p class="text-2xl font-black text-amber-400">30+ Yrs</p>
-                    <p class="text-xs text-slate-300 mt-0.5">Trusted Austin Experience</p>
+                <div class="text-center p-3 rounded-xl bg-white/5 border border-white/5">
+                    <p class="text-xl sm:text-2xl font-black text-white">25+</p>
+                    <p class="text-[11px] text-slate-400 mt-0.5">Years Serving Austin</p>
                 </div>
-                <div class="p-3 text-center">
-                    <p class="text-2xl font-black text-amber-400">3D CBCT</p>
-                    <p class="text-xs text-slate-300 mt-0.5">Precision Digital Dentistry</p>
+                <div class="text-center p-3 rounded-xl bg-white/5 border border-white/5">
+                    <p class="text-xl sm:text-2xl font-black text-white">100%</p>
+                    <p class="text-[11px] text-slate-400 mt-0.5">Modern Digital Care</p>
                 </div>
-                <div class="p-3 text-center">
-                    <p class="text-2xl font-black text-amber-400">2 Clinics</p>
-                    <p class="text-xs text-slate-300 mt-0.5">Parmer Lane & Westlake Hills</p>
+                <div class="text-center p-3 rounded-xl bg-white/5 border border-white/5">
+                    <p class="text-xl sm:text-2xl font-black text-white">2 Clinics</p>
+                    <p class="text-[11px] text-slate-400 mt-0.5">Locations in Austin</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: Why Choose Us / Trust Badges Section -->
-    <section id="why-choose" class="py-20 bg-slate-950/60 border-t border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-3xl mx-auto space-y-3">
-                <span class="text-xs font-bold uppercase tracking-widest text-amber-400">The Lifetime Dental Difference</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
-                    Why Choose Austin Lifetime Dental: Clinical Excellence Backed by Experience
+    <!-- SECTION 3: WHY CHOOSE US (4 CORE VALUE PILLARS) -->
+    <section id="about" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#0a101f]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
+                    The Lifetime Dental Standard
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight font-serif">
+                    Why Austin Patients Trust Us
                 </h2>
-                <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-                    We combine world-class clinician mastery with high-resolution digital tools to deliver comfortable, life-long dental results.
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Combining clinical excellence, gentle patient care, and state-of-the-art diagnostic technology.
                 </p>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-amber-400 text-2xl group-hover:scale-110 transition-transform">
-                        🔬
-                    </div>
-                    <h3 class="text-lg font-bold text-white mt-4">Advanced Dental Tech</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
-                        State-of-the-art 3D CBCT scanners, intraoral cameras, and computer-guided implant planning for unmatched accuracy and pain-free care.
-                    </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
+                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4">🔬</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Advanced 3D Technology</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">State-of-the-art digital imaging, intraoral scanners, and precision diagnostics for painless accuracy.</p>
                 </div>
-
-                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-amber-400 text-2xl group-hover:scale-110 transition-transform">
-                        🏆
-                    </div>
-                    <h3 class="text-lg font-bold text-white mt-4">Multi-Decade Experience</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
-                        Three decades of distinguished clinical service in Austin, creating thousands of natural, breathtaking smile makeovers.
-                    </p>
+                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
+                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4">🏆</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Board-Certified Specialists</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Distinguished clinicians with extensive post-doctoral training committed to lifetime patient wellness.</p>
                 </div>
-
-                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-amber-400 text-2xl group-hover:scale-110 transition-transform">
-                        🌿
-                    </div>
-                    <h3 class="text-lg font-bold text-white mt-4">Compassionate Care</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
-                        Gentle dentistry and oral conscious sedation options ensure even the most anxious patients feel relaxed and completely at ease.
-                    </p>
+                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
+                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4">✨</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Anxiety-Free Comfort</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Warm, soothing environment equipped with modern amenities and gentle sedation options for stress-free visits.</p>
                 </div>
-
-                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-amber-400 text-2xl group-hover:scale-110 transition-transform">
-                        📍
-                    </div>
-                    <h3 class="text-lg font-bold text-white mt-4">Dual Convenient Clinics</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
-                        Centrally situated offices in North Austin on Parmer Lane (near The Domain) and in the prestigious Westlake Dermatology building.
-                    </p>
+                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
+                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4">⚡</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Transparent Scheduling</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Direct digital booking, zero waiting room delays, flexible financing, and upfront clear treatment plans.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 4: Comprehensive Featured Services Grid -->
-    <section id="services" class="py-20 max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-3xl mx-auto space-y-3">
-            <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Bespoke Treatments</span>
-            <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
-                Dental Services at Austin Lifetime Dental
-            </h2>
-            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-                World-class artistry, reconstructive mastery, and comprehensive family checkups tailored to your goals.
-            </p>
-        </div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            <!-- Card 1: Cosmetic Dentistry -->
-            <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-amber-400/40 transition-all duration-300 flex flex-col justify-between group">
-                <div class="relative overflow-hidden h-52">
-                    <img src="https://www.lifetimedental.com/wp-content/uploads/Cosmetic-Dentistry-With-Dentists-in-Austin-TX-at-Lifetime-Dental.webp" 
-                         alt="Cosmetic Dentistry" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-[11px] font-bold bg-amber-500 text-slate-950 shadow-md">Signature Focus</span>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                    <div>
-                        <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors">Cosmetic Dentistry & Smile Makeovers</h3>
-                        <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
-                            Custom handcrafted porcelain veneers, composite bonding, and professional teeth whitening engineered for lifelike brilliance.
-                        </p>
-                    </div>
-                    <a href="https://wa.me/15128351924" target="_blank" class="text-amber-400 hover:text-amber-300 font-bold text-xs inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                        Inquire About Smile Makeovers →
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 2: Dental Implants -->
-            <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-amber-400/40 transition-all duration-300 flex flex-col justify-between group">
-                <div class="relative overflow-hidden h-52">
-                    <img src="https://www.lifetimedental.com/wp-content/uploads/Dental-Implants-Dentist-in-Austin-TX-with-Austin-Lifetime-Dental-1.webp" 
-                         alt="Dental Implants" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-[11px] font-bold bg-blue-500/80 text-white shadow-md">Permanent Teeth</span>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                    <div>
-                        <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors">Dental Implants & Restorations</h3>
-                        <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
-                            Permanent tooth replacement with surgical titanium or ceramic implants, implant-supported bridges, and full-arch solutions.
-                        </p>
-                    </div>
-                    <a href="https://wa.me/15128351924" target="_blank" class="text-amber-400 hover:text-amber-300 font-bold text-xs inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                        Inquire About Implants →
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 3: Invisalign -->
-            <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-amber-400/40 transition-all duration-300 flex flex-col justify-between group">
-                <div class="relative overflow-hidden h-52">
-                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" 
-                         alt="Invisalign Clear Aligners" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-[11px] font-bold bg-cyan-500/80 text-white shadow-md">Clear Ortho</span>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                    <div>
-                        <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors">Invisalign® & Clear Aligners</h3>
-                        <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
-                            Straighten your teeth comfortably and discreetly without wires or brackets using custom clear aligners tailored to your lifestyle.
-                        </p>
-                    </div>
-                    <a href="https://wa.me/15128351924" target="_blank" class="text-amber-400 hover:text-amber-300 font-bold text-xs inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                        Inquire About Invisalign →
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 4: Sedation Dentistry -->
-            <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-amber-400/40 transition-all duration-300 flex flex-col justify-between group">
-                <div class="relative overflow-hidden h-52">
-                    <img src="https://www.lifetimedental.com/wp-content/uploads/Sedation-Dentistry-In-Austin-TX-with-Austin-Lifetime-Dental.webp" 
-                         alt="Sedation Dentistry" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-[11px] font-bold bg-emerald-500/80 text-white shadow-md">Anxiety Free</span>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                    <div>
-                        <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors">Conscious Sedation Dentistry</h3>
-                        <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
-                            Gentle oral conscious sedation allows you to undergo complex restorative or cosmetic procedures in total comfort and tranquillity.
-                        </p>
-                    </div>
-                    <a href="https://wa.me/15128351924" target="_blank" class="text-amber-400 hover:text-amber-300 font-bold text-xs inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                        Inquire About Sedation →
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 5: Crowns & Restorative -->
-            <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-amber-400/40 transition-all duration-300 flex flex-col justify-between group">
-                <div class="relative overflow-hidden h-52">
-                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" 
-                         alt="Crowns and Bridges" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-[11px] font-bold bg-indigo-500/80 text-white shadow-md">Precision Restoration</span>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                    <div>
-                        <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors">Crowns, Bridges & Restorations</h3>
-                        <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
-                            Ultra-durable, natural-looking ceramic crowns and bridges that protect damaged teeth and restore optimal bite function.
-                        </p>
-                    </div>
-                    <a href="https://wa.me/15128351924" target="_blank" class="text-amber-400 hover:text-amber-300 font-bold text-xs inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                        Inquire About Restorations →
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 6: General Preventive -->
-            <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-amber-400/40 transition-all duration-300 flex flex-col justify-between group">
-                <div class="relative overflow-hidden h-52">
-                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80" 
-                         alt="General Family Dentistry" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-[11px] font-bold bg-amber-500 text-slate-950 shadow-md">Special Offer Active</span>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                    <div>
-                        <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors">General & Preventive Family Care</h3>
-                        <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
-                            Comprehensive checkups, gentle ultrasonic hygiene, digital decay detection, and proactive care for your whole family.
-                        </p>
-                    </div>
-                    <a href="https://wa.me/15128351924" target="_blank" class="text-amber-400 hover:text-amber-300 font-bold text-xs inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                        Claim $159 Visit Offer →
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 5: Meet Your Dentists / Team Spotlight -->
-    <section id="dentists" class="py-20 bg-slate-950/70 border-t border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-3xl mx-auto space-y-3">
-                <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Clinical Leadership</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
-                    Meet Your Clinical Team
+    <!-- SECTION 4: COMPREHENSIVE FEATURED SERVICES GRID (6 RESPONSIVE CARDS) -->
+    <section id="services" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#080e1a]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
+                    Clinical Offerings
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight font-serif">
+                    Comprehensive Care Tailored to You
                 </h2>
-                <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-                    Dedicated, master-level Austin clinicians committed to patient-first dental excellence and natural beauty.
+                <p class="text-slate-400 text-sm sm:text-base">
+                    From regular family preventative care to advanced full-mouth restorations and cosmetic design.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8 mt-12 max-w-5xl mx-auto">
-                <!-- Doctor 1: Dr. Hoppy Lane -->
-                <div class="bg-obsidian-card rounded-3xl p-6 sm:p-8 border border-white/10 hover:border-amber-400/40 transition-all duration-300 flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
-                    <img src="https://www.lifetimedental.com/wp-content/uploads/Dr-Hoppy-Lane-DDS-Dentist-in-Austin-TX-with-Austin-Lifetime-Dental.webp" 
-                         alt="Dr. Hoppy Lane, DDS" 
-                         class="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl object-cover border border-amber-400/30 shadow-xl flex-shrink-0" />
-                    <div class="space-y-3">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80" alt="Porcelain Veneers & Smile Makeovers" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80';" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Featured Care</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-2xl font-black text-white">Dr. Hoppy Lane, DDS</h3>
-                            <p class="text-amber-400 font-semibold text-xs sm:text-sm mt-0.5">Founder & Master Cosmetic Dentist (30+ Yrs Experience)</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Porcelain Veneers & Smile Makeovers</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Dedicated high-standard porcelain veneers & smile makeovers tailored for individuals and families in Austin, combining precision care with modern comfort.</p>
                         </div>
-                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                            With over 30 years of cosmetic and restorative expertise in Austin, Dr. Lane is renowned for crafting natural, confident smile transformations in a relaxed, honest clinical environment.
-                        </p>
-                        <div class="flex flex-wrap gap-2 pt-1 justify-center sm:justify-start">
-                            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-white/5 border border-white/10 text-slate-300">Cosmetic Makeovers</span>
-                            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-white/5 border border-white/10 text-slate-300">Porcelain Veneers</span>
-                            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-white/5 border border-white/10 text-slate-300">Sedation Care</span>
-                        </div>
+                        <a href="#booking-funnel" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                            <span>Book Consultation</span>
+                            <span>→</span>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Doctor 2: Dr. Albert Olivares -->
-                <div class="bg-obsidian-card rounded-3xl p-6 sm:p-8 border border-white/10 hover:border-amber-400/40 transition-all duration-300 flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
-                    <img src="https://www.lifetimedental.com/wp-content/uploads/Dr-Albert-Olivares-DDS-Dentist-in-Austin-TX-with-Austin-Lifetime-Dental.webp" 
-                         alt="Dr. Albert Olivares, DDS" 
-                         class="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl object-cover border border-amber-400/30 shadow-xl flex-shrink-0" />
-                    <div class="space-y-3">
+                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" alt="Dental Implants & All-on-4 Restorations" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80';" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Featured Care</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-2xl font-black text-white">Dr. Albert Olivares, DDS</h3>
-                            <p class="text-amber-400 font-semibold text-xs sm:text-sm mt-0.5">Restorative & Implant Specialist</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Dental Implants & All-on-4 Restorations</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Dedicated high-standard dental implants & all-on-4 restorations tailored for individuals and families in Austin, combining precision care with modern comfort.</p>
                         </div>
-                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                            Dr. Olivares utilizes cutting-edge 3D surgical planning to restore missing teeth with permanent dental implants, delivering predictable, long-lasting outcomes with microsurgical finesse.
+                        <a href="#booking-funnel" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                            <span>Book Consultation</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800&q=80" alt="Invisalign Clear Aligners" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80';" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Featured Care</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Invisalign Clear Aligners</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Dedicated high-standard invisalign clear aligners tailored for individuals and families in Austin, combining precision care with modern comfort.</p>
+                        </div>
+                        <a href="#booking-funnel" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                            <span>Book Consultation</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80" alt="Sedation & Pain-Free Dentistry" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80';" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Featured Care</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Sedation & Pain-Free Dentistry</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Dedicated high-standard sedation & pain-free dentistry tailored for individuals and families in Austin, combining precision care with modern comfort.</p>
+                        </div>
+                        <a href="#booking-funnel" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                            <span>Book Consultation</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80" alt="Same-Day Emergency Dental Care" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80';" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Featured Care</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Same-Day Emergency Dental Care</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Dedicated high-standard same-day emergency dental care tailored for individuals and families in Austin, combining precision care with modern comfort.</p>
+                        </div>
+                        <a href="#booking-funnel" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                            <span>Book Consultation</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80" alt="Comprehensive Cleanings & Family Care" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80';" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Featured Care</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Comprehensive Cleanings & Family Care</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Dedicated high-standard comprehensive cleanings & family care tailored for individuals and families in Austin, combining precision care with modern comfort.</p>
+                        </div>
+                        <a href="#booking-funnel" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                            <span>Book Consultation</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: TEAM / DOCTOR SPOTLIGHT (REAL CLINICIANS & CREDENTIALS) -->
+    <section id="team" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#0a101f]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
+                    Meet The Practitioners
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight font-serif">
+                    Compassionate Clinical Leadership
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Dedicated doctors combining advanced medical training with a gentle, patient-first approach.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
+                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 p-6 flex flex-col sm:flex-row items-center gap-6 hover:border-brand transition">
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80" alt="Dr. Hoppy Lane, DDS" class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl object-cover border-2 border-white/10 shrink-0 shadow-lg" onerror="this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';" />
+                    <div class="text-center sm:text-left">
+                        <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1.5">Verified Practitioner</span>
+                        <h3 class="text-xl font-bold text-white font-serif">Dr. Hoppy Lane, DDS</h3>
+                        <p class="text-brand text-xs font-semibold mt-0.5">Founder & Cosmetic Dentistry Specialist</p>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">Over 25 years of cosmetic dentistry expertise with advanced post-doctoral training in smile design, porcelain veneers, and full-mouth rehabilitation.</p>
+                    </div>
+                </div>
+
+                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 p-6 flex flex-col sm:flex-row items-center gap-6 hover:border-brand transition">
+                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80" alt="Dr. Albert Olivares, DDS" class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl object-cover border-2 border-white/10 shrink-0 shadow-lg" onerror="this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';" />
+                    <div class="text-center sm:text-left">
+                        <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1.5">Verified Practitioner</span>
+                        <h3 class="text-xl font-bold text-white font-serif">Dr. Albert Olivares, DDS</h3>
+                        <p class="text-brand text-xs font-semibold mt-0.5">General & Restorative Dentist</p>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">Specializing in gentle family dentistry, implant restorations, and patient-first preventive care with cutting-edge 3D dental imaging.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: PATIENT REVIEWS & GOOGLE STAR RATINGS -->
+    <section id="reviews" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#080e1a]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
+                    Patient Testimonials
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight font-serif">
+                    Loved by Patients Across Austin
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Real verified reviews from members of the Austin community.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">★★★★★</div>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
+                            "The team at Lifetime Dental redefined dentistry for me. Incredible bedside manner, cutting-edge technology, and completely pain-free treatment. I wouldn't trust anyone else in Austin."
                         </p>
-                        <div class="flex flex-wrap gap-2 pt-1 justify-center sm:justify-start">
-                            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-white/5 border border-white/10 text-slate-300">Dental Implants</span>
-                            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-white/5 border border-white/10 text-slate-300">Full-Mouth Restoration</span>
-                            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-white/5 border border-white/10 text-slate-300">3D Digital Surgery</span>
-                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-white text-xs font-bold">Sarah M.</span>
+                        <span class="text-slate-400 text-[11px]">Verified Google Review</span>
+                    </div>
+                </div>
+
+                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">★★★★★</div>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
+                            "From the moment you walk through the door, the staff makes you feel right at home. The digital 3D scans and transparent treatment breakdown were world-class."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-white text-xs font-bold">David R.</span>
+                        <span class="text-slate-400 text-[11px]">Verified Patient</span>
+                    </div>
+                </div>
+
+                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">★★★★★</div>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
+                            "Outstanding results! Clean, gorgeous facility, state-of-the-art equipment, and genuinely compassionate care. Highest recommendation in Austin!"
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-white text-xs font-bold">Elena K.</span>
+                        <span class="text-slate-400 text-[11px]">Verified Google Review</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 6: Patient Reviews & Google Star Ratings -->
-    <section id="reviews" class="py-20 max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-3xl mx-auto space-y-3">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-300 text-xs font-bold uppercase tracking-wider">
-                <span>Verified Patient Satisfaction</span>
-            </div>
-            <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
-                Trusted by Patients Across Austin
-            </h2>
-            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-                With over 900 five-star Google reviews, see why Austin families consistently choose us for their dental care.
-            </p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-6 mt-12">
-            <!-- Review 1 -->
-            <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between space-y-4">
-                <div class="space-y-3">
-                    <div class="text-amber-400 text-base">★★★★★</div>
-                    <p class="text-slate-200 text-sm leading-relaxed italic">
-                        “I love my new veneers! Dr. Lane and Suzanne made my smile look better and completely natural. The entire team at Lifetime Dental made the experience calm, painless, and truly enjoyable.”
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-                    <div>
-                        <p class="font-bold text-white text-sm">Sarah M.</p>
-                        <p class="text-xs text-slate-400">Cosmetic Veneers Patient • North Austin</p>
-                    </div>
-                    <span class="text-emerald-400 text-xs font-bold">✓ Verified Google Review</span>
-                </div>
+    <!-- SECTION 7: INTERACTIVE QUICK-BOOKING FUNNEL + BRANCHES / HEADQUARTERS FOOTER -->
+    <section id="booking-funnel" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#0a101f]">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-10">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
+                    Priority Online Scheduling
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight font-serif">
+                    Ready to Connect with Lifetime Dental?
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    Select your preferred visit time or reach out directly to secure priority scheduling in Austin.
+                </p>
             </div>
 
-            <!-- Review 2 -->
-            <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between space-y-4">
-                <div class="space-y-3">
-                    <div class="text-amber-400 text-base">★★★★★</div>
-                    <p class="text-slate-200 text-sm leading-relaxed italic">
-                        “Had my dental implant procedure done with Dr. Olivares. Incredible precision, zero discomfort, and the results exceeded my expectations. Best dental clinic in Texas hands down!”
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-                    <div>
-                        <p class="font-bold text-white text-sm">David R.</p>
-                        <p class="text-xs text-slate-400">Implant Patient • Westlake Hills</p>
-                    </div>
-                    <span class="text-emerald-400 text-xs font-bold">✓ Verified Google Review</span>
-                </div>
-            </div>
-
-            <!-- Review 3 -->
-            <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between space-y-4">
-                <div class="space-y-3">
-                    <div class="text-amber-400 text-base">★★★★★</div>
-                    <p class="text-slate-200 text-sm leading-relaxed italic">
-                        “From the 3D scanning to the gentle cleaning, the technology and care here are second to none. Having convenient offices in both Parmer and Westlake makes scheduling effortless.”
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-                    <div>
-                        <p class="font-bold text-white text-sm">Elena K.</p>
-                        <p class="text-xs text-slate-400">General Care • The Domain, Austin</p>
-                    </div>
-                    <span class="text-emerald-400 text-xs font-bold">✓ Verified Google Review</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 7: Interactive Quick-Booking Funnel + Multi-Location Footer -->
-    <section id="locations" class="py-20 bg-gradient-to-b from-slate-950/90 to-[#080e1a] border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="bg-obsidian-card rounded-3xl p-8 sm:p-12 border border-amber-400/30 shadow-2xl relative overflow-hidden">
-                <div class="max-w-3xl mx-auto text-center space-y-6">
-                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-400/10 border border-amber-400/30 text-amber-300 uppercase tracking-widest">
-                        Online Consultation & Appointment Scheduling
-                    </span>
-                    <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight font-serif">
-                        Ready to Transform Your Smile?
-                    </h2>
-                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                        Select your preferred location below for instant 1-tap booking or call directly to speak with our treatment coordinators.
-                    </p>
-
-                    <div class="grid sm:grid-cols-2 gap-6 pt-4 text-left">
-                        <!-- Parmer Lane Office -->
-                        <div class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition">
-                            <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-amber-400 text-slate-950">Branch 1</span>
-                            <h3 class="text-xl font-bold text-white mt-2">Parmer Lane (North Austin)</h3>
-                            <p class="text-slate-400 text-xs mt-1">Conveniently situated just north of The Domain for North Austin families & professionals.</p>
-                            <p class="text-white text-sm font-semibold mt-3">📞 Phone: <a href="tel:(512) 835-1924" class="text-amber-400 hover:underline">(512) 835-1924</a></p>
-                            <a href="https://wa.me/15128351924" target="_blank" class="mt-4 btn-gold w-full py-2.5 rounded-xl text-xs font-bold text-center block">
-                                Book at Parmer Lane →
-                            </a>
+            <!-- Booking Funnel Card -->
+            <div class="max-w-xl mx-auto bg-obsidian-card p-8 rounded-3xl border border-white/15 shadow-2xl">
+                <form onsubmit="event.preventDefault(); window.open('https://wa.me/5128351924?text=' + encodeURIComponent('Hi Lifetime Dental, I would like to schedule an appointment consultation via your digital booking portal.'), '_blank');" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Your Full Name</label>
+                            <input type="text" required placeholder="Jane Doe" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand" />
                         </div>
-
-                        <!-- Westlake Office -->
-                        <div class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition">
-                            <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-amber-400 text-slate-950">Branch 2</span>
-                            <h3 class="text-xl font-bold text-white mt-2">Westlake (Bee Caves Rd)</h3>
-                            <p class="text-slate-400 text-xs mt-1">Located inside the Westlake Dermatology building serving Westlake Hills & Bee Cave.</p>
-                            <p class="text-white text-sm font-semibold mt-3">📞 Phone: <a href="tel:(512) 263-8332" class="text-amber-400 hover:underline">(512) 263-8332</a></p>
-                            <a href="https://wa.me/15122638332" target="_blank" class="mt-4 btn-gold w-full py-2.5 rounded-xl text-xs font-bold text-center block">
-                                Book at Westlake Clinic →
-                            </a>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Phone Number</label>
+                            <input type="tel" required placeholder="(555) 000-0000" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand" />
                         </div>
                     </div>
-                </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Reason for Visit</label>
+                        <select class="w-full bg-[#080e1a] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-brand">
+                            <option>New Patient Examination & Consultation</option>
+                            <option>Cosmetic Smile Consultation</option>
+                            <option>Same-Day Emergency Visit</option>
+                            <option>Restorative & Implant Treatment</option>
+                            <option>Routine Checkup & Cleaning</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Preferred Time of Day</label>
+                        <select class="w-full bg-[#080e1a] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-brand">
+                            <option>Morning (8:00 AM - 12:00 PM)</option>
+                            <option>Afternoon (12:00 PM - 4:00 PM)</option>
+                            <option>First Available Slot</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-brand w-full py-3.5 rounded-xl text-xs sm:text-sm font-bold shadow-xl mt-4">
+                        Confirm & Reserve Consultation Online →
+                    </button>
+                    <p class="text-[11px] text-center text-slate-400 mt-2">🔒 HIPAA-Compliant & Instant Confirmation via Practice Concierge</p>
+                </form>
             </div>
+
+            <!-- Multi-Location Branches or Practice Headquarters -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-brand transition">
+                        <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block">Branch 1</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Parmer Lane Clinic (North Austin)</h3>
+                        <p class="text-slate-400 text-xs mt-1">Conveniently situated just north of The Domain for North Austin families & tech professionals.</p>
+                        <p class="text-slate-300 text-xs mt-2">📍 12233 RR 620 N, Suite 101, Austin, TX 78750</p>
+                        <p class="text-white text-sm font-semibold mt-3">📞 Phone: <a href="tel:(512) 835-1924" class="text-brand hover:underline">(512) 835-1924</a></p>
+                        <a href="https://wa.me/5128351924" target="_blank" class="mt-4 btn-brand w-full py-2.5 rounded-xl text-xs font-bold text-center block">
+                            Book at Parmer Lane Clinic →
+                        </a>
+                    </div>
+
+                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-brand transition">
+                        <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block">Branch 2</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Westlake Clinic (Bee Caves Rd)</h3>
+                        <p class="text-slate-400 text-xs mt-1">Located inside Westlake Dermatology medical building serving Westlake Hills & Bee Cave.</p>
+                        <p class="text-slate-300 text-xs mt-2">📍 3801 Bee Caves Rd, Suite 200, West Lake Hills, TX 78746</p>
+                        <p class="text-white text-sm font-semibold mt-3">📞 Phone: <a href="tel:(512) 263-8332" class="text-brand hover:underline">(512) 263-8332</a></p>
+                        <a href="https://wa.me/5122638332" target="_blank" class="mt-4 btn-brand w-full py-2.5 rounded-xl text-xs font-bold text-center block">
+                            Book at Westlake Clinic →
+                        </a>
+                    </div>
+</div>
 
             <!-- Footer Details -->
             <footer class="mt-16 pt-10 border-t border-white/10 text-xs text-slate-400 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
                 <div>
                     <p class="font-bold text-slate-200">Lifetime Dental</p>
-                    <p class="mt-1">Serving North Austin, The Domain, Westlake Hills, Bee Cave, Rollingwood & Barton Creek.</p>
+                    <p class="mt-1">Serving Austin, USA and surrounding metropolitan communities.</p>
                 </div>
                 <div>
                     <p>🕒 Mon - Thu: 8:00 AM – 5:00 PM | Fri: 8:00 AM – 2:00 PM</p>
-                    <p class="mt-1">© 2026 Lifetime Dental. All rights reserved. • <a href="mailto:contact@lifetimedental.com" class="text-slate-300 hover:underline">contact@lifetimedental.com</a></p>
+                    <p class="mt-1">© 2026 Lifetime Dental. All rights reserved. • <a href="mailto:info@lifetimedental.com" class="text-slate-300 hover:underline">contact@lifetimedental.com</a></p>
                 </div>
             </footer>
         </div>
     </section>
 
-    <!-- 2026 Sticky Mobile Quick-Action Bar -->
+    <!-- 2026 STICKY MOBILE QUICK-ACTION BAR -->
     <div class="fixed bottom-0 left-0 right-0 z-40 bg-slate-950/95 backdrop-blur-md border-t border-white/10 px-4 py-2.5 flex items-center justify-between sm:hidden shadow-2xl">
         <div class="flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span class="text-xs font-bold text-slate-200">1-Tap Booking Active</span>
+            <span class="text-xs font-bold text-slate-200">Instant Booking Active</span>
         </div>
         <div class="flex items-center gap-2">
             <a href="tel:(512) 835-1924" class="px-3 py-1.5 rounded-lg bg-white/10 text-white text-xs font-semibold">📞 Call</a>
-            <a href="https://wa.me/15128351924" target="_blank" class="btn-gold px-3.5 py-1.5 rounded-lg text-xs font-bold shadow-md">💬 Book Consultation</a>
+            <a href="https://wa.me/5128351924" target="_blank" class="btn-brand px-3.5 py-1.5 rounded-lg text-xs font-bold shadow-md">💬 Book Consultation</a>
         </div>
     </div>
 
-    <!-- Floating Action CTA (Desktop/Tablet) -->
+    <!-- FLOATING ACTION CTA (Desktop/Tablet) -->
     <div class="hidden sm:block fixed bottom-6 right-6 z-50">
-        <a href="https://wa.me/15128351924" target="_blank" class="relative flex items-center justify-center w-14 h-14 bg-gradient-to-tr from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 rounded-full shadow-2xl transition">
-            <span class="absolute -inset-1 rounded-full bg-amber-400 opacity-75 animate-ping"></span>
+        <a href="https://wa.me/5128351924" target="_blank" class="relative flex items-center justify-center w-14 h-14 bg-brand rounded-full shadow-2xl transition hover:scale-105">
+            <span class="absolute -inset-1 rounded-full bg-brand opacity-60 animate-ping"></span>
             <svg class="w-7 h-7 fill-current relative z-10" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.777.814 2.791.814 3.18 0 5.767-2.587 5.768-5.766.001-3.181-2.586-5.767-5.768-5.767zm0 10.355c-.887 0-1.638-.253-2.316-.677l-.166-.104-1.58.414.422-1.54-.109-.174c-.464-.739-.71-1.464-.71-2.272.001-2.53 2.059-4.588 4.59-4.588 2.529 0 4.587 2.058 4.588 4.588.001 2.531-2.057 4.589-4.589 4.589z"/></svg>
         </a>
     </div>

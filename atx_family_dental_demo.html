@@ -7,7 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
     <style id="brand-dna-styles">
         
         html, body {
@@ -155,6 +157,218 @@
         }
     })();
     </script>
+<style id="niche-3d-depth-styles">
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #07131b !important;
+            background-image: 
+                radial-gradient(circle at 18% 15%, rgba(16, 185, 129, 0.20) 0%, transparent 48%),
+                radial-gradient(circle at 82% 82%, rgba(20, 184, 166, 0.20) 0%, transparent 52%),
+                radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px) !important;
+            background-size: 100% 100%, 100% 100%, 32px 32px !important;
+            background-attachment: fixed !important;
+            color: #f1f5f9 !important;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+            min-height: 100vh;
+        }
+
+        /* Mobile Performance: Hardware Acceleration & Smooth Scrolling */
+        html, body, main, section, .scrollable-container, .glass-card, .service-card {
+            -webkit-overflow-scrolling: touch;
+            transform: translateZ(0);
+        }
+        .glass-card, .service-card, header, .btn-whatsapp, .btn-call {
+            will-change: transform;
+        }
+
+        /* Glassmorphic Navbar */
+        header, nav, .glass-nav {
+            background: rgba(10, 14, 24, 0.75) !important;
+            backdrop-filter: blur(20px) !important;
+            -webkit-backdrop-filter: blur(20px) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6) !important;
+        }
+
+        /* Transparent Main Sections */
+        section {
+            background: transparent !important;
+            border-color: rgba(255, 255, 255, 0.06) !important;
+        }
+
+        /* Glassmorphic Cards & Hero Frame with 3D Depth Shadow */
+        .glass-card, .glass-panel, [data-glass="true"],
+        .bg-white, .bg-slate-50, 
+        div[style*="background-color: #ffffff"], 
+        div[style*="background-color: #f8fafc"] {
+            background: rgba(255, 255, 255, 0.035) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            backdrop-filter: blur(16px) !important;
+            -webkit-backdrop-filter: blur(16px) !important;
+            box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.7), inset 0 1px 1px 0 rgba(255, 255, 255, 0.15) !important;
+            border-radius: 1.25rem !important;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+
+        /* Hover effects with subtle 3D lift */
+        .glass-card:hover, .service-card:hover, 
+        div[style*="background-color: #f8fafc"]:hover,
+        div[style*="background-color: #ffffff"]:hover {
+            transform: translateY(-4px) !important;
+            border-color: rgba(255, 255, 255, 0.22) !important;
+            box-shadow: 0 32px 72px -10px rgba(0, 0, 0, 0.88), inset 0 1px 2px 0 rgba(255, 255, 255, 0.28) !important;
+        }
+
+        /* Crisp High-Contrast Typography */
+        h1, h2, h3, h4, .text-slate-900 {
+            color: #ffffff !important;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+        }
+        p, .text-slate-600, .text-slate-500, .text-slate-700 {
+            color: #cbd5e1 !important;
+        }
+        .text-slate-400 {
+            color: #94a3b8 !important;
+        }
+
+        /* Sharp Contrast CTA Buttons */
+        .btn-whatsapp, a[href*="wa.me"], a.bg-emerald-600 {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+            color: #ffffff !important;
+            font-weight: 700 !important;
+            border: 1px solid rgba(255, 255, 255, 0.25) !important;
+            box-shadow: 0 10px 25px -4px rgba(16, 185, 129, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.35) !important;
+            transition: all 0.25s ease !important;
+        }
+        .btn-whatsapp:hover, a[href*="wa.me"]:hover, a.bg-emerald-600:hover {
+            transform: translateY(-2px) scale(1.02) !important;
+            box-shadow: 0 16px 36px -4px rgba(16, 185, 129, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.45) !important;
+        }
+
+        .btn-call, a[href^="tel:"], a.bg-indigo-600 {
+            background: linear-gradient(135deg, #0d9488 0%, #059669 100%) !important;
+            color: #ffffff !important;
+            font-weight: 700 !important;
+            border: 1px solid rgba(255, 255, 255, 0.22) !important;
+            box-shadow: 0 10px 25px -4px rgba(99, 102, 241, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.3) !important;
+            transition: all 0.25s ease !important;
+        }
+        .btn-call:hover, a[href^="tel:"]:hover, a.bg-indigo-600:hover {
+            transform: translateY(-2px) scale(1.02) !important;
+            box-shadow: 0 16px 36px -4px rgba(99, 102, 241, 0.65) !important;
+        }
+
+        /* Rating & Niche Badges */
+        .bg-indigo-100, .bg-indigo-50, div[class*="bg-indigo-100"], .badge-pill {
+            background: rgba(16, 185, 129, 0.12) !important;
+            border: 1px solid rgba(16, 185, 129, 0.35) !important;
+            color: #34d399 !important;
+            backdrop-filter: blur(8px) !important;
+        }
+        .text-indigo-800, .text-indigo-700, .text-indigo-600, .niche-accent {
+            color: #34d399 !important;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(5, 7, 12, 0.95) !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+        }
+
+        /* Mobile Performance: Disable expensive backdrop-filter on small screens */
+        @media (max-width: 768px) {
+            header, nav, .glass-nav {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                background: rgba(10, 14, 24, 0.96) !important;
+            }
+            .glass-card, .glass-panel, [data-glass="true"],
+            .bg-white, .bg-slate-50, 
+            div[style*="background-color: #ffffff"], 
+            div[style*="background-color: #f8fafc"],
+            .service-card {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                background: rgba(15, 23, 42, 0.94) !important;
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6) !important;
+            }
+            .bg-indigo-100, .bg-indigo-50, div[class*="bg-indigo-100"], .badge-pill {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+        }
+
+
+
+        /* Anti-Capture Focus Blur Shield */
+        body.window-blurred {
+            filter: blur(16px) grayscale(40%) !important;
+            transition: filter 0.15s ease-out !important;
+        }
+
+        /* Preserved Anti-Theft Watermark & Security Shielding */
+        .watermark-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 99999;
+            opacity: 0;
+            display: none;
+            align-items: center; justify-content: center;
+        }
+        .watermark-text {
+            font-size: 2rem; font-weight: 800;
+            color: rgba(244, 63, 94, 0.75);
+            transform: rotate(-30deg);
+            letter-spacing: 0.2em;
+            pointer-events: none;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 20px;
+        }
+        .capture-blind {
+            filter: blur(28px) grayscale(100%) !important;
+            opacity: 0.15 !important;
+        }
+        body.capture-blind .watermark-overlay,
+        .capture-blind .watermark-overlay {
+            opacity: 1 !important;
+            display: flex !important;
+            background: rgba(5, 7, 12, 0.95) !important;
+        }
+        body.capture-blind .watermark-text,
+        .capture-blind .watermark-text {
+            color: #f43f5e !important;
+            text-shadow: 0 0 25px rgba(244, 63, 94, 0.8) !important;
+        }
+        @media print {
+
+            .watermark-overlay {
+                opacity: 1 !important;
+                display: flex !important;
+                background: repeating-linear-gradient(
+                    -45deg,
+                    rgba(244, 63, 94, 0.08),
+                    rgba(244, 63, 94, 0.08) 100px,
+                    transparent 100px,
+                    transparent 200px
+                );
+            }
+            .watermark-text {
+                display: block !important;
+                font-size: 2rem; font-weight: 800;
+                color: #f43f5e !important;
+                transform: rotate(-30deg);
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+            }
+        }
+    </style>
 </head>
 <body class="bg-[#faf9f6] text-slate-800 font-sans antialiased min-h-screen relative flex flex-col justify-between pb-16 sm:pb-0">
 
@@ -176,7 +390,7 @@
     <header class="sticky top-0 z-40 backdrop-blur-md bg-white/90 border-b border-slate-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <img src="https://www.atxfamilydental.com/wp-content/uploads/2025/02/Header-logo.png" alt="Atx family dental" class="h-10 w-auto max-w-[210px] object-contain drop-shadow-sm" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" /><div class="hidden w-10 h-10 rounded-xl bg-gradient-to-tr from-teal-600 to-cyan-600 items-center justify-center font-bold text-white text-base shadow-md">AT</div>
+                <img src="https://www.atxfamilydental.com/wp-content/uploads/2025/02/Header-logo.png" alt="Atx family dental" class="h-10 w-auto max-w-[210px] object-contain drop-shadow-sm" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" / loading="lazy" decoding="async"><div class="hidden w-10 h-10 rounded-xl bg-gradient-to-tr from-teal-600 to-cyan-600 items-center justify-center font-bold text-white text-base shadow-md">AT</div>
                 <span class="font-black text-base tracking-tight text-slate-900">Atx family dental</span>
             </div>
             <div class="flex items-center gap-3">
@@ -214,7 +428,7 @@
             </div>
             <div class="lg:col-span-5 relative">
                 <div class="bg-white p-2.5 rounded-3xl border border-slate-200 shadow-2xl relative overflow-hidden">
-                    <img src="https://www.atxfamilydental.com/wp-content/uploads/2025/02/home-banner-desktop.png" alt="Atx family dental" class="rounded-2xl w-full h-72 sm:h-84 object-cover shadow-inner pointer-events-none" onerror="this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';" />
+                    <img src="https://www.atxfamilydental.com/wp-content/uploads/2025/02/home-banner-desktop.png" alt="Atx family dental" class="rounded-2xl w-full h-72 sm:h-84 object-cover shadow-inner pointer-events-none" onerror="this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';" / loading="lazy" decoding="async">
                     <div class="absolute bottom-5 left-5 right-5 p-4 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-lg flex items-center justify-between">
                         <div>
                             <p class="text-[11px] uppercase tracking-wider text-slate-500 font-bold">Standard Consultation</p>
@@ -238,7 +452,7 @@
                 
                 <div class="service-card rounded-2xl overflow-hidden p-3 border border-slate-200 bg-white shadow-md flex flex-col justify-between hover:shadow-xl transition-all duration-300">
                     <div class="relative overflow-hidden rounded-xl">
-                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" alt="Routine Care" class="w-full h-44 object-cover hover:scale-105 transition-transform duration-500 pointer-events-none" onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80';" />
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" alt="Routine Care" class="w-full h-44 object-cover hover:scale-105 transition-transform duration-500 pointer-events-none" onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80';" / loading="lazy" decoding="async">
                         <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-teal-600 text-white shadow-sm">Verified Care</span>
                     </div>
                     <div class="p-3 flex-1 flex flex-col justify-between">
@@ -251,7 +465,7 @@
                 </div>
                 <div class="service-card rounded-2xl overflow-hidden p-3 border border-slate-200 bg-white shadow-md flex flex-col justify-between hover:shadow-xl transition-all duration-300">
                     <div class="relative overflow-hidden rounded-xl">
-                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" alt="Emergency Dentistry" class="w-full h-44 object-cover hover:scale-105 transition-transform duration-500 pointer-events-none" onerror="this.src='https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80';" />
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" alt="Emergency Dentistry" class="w-full h-44 object-cover hover:scale-105 transition-transform duration-500 pointer-events-none" onerror="this.src='https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80';" / loading="lazy" decoding="async">
                         <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-teal-600 text-white shadow-sm">Verified Care</span>
                     </div>
                     <div class="p-3 flex-1 flex flex-col justify-between">
@@ -264,7 +478,7 @@
                 </div>
                 <div class="service-card rounded-2xl overflow-hidden p-3 border border-slate-200 bg-white shadow-md flex flex-col justify-between hover:shadow-xl transition-all duration-300">
                     <div class="relative overflow-hidden rounded-xl">
-                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80" alt="Invisalign" class="w-full h-44 object-cover hover:scale-105 transition-transform duration-500 pointer-events-none" onerror="this.src='https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80';" />
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80" alt="Invisalign" class="w-full h-44 object-cover hover:scale-105 transition-transform duration-500 pointer-events-none" onerror="this.src='https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80';" / loading="lazy" decoding="async">
                         <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-teal-600 text-white shadow-sm">Verified Care</span>
                     </div>
                     <div class="p-3 flex-1 flex flex-col justify-between">
@@ -277,7 +491,7 @@
                 </div>
                 <div class="service-card rounded-2xl overflow-hidden p-3 border border-slate-200 bg-white shadow-md flex flex-col justify-between hover:shadow-xl transition-all duration-300">
                     <div class="relative overflow-hidden rounded-xl">
-                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" alt="Dental Implants" class="w-full h-44 object-cover hover:scale-105 transition-transform duration-500 pointer-events-none" onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80';" />
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" alt="Dental Implants" class="w-full h-44 object-cover hover:scale-105 transition-transform duration-500 pointer-events-none" onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80';" / loading="lazy" decoding="async">
                         <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-teal-600 text-white shadow-sm">Verified Care</span>
                     </div>
                     <div class="p-3 flex-1 flex flex-col justify-between">
@@ -290,7 +504,7 @@
                 </div>
                 <div class="service-card rounded-2xl overflow-hidden p-3 border border-slate-200 bg-white shadow-md flex flex-col justify-between hover:shadow-xl transition-all duration-300">
                     <div class="relative overflow-hidden rounded-xl">
-                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" alt="Dental Veneers" class="w-full h-44 object-cover hover:scale-105 transition-transform duration-500 pointer-events-none" onerror="this.src='https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80';" />
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" alt="Dental Veneers" class="w-full h-44 object-cover hover:scale-105 transition-transform duration-500 pointer-events-none" onerror="this.src='https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80';" / loading="lazy" decoding="async">
                         <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-teal-600 text-white shadow-sm">Verified Care</span>
                     </div>
                     <div class="p-3 flex-1 flex flex-col justify-between">
@@ -303,7 +517,7 @@
                 </div>
                 <div class="service-card rounded-2xl overflow-hidden p-3 border border-slate-200 bg-white shadow-md flex flex-col justify-between hover:shadow-xl transition-all duration-300">
                     <div class="relative overflow-hidden rounded-xl">
-                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80" alt="Cosmetic Dentistry" class="w-full h-44 object-cover hover:scale-105 transition-transform duration-500 pointer-events-none" onerror="this.src='https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80';" />
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80" alt="Cosmetic Dentistry" class="w-full h-44 object-cover hover:scale-105 transition-transform duration-500 pointer-events-none" onerror="this.src='https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80';" / loading="lazy" decoding="async">
                         <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-teal-600 text-white shadow-sm">Verified Care</span>
                     </div>
                     <div class="p-3 flex-1 flex flex-col justify-between">
