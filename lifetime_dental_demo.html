@@ -78,11 +78,127 @@
             transform: translateY(-1px) !important;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4) !important;
         }
+
+        /* High-Definition Text Protection Shadows */
+        .hero-title-shadow {
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 4px 24px rgba(0, 0, 0, 0.85), 0 1px 3px rgba(0, 0, 0, 0.95);
+        }
+        .hero-text-shadow {
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95), 0 4px 18px rgba(0, 0, 0, 0.85);
+        }
+
+        /* 60fps Ken-Burns Cinematic Slow Zoom */
+        @keyframes heroSlowZoom {
+            0% {
+                transform: scale(1.0) translate3d(0, 0, 0);
+            }
+            50% {
+                transform: scale(1.06) translate3d(-0.8%, -0.5%, 0);
+            }
+            100% {
+                transform: scale(1.0) translate3d(0, 0, 0);
+            }
+        }
+        .hero-ken-burns {
+            animation: heroSlowZoom 24s ease-in-out infinite alternate;
+            will-change: transform;
+            transform-origin: center center;
+        }
+
+        /* Ambient Luxury Drifting Orbs */
+        @keyframes floatSlow1 {
+            0%, 100% {
+                transform: translate3d(0, 0, 0) scale(1);
+                opacity: 0.35;
+            }
+            50% {
+                transform: translate3d(35px, -25px, 0) scale(1.12);
+                opacity: 0.55;
+            }
+        }
+        @keyframes floatSlow2 {
+            0%, 100% {
+                transform: translate3d(0, 0, 0) scale(1.05);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translate3d(-30px, 20px, 0) scale(0.95);
+                opacity: 0.5;
+            }
+        }
+        .ambient-orb-1 {
+            position: absolute;
+            top: 15%;
+            left: 15%;
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle, #f59e0b 0%, transparent 70%);
+            filter: blur(80px);
+            border-radius: 9999px;
+            pointer-events: none;
+            animation: floatSlow1 18s ease-in-out infinite;
+            will-change: transform, opacity;
+            z-index: 1;
+        }
+        .ambient-orb-2 {
+            position: absolute;
+            top: 30%;
+            right: 12%;
+            width: 380px;
+            height: 380px;
+            background: radial-gradient(circle, #d97706 0%, transparent 70%);
+            filter: blur(80px);
+            border-radius: 9999px;
+            pointer-events: none;
+            animation: floatSlow2 22s ease-in-out infinite;
+            will-change: transform, opacity;
+            z-index: 1;
+        }
+
+        /* Staggered Cinematic Entrance Animations */
+        @keyframes heroFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-fade-1 {
+            animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+            animation-delay: 0.1s;
+        }
+        .hero-fade-2 {
+            animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+            animation-delay: 0.25s;
+        }
+        .hero-fade-3 {
+            animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+            animation-delay: 0.4s;
+        }
+        .hero-fade-4 {
+            animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+            animation-delay: 0.55s;
+        }
+        .hero-fade-5 {
+            animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+            animation-delay: 0.7s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-ken-burns, .ambient-orb-1, .ambient-orb-2, .hero-fade-1, .hero-fade-2, .hero-fade-3, .hero-fade-4, .hero-fade-5 {
+                animation: none !important;
+                transform: none !important;
+                opacity: 1 !important;
+            }
+        }
     </style>
         <!-- 7-Day Client Auto-Expiry Shield -->
     <script id="demo-expiry-shield">
     (function() {
-        const DEMO_CREATED_TIMESTAMP = 1790707782492;
+        const DEMO_CREATED_TIMESTAMP = 1790708666758;
         const EXPIRY_DAYS = 7;
         const isExpired = (Date.now() - DEMO_CREATED_TIMESTAMP) > (EXPIRY_DAYS * 24 * 60 * 60 * 1000);
 
@@ -253,52 +369,55 @@
 
     <!-- SECTION 2: FULL-BLEED CINEMATIC HERO (Zero $490 Badge) -->
     <section class="relative min-h-[85vh] flex items-center justify-center px-4 sm:px-8 py-20 overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=2000&q=85" alt="Lifetime Dental" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-center filter brightness-[0.4] scale-105 transform hover:scale-100 transition duration-1000" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
-            <div class="absolute inset-0 bg-gradient-to-b from-[#080e1a]/70 via-[#080e1a]/85 to-[#080e1a]"></div>
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=2000&q=85" alt="Lifetime Dental" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-center hero-ken-burns" style="filter: brightness(0.85) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
+            <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(8,14,26,0.45) 0%, rgba(8,14,26,0.30) 45%, rgba(8,14,26,0.82) 100%);"></div>
+            <!-- Ambient Floating Gradient Orbs -->
+            <div class="ambient-orb-1"></div>
+            <div class="ambient-orb-2"></div>
         </div>
 
         <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md text-xs font-semibold text-slate-200">
+            <div class="hero-fade-1 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-semibold text-white hero-text-shadow">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span>Proudly Serving Austin, USA • Modern Dental Clinic Care</span>
             </div>
 
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] font-serif">
+            <h1 class="hero-fade-2 text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] font-serif hero-title-shadow">
                 Premier Cosmetic & Implant Dentistry in Austin
             </h1>
 
-            <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-light">
+            <p class="hero-fade-3 text-slate-100 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal hero-text-shadow">
                 Serving North Austin, Westlake Hills & Bee Cave with distinguished clinical excellence, dual state-of-the-art facilities, and compassionate care.
             </p>
 
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <div class="hero-fade-4 flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                 <a href="#booking-funnel" class="btn-brand w-full sm:w-auto px-8 py-3.5 rounded-xl text-sm font-bold shadow-xl flex items-center justify-center gap-2">
                     <span>Schedule Your Consultation</span>
                     <span>→</span>
                 </a>
-                <a href="#services" class="w-full sm:w-auto px-6 py-3.5 rounded-xl text-sm font-semibold text-white bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur-sm transition">
+                <a href="#services" class="w-full sm:w-auto px-6 py-3.5 rounded-xl text-sm font-semibold text-white bg-slate-900/60 hover:bg-slate-900/80 border border-white/20 backdrop-blur-md transition shadow-lg">
                     Explore Services ↓
                 </a>
             </div>
 
             <!-- Trust Metrics Bar -->
-            <div class="pt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto border-t border-white/10 mt-8">
-                <div class="text-center p-3 rounded-xl bg-white/5 border border-white/5">
+            <div class="hero-fade-5 pt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto border-t border-white/15 mt-8">
+                <div class="text-center p-3 rounded-xl bg-slate-950/60 border border-white/10 backdrop-blur-md shadow-lg">
                     <p class="text-xl sm:text-2xl font-black text-white">⭐ 5.0</p>
-                    <p class="text-[11px] text-slate-400 mt-0.5">540+ Verified Reviews</p>
+                    <p class="text-[11px] text-slate-300 mt-0.5 font-medium">540+ Verified Reviews</p>
                 </div>
-                <div class="text-center p-3 rounded-xl bg-white/5 border border-white/5">
+                <div class="text-center p-3 rounded-xl bg-slate-950/60 border border-white/10 backdrop-blur-md shadow-lg">
                     <p class="text-xl sm:text-2xl font-black text-white">25+</p>
-                    <p class="text-[11px] text-slate-400 mt-0.5">Years Serving Austin</p>
+                    <p class="text-[11px] text-slate-300 mt-0.5 font-medium">Years Serving Austin</p>
                 </div>
-                <div class="text-center p-3 rounded-xl bg-white/5 border border-white/5">
+                <div class="text-center p-3 rounded-xl bg-slate-950/60 border border-white/10 backdrop-blur-md shadow-lg">
                     <p class="text-xl sm:text-2xl font-black text-white">100%</p>
-                    <p class="text-[11px] text-slate-400 mt-0.5">Modern Digital Care</p>
+                    <p class="text-[11px] text-slate-300 mt-0.5 font-medium">Modern Digital Care</p>
                 </div>
-                <div class="text-center p-3 rounded-xl bg-white/5 border border-white/5">
+                <div class="text-center p-3 rounded-xl bg-slate-950/60 border border-white/10 backdrop-blur-md shadow-lg">
                     <p class="text-xl sm:text-2xl font-black text-white">2 Clinics</p>
-                    <p class="text-[11px] text-slate-400 mt-0.5">Locations in Austin</p>
+                    <p class="text-[11px] text-slate-300 mt-0.5 font-medium">Locations in Austin</p>
                 </div>
             </div>
         </div>
