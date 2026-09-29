@@ -100,6 +100,12 @@
             transform: translateY(-2px) !important;
             box-shadow: 0 12px 30px -5px var(--brand-glow) !important;
         }
+        .slot-pill input:checked + span {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+            color: #090e17 !important;
+            border-color: transparent !important;
+            font-weight: 700 !important;
+        }
 
         /* High-Definition Text Protection Shadows */
         .hero-title-shadow {
@@ -224,7 +230,7 @@
         <!-- 7-Day Client Auto-Expiry Shield -->
     <script id="demo-expiry-shield">
     (function() {
-        const DEMO_CREATED_TIMESTAMP = 1790712474295;
+        const DEMO_CREATED_TIMESTAMP = 1790713538766;
         const EXPIRY_DAYS = 7;
         const isExpired = (Date.now() - DEMO_CREATED_TIMESTAMP) > (EXPIRY_DAYS * 24 * 60 * 60 * 1000);
 
@@ -734,12 +740,13 @@
         </div>
     </section>
 
-    <!-- SECTION 7: INTERACTIVE QUICK-BOOKING FUNNEL + HEADQUARTERS CARD -->
-    <section id="booking-funnel" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#0a101f]">
+    <!-- SECTION 7: HIGH-END 2-COLUMN LUXURY AGENCY SUITE (CONTACT & PRIORITY SCHEDULING) -->
+    <section id="booking-funnel" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#0a101f] relative">
         <div class="max-w-7xl mx-auto">
-            <div class="max-w-3xl mx-auto text-center space-y-4 mb-10">
-                <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
-                    Priority Online Scheduling
+            <div class="max-w-3xl mx-auto text-center space-y-3 mb-14">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    ● Available Today • Priority Online Scheduling
                 </span>
                 <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight font-serif">
                     Ready to Connect with Lifetime Dental?
@@ -749,65 +756,204 @@
                 </p>
             </div>
 
-            <!-- Booking Funnel Card -->
-            <div class="max-w-xl mx-auto bg-obsidian-card p-8 rounded-3xl border border-white/15 shadow-2xl">
-                <form onsubmit="event.preventDefault(); window.open('https://wa.me/5128351924?text=' + encodeURIComponent('Hi Lifetime Dental, I would like to schedule an appointment consultation via your digital booking portal.'), '_blank');" class="space-y-4">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">Your Full Name</label>
-                            <input type="text" required placeholder="Jane Doe" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand" />
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">Phone Number</label>
-                            <input type="tel" required placeholder="(555) 000-0000" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand" />
-                        </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- LEFT COLUMN: DIRECT CONTACT, VERIFIED HOURS & LOCATION HUB -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="space-y-2">
+                        <span class="text-xs font-bold text-brand uppercase tracking-wider block">Get In Touch Directly</span>
+                        <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight font-serif">
+                            Visit Our Clinic Suite or Speak to a Specialist
+                        </h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                            Hospital-grade sterile operatories, 3D intraoral digital scanners, and relaxed consultation rooms. Connect directly with our team in Austin, USA.
+                        </p>
                     </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 mb-1">Reason for Visit</label>
-                        <select class="w-full bg-[#080e1a] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-brand">
-                            <option>Special Privilege Inquiry / First Visit</option>
-                            <option>Priority Service Appointment</option>
-                            <option>General Pricing & Consultation</option>
-                            <option>Custom Request & VIP Inquiries</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 mb-1">Preferred Time of Day</label>
-                        <select class="w-full bg-[#080e1a] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-brand">
-                            <option>Morning (8:00 AM - 12:00 PM)</option>
-                            <option>Afternoon (12:00 PM - 4:00 PM)</option>
-                            <option>First Available Slot</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn-brand w-full py-3.5 rounded-xl text-xs sm:text-sm font-bold shadow-xl mt-4">
-                        Confirm & Reserve Consultation Online →
-                    </button>
-                    <p class="text-[11px] text-center text-slate-400 mt-2">🔒 Instant Confirmation via Practice Concierge • Zero Waiting Delay</p>
-                </form>
-            </div>
 
-            <!-- Multi-Location Branches or Practice Headquarters -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                    <div class="interactive-card bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-brand transition">
-                        <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block">Branch 1</span>
-                        <h3 class="text-xl font-bold text-white mt-2">Parmer Lane Clinic (North Austin)</h3>
-                        <p class="text-slate-300 text-xs mt-2">📍 12233 RR 620 N, Suite 101, Austin, TX 78750</p>
-                        <p class="text-white text-sm font-semibold mt-3">📞 Phone: <span class="text-brand">(512) 835-1924</span></p>
-                        <a href="https://wa.me/5128351924" target="_blank" class="mt-4 btn-brand w-full py-2.5 rounded-xl text-xs font-bold text-center block">
-                            Book at Parmer Lane Clinic (North Austin) →
+                    <!-- 3 Interactive Contact Cards -->
+                    <div class="space-y-3">
+                        <!-- Card 1: Physical Address -->
+                        <a href="https://www.google.com/maps/search/?api=1&query=Lifetime%20Dental%20Austin%2C%20USA" target="_blank" class="interactive-card block bg-obsidian-card p-4 sm:p-5 rounded-2xl border border-white/10 hover:border-brand transition shadow-lg group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-brand/20 border border-brand/30 flex items-center justify-center text-lg shrink-0 text-brand">
+                                    📍
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between gap-2">
+                                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Physical Address</span>
+                                        <span class="text-brand text-xs font-semibold group-hover:underline inline-flex items-center gap-0.5">Directions ↗</span>
+                                    </div>
+                                    <p class="text-sm font-bold text-white mt-0.5 truncate">Austin, USA</p>
+                                    <p class="text-xs text-slate-400 mt-0.5">Clinical Care Suite • Tap to open navigation</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card 2: Dedicated Hotline -->
+                        <a href="tel:+5128351924" class="interactive-card block bg-obsidian-card p-4 sm:p-5 rounded-2xl border border-white/10 hover:border-brand transition shadow-lg group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-lg shrink-0 text-blue-400">
+                                    📞
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between gap-2">
+                                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Dedicated Hotline</span>
+                                        <span class="text-blue-400 text-xs font-semibold group-hover:underline inline-flex items-center gap-0.5">1-Tap Call ↗</span>
+                                    </div>
+                                    <p class="text-sm font-bold text-white mt-0.5">(512) 835-1924</p>
+                                    <p class="text-xs text-slate-400 mt-0.5">Direct line to Clinical Concierge</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card 3: Verified WhatsApp Channel -->
+                        <a href="https://wa.me/5128351924" target="_blank" class="interactive-card block bg-obsidian-card p-4 sm:p-5 rounded-2xl border border-emerald-500/30 hover:border-emerald-400 transition shadow-lg group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-lg shrink-0 text-emerald-400">
+                                    💬
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between gap-2">
+                                        <span class="text-[11px] font-bold text-emerald-400 uppercase tracking-wider">Verified WhatsApp</span>
+                                        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">⚡ &lt; 15 Mins</span>
+                                    </div>
+                                    <p class="text-sm font-bold text-white mt-0.5">Instant WhatsApp Concierge</p>
+                                    <p class="text-xs text-slate-400 mt-0.5">Fastest response channel for priority reservations</p>
+                                </div>
+                            </div>
                         </a>
                     </div>
 
-                    <div class="interactive-card bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-brand transition">
-                        <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block">Branch 2</span>
-                        <h3 class="text-xl font-bold text-white mt-2">Westlake Clinic (Bee Caves Rd)</h3>
-                        <p class="text-slate-300 text-xs mt-2">📍 3801 Bee Caves Rd, Suite 200, West Lake Hills, TX 78746</p>
-                        <p class="text-white text-sm font-semibold mt-3">📞 Phone: <span class="text-brand">(512) 263-8332</span></p>
-                        <a href="https://wa.me/5128351924" target="_blank" class="mt-4 btn-brand w-full py-2.5 rounded-xl text-xs font-bold text-center block">
-                            Book at Westlake Clinic (Bee Caves Rd) →
-                        </a>
+                    <!-- Business Operating Hours Card -->
+                    <div class="bg-obsidian-card p-4 sm:p-5 rounded-2xl border border-white/10 shadow-lg">
+                        <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-white/10">
+                            <span class="text-xs font-bold text-white flex items-center gap-2">
+                                <span>🕒</span> Operating & Consultation Hours
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 text-[11px] text-emerald-400 font-semibold">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                Open Today
+                            </span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-300 font-medium">Mon - Sat: 8:30 AM – 7:30 PM | Sun: Emergency Care</p>
+                        <p class="text-[11px] text-slate-400 mt-1">Special priority slots available outside regular hours upon request.</p>
+                    </div>
+
+                    <!-- Multi-Location Branches or Location Extra Component -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                    <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-brand transition">
+                        <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-brand text-slate-950 uppercase">Branch 1</span>
+                        <p class="text-xs font-bold text-white mt-1">Parmer Lane Clinic (North Austin)</p>
+                        <p class="text-[11px] text-slate-400 mt-0.5">📍 12233 RR 620 N, Suite 101, Austin, TX 78750</p>
+                        <p class="text-[11px] text-brand font-semibold mt-1">📞 (512) 835-1924</p>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-brand transition">
+                        <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-brand text-slate-950 uppercase">Branch 2</span>
+                        <p class="text-xs font-bold text-white mt-1">Westlake Clinic (Bee Caves Rd)</p>
+                        <p class="text-[11px] text-slate-400 mt-0.5">📍 3801 Bee Caves Rd, Suite 200, West Lake Hills, TX 78746</p>
+                        <p class="text-[11px] text-brand font-semibold mt-1">📞 (512) 263-8332</p>
                     </div>
 </div>
+                </div>
+
+                <!-- RIGHT COLUMN: INTERACTIVE VIP RESERVATION & INQUIRY SUITE -->
+                <div class="lg:col-span-7 bg-obsidian-card p-6 sm:p-8 rounded-3xl border border-white/15 shadow-2xl relative overflow-hidden">
+                    <div class="mb-6 pb-4 border-b border-white/10">
+                        <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1.5">VIP Reservation Suite</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white font-serif">Schedule Patient Priority Appointment</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-1">Reserve consultation with our senior clinical specialists with zero waiting room delay.</p>
+                    </div>
+
+                    <form onsubmit="event.preventDefault(); (function(f){
+                        var name = f.client_name.value.trim() || 'Guest';
+                        var phone = f.client_phone.value.trim() || 'Not Provided';
+                        var service = f.client_service.value;
+                        var date = f.client_date.value ? f.client_date.value : 'First Available Date';
+                        var slot = f.querySelector('input[name=client_slot]:checked') ? f.querySelector('input[name=client_slot]:checked').value : 'Preferred Time';
+                        var notes = f.client_notes.value.trim();
+                        var msg = 'Hi Lifetime Dental, I would like to schedule an appointment via your digital booking portal:\n' +
+                                  '• Name: ' + name + '\n' +
+                                  '• Phone: ' + phone + '\n' +
+                                  '• Service: ' + service + '\n' +
+                                  '• Preferred Slot: ' + date + ' (' + slot + ')';
+                        if (notes) { msg += '\n• Notes: ' + notes; }
+                        window.open('https://wa.me/5128351924?text=' + encodeURIComponent(msg), '_blank');
+                    })(this);" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1.5">
+                                    <span>👤</span> Your Full Name
+                                </label>
+                                <input type="text" name="client_name" required placeholder="Jane Doe" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand" />
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1.5">
+                                    <span>📱</span> WhatsApp Phone Number
+                                </label>
+                                <input type="tel" name="client_phone" required placeholder="e.g. +1 (555) 000-0000" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1.5">
+                                <span>⚙️</span> Required Service / Consultation
+                            </label>
+                            <select name="client_service" class="w-full bg-[#080e1a] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-brand">
+                            <option value="Porcelain Veneers & Smile Makeovers">Porcelain Veneers & Smile Makeovers</option>
+                            <option value="Dental Implants & All-on-4 Restorations">Dental Implants & All-on-4 Restorations</option>
+                            <option value="Invisalign Clear Aligners">Invisalign Clear Aligners</option>
+                            <option value="Sedation & Pain-Free Dentistry">Sedation & Pain-Free Dentistry</option>
+                            <option value="Same-Day Emergency Dental Care">Same-Day Emergency Dental Care</option>
+                            <option value="Comprehensive Cleanings & Family Care">Comprehensive Cleanings & Family Care</option>
+                            <option value="Other / Bespoke Consultation">Other / Bespoke Consultation</option>
+                            </select>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1.5">
+                                    <span>📅</span> Preferred Date
+                                </label>
+                                <input type="date" name="client_date" class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-brand transition" />
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1.5">
+                                    <span>⏰</span> Preferred Time Slot
+                                </label>
+                                <div class="grid grid-cols-3 gap-1.5">
+                                    <label class="slot-pill cursor-pointer">
+                                        <input type="radio" name="client_slot" value="Morning (9 AM - 12 PM)" class="sr-only" checked />
+                                        <span class="block py-2 px-1 text-center rounded-xl border border-white/10 bg-white/5 text-[10px] sm:text-[11px] font-semibold text-slate-300 transition hover:border-brand">Morning</span>
+                                    </label>
+                                    <label class="slot-pill cursor-pointer">
+                                        <input type="radio" name="client_slot" value="Afternoon (12 PM - 4 PM)" class="sr-only" />
+                                        <span class="block py-2 px-1 text-center rounded-xl border border-white/10 bg-white/5 text-[10px] sm:text-[11px] font-semibold text-slate-300 transition hover:border-brand">Afternoon</span>
+                                    </label>
+                                    <label class="slot-pill cursor-pointer">
+                                        <input type="radio" name="client_slot" value="Evening (4 PM - 8 PM)" class="sr-only" />
+                                        <span class="block py-2 px-1 text-center rounded-xl border border-white/10 bg-white/5 text-[10px] sm:text-[11px] font-semibold text-slate-300 transition hover:border-brand">Evening</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1.5">
+                                <span>📝</span> Special Notes / Requirements (Optional)
+                            </label>
+                            <textarea name="client_notes" rows="2" placeholder="Any specific requirements, questions, or visit notes..." class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-brand w-full py-3.5 rounded-xl text-xs sm:text-sm font-bold shadow-xl mt-2 flex items-center justify-center gap-2">
+                            <span>💬</span>
+                            <span>Confirm & Connect with Clinical Concierge →</span>
+                        </button>
+                        <p class="text-[11px] text-center text-slate-400 mt-2">
+                            🔒 100% HIPAA/Privacy Compliant • Zero Waiting Time • Senior Doctor Direct Review
+                        </p>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
