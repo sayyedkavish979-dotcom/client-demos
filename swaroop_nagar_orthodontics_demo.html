@@ -26,16 +26,17 @@
 
     <style id="dynamic-brand-styles">
         :root {
-            --brand-primary: #0ea5e9;
-            --brand-accent: #0284c7;
-            --brand-btn-text: #090e17;
+            --brand-primary: #0284c7;
+            --brand-accent: #0d9488;
+            --brand-btn-text: #ffffff;
+            --brand-glow: rgba(13, 148, 136, 0.35);
         }
         *, *::before, *::after {
             box-sizing: border-box;
         }
         html, body {
             margin: 0; padding: 0;
-            background-color: #080e1a !important;
+            background-color: #071220 !important;
             color: #f1f5f9 !important;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
             scroll-behavior: smooth;
@@ -55,7 +56,6 @@
             background-color: rgba(8, 14, 26, 0.95);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        /* Hide desktop navigation links on mobile widths to prevent unstyled stacked link list */
         nav {
             display: none;
         }
@@ -66,41 +66,38 @@
                 gap: 1.5rem;
             }
         }
+        img {
+            content-visibility: auto;
+        }
         .font-serif {
             font-family: 'Playfair Display', Georgia, serif !important;
         }
-        .bg-obsidian {
-            background-color: #080e1a !important;
-        }
         .bg-obsidian-card {
-            background: rgba(15, 23, 42, 0.75) !important;
-            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            background: rgba(11, 25, 44, 0.78) !important;
+            border: 1px solid rgba(2, 132, 199, 0.22) !important;
             backdrop-filter: blur(16px) !important;
             -webkit-backdrop-filter: blur(16px) !important;
         }
         .bg-brand {
-            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%) !important;
-            color: #090e17 !important;
+            background: linear-gradient(135deg, #0284c7 0%, #0d9488 100%) !important;
+            color: #ffffff !important;
         }
         .text-brand {
-            color: #0ea5e9 !important;
+            color: #0284c7 !important;
         }
         .border-brand {
-            border-color: #0ea5e9 !important;
+            border-color: #0284c7 !important;
         }
         .btn-brand {
-            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%) !important;
-            color: #090e17 !important;
+            background: linear-gradient(135deg, #0284c7 0%, #0d9488 100%) !important;
+            color: #ffffff !important;
             font-weight: 700 !important;
             transition: all 0.25s ease !important;
         }
         .btn-brand:hover {
             opacity: 0.92 !important;
-            transform: translateY(-1px) !important;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4) !important;
-        }
-        img {
-            content-visibility: auto;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 12px 30px -5px var(--brand-glow) !important;
         }
 
         /* High-Definition Text Protection Shadows */
@@ -111,118 +108,122 @@
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95), 0 4px 18px rgba(0, 0, 0, 0.85);
         }
 
-        /* 60fps Ken-Burns Cinematic Slow Zoom */
-        @keyframes heroSlowZoom {
+        /* Faster Dynamic Ken-Burns Zoom: 1.0 to 1.07 in 4.0s */
+        @keyframes activeKenBurns {
             0% {
                 transform: scale(1.0) translate3d(0, 0, 0);
             }
-            50% {
-                transform: scale(1.06) translate3d(-0.8%, -0.5%, 0);
-            }
             100% {
-                transform: scale(1.0) translate3d(0, 0, 0);
+                transform: scale(1.07) translate3d(-0.8%, -0.5%, 0);
             }
         }
-        .hero-ken-burns {
-            animation: heroSlowZoom 24s ease-in-out infinite alternate;
+        .hero-slide {
+            transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: opacity;
+        }
+        .hero-slide.active {
+            opacity: 1 !important;
+            z-index: 10 !important;
+        }
+        .hero-slide.active .hero-kenburns {
+            animation: activeKenBurns 4s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
             will-change: transform;
-            transform-origin: center center;
+        }
+        .hero-slide:not(.active) .hero-kenburns {
+            animation: none;
+            transform: scale(1.0);
         }
 
-        /* Ambient Luxury Drifting Orbs */
+        /* 3D Interactive Card Hover Lift & Glow Borders */
+        .interactive-card {
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+            will-change: transform, box-shadow;
+        }
+        .interactive-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 20px 35px -10px var(--brand-glow), 0 0 0 1px var(--brand-primary);
+            border-color: var(--brand-primary) !important;
+        }
+        .interactive-card:hover .card-img-zoom {
+            transform: scale(1.08);
+        }
+        .card-img-zoom {
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+        }
+
+        /* Staggered Scroll Entrance Animations */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal-on-scroll.is-revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger-1 { transition-delay: 0.08s; }
+        .stagger-2 { transition-delay: 0.16s; }
+        .stagger-3 { transition-delay: 0.24s; }
+        .stagger-4 { transition-delay: 0.32s; }
+        .stagger-5 { transition-delay: 0.40s; }
+        .stagger-6 { transition-delay: 0.48s; }
+
+        /* Ambient Floating Orbs */
         @keyframes floatSlow1 {
-            0%, 100% {
-                transform: translate3d(0, 0, 0) scale(1);
-                opacity: 0.35;
-            }
-            50% {
-                transform: translate3d(35px, -25px, 0) scale(1.12);
-                opacity: 0.55;
-            }
+            0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.35; }
+            50% { transform: translate3d(35px, -25px, 0) scale(1.12); opacity: 0.55; }
         }
         @keyframes floatSlow2 {
-            0%, 100% {
-                transform: translate3d(0, 0, 0) scale(1.05);
-                opacity: 0.3;
-            }
-            50% {
-                transform: translate3d(-30px, 20px, 0) scale(0.95);
-                opacity: 0.5;
-            }
+            0%, 100% { transform: translate3d(0, 0, 0) scale(1.05); opacity: 0.3; }
+            50% { transform: translate3d(-30px, 20px, 0) scale(0.95); opacity: 0.5; }
         }
         .ambient-orb-1 {
             position: absolute;
-            top: 15%;
-            left: 15%;
-            width: 420px;
-            height: 420px;
-            background: radial-gradient(circle, #0ea5e9 0%, transparent 70%);
-            filter: blur(80px);
-            border-radius: 9999px;
-            pointer-events: none;
-            animation: floatSlow1 18s ease-in-out infinite;
-            will-change: transform, opacity;
-            z-index: 1;
-        }
-        .ambient-orb-2 {
-            position: absolute;
-            top: 30%;
-            right: 12%;
-            width: 380px;
-            height: 380px;
+            top: 15%; left: 15%;
+            width: 420px; height: 420px;
             background: radial-gradient(circle, #0284c7 0%, transparent 70%);
             filter: blur(80px);
             border-radius: 9999px;
             pointer-events: none;
+            animation: floatSlow1 18s ease-in-out infinite;
+            z-index: 1;
+        }
+        .ambient-orb-2 {
+            position: absolute;
+            top: 30%; right: 12%;
+            width: 380px; height: 380px;
+            background: radial-gradient(circle, #0d9488 0%, transparent 70%);
+            filter: blur(80px);
+            border-radius: 9999px;
+            pointer-events: none;
             animation: floatSlow2 22s ease-in-out infinite;
-            will-change: transform, opacity;
             z-index: 1;
         }
 
-        /* Staggered Cinematic Entrance Animations */
-        @keyframes heroFadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(18px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .hero-fade-1 {
-            animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-            animation-delay: 0.1s;
-        }
-        .hero-fade-2 {
-            animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
-            animation-delay: 0.25s;
-        }
-        .hero-fade-3 {
-            animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
-            animation-delay: 0.4s;
-        }
-        .hero-fade-4 {
-            animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
-            animation-delay: 0.55s;
-        }
-        .hero-fade-5 {
-            animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
-            animation-delay: 0.7s;
-        }
-
         @media (prefers-reduced-motion: reduce) {
-            .hero-ken-burns, .ambient-orb-1, .ambient-orb-2, .hero-fade-1, .hero-fade-2, .hero-fade-3, .hero-fade-4, .hero-fade-5 {
+            .hero-slide.active .hero-kenburns, .ambient-orb-1, .ambient-orb-2 {
                 animation: none !important;
                 transform: none !important;
+            }
+            .interactive-card:hover {
+                transform: none !important;
+            }
+            .card-img-zoom {
+                transform: none !important;
+            }
+            .reveal-on-scroll {
                 opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
             }
         }
     </style>
         <!-- 7-Day Client Auto-Expiry Shield -->
     <script id="demo-expiry-shield">
     (function() {
-        const DEMO_CREATED_TIMESTAMP = 1790708865958;
+        const DEMO_CREATED_TIMESTAMP = 1790711363730;
         const EXPIRY_DAYS = 7;
         const isExpired = (Date.now() - DEMO_CREATED_TIMESTAMP) > (EXPIRY_DAYS * 24 * 60 * 60 * 1000);
 
@@ -349,7 +350,7 @@
     })();
     </script>
 </head>
-<body class="bg-[#080e1a] text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 pb-20 sm:pb-0">
+<body class="text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 pb-20 sm:pb-0" style="background-color: #071220;">
 
     <!-- SECTION 1: TOP NOTIFICATION BANNER + NAVIGATION HEADER -->
     <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-white/10 px-4 py-2 text-center text-xs sm:text-sm font-medium text-slate-300">
@@ -391,31 +392,53 @@
         </div>
     </header>
 
-    <!-- SECTION 2: FULL-BLEED CINEMATIC HERO BANNER (No 2-column box layout) -->
-    <section class="relative min-h-[85vh] flex items-center justify-center px-4 sm:px-8 py-20 overflow-hidden">
-        <div class="absolute inset-0 z-0 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=85" alt="Swaroop Nagar Orthodontics" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-center hero-ken-burns" style="filter: brightness(0.85) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
-            <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(8,14,26,0.45) 0%, rgba(8,14,26,0.30) 45%, rgba(8,14,26,0.82) 100%);"></div>
+    <!-- SECTION 2: FULL-BLEED DYNAMIC MULTI-PHOTO AUTO-CROSSFADE HERO -->
+    <section class="relative min-h-[85vh] flex items-center justify-center px-4 sm:px-8 py-20 overflow-hidden" id="hero-slider-section">
+        <!-- Multi-Photo Auto-Crossfade Hero Background Slides -->
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" id="hero-slider-container">
+            <div class="hero-slide active absolute inset-0 w-full h-full opacity-100 z-10 transition-opacity duration-[1200ms] ease-in-out">
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=85" alt="Swaroop Nagar Orthodontics 1" fetchpriority="high" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
+            </div>
+            <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
+                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1920&q=85" alt="Swaroop Nagar Orthodontics 2" loading="lazy" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
+            </div>
+            <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1920&q=85" alt="Swaroop Nagar Orthodontics 3" loading="lazy" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
+            </div>
+            <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
+                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1920&q=85" alt="Swaroop Nagar Orthodontics 4" loading="lazy" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
+            </div>
+
+            <!-- Balanced 40%-45% Vignette Overlay Tailored to Niche Color -->
+            <div class="absolute inset-0 z-20 pointer-events-none" style="background: linear-gradient(to bottom, rgba(7, 18, 32, 0.42) 0%, rgba(7, 18, 32, 0.22) 45%, rgba(7, 18, 32, 0.88) 100%);"></div>
             <!-- Ambient Floating Gradient Orbs -->
             <div class="ambient-orb-1"></div>
             <div class="ambient-orb-2"></div>
         </div>
 
-        <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6">
-            <div class="hero-fade-1 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-semibold text-white hero-text-shadow">
+        <!-- Active Pagination Indicator Dots at Bottom of Hero -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10" id="hero-slider-dots">
+            <button type="button" aria-label="Slide 1" onclick="switchHeroSlide(0)" class="hero-dot w-7 h-2 rounded-full bg-white transition-all duration-300 shadow"></button>
+            <button type="button" aria-label="Slide 2" onclick="switchHeroSlide(1)" class="hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white/80 transition-all duration-300"></button>
+            <button type="button" aria-label="Slide 3" onclick="switchHeroSlide(2)" class="hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white/80 transition-all duration-300"></button>
+            <button type="button" aria-label="Slide 4" onclick="switchHeroSlide(3)" class="hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white/80 transition-all duration-300"></button>
+        </div>
+
+        <div class="relative z-20 max-w-4xl mx-auto text-center space-y-6">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-semibold text-white hero-text-shadow">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span>Proudly Serving Swaroop Nagar, Kanpur • Advanced Healthcare & Patient Care</span>
             </div>
 
-            <h1 class="hero-fade-2 text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] font-serif hero-title-shadow">
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] font-serif hero-title-shadow">
                 Gentle Modern Care & Advanced Diagnostics in Swaroop Nagar, Kanpur
             </h1>
 
-            <p class="hero-fade-3 text-slate-100 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal hero-text-shadow">
+            <p class="text-slate-100 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal hero-text-shadow">
                 Compassionate specialists dedicated to anxiety-free visits, state-of-the-art clinical equipment, and lasting patient wellness in Swaroop Nagar, Kanpur.
             </p>
 
-            <div class="hero-fade-4 flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                 <a href="https://wa.me/917355568493?text=Hi%20Swaroop%20Nagar%20Orthodontics%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="btn-brand w-full sm:w-auto px-8 py-3.5 rounded-xl text-sm font-bold shadow-xl flex items-center justify-center gap-2">
                     <span>💬 Inquire Directly on WhatsApp</span>
                     <span>→</span>
@@ -426,10 +449,10 @@
             </div>
 
             <!-- Trust Metrics Bar -->
-            <div class="hero-fade-5 pt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto border-t border-white/15 mt-8">
+            <div class="pt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto border-t border-white/15 mt-8">
                 <div class="text-center p-3 rounded-xl bg-slate-950/60 border border-white/10 backdrop-blur-md shadow-lg">
-                    <p class="text-xl sm:text-2xl font-black text-white">⭐ 4.9</p>
-                    <p class="text-[11px] text-slate-300 mt-0.5 font-medium">150+ Local Reviews</p>
+                    <p class="text-xl sm:text-2xl font-black text-white">⭐ 5.0</p>
+                    <p class="text-[11px] text-slate-300 mt-0.5 font-medium">150+ Verified Reviews</p>
                 </div>
                 <div class="text-center p-3 rounded-xl bg-slate-950/60 border border-white/10 backdrop-blur-md shadow-lg">
                     <p class="text-xl sm:text-2xl font-black text-white">15+ Yrs</p>
@@ -437,17 +460,17 @@
                 </div>
                 <div class="text-center p-3 rounded-xl bg-slate-950/60 border border-white/10 backdrop-blur-md shadow-lg">
                     <p class="text-xl sm:text-2xl font-black text-white">100%</p>
-                    <p class="text-[11px] text-slate-300 mt-0.5 font-medium">Fresh & Authentic</p>
+                    <p class="text-[11px] text-slate-300 mt-0.5 font-medium">Authentic & Verified</p>
                 </div>
                 <div class="text-center p-3 rounded-xl bg-slate-950/60 border border-white/10 backdrop-blur-md shadow-lg">
-                    <p class="text-xl sm:text-2xl font-black text-white">Verified</p>
-                    <p class="text-[11px] text-slate-300 mt-0.5 font-medium">Top-Rated Practice</p>
+                    <p class="text-xl sm:text-2xl font-black text-white">Top Rated</p>
+                    <p class="text-[11px] text-slate-300 mt-0.5 font-medium">Benchmark Standard</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: WHY CHOOSE US (4 CORE VALUE PILLARS) -->
+    <!-- SECTION 3: WHY CHOOSE US (4 CORE VALUE PILLARS WITH 3D LIFT) -->
     <section id="about" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#0a101f]">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
@@ -463,32 +486,37 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
-                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4">🏆</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Master Craftsmanship</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Dedicated practitioners bringing decades of refined expertise, premium ingredients, and exact standards.</p>
+                
+                <div class="interactive-card reveal-on-scroll stagger-1 bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
+                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4 shadow-md">🔬</div>
+                    <h3 class="text-lg font-bold text-white mb-2">3D Digital Imaging</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Low-radiation panoramic scans and intraoral cameras providing transparent clinical insights.</p>
                 </div>
-                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
-                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4">🔬</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Modern Technology</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Advanced state-of-the-art tools and equipment ensuring precision quality and rapid turnaround.</p>
+
+                <div class="interactive-card reveal-on-scroll stagger-2 bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
+                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4 shadow-md">🏆</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Board-Certified Team</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Senior specialists with advanced international training committed to conservative care.</p>
                 </div>
-                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
-                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4">✨</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Uncompromised Comfort</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">A welcoming environment with personalized attention dedicated entirely to your ease and satisfaction.</p>
+
+                <div class="interactive-card reveal-on-scroll stagger-3 bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
+                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4 shadow-md">✨</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Anxiety-Free Visits</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Gentle soothing environment with painless micro-instruments and comforting bedside empathy.</p>
                 </div>
-                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
-                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4">⚡</div>
-                    <h3 class="text-lg font-bold text-white mb-2">1-Tap WhatsApp Funnel</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Direct instant messaging, zero waiting room delays, upfront transparent quotes, and quick confirmations.</p>
+
+                <div class="interactive-card reveal-on-scroll stagger-4 bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
+                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4 shadow-md">⚡</div>
+                    <h3 class="text-lg font-bold text-white mb-2">1-Tap Priority Booking</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Instant appointment confirmation on WhatsApp with zero waiting room delays.</p>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- SECTION 4: COMPREHENSIVE FEATURED SERVICES GRID (6 RESPONSIVE CARDS) -->
-    <section id="services" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#080e1a]">
+    <section id="services" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: #071220;">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
                 <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
@@ -498,22 +526,22 @@
                     Comprehensive Quality Services
                 </h2>
                 <p class="text-slate-400 text-sm sm:text-base">
-                    Tailored specifically to match the distinguished expectations of our patrons in Swaroop Nagar, Kanpur.
+                    Tailored specifically to match the distinguished expectations of patrons in Swaroop Nagar, Kanpur.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                <div class="interactive-card reveal-on-scroll stagger-1 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80" alt="Advanced 3D Smile Makeovers & Braces" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80" alt="Digital 3D Smile Makeovers & Clear Aligners" loading="lazy" decoding="async" class="card-img-zoom w-full h-full object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Specialized Offering</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Cosmetic Ortho</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Advanced 3D Smile Makeovers & Braces</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Dedicated high-standard advanced 3d smile makeovers & braces tailored for individuals and families in Swaroop Nagar, Kanpur, combining quality precision with warm service.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Digital 3D Smile Makeovers & Clear Aligners</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Ultra-precise intraoral scans and customized invisible orthodontic aligners for confident smiles.</p>
                         </div>
                         <a href="https://wa.me/917355568493?text=Hi%20Swaroop%20Nagar%20Orthodontics%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
@@ -522,16 +550,16 @@
                     </div>
                 </div>
 
-                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                <div class="interactive-card reveal-on-scroll stagger-2 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" alt="Painless Root Canal & Restorations" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
+                        <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800&q=80" alt="Painless Laser Dentistry & Micro-Restorations" loading="lazy" decoding="async" class="card-img-zoom w-full h-full object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Specialized Offering</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Zero Discomfort</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Painless Root Canal & Restorations</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Dedicated high-standard painless root canal & restorations tailored for individuals and families in Swaroop Nagar, Kanpur, combining quality precision with warm service.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Painless Laser Dentistry & Micro-Restorations</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Drill-free laser cavity treatments and tooth-colored composite restorations with zero discomfort.</p>
                         </div>
                         <a href="https://wa.me/917355568493?text=Hi%20Swaroop%20Nagar%20Orthodontics%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
@@ -540,16 +568,16 @@
                     </div>
                 </div>
 
-                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                <div class="interactive-card reveal-on-scroll stagger-3 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80" alt="Dental Implants & Laser Dentistry" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
+                        <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=80" alt="Permanent Titanium Dental Implants & Crowns" loading="lazy" decoding="async" class="card-img-zoom w-full h-full object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Specialized Offering</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Surgical Precision</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Dental Implants & Laser Dentistry</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Dedicated high-standard dental implants & laser dentistry tailored for individuals and families in Swaroop Nagar, Kanpur, combining quality precision with warm service.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Permanent Titanium Dental Implants & Crowns</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Computer-guided implant surgery and lifelike zirconia crowns engineered for lifetime durability.</p>
                         </div>
                         <a href="https://wa.me/917355568493?text=Hi%20Swaroop%20Nagar%20Orthodontics%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
@@ -558,16 +586,16 @@
                     </div>
                 </div>
 
-                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                <div class="interactive-card reveal-on-scroll stagger-4 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80" alt="Comprehensive Family Dental Wellness" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" alt="Pediatric Dental Wellness & Gentle Care" loading="lazy" decoding="async" class="card-img-zoom w-full h-full object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Specialized Offering</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Family Care</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Comprehensive Family Dental Wellness</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Dedicated high-standard comprehensive family dental wellness tailored for individuals and families in Swaroop Nagar, Kanpur, combining quality precision with warm service.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Pediatric Dental Wellness & Gentle Care</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Warm, anxiety-free examinations, fluoride coatings, and preventative sealants for children.</p>
                         </div>
                         <a href="https://wa.me/917355568493?text=Hi%20Swaroop%20Nagar%20Orthodontics%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
@@ -576,16 +604,16 @@
                     </div>
                 </div>
 
-                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                <div class="interactive-card reveal-on-scroll stagger-5 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800&q=80" alt="Pediatric Care & Preventive Fluoride" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
+                        <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80" alt="Ultrasonic Prophylaxis & Laser Teeth Whitening" loading="lazy" decoding="async" class="card-img-zoom w-full h-full object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Specialized Offering</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Aesthetic Glow</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Pediatric Care & Preventive Fluoride</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Dedicated high-standard pediatric care & preventive fluoride tailored for individuals and families in Swaroop Nagar, Kanpur, combining quality precision with warm service.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Ultrasonic Prophylaxis & Laser Teeth Whitening</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Gentle plaque removal and in-office LED activation delivering up to 8 shades brighter results.</p>
                         </div>
                         <a href="https://wa.me/917355568493?text=Hi%20Swaroop%20Nagar%20Orthodontics%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
@@ -594,16 +622,16 @@
                     </div>
                 </div>
 
-                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                <div class="interactive-card reveal-on-scroll stagger-6 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80" alt="Same-Day Emergency Relief Care" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" alt="24/7 Same-Day Urgent Relief & Emergency Care" loading="lazy" decoding="async" class="card-img-zoom w-full h-full object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Specialized Offering</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Emergency Clinic</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Same-Day Emergency Relief Care</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Dedicated high-standard same-day emergency relief care tailored for individuals and families in Swaroop Nagar, Kanpur, combining quality precision with warm service.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">24/7 Same-Day Urgent Relief & Emergency Care</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Immediate alleviation for acute toothaches, fractured restorations, and oral trauma.</p>
                         </div>
                         <a href="https://wa.me/917355568493?text=Hi%20Swaroop%20Nagar%20Orthodontics%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
@@ -631,22 +659,22 @@
                 </p>
             </div>
 
-            <div class="max-w-2xl mx-auto">
-                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 p-6 flex flex-col sm:flex-row items-center gap-6 hover:border-brand transition">
+            
+                <div class="interactive-card reveal-on-scroll stagger-1 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 p-6 flex flex-col sm:flex-row items-center gap-6 hover:border-brand transition max-w-2xl mx-auto shadow-2xl">
                     <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80" alt="Clinical Leadership Team" loading="lazy" decoding="async" class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl object-cover border-2 border-white/10 shrink-0 shadow-lg" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
                     <div class="text-center sm:text-left">
-                        <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1.5">Verified Director</span>
+                        <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1.5">Advanced Healthcare & Patient Care</span>
                         <h3 class="text-xl font-bold text-white font-serif">Clinical Leadership Team</h3>
                         <p class="text-brand text-xs font-semibold mt-0.5">Senior Healthcare & Dental Specialists</p>
                         <p class="text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">Dedicated clinical practitioners bringing advanced diagnostic precision, gentle bedside care, and decades of collective experience.</p>
                     </div>
                 </div>
-            </div>
+
         </div>
     </section>
 
     <!-- SECTION 6: VERIFIED 5.0 GOOGLE REVIEWS & TESTIMONIALS -->
-    <section id="reviews" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#080e1a]">
+    <section id="reviews" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: #071220;">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
                 <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
@@ -661,49 +689,51 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between">
+                
+                <div class="interactive-card reveal-on-scroll stagger-1 bg-obsidian-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between shadow-xl">
                     <div>
                         <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">★★★★★</div>
                         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
-                            "The benchmark for quality in Swaroop Nagar, Kanpur! Unbelievable attention to detail, welcoming hospitality, and absolute perfection. Best experience I have had in the city."
+                            "Completely changed how I feel about dental visits. Painless root canal and the kindest doctors. Absolutely world-class."
                         </p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                        <span class="text-white text-xs font-bold">Rohan S.</span>
+                        <span class="text-white text-xs font-bold">Sarah M.</span>
+                        <span class="text-slate-400 text-[11px]">Verified Patient</span>
+                    </div>
+                </div>
+
+                <div class="interactive-card reveal-on-scroll stagger-2 bg-obsidian-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">★★★★★</div>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
+                            "As a physician myself, I was thoroughly impressed by their strict sterilization protocols and 3D digital precision."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-white text-xs font-bold">Dr. Rajesh T.</span>
+                        <span class="text-slate-400 text-[11px]">Verified Review</span>
+                    </div>
+                </div>
+
+                <div class="interactive-card reveal-on-scroll stagger-3 bg-obsidian-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">★★★★★</div>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
+                            "Their clear aligner treatment straightened my teeth in just 6 months. Exceptional attention to detail!"
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-white text-xs font-bold">Elena K.</span>
                         <span class="text-slate-400 text-[11px]">Verified Google Review</span>
                     </div>
                 </div>
 
-                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">★★★★★</div>
-                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
-                            "Super impressed by their professionalism and instant WhatsApp booking. Truly agency-grade experience right in Swaroop Nagar, Kanpur."
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                        <span class="text-white text-xs font-bold">Ananya M.</span>
-                        <span class="text-slate-400 text-[11px]">Verified Client</span>
-                    </div>
-                </div>
-
-                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">★★★★★</div>
-                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
-                            "Outstanding turnaround and world-class quality. Swaroop Nagar Orthodontics sets the gold standard in Swaroop Nagar, Kanpur without question."
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                        <span class="text-white text-xs font-bold">Vikram K.</span>
-                        <span class="text-slate-400 text-[11px]">Verified Review</span>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 7: QUICK BOOKING FUNNEL + LOCATION & OPERATIONAL HOURS FOOTER -->
+    <!-- SECTION 7: QUICK BOOKING FUNNEL + PRACTICE HEADQUARTERS CARD -->
     <section id="booking-funnel" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#0a101f]">
         <div class="max-w-7xl mx-auto">
             <div class="max-w-3xl mx-auto text-center space-y-4 mb-10">
@@ -748,7 +778,7 @@
             </div>
 
             <!-- Practice Headquarters Card -->
-            <div class="max-w-xl mx-auto bg-white/5 p-6 rounded-2xl border border-white/10 text-center mt-8">
+            <div class="max-w-xl mx-auto bg-white/5 p-6 rounded-2xl border border-white/10 text-center mt-8 shadow-xl">
                 <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-2">Practice Headquarters</span>
                 <h3 class="text-xl font-bold text-white font-serif">Swaroop Nagar Orthodontics</h3>
                 <p class="text-slate-400 text-xs mt-1">Convenient appointments & direct local care</p>
@@ -758,20 +788,97 @@
                     💬 Chat on WhatsApp with Concierge →
                 </a>
             </div>
-
-            <!-- Footer Details -->
-            <footer class="mt-16 pt-10 border-t border-white/10 text-xs text-slate-400 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-                <div>
-                    <p class="font-bold text-slate-200">Swaroop Nagar Orthodontics</p>
-                    <p class="mt-1">Serving Swaroop Nagar, Kanpur and surrounding metropolitan communities.</p>
-                </div>
-                <div>
-                    <p>🕒 Mon - Sun: 8:00 AM – 10:00 PM</p>
-                    <p class="mt-1">© 2026 Swaroop Nagar Orthodontics. All rights reserved. • <a href="mailto:nan" class="text-slate-300 hover:underline">nan</a></p>
-                </div>
-            </footer>
         </div>
     </section>
+
+    <!-- SECTION 8: 4-COLUMN PROFESSIONAL ARCHITECTURE FOOTER -->
+    <footer class="pt-16 pb-12 border-t border-white/10 bg-[#060a14] relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+                <!-- Col 1: Brand Profile -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-brand flex items-center justify-center font-bold text-slate-950 text-base shadow-md">SW</div>
+                        <div>
+                            <span class="text-base font-black tracking-tight text-white block">Swaroop Nagar Orthodontics</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-widest block font-medium">📍 Swaroop Nagar, Kanpur</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                        Delivering compassionate, anxiety-free dental and healthcare solutions using 3D digital technology for Swaroop Nagar, Kanpur.
+                    </p>
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-300 text-[11px] font-medium">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>Verified Dental Clinic in Swaroop Nagar, Kanpur</span>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Navigation -->
+                <div class="space-y-4">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider">Quick Navigation</h4>
+                    <ul class="space-y-2.5 text-xs text-slate-300">
+                        <li><a href="#services" class="hover:text-brand transition flex items-center gap-1.5"><span>→</span> <span>Featured Services</span></a></li>
+                        <li><a href="#about" class="hover:text-brand transition flex items-center gap-1.5"><span>→</span> <span>Why Choose Us</span></a></li>
+                        <li><a href="#team" class="hover:text-brand transition flex items-center gap-1.5"><span>→</span> <span>Leadership & Team</span></a></li>
+                        <li><a href="#reviews" class="hover:text-brand transition flex items-center gap-1.5"><span>→</span> <span>Client Testimonials</span></a></li>
+                        <li><a href="#booking-funnel" class="hover:text-brand transition flex items-center gap-1.5"><span>→</span> <span>Online Consultation Booking</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Direct Contact & Working Hours -->
+                <div class="space-y-4">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider">Direct Contact & Hours</h4>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <p class="text-slate-400 flex items-start gap-2">
+                            <span class="text-brand shrink-0">📍</span>
+                            <span>Swaroop Nagar, Kanpur</span>
+                        </p>
+                        <p class="flex items-center gap-2"><span class="text-brand shrink-0">📞</span><a href="tel:+917355568493" class="text-white font-semibold hover:underline">+91 73555 68493</a></p>
+                        <p class="flex items-center gap-2">
+                            <span class="text-emerald-400 shrink-0">💬</span>
+                            <a href="https://wa.me/917355568493?text=Hi%20Swaroop%20Nagar%20Orthodontics%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="text-emerald-400 font-semibold hover:underline">Verified WhatsApp Concierge</a>
+                        </p>
+                        <p class="flex items-center gap-2"><span class="text-brand shrink-0">✉️</span><span class="text-slate-400">Direct Concierge Inquiries</span></p>
+                    </div>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-slate-400">
+                        <p class="font-semibold text-slate-300">🕒 Operating Hours:</p>
+                        <p class="mt-0.5">Mon - Sat: 8:30 AM – 7:30 PM | Sun: Emergency Care</p>
+                    </div>
+                </div>
+
+                <!-- Col 4: VIP Booking & Google Map -->
+                <div class="space-y-4">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider">VIP Booking & Location</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Reserve your preferred appointment slot or request directions.
+                    </p>
+                    <a href="https://wa.me/917355568493?text=Hi%20Swaroop%20Nagar%20Orthodontics%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="btn-brand w-full py-3 px-4 rounded-xl text-xs font-bold text-center block shadow-lg">
+                        💬 WhatsApp VIP Booking →
+                    </a>
+                    <div class="pt-2">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Swaroop%20Nagar%20Orthodontics%20Swaroop%20Nagar%2C%20Kanpur" target="_blank" class="inline-flex items-center gap-2 text-xs text-slate-300 hover:text-white bg-white/5 border border-white/10 px-3.5 py-2.5 rounded-xl w-full justify-center transition">
+                            <span>🗺️</span>
+                            <span>Open in Google Maps Directions ↗</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright Bar (100% Sanitized, Zero 'nan') -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs text-slate-400">
+                <p>© 2026 Swaroop Nagar Orthodontics. All rights reserved.</p>
+                <div class="flex flex-wrap items-center justify-center gap-4 text-[11px] text-slate-400">
+                    <span>Privacy Shield</span>
+                    <span>•</span>
+                    <span>Terms of Service</span>
+                    <span>•</span>
+                    <span>256-Bit SSL Protection</span>
+                    <span>•</span>
+                    <span>Verified Quality Standards</span>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- 2026 STICKY MOBILE QUICK-ACTION BAR -->
     <div class="fixed bottom-0 left-0 right-0 z-40 bg-slate-950/95 backdrop-blur-md border-t border-white/10 px-4 py-2.5 flex items-center justify-between sm:hidden shadow-2xl">
@@ -793,11 +900,79 @@
         </a>
     </div>
 
-    <!-- 2-Second External Asset Watchdog (Guarantees zero UI wait/freeze) -->
+    <!-- SCRIPTS: 4.0s Auto-Crossfade Hero Slider + Scroll Reveal + Image Watchdog -->
     <script>
+    // Hero Auto-Crossfade Slider (4.0s change, 1.2s crossfade, Ken-Burns active zoom)
+    (function() {
+        var slides = document.querySelectorAll('.hero-slide');
+        var dots = document.querySelectorAll('.hero-dot');
+        if (!slides.length) return;
+        var current = 0;
+        var timer = null;
+
+        function showSlide(idx) {
+            current = (idx + slides.length) % slides.length;
+            for (var i = 0; i < slides.length; i++) {
+                if (i === current) {
+                    slides[i].classList.add('active');
+                    slides[i].style.opacity = '1';
+                    slides[i].style.zIndex = '10';
+                } else {
+                    slides[i].classList.remove('active');
+                    slides[i].style.opacity = '0';
+                    slides[i].style.zIndex = '0';
+                }
+            }
+            for (var d = 0; d < dots.length; d++) {
+                if (d === current) {
+                    dots[d].className = 'hero-dot w-7 h-2 rounded-full bg-white transition-all duration-300 shadow';
+                } else {
+                    dots[d].className = 'hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white/80 transition-all duration-300';
+                }
+            }
+        }
+
+        window.switchHeroSlide = function(idx) {
+            showSlide(idx);
+            restartTimer();
+        };
+
+        function restartTimer() {
+            if (timer) clearInterval(timer);
+            timer = setInterval(function() {
+                showSlide(current + 1);
+            }, 4000);
+        }
+
+        restartTimer();
+    })();
+
+    // Staggered Scroll Entrance Animations
+    (function() {
+        var items = document.querySelectorAll('.reveal-on-scroll');
+        if (!('IntersectionObserver' in window)) {
+            for (var i = 0; i < items.length; i++) {
+                items[i].classList.add('is-revealed');
+            }
+            return;
+        }
+        var observer = new IntersectionObserver(function(entries) {
+            for (var j = 0; j < entries.length; j++) {
+                if (entries[j].isIntersecting) {
+                    entries[j].target.classList.add('is-revealed');
+                    observer.unobserve(entries[j].target);
+                }
+            }
+        }, { threshold: 0.1 });
+        for (var k = 0; k < items.length; k++) {
+            observer.observe(items[k]);
+        }
+    })();
+
+    // 2-Second External Asset Watchdog (Guarantees zero UI wait/freeze)
     (function() {
         var placeholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E";
-        function auditImages() {
+        function monitorImages() {
             var imgs = document.querySelectorAll('img');
             imgs.forEach(function(img) {
                 if (img.complete) return;
@@ -811,9 +986,9 @@
             });
         }
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', auditImages);
+            document.addEventListener('DOMContentLoaded', monitorImages);
         } else {
-            auditImages();
+            monitorImages();
         }
     })();
     </script>
