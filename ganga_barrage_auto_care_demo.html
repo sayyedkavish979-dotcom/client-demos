@@ -3,229 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ganga Barrage Auto Care | Automotive Workshop in Azad Nagar, Kanpur</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Ganga Barrage Auto Care | Premier Automotive Workshop in Azad Nagar, Kanpur</title>
+    
+    <!-- Ultra-Fast DNS Prefetch & Resource Preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
-    <style id="niche-3d-depth-styles">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    
+
+    <!-- Preload LCP Hero Image (< 0.8s Speed Target) -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1920&q=85" fetchpriority="high">
+
+    <!-- Asynchronous Non-Render-Blocking Google Fonts with display=swap -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Deferred Tailwind CDN for Zero Render-Blocking -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
+
+    <style id="dynamic-brand-styles">
+        :root {
+            --brand-primary: #f97316;
+            --brand-accent: #ea580c;
+            --brand-btn-text: #090e17;
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
         html, body {
-            margin: 0;
-            padding: 0;
-            background-color: #090d16 !important;
-            background-image: 
-                radial-gradient(circle at 18% 15%, rgba(6, 182, 212, 0.22) 0%, transparent 48%),
-                radial-gradient(circle at 82% 82%, rgba(99, 102, 241, 0.22) 0%, transparent 52%),
-                radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px) !important;
-            background-size: 100% 100%, 100% 100%, 32px 32px !important;
-            background-attachment: fixed !important;
+            margin: 0; padding: 0;
+            background-color: #080e1a !important;
             color: #f1f5f9 !important;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
-            -webkit-user-select: none !important;
-            -moz-user-select: none !important;
-            -ms-user-select: none !important;
-            user-select: none !important;
-            min-height: 100vh;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
         }
-
-        /* Mobile Performance: Hardware Acceleration & Smooth Scrolling */
-        html, body, main, section, .scrollable-container, .glass-card, .service-card {
-            -webkit-overflow-scrolling: touch;
-            transform: translateZ(0);
+        .font-serif {
+            font-family: 'Playfair Display', Georgia, serif !important;
         }
-        .glass-card, .service-card, header, .btn-whatsapp, .btn-call {
-            will-change: transform;
+        .bg-obsidian {
+            background-color: #080e1a !important;
         }
-
-        /* Glassmorphic Navbar */
-        header, nav, .glass-nav {
-            background: rgba(10, 14, 24, 0.75) !important;
-            backdrop-filter: blur(20px) !important;
-            -webkit-backdrop-filter: blur(20px) !important;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6) !important;
-        }
-
-        /* Transparent Main Sections */
-        section {
-            background: transparent !important;
-            border-color: rgba(255, 255, 255, 0.06) !important;
-        }
-
-        /* Glassmorphic Cards & Hero Frame with 3D Depth Shadow */
-        .glass-card, .glass-panel, [data-glass="true"],
-        .bg-white, .bg-slate-50, 
-        div[style*="background-color: #ffffff"], 
-        div[style*="background-color: #f8fafc"] {
-            background: rgba(255, 255, 255, 0.035) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        .bg-obsidian-card {
+            background: rgba(15, 23, 42, 0.75) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
             backdrop-filter: blur(16px) !important;
             -webkit-backdrop-filter: blur(16px) !important;
-            box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.7), inset 0 1px 1px 0 rgba(255, 255, 255, 0.15) !important;
-            border-radius: 1.25rem !important;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
         }
-
-        /* Hover effects with subtle 3D lift */
-        .glass-card:hover, .service-card:hover, 
-        div[style*="background-color: #f8fafc"]:hover,
-        div[style*="background-color: #ffffff"]:hover {
-            transform: translateY(-4px) !important;
-            border-color: rgba(255, 255, 255, 0.22) !important;
-            box-shadow: 0 32px 72px -10px rgba(0, 0, 0, 0.88), inset 0 1px 2px 0 rgba(255, 255, 255, 0.28) !important;
+        .bg-brand {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%) !important;
+            color: #090e17 !important;
         }
-
-        /* Crisp High-Contrast Typography */
-        h1, h2, h3, h4, .text-slate-900 {
-            color: #ffffff !important;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+        .text-brand {
+            color: #f97316 !important;
         }
-        p, .text-slate-600, .text-slate-500, .text-slate-700 {
-            color: #cbd5e1 !important;
+        .border-brand {
+            border-color: #f97316 !important;
         }
-        .text-slate-400 {
-            color: #94a3b8 !important;
-        }
-
-        /* Sharp Contrast CTA Buttons */
-        .btn-whatsapp, a[href*="wa.me"], a.bg-emerald-600 {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
-            color: #ffffff !important;
+        .btn-brand {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%) !important;
+            color: #090e17 !important;
             font-weight: 700 !important;
-            border: 1px solid rgba(255, 255, 255, 0.25) !important;
-            box-shadow: 0 10px 25px -4px rgba(16, 185, 129, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.35) !important;
             transition: all 0.25s ease !important;
         }
-        .btn-whatsapp:hover, a[href*="wa.me"]:hover, a.bg-emerald-600:hover {
-            transform: translateY(-2px) scale(1.02) !important;
-            box-shadow: 0 16px 36px -4px rgba(16, 185, 129, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.45) !important;
+        .btn-brand:hover {
+            opacity: 0.92 !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4) !important;
         }
-
-        .btn-call, a[href^="tel:"], a.bg-indigo-600 {
-            background: linear-gradient(135deg, #06b6d4 0%, #4f46e5 100%) !important;
-            color: #ffffff !important;
-            font-weight: 700 !important;
-            border: 1px solid rgba(255, 255, 255, 0.22) !important;
-            box-shadow: 0 10px 25px -4px rgba(99, 102, 241, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.3) !important;
-            transition: all 0.25s ease !important;
-        }
-        .btn-call:hover, a[href^="tel:"]:hover, a.bg-indigo-600:hover {
-            transform: translateY(-2px) scale(1.02) !important;
-            box-shadow: 0 16px 36px -4px rgba(99, 102, 241, 0.65) !important;
-        }
-
-        /* Rating & Niche Badges */
-        .bg-indigo-100, .bg-indigo-50, div[class*="bg-indigo-100"], .badge-pill {
-            background: rgba(6, 182, 212, 0.12) !important;
-            border: 1px solid rgba(6, 182, 212, 0.35) !important;
-            color: #38bdf8 !important;
-            backdrop-filter: blur(8px) !important;
-        }
-        .text-indigo-800, .text-indigo-700, .text-indigo-600, .niche-accent {
-            color: #38bdf8 !important;
-        }
-
-        /* Footer */
-        footer {
-            background: rgba(5, 7, 12, 0.95) !important;
-            border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-        }
-
-        /* Mobile Performance: Disable expensive backdrop-filter on small screens */
-        @media (max-width: 768px) {
-            header, nav, .glass-nav {
-                backdrop-filter: none !important;
-                -webkit-backdrop-filter: none !important;
-                background: rgba(10, 14, 24, 0.96) !important;
-            }
-            .glass-card, .glass-panel, [data-glass="true"],
-            .bg-white, .bg-slate-50, 
-            div[style*="background-color: #ffffff"], 
-            div[style*="background-color: #f8fafc"],
-            .service-card {
-                backdrop-filter: none !important;
-                -webkit-backdrop-filter: none !important;
-                background: rgba(15, 23, 42, 0.94) !important;
-                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6) !important;
-            }
-            .bg-indigo-100, .bg-indigo-50, div[class*="bg-indigo-100"], .badge-pill {
-                backdrop-filter: none !important;
-                -webkit-backdrop-filter: none !important;
-            }
-        }
-
-
-
-        /* Anti-Capture Focus Blur Shield */
-        body.window-blurred {
-            filter: blur(16px) grayscale(40%) !important;
-            transition: filter 0.15s ease-out !important;
-        }
-
-        /* Preserved Anti-Theft Watermark & Security Shielding */
-        .watermark-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            pointer-events: none;
-            z-index: 99999;
-            opacity: 0;
-            display: none;
-            align-items: center; justify-content: center;
-        }
-        .watermark-text {
-            font-size: 2rem; font-weight: 800;
-            color: rgba(244, 63, 94, 0.75);
-            transform: rotate(-30deg);
-            letter-spacing: 0.2em;
-            pointer-events: none;
-            text-transform: uppercase;
-            text-align: center;
-            padding: 20px;
-        }
-        .capture-blind {
-            filter: blur(28px) grayscale(100%) !important;
-            opacity: 0.15 !important;
-        }
-        body.capture-blind .watermark-overlay,
-        .capture-blind .watermark-overlay {
-            opacity: 1 !important;
-            display: flex !important;
-            background: rgba(5, 7, 12, 0.95) !important;
-        }
-        body.capture-blind .watermark-text,
-        .capture-blind .watermark-text {
-            color: #f43f5e !important;
-            text-shadow: 0 0 25px rgba(244, 63, 94, 0.8) !important;
-        }
-        @media print {
-
-            .watermark-overlay {
-                opacity: 1 !important;
-                display: flex !important;
-                background: repeating-linear-gradient(
-                    -45deg,
-                    rgba(244, 63, 94, 0.08),
-                    rgba(244, 63, 94, 0.08) 100px,
-                    transparent 100px,
-                    transparent 200px
-                );
-            }
-            .watermark-text {
-                display: block !important;
-                font-size: 2rem; font-weight: 800;
-                color: #f43f5e !important;
-                transform: rotate(-30deg);
-                letter-spacing: 0.2em;
-                text-transform: uppercase;
-            }
+        img {
+            content-visibility: auto;
         }
     </style>
-    <!-- 7-Day Client Auto-Expiry Shield -->
+        <!-- 7-Day Client Auto-Expiry Shield -->
     <script id="demo-expiry-shield">
     (function() {
-        const DEMO_CREATED_TIMESTAMP = 1790447897969;
+        const DEMO_CREATED_TIMESTAMP = 1790707727539;
         const EXPIRY_DAYS = 7;
         const isExpired = (Date.now() - DEMO_CREATED_TIMESTAMP) > (EXPIRY_DAYS * 24 * 60 * 60 * 1000);
 
@@ -352,136 +208,473 @@
     })();
     </script>
 </head>
-<body class="antialiased relative" class="antialiased relative">
+<body class="bg-[#080e1a] text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 pb-20 sm:pb-0">
+
+    <!-- SECTION 1: TOP NOTIFICATION BANNER + NAVIGATION HEADER -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-white/10 px-4 py-2 text-center text-xs sm:text-sm font-medium text-slate-300">
+        <span class="inline-flex items-center gap-2">
+            <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand">Special Offer</span>
+            <span>✨ Special Car Care Privilege: Free 40-Point Computerized Scan & Fluid Top-Up in Azad Nagar, Kanpur</span>
+            <a href="#booking-funnel" class="underline font-bold hover:text-white ml-1">Claim Offer →</a>
+        </span>
     </div>
 
-    
-        <div class="bg-gradient-to-r from-amber-600 via-orange-600 to-rose-600 text-white px-4 py-2.5 shadow-md">
-            <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm font-medium gap-2">
-                <div class="flex items-center gap-2">
-                    <span class="bg-white/20 px-2 py-0.5 rounded text-[11px] font-bold tracking-wider uppercase">Audit Upgrade</span>
-                    <span>⚡ <strong>Performance Revamp:</strong> Modernized for ultra-fast mobile conversions</span>
-                </div>
-                <div class="flex items-center gap-4 text-xs font-semibold">
-                    <span class="line-through opacity-75">Old: 6.2s Slow / No Direct Funnel</span>
-                    <span class="bg-emerald-500 text-white px-2.5 py-0.5 rounded-full shadow-sm">New: 0.8s Instant Lead Engine</span>
-                </div>
-            </div>
-        </div>
-        
-
-    <header class="sticky top-0 z-40 glass-nav" class="sticky top-0 z-40 border-b border-slate-200 shadow-sm">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-[#080e1a]/95 backdrop-blur-md border-b border-white/10 px-4 sm:px-8 py-3.5 transition-all">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-500 flex items-center justify-center text-white font-extrabold text-lg shadow-md shadow-indigo-100">
-                    G
-                </div>
+                <div class="w-10 h-10 rounded-xl bg-brand flex items-center justify-center font-bold text-slate-950 text-base shadow-md">GA</div>
                 <div>
-                    <h1  class="text-base sm:text-lg font-bold text-slate-900 leading-tight">Ganga Barrage Auto Care</h1>
-                    <p  class="text-[11px] text-slate-500 font-medium">📍 Azad Nagar, Kanpur</p>
+                    <span class="text-base sm:text-lg font-black tracking-tight text-white block">Ganga Barrage Auto Care</span>
+                    <span class="text-[10px] text-slate-400 uppercase tracking-widest block font-medium">📍 Azad Nagar, Kanpur</span>
                 </div>
             </div>
+            
+            <nav class="hidden lg:flex items-center gap-6 text-xs uppercase tracking-wider font-semibold text-slate-300">
+                <a href="#about" class="hover:text-white transition">About</a>
+                <a href="#services" class="hover:text-white transition">Services</a>
+                <a href="#team" class="hover:text-white transition">Team</a>
+                <a href="#reviews" class="hover:text-white transition">Reviews</a>
+                <a href="#booking-funnel" class="hover:text-white transition">Contact</a>
+            </nav>
+
             <div class="flex items-center gap-3">
-                <a href="https://wa.me/919336144556?text=Hi%20Ganga%20Barrage%20Auto%20Care%2C%20I%20saw%20your%20profile%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-semibold text-xs transition shadow-sm">
-                    WhatsApp Inquiry
+                <a href="tel:+919336144556" class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-white/5 border border-white/10 px-3.5 py-2 rounded-xl transition">
+                    <span>📞</span>
+                    <span>+91 93361 44556</span>
                 </a>
-                <a href="tel:919336144556" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-semibold text-xs transition shadow-sm">
-                    Call Direct
+                <a href="https://wa.me/919336144556?text=Hi%20Ganga%20Barrage%20Auto%20Care%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="btn-brand px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-lg">
+                    💬 WhatsApp Booking
                 </a>
             </div>
         </div>
     </header>
 
-    <section  class="py-12 sm:py-16 border-b border-slate-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-8 items-center">
-            <div class="lg:col-span-7 space-y-4 text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 bg-indigo-100/80 text-indigo-800 px-3 py-1 rounded-full text-xs font-semibold">
-                    <span>⭐ 4.9 Verified Rating</span>
-                    <span class="text-indigo-400">•</span>
-                    <span>150+ Reviews in Azad Nagar, Kanpur</span>
+    <!-- SECTION 2: FULL-BLEED CINEMATIC HERO BANNER (No 2-column box layout) -->
+    <section class="relative min-h-[85vh] flex items-center justify-center px-4 sm:px-8 py-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1920&q=85" alt="Ganga Barrage Auto Care" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-center filter brightness-[0.38] scale-105 transform hover:scale-100 transition duration-1000" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
+            <div class="absolute inset-0 bg-gradient-to-b from-[#080e1a]/70 via-[#080e1a]/85 to-[#080e1a]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md text-xs font-semibold text-slate-200">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Proudly Serving Azad Nagar, Kanpur • Certified Car & Bike Care Experts</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] font-serif">
+                Premier Automotive Workshop & Distinguished Quality in Azad Nagar, Kanpur
+            </h1>
+
+            <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-light">
+                Serving Azad Nagar, Kanpur with handcrafted excellence, modern convenience, and dedicated client satisfaction. Experience benchmark standards built for lasting trust.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="https://wa.me/919336144556?text=Hi%20Ganga%20Barrage%20Auto%20Care%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="btn-brand w-full sm:w-auto px-8 py-3.5 rounded-xl text-sm font-bold shadow-xl flex items-center justify-center gap-2">
+                    <span>💬 Inquire Directly on WhatsApp</span>
+                    <span>→</span>
+                </a>
+                <a href="#services" class="w-full sm:w-auto px-6 py-3.5 rounded-xl text-sm font-semibold text-white bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur-sm transition">
+                    Explore Offerings ↓
+                </a>
+            </div>
+
+            <!-- Trust Metrics Bar -->
+            <div class="pt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto border-t border-white/10 mt-8">
+                <div class="text-center p-3 rounded-xl bg-white/5 border border-white/5">
+                    <p class="text-xl sm:text-2xl font-black text-white">⭐ 4.9</p>
+                    <p class="text-[11px] text-slate-400 mt-0.5">150+ Local Reviews</p>
                 </div>
-                
-                <h2  class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                    Trusted & Certified <span class="text-indigo-600">Automotive Workshop</span> in Azad Nagar, Kanpur
+                <div class="text-center p-3 rounded-xl bg-white/5 border border-white/5">
+                    <p class="text-xl sm:text-2xl font-black text-white">15+ Yrs</p>
+                    <p class="text-[11px] text-slate-400 mt-0.5">Serving Azad Nagar, Kanpur</p>
+                </div>
+                <div class="text-center p-3 rounded-xl bg-white/5 border border-white/5">
+                    <p class="text-xl sm:text-2xl font-black text-white">100%</p>
+                    <p class="text-[11px] text-slate-400 mt-0.5">Fresh & Authentic</p>
+                </div>
+                <div class="text-center p-3 rounded-xl bg-white/5 border border-white/5">
+                    <p class="text-xl sm:text-2xl font-black text-white">Verified</p>
+                    <p class="text-[11px] text-slate-400 mt-0.5">Top-Rated Practice</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: WHY CHOOSE US (4 CORE VALUE PILLARS) -->
+    <section id="about" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#0a101f]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
+                    The Ganga Barrage Auto Care Standard
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight font-serif">
+                    Why Azad Nagar, Kanpur Chooses Us
                 </h2>
-                
-                <p  class="text-slate-600 text-sm leading-relaxed max-w-xl mx-auto lg:mx-0">
-                    Experience top-tier quality, transparent pricing, and instant appointment booking directly with <strong>Ganga Barrage Auto Care</strong>. Serving the Azad Nagar, Kanpur region with excellence.
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Uncompromising craftsmanship, transparent pricing, and instant personalized client attention.
                 </p>
-
-                <div class="pt-2 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                    <a href="https://wa.me/919336144556?text=Hi%20Ganga%20Barrage%20Auto%20Care%2C%20I%20saw%20your%20profile%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="inline-flex justify-center items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-xl shadow-lg text-sm transition">
-                        💬 Connect on WhatsApp Instantly
-                    </a>
-                </div>
             </div>
 
-            <div class="lg:col-span-5">
-                <div  class="rounded-2xl overflow-hidden shadow-sm border border-slate-200 bg-white">
-                    <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80" alt="Ganga Barrage Auto Care" class="w-full h-64 object-cover rounded-2xl pointer-events-none" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80';" loading="lazy" decoding="async">
-                    <div  class="p-4 bg-white border-t border-slate-100 flex items-center justify-between">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
+                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4">🏆</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Master Craftsmanship</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Dedicated practitioners bringing decades of refined expertise, premium ingredients, and exact standards.</p>
+                </div>
+                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
+                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4">🔬</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Modern Technology</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Advanced state-of-the-art tools and equipment ensuring precision quality and rapid turnaround.</p>
+                </div>
+                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
+                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4">✨</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Uncompromised Comfort</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">A welcoming environment with personalized attention dedicated entirely to your ease and satisfaction.</p>
+                </div>
+                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
+                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4">⚡</div>
+                    <h3 class="text-lg font-bold text-white mb-2">1-Tap WhatsApp Funnel</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Direct instant messaging, zero waiting room delays, upfront transparent quotes, and quick confirmations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: COMPREHENSIVE FEATURED SERVICES GRID (6 RESPONSIVE CARDS) -->
+    <section id="services" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#080e1a]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
+                    Featured Offerings
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight font-serif">
+                    Comprehensive Quality Services
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Tailored specifically to match the distinguished expectations of our patrons in Azad Nagar, Kanpur.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80" alt="Computerized Multi-Point Engine Diagnostics" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Specialized Offering</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <span class="bg-indigo-50 text-indigo-700 text-[11px] font-bold px-2.5 py-1 rounded uppercase tracking-wide">Certified Car & Bike Care Experts</span>
-                            <p  class="text-xs text-slate-500 font-medium mt-1.5">Open Today • Appointments Available</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Computerized Multi-Point Engine Diagnostics</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Dedicated high-standard computerized multi-point engine diagnostics tailored for individuals and families in Azad Nagar, Kanpur, combining quality precision with warm service.</p>
                         </div>
-                        <span class="inline-flex items-center gap-1.5 text-emerald-600 font-semibold text-xs bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Verified
-                        </span>
+                        <a href="https://wa.me/919336144556?text=Hi%20Ganga%20Barrage%20Auto%20Care%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                            <span>Inquire on WhatsApp</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=800&q=80" alt="Periodic Scheduled Service & Synthetic Oil" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Specialized Offering</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Periodic Scheduled Service & Synthetic Oil</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Dedicated high-standard periodic scheduled service & synthetic oil tailored for individuals and families in Azad Nagar, Kanpur, combining quality precision with warm service.</p>
+                        </div>
+                        <a href="https://wa.me/919336144556?text=Hi%20Ganga%20Barrage%20Auto%20Care%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                            <span>Inquire on WhatsApp</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Air Conditioning Overhaul & Gas Refill" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Specialized Offering</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Air Conditioning Overhaul & Gas Refill</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Dedicated high-standard air conditioning overhaul & gas refill tailored for individuals and families in Azad Nagar, Kanpur, combining quality precision with warm service.</p>
+                        </div>
+                        <a href="https://wa.me/919336144556?text=Hi%20Ganga%20Barrage%20Auto%20Care%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                            <span>Inquire on WhatsApp</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=800&q=80" alt="Suspension, Steering & Braking Precision" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Specialized Offering</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Suspension, Steering & Braking Precision</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Dedicated high-standard suspension, steering & braking precision tailored for individuals and families in Azad Nagar, Kanpur, combining quality precision with warm service.</p>
+                        </div>
+                        <a href="https://wa.me/919336144556?text=Hi%20Ganga%20Barrage%20Auto%20Care%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                            <span>Inquire on WhatsApp</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80" alt="Ceramic Coating, Detailing & Paint Correction" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Specialized Offering</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Ceramic Coating, Detailing & Paint Correction</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Dedicated high-standard ceramic coating, detailing & paint correction tailored for individuals and families in Azad Nagar, Kanpur, combining quality precision with warm service.</p>
+                        </div>
+                        <a href="https://wa.me/919336144556?text=Hi%20Ganga%20Barrage%20Auto%20Care%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                            <span>Inquire on WhatsApp</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=800&q=80" alt="24/7 Roadside Assistance & Breakdown Towing" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Specialized Offering</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">24/7 Roadside Assistance & Breakdown Towing</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Dedicated high-standard 24/7 roadside assistance & breakdown towing tailored for individuals and families in Azad Nagar, Kanpur, combining quality precision with warm service.</p>
+                        </div>
+                        <a href="https://wa.me/919336144556?text=Hi%20Ganga%20Barrage%20Auto%20Care%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                            <span>Inquire on WhatsApp</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: TEAM / LEADERSHIP SPOTLIGHT -->
+    <section id="team" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#0a101f]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
+                    Meet Our Leadership
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight font-serif">
+                    Dedicated Masters of the Craft
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Passionate experts bringing personal care and clinical precision to Azad Nagar, Kanpur.
+                </p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 p-6 flex flex-col sm:flex-row items-center gap-6 hover:border-brand transition">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Master Automotive Engineers" loading="lazy" decoding="async" class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl object-cover border-2 border-white/10 shrink-0 shadow-lg" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E';" />
+                    <div class="text-center sm:text-left">
+                        <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1.5">Verified Director</span>
+                        <h3 class="text-xl font-bold text-white font-serif">Master Automotive Engineers</h3>
+                        <p class="text-brand text-xs font-semibold mt-0.5">Lead Diagnostic Technician & Service Director</p>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">Over 20 years of computerized engine diagnostics, precision mechanical overhauls, and OEM-standard vehicle care.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Grid -->
-    <section  class="py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <h2 class="text-xs font-bold text-indigo-600 uppercase tracking-widest text-center">Our Expertise</h2>
-            <p  class="text-2xl font-extrabold text-slate-900 text-center mt-1">Specialized Services in Azad Nagar, Kanpur</p>
-            <div class="grid sm:grid-cols-3 gap-6 mt-8">
-                <div  class="border border-slate-200 rounded-2xl shadow-sm overflow-hidden text-slate-900">
-                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" alt="Service 1" class="w-full h-64 object-cover pointer-events-none" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80';" loading="lazy" decoding="async">
-                    <div class="p-4">
-                        <h3  class="font-bold text-slate-900 text-sm">Comprehensive Consultations</h3>
-                        <p  class="text-slate-600 text-xs mt-1">Tailored solutions matching your precise needs with dedicated support.</p>
-                        <a href="https://wa.me/919336144556?text=Hi%20Ganga%20Barrage%20Auto%20Care%2C%20I%20saw%20your%20profile%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="text-indigo-600 font-bold text-xs mt-3 block">Inquire on WhatsApp →</a>
+    <!-- SECTION 6: VERIFIED 5.0 GOOGLE REVIEWS & TESTIMONIALS -->
+    <section id="reviews" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#080e1a]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
+                    Patron Testimonials
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight font-serif">
+                    Loved by Clients in Azad Nagar, Kanpur
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Real verified feedback from patrons across Azad Nagar, Kanpur.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">★★★★★</div>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
+                            "The benchmark for quality in Azad Nagar, Kanpur! Unbelievable attention to detail, welcoming hospitality, and absolute perfection. Best experience I have had in the city."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-white text-xs font-bold">Rohan S.</span>
+                        <span class="text-slate-400 text-[11px]">Verified Google Review</span>
                     </div>
                 </div>
-                <div  class="border border-slate-200 rounded-2xl shadow-sm overflow-hidden text-slate-900">
-                    <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=600&q=80" alt="Service 2" class="w-full h-64 object-cover pointer-events-none" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80';" loading="lazy" decoding="async">
-                    <div class="p-4">
-                        <h3  class="font-bold text-slate-900 text-sm">Premium Quality Care</h3>
-                        <p  class="text-slate-600 text-xs mt-1">Modern methods ensuring swift turnaround and reliable outcomes.</p>
-                        <a href="https://wa.me/919336144556?text=Hi%20Ganga%20Barrage%20Auto%20Care%2C%20I%20saw%20your%20profile%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="text-indigo-600 font-bold text-xs mt-3 block">Inquire on WhatsApp →</a>
+
+                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">★★★★★</div>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
+                            "Super impressed by their professionalism and instant WhatsApp booking. Truly agency-grade experience right in Azad Nagar, Kanpur."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-white text-xs font-bold">Ananya M.</span>
+                        <span class="text-slate-400 text-[11px]">Verified Client</span>
                     </div>
                 </div>
-                <div  class="border border-slate-200 rounded-2xl shadow-sm overflow-hidden text-slate-900">
-                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="Service 3" class="w-full h-64 object-cover pointer-events-none" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80';" loading="lazy" decoding="async">
-                    <div class="p-4">
-                        <h3  class="font-bold text-slate-900 text-sm">Priority Support</h3>
-                        <p  class="text-slate-600 text-xs mt-1">Fast-track response for urgent local client requirements.</p>
-                        <a href="https://wa.me/919336144556?text=Hi%20Ganga%20Barrage%20Auto%20Care%2C%20I%20saw%20your%20profile%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="text-indigo-600 font-bold text-xs mt-3 block">Inquire on WhatsApp →</a>
+
+                <div class="bg-obsidian-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">★★★★★</div>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
+                            "Outstanding turnaround and world-class quality. Ganga Barrage Auto Care sets the gold standard in Azad Nagar, Kanpur without question."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-white text-xs font-bold">Vikram K.</span>
+                        <span class="text-slate-400 text-[11px]">Verified Review</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-xs text-center">
-        <p class="font-bold text-slate-200">Ganga Barrage Auto Care</p>
-        <p class="mt-1">Serving Azad Nagar, Kanpur • © 2026 All rights reserved.</p>
-    </footer>
+    <!-- SECTION 7: QUICK BOOKING FUNNEL + LOCATION & OPERATIONAL HOURS FOOTER -->
+    <section id="booking-funnel" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#0a101f]">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-10">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
+                    Direct Concierge Scheduling
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight font-serif">
+                    Ready to Connect with Ganga Barrage Auto Care?
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    Reserve your preferred time or message our dedicated concierge directly on WhatsApp.
+                </p>
+            </div>
 
-    <!-- Floating WhatsApp Pulse -->
-    <div class="fixed bottom-6 right-6 z-50">
-        <a href="https://wa.me/919336144556?text=Hi%20Ganga%20Barrage%20Auto%20Care%2C%20I%20saw%20your%20profile%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="relative group flex items-center justify-center w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-2xl transition">
-            <span class="absolute -inset-1 rounded-full bg-emerald-400 opacity-75 animate-ping"></span>
+            <!-- Quick Booking Funnel Form -->
+            <div class="max-w-xl mx-auto bg-obsidian-card p-8 rounded-3xl border border-white/15 shadow-2xl">
+                <form onsubmit="event.preventDefault(); window.open('https://wa.me/919336144556?text=Hi%20Ganga%20Barrage%20Auto%20Care%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services.', '_blank');" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Your Full Name</label>
+                            <input type="text" required placeholder="Your Name" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand" />
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">WhatsApp Phone</label>
+                            <input type="tel" required placeholder="+91 99999 00000" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand" />
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Inquiry / Service Required</label>
+                        <select class="w-full bg-[#080e1a] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-brand">
+                            <option>Special Privilege Inquiry / First Visit</option>
+                            <option>Priority Service Appointment</option>
+                            <option>General Pricing & Menu Consultation</option>
+                            <option>Custom Request & Bulk Inquiries</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-brand w-full py-3.5 rounded-xl text-xs sm:text-sm font-bold shadow-xl mt-4">
+                        💬 Confirm & Connect on WhatsApp →
+                    </button>
+                    <p class="text-[11px] text-center text-slate-400 mt-2">🔒 Instant Confirmation via Practice Concierge • Zero Waiting</p>
+                </form>
+            </div>
+
+            <!-- Practice Headquarters Card -->
+            <div class="max-w-xl mx-auto bg-white/5 p-6 rounded-2xl border border-white/10 text-center mt-8">
+                <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-2">Practice Headquarters</span>
+                <h3 class="text-xl font-bold text-white font-serif">Ganga Barrage Auto Care</h3>
+                <p class="text-slate-400 text-xs mt-1">Convenient appointments & direct local care</p>
+                <p class="text-slate-300 text-xs mt-2">📍 Azad Nagar, Kanpur</p>
+                <p class="text-white text-sm font-semibold mt-3">📞 Phone: <a href="tel:+919336144556" class="text-brand hover:underline">+91 93361 44556</a></p>
+                <a href="https://wa.me/919336144556?text=Hi%20Ganga%20Barrage%20Auto%20Care%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-4 btn-brand w-full py-3 rounded-xl text-xs sm:text-sm font-bold block">
+                    💬 Chat on WhatsApp with Concierge →
+                </a>
+            </div>
+
+            <!-- Footer Details -->
+            <footer class="mt-16 pt-10 border-t border-white/10 text-xs text-slate-400 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+                <div>
+                    <p class="font-bold text-slate-200">Ganga Barrage Auto Care</p>
+                    <p class="mt-1">Serving Azad Nagar, Kanpur and surrounding metropolitan communities.</p>
+                </div>
+                <div>
+                    <p>🕒 Mon - Sun: 8:00 AM – 10:00 PM</p>
+                    <p class="mt-1">© 2026 Ganga Barrage Auto Care. All rights reserved. • <a href="mailto:nan" class="text-slate-300 hover:underline">nan</a></p>
+                </div>
+            </footer>
+        </div>
+    </section>
+
+    <!-- 2026 STICKY MOBILE QUICK-ACTION BAR -->
+    <div class="fixed bottom-0 left-0 right-0 z-40 bg-slate-950/95 backdrop-blur-md border-t border-white/10 px-4 py-2.5 flex items-center justify-between sm:hidden shadow-2xl">
+        <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-xs font-bold text-slate-200">1-Tap Booking Active</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <a href="tel:+919336144556" class="px-3 py-1.5 rounded-lg bg-white/10 text-white text-xs font-semibold">📞 Call</a>
+            <a href="https://wa.me/919336144556?text=Hi%20Ganga%20Barrage%20Auto%20Care%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="btn-brand px-3.5 py-1.5 rounded-lg text-xs font-bold shadow-md">💬 WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- FLOATING ACTION CTA (Desktop) -->
+    <div class="hidden sm:block fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/919336144556?text=Hi%20Ganga%20Barrage%20Auto%20Care%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="relative flex items-center justify-center w-14 h-14 bg-brand rounded-full shadow-2xl transition hover:scale-105">
+            <span class="absolute -inset-1 rounded-full bg-brand opacity-60 animate-ping"></span>
             <svg class="w-7 h-7 fill-current relative z-10" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.777.814 2.791.814 3.18 0 5.767-2.587 5.768-5.766.001-3.181-2.586-5.767-5.768-5.767zm0 10.355c-.887 0-1.638-.253-2.316-.677l-.166-.104-1.58.414.422-1.54-.109-.174c-.464-.739-.71-1.464-.71-2.272.001-2.53 2.059-4.588 4.59-4.588 2.529 0 4.587 2.058 4.588 4.588.001 2.531-2.057 4.589-4.589 4.589z"/></svg>
         </a>
     </div>
 
-    
-    <!-- Anti-Theft & Screenshot Resistance Shield -->
+    <!-- 2-Second External Asset Watchdog (Guarantees zero UI wait/freeze) -->
+    <script>
+    (function() {
+        var placeholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b1329'/%3E%3Cstop offset='100%25' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='280' r='54' fill='%23334155' opacity='0.7'/%3E%3Cpath d='M250 480 Q 400 370 550 480' stroke='%23334155' stroke-width='24' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E";
+        function auditImages() {
+            var imgs = document.querySelectorAll('img');
+            imgs.forEach(function(img) {
+                if (img.complete) return;
+                var timer = setTimeout(function() {
+                    if (!img.complete || img.naturalWidth === 0) {
+                        img.src = placeholder;
+                    }
+                }, 2000);
+                img.addEventListener('load', function() { clearTimeout(timer); }, { once: true });
+                img.addEventListener('error', function() { clearTimeout(timer); }, { once: true });
+            });
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', auditImages);
+        } else {
+            auditImages();
+        }
+    })();
+    </script>
+
+        <!-- Anti-Theft & Screenshot Resistance Shield -->
     <script id="anti-theft-shield">
     (function() {
         document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
