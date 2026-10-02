@@ -14,33 +14,33 @@
     
 
     <!-- Preload LCP Hero Image (< 0.8s Speed Target) -->
-    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=85" fetchpriority="high">
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=85" fetchpriority="high">
 
     <!-- Asynchronous Non-Render-Blocking Google Fonts with display=swap -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
     <!-- Synchronous Immediate Tailwind CDN to Prevent FOUC -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style id="dynamic-brand-styles">
         :root {
-            --brand-primary: #0ea5e9;
-            --brand-accent: #6366f1;
+            --brand-primary: #d97706;
+            --brand-accent: #0284c7;
             --brand-btn-text: #090e17;
-            --brand-glow: rgba(14, 165, 233, 0.35);
-            --font-heading: 'Inter', sans-serif;
+            --brand-glow: rgba(217, 119, 6, 0.45);
+            --font-heading: 'Plus Jakarta Sans', 'Inter', sans-serif;
             --font-body: 'Inter', sans-serif;
-            --card-radius: 1rem;
-            --card-border: rgba(14, 165, 233, 0.22);
+            --card-radius: 0.75rem;
+            --card-border: rgba(217, 119, 6, 0.35);
         }
         *, *::before, *::after {
             box-sizing: border-box;
         }
         html, body {
             margin: 0; padding: 0;
-            background-color: #080e1a !important;
+            background-color: #0a0e17 !important;
             color: #f1f5f9 !important;
             font-family: var(--font-body), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
             scroll-behavior: smooth;
@@ -90,24 +90,24 @@
             font-family: var(--font-heading) !important;
         }
         .bg-obsidian-card {
-            background: rgba(15, 23, 42, 0.78) !important;
+            background: rgba(15, 23, 42, 0.85) !important;
             border: 1px solid var(--card-border) !important;
             border-radius: var(--card-radius) !important;
             backdrop-filter: blur(16px) !important;
             -webkit-backdrop-filter: blur(16px) !important;
         }
         .bg-brand {
-            background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%) !important;
+            background: linear-gradient(135deg, #d97706 0%, #0284c7 100%) !important;
             color: #090e17 !important;
         }
         .text-brand {
-            color: #0ea5e9 !important;
+            color: #d97706 !important;
         }
         .border-brand {
-            border-color: #0ea5e9 !important;
+            border-color: #d97706 !important;
         }
         .btn-brand {
-            background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%) !important;
+            background: linear-gradient(135deg, #d97706 0%, #0284c7 100%) !important;
             color: #090e17 !important;
             font-weight: 700 !important;
             transition: all 0.25s ease !important;
@@ -118,7 +118,7 @@
             box-shadow: 0 12px 30px -5px var(--brand-glow) !important;
         }
         .slot-pill input:checked + span {
-            background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%) !important;
+            background: linear-gradient(135deg, #d97706 0%, #0284c7 100%) !important;
             color: #090e17 !important;
             border-color: transparent !important;
             font-weight: 700 !important;
@@ -221,7 +221,7 @@
             position: absolute;
             top: 15%; left: 15%;
             width: 420px; height: 420px;
-            background: radial-gradient(circle, #0ea5e9 0%, transparent 70%);
+            background: radial-gradient(circle, #d97706 0%, transparent 70%);
             filter: blur(80px);
             border-radius: 9999px;
             pointer-events: none;
@@ -232,12 +232,31 @@
             position: absolute;
             top: 30%; right: 12%;
             width: 380px; height: 380px;
-            background: radial-gradient(circle, #6366f1 0%, transparent 70%);
+            background: radial-gradient(circle, #0284c7 0%, transparent 70%);
             filter: blur(80px);
             border-radius: 9999px;
             pointer-events: none;
             animation: floatSlow2 22s ease-in-out infinite;
             z-index: 1;
+        }
+        .spotlight-card {
+            position: relative;
+            background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.06), transparent 40%), rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .spotlight-card:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 12px 35px -10px rgba(0, 0, 0, 0.5);
+        }
+        .frosted-badge {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -261,7 +280,7 @@
         <!-- 7-Day Client Auto-Expiry Shield -->
     <script id="demo-expiry-shield">
     (function() {
-        const DEMO_CREATED_TIMESTAMP = 1790963606910;
+        const DEMO_CREATED_TIMESTAMP = 1790966652803;
         const EXPIRY_DAYS = 7;
         const isExpired = (Date.now() - DEMO_CREATED_TIMESTAMP) > (EXPIRY_DAYS * 24 * 60 * 60 * 1000);
 
@@ -388,13 +407,13 @@
     })();
     </script>
 </head>
-<body class="text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 pb-20 sm:pb-0" style="background-color: #080e1a;">
+<body class="text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 pb-20 sm:pb-0" style="background-color: #0a0e17;">
 
     <!-- SECTION 1: TOP NOTIFICATION BANNER + NAVIGATION HEADER -->
     <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-white/10 px-4 py-2 text-center text-xs sm:text-sm font-medium text-slate-300">
         <span class="inline-flex items-center gap-2">
             <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand">Special Offer</span>
-            <span>✨ Exclusive Welcome Offer: Complimentary Priority Consultation & 10% First Booking Privilege for Mishripur Residents</span>
+            <span>🏗️ Commercial Supply Privilege: Flat Wholesale Contractor Rates & Same-Day Bulk Site Dispatch in Mishripur</span>
             <a href="#booking-funnel" class="underline font-bold hover:text-white ml-1">Claim Offer →</a>
         </span>
     </div>
@@ -438,20 +457,20 @@
         <!-- Multi-Photo Auto-Crossfade Hero Background Slides -->
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" id="hero-slider-container">
             <div class="hero-slide active absolute inset-0 w-full h-full opacity-100 z-10 transition-opacity duration-[1200ms] ease-in-out">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=85" alt="AR Traders 1" fetchpriority="high" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\'><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=85" alt="AR Traders 1" fetchpriority="high" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\'><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
             </div>
             <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1920&q=85" alt="AR Traders 2" loading="lazy" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\'><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
+                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1920&q=85" alt="AR Traders 2" loading="lazy" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\'><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
             </div>
             <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
-                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1920&q=85" alt="AR Traders 3" loading="lazy" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\'><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1920&q=85" alt="AR Traders 3" loading="lazy" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\'><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
             </div>
             <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
-                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1920&q=85" alt="AR Traders 4" loading="lazy" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\'><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
+                <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1920&q=85" alt="AR Traders 4" loading="lazy" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\'><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
             </div>
 
             <!-- Balanced 40%-45% Vignette Overlay Tailored to Niche Color -->
-            <div class="absolute inset-0 z-20 pointer-events-none" style="background: linear-gradient(to bottom, rgba(8, 14, 26, 0.42) 0%, rgba(8, 14, 26, 0.22) 45%, rgba(8, 14, 26, 0.88) 100%);"></div>
+            <div class="absolute inset-0 z-20 pointer-events-none" style="background: linear-gradient(to bottom, rgba(10, 14, 23, 0.42) 0%, rgba(10, 14, 23, 0.22) 45%, rgba(10, 14, 23, 0.88) 100%);"></div>
             <!-- Ambient Floating Gradient Orbs -->
             <div class="ambient-orb-1"></div>
             <div class="ambient-orb-2"></div>
@@ -468,15 +487,15 @@
         <div class="relative z-20 max-w-4xl mx-auto text-center space-y-6">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-semibold text-white hero-text-shadow">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>Proudly Serving Mishripur • Trusted Local Services & Fast Delivery</span>
+                <span>Proudly Serving Mishripur • Authorized Wholesale Building Materials & Structural Supply Depot</span>
             </div>
 
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] font-serif hero-title-shadow">
-                Premier Quality & Distinguished Excellence in Mishripur
+                Authorized Wholesale Cement, Aggregates & Construction Supplies in Mishripur
             </h1>
 
             <p class="text-slate-100 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal hero-text-shadow">
-                Serving Mishripur with handcrafted excellence, modern convenience, and dedicated client satisfaction. Experience benchmark standards built for lasting trust.
+                Direct authorized distributor of UltraTech, Ambuja, Fe-550D TMT rebars, and commercial hardware with guaranteed same-day site dispatch across Mishripur.
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -561,11 +580,11 @@
         </div>
     </div>
 
-    <!-- SECTION 3: WHY CHOOSE US (4 CORE VALUE PILLARS WITH 3D LIFT) -->
-    <section id="about" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#0a101f]">
-        <div class="max-w-7xl mx-auto">
+    <!-- SECTION 3: 21st.dev BENTO GRID FEATURE ARCHITECTURE -->
+    <section id="about" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#0a101f] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
-                <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
+                <span class="frosted-badge px-3.5 py-1 rounded-full text-xs font-bold text-slate-300 uppercase tracking-widest inline-block">
                     The AR Traders Standard
                 </span>
                 <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight font-serif">
@@ -576,38 +595,116 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <div class="interactive-card reveal-on-scroll stagger-1 bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
-                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4 shadow-md">🏆</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Master Craftsmanship</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Dedicated practitioners bringing refined expertise, exact standards, and integrity.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+                <!-- Bento Card 1: 1 Large Feature Card (Spans 2 columns on desktop) -->
+                <div class="spotlight-card lg:col-span-2 p-8 sm:p-10 rounded-3xl relative overflow-hidden flex flex-col justify-between shadow-2xl group border border-white/10">
+                    <div class="pointer-events-none absolute -right-10 -bottom-10 w-64 h-64 rounded-full bg-brand/10 blur-3xl group-hover:bg-brand/20 transition duration-500"></div>
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-6">
+                            <span class="frosted-badge px-3.5 py-1.5 rounded-full text-[11px] font-bold text-slate-200 uppercase tracking-widest inline-flex items-center gap-2">
+                                <span class="text-brand">★</span> Core Benchmark Pillar
+                            </span>
+                            <span class="text-xs font-semibold text-slate-400 hidden sm:inline">2026 Industry Standard</span>
+                        </div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand/15 border border-brand/30 flex items-center justify-center text-3xl mb-5 shadow-inner">
+                            🏗️
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight mb-3 font-serif">
+                            Authorized Direct Dealership
+                        </h3>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
+                            100% genuine factory-fresh cement and primary steel brands with test certificates.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+                        <div class="flex items-center gap-2 text-xs font-semibold text-slate-300">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span>Verified Excellence in Mishripur</span>
+                        </div>
+                        <a href="https://wa.me/919838832467?text=Hi%20AR%20Traders%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="text-xs font-bold text-brand hover:underline inline-flex items-center gap-1.5">
+                            <span>Direct Concierge Inquiry</span>
+                            <span>→</span>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="interactive-card reveal-on-scroll stagger-2 bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
-                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4 shadow-md">🔬</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Modern Technology</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Advanced tools and efficient methodologies ensuring precision and rapid turnaround.</p>
+                <!-- Bento Column 2: 2 Stacked Medium Cards -->
+                <div class="flex flex-col gap-6 lg:col-span-1">
+                    <!-- Medium Card A -->
+                    <div class="spotlight-card p-6 sm:p-7 rounded-3xl relative overflow-hidden flex flex-col justify-between shadow-xl flex-1 border border-white/10">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-11 h-11 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-2xl">
+                                    💼
+                                </div>
+                                <span class="frosted-badge px-2.5 py-1 rounded-full text-[10px] font-bold text-cyan-300 uppercase tracking-wider">
+                                    Speed & Precision
+                                </span>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">Wholesale Contractor Pricing</h4>
+                            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Unbeatable wholesale bulk rates, transparent GST invoices, and running ledger credit.</p>
+                        </div>
+                    </div>
+
+                    <!-- Medium Card B -->
+                    <div class="spotlight-card p-6 sm:p-7 rounded-3xl relative overflow-hidden flex flex-col justify-between shadow-xl flex-1 border border-white/10">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-11 h-11 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-2xl">
+                                    🚚
+                                </div>
+                                <span class="frosted-badge px-2.5 py-1 rounded-full text-[10px] font-bold text-amber-300 uppercase tracking-wider">
+                                    Verified Quality
+                                </span>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">Guaranteed Same-Day Dispatch</h4>
+                            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Dedicated fleet of hydraulic tippers delivering right to your construction site.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="interactive-card reveal-on-scroll stagger-3 bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
-                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4 shadow-md">✨</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Uncompromised Quality</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">A welcoming client experience built on trust, consistency, and attention to detail.</p>
-                </div>
+                <!-- Bento Card 3: 1 Interactive Stat & Trust Card (Full Width at bottom) -->
+                <div class="spotlight-card col-span-1 md:col-span-2 lg:col-span-3 p-6 sm:p-8 rounded-3xl relative overflow-hidden shadow-2xl border border-white/10 bg-gradient-to-r from-slate-900/90 via-slate-900/50 to-slate-950/90 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="flex items-center gap-4 text-left w-full md:w-auto">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-3xl shrink-0 shadow-md">
+                            ⚡
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="frosted-badge px-2.5 py-0.5 rounded-full text-[10px] font-black text-emerald-400 uppercase tracking-wider inline-flex items-center gap-1.5">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    1-Tap Fast Response
+                                </span>
+                            </div>
+                            <h4 class="text-lg sm:text-xl font-black text-white">Complete Structural Portfolio</h4>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-0.5">Single-point source for cement, TMT rebars, sand, aggregates, and hardware.</p>
+                        </div>
+                    </div>
 
-                <div class="interactive-card reveal-on-scroll stagger-4 bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
-                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4 shadow-md">⚡</div>
-                    <h3 class="text-lg font-bold text-white mb-2">1-Tap WhatsApp Funnel</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Direct instant messaging, zero waiting room delays, and immediate confirmation.</p>
+                    <div class="flex items-center justify-between md:justify-end gap-6 w-full md:w-auto border-t md:border-t-0 border-white/10 pt-4 md:pt-0">
+                        <div class="text-center md:text-right">
+                            <p class="text-xl sm:text-2xl font-black text-white">⭐ 4.9/5</p>
+                            <p class="text-[11px] text-slate-400 font-medium">Google Verified</p>
+                        </div>
+                        <div class="h-8 w-px bg-white/15 hidden sm:block"></div>
+                        <div class="text-center md:text-right">
+                            <p class="text-xl sm:text-2xl font-black text-emerald-400">&lt; 2 Mins</p>
+                            <p class="text-[11px] text-slate-400 font-medium">WhatsApp Reply</p>
+                        </div>
+                        <a href="https://wa.me/919838832467?text=Hi%20AR%20Traders%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="btn-brand px-5 py-2.5 rounded-xl text-xs font-bold shadow-lg shrink-0 inline-flex items-center gap-1.5">
+                            <span>Inquire Now</span>
+                            <span>→</span>
+                        </a>
+                    </div>
                 </div>
-
             </div>
+
         </div>
     </section>
 
     <!-- SECTION 4: COMPREHENSIVE FEATURED SERVICES GRID (6 RESPONSIVE CARDS) -->
-    <section id="services" class="relative py-20 px-4 sm:px-8 border-t border-white/10 overflow-hidden" style="background-color: #080e1a;">
+    <section id="services" class="relative py-20 px-4 sm:px-8 border-t border-white/10 overflow-hidden" style="background-color: #0a0e17;">
         <!-- 21st.dev Ambient Spotlight / Radial Background Glow -->
         <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-cyan-500/20 to-blue-600/20 blur-[120px]"></div>
 
@@ -628,14 +725,14 @@
                 
                 <div class="interactive-card reveal-on-scroll stagger-1 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
                     <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Comprehensive Client Solutions" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="53-Grade OPC & PPC Cement (UltraTech, Ambuja, ACC)" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Core Offering</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded text-[10px] font-black uppercase tracking-wider bg-amber-950/80 text-amber-400 border border-amber-500/30">Authorized Cement</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Comprehensive Client Solutions</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Tailored premium offerings structured for highest efficiency and long-term client value.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">53-Grade OPC & PPC Cement (UltraTech, Ambuja, ACC)</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Factory-fresh authorized bags, premium 53-grade high compressive strength for structural foundation and slab casting.</p>
                         </div>
                         <a href="https://wa.me/919838832467?text=Hi%20AR%20Traders%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
@@ -646,14 +743,14 @@
 
                 <div class="interactive-card reveal-on-scroll stagger-2 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
                     <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Rapid Operational Support & Delivery" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                        <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=800&q=80" alt="Wholesale Bulk Site Dispatch & Hydraulic Delivery" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Fast Delivery</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded text-[10px] font-black uppercase tracking-wider bg-amber-950/80 text-amber-400 border border-amber-500/30">Bulk Logistics</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Rapid Operational Support & Delivery</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Streamlined processes ensuring swift turnaround times without compromising accuracy.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Wholesale Bulk Site Dispatch & Hydraulic Delivery</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Same-day on-site unloading via direct hydraulic tippers and flatbed transport directly to your project location.</p>
                         </div>
                         <a href="https://wa.me/919838832467?text=Hi%20AR%20Traders%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
@@ -664,14 +761,14 @@
 
                 <div class="interactive-card reveal-on-scroll stagger-3 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
                     <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="Dedicated Strategic Consultation" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80" alt="White Cement & Polymer Wall Care Putty" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Consultation</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded text-[10px] font-black uppercase tracking-wider bg-amber-950/80 text-amber-400 border border-amber-500/30">Finishing Solutions</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Dedicated Strategic Consultation</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">In-depth evaluations and roadmaps designed around your specific requirements.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">White Cement & Polymer Wall Care Putty</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Water-resistant smooth basecoats, premium white cement, and wall prep compounds delivering flawless paint finish.</p>
                         </div>
                         <a href="https://wa.me/919838832467?text=Hi%20AR%20Traders%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
@@ -682,14 +779,14 @@
 
                 <div class="interactive-card reveal-on-scroll stagger-4 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
                     <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Quality Assurance & Performance Auditing" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80" alt="High-Yield TMT Rebars & Structural Steel" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Quality Check</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded text-[10px] font-black uppercase tracking-wider bg-amber-950/80 text-amber-400 border border-amber-500/30">Fe-550D Steel</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Quality Assurance & Performance Auditing</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Continuous monitoring and benchmark testing to ensure reliable excellence.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">High-Yield TMT Rebars & Structural Steel</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Fe-550D primary brand rebars, square pipes, angle iron, and fabricated steel beams with certified bendability.</p>
                         </div>
                         <a href="https://wa.me/919838832467?text=Hi%20AR%20Traders%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
@@ -700,14 +797,14 @@
 
                 <div class="interactive-card reveal-on-scroll stagger-5 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
                     <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Priority Concierge Service" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Ready-Mix Concrete & Mortar Solutions" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Concierge</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded text-[10px] font-black uppercase tracking-wider bg-amber-950/80 text-amber-400 border border-amber-500/30">Engineered Concrete</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Priority Concierge Service</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Direct 1-on-1 contact channel with zero delays and personalized attention.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Ready-Mix Concrete & Mortar Solutions</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Standardized grade mixes, coarse aggregate river sand, and specialized crack-resistant admixtures.</p>
                         </div>
                         <a href="https://wa.me/919838832467?text=Hi%20AR%20Traders%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
@@ -718,14 +815,14 @@
 
                 <div class="interactive-card reveal-on-scroll stagger-6 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
                     <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Long-Term Client Partnership & Growth" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Direct Contractor Account & B2B GST Billing" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Partnership</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded text-[10px] font-black uppercase tracking-wider bg-amber-950/80 text-amber-400 border border-amber-500/30">Contractor B2B</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Long-Term Client Partnership & Growth</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Reliable ongoing support, updates, and optimization ensuring sustainable success.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Direct Contractor Account & B2B GST Billing</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Competitive wholesale pricing slabs, verified GST tax invoices, and flexible running commercial ledger terms.</p>
                         </div>
                         <a href="https://wa.me/919838832467?text=Hi%20AR%20Traders%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
@@ -755,12 +852,12 @@
 
             
                 <div class="interactive-card reveal-on-scroll stagger-1 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 p-6 flex flex-col sm:flex-row items-center gap-6 hover:border-brand transition max-w-2xl mx-auto shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Executive Leadership Team" loading="lazy" decoding="async" class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl object-cover border-2 border-white/10 shrink-0 shadow-lg" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\' viewBox=\'0 0 400 400\'><rect width=\'400\' height=\'400\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'18\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Leadership</text></svg>';" />
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Chief Wholesale Materials Director" loading="lazy" decoding="async" class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl object-cover border-2 border-white/10 shrink-0 shadow-lg" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\' viewBox=\'0 0 400 400\'><rect width=\'400\' height=\'400\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'18\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Leadership</text></svg>';" />
                     <div class="text-center sm:text-left">
-                        <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1.5">Trusted Local Services & Fast Delivery</span>
-                        <h3 class="text-xl font-bold text-white font-serif">Executive Leadership Team</h3>
-                        <p class="text-brand text-xs font-semibold mt-0.5">Managing Director & Executive Concierge</p>
-                        <p class="text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">Dedicated to setting benchmark standards of excellence, personalized client attention, and swift results.</p>
+                        <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1.5">Authorized Wholesale Building Materials & Structural Supply Depot</span>
+                        <h3 class="text-xl font-bold text-white font-serif">Chief Wholesale Materials Director</h3>
+                        <p class="text-brand text-xs font-semibold mt-0.5">Head of Procurement & Commercial Site Supply</p>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">Over 25 years of trusted supply chain leadership supplying certified cement, Fe-550D TMT, and structural building supplies to major infrastructure projects and residential developments.</p>
                     </div>
                 </div>
 
@@ -768,7 +865,7 @@
     </section>
 
     <!-- SECTION 6: VERIFIED 5.0 GOOGLE REVIEWS & TESTIMONIALS -->
-    <section id="reviews" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: #080e1a;">
+    <section id="reviews" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: #0a0e17;">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
                 <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
@@ -788,12 +885,12 @@
                     <div>
                         <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">★★★★★</div>
                         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
-                            "The benchmark for quality in {loc}! Unbelievable attention to detail, welcoming hospitality, and absolute perfection."
+                            "Our primary cement and steel supplier for 3 major projects. Never a single delay in site unloading."
                         </p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                        <span class="text-white text-xs font-bold">Rohan S.</span>
-                        <span class="text-slate-400 text-[11px]">Verified Client</span>
+                        <span class="text-white text-xs font-bold">Rajesh Verma</span>
+                        <span class="text-slate-400 text-[11px]">Civil Contractor</span>
                     </div>
                 </div>
 
@@ -801,12 +898,12 @@
                     <div>
                         <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">★★★★★</div>
                         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
-                            "Super impressed by their professionalism and instant WhatsApp booking. Truly agency-grade experience right in {loc}."
+                            "Verified 53-grade OPC and Fe-550D steel always accompanied by manufacturer test certificates. Completely dependable."
                         </p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                        <span class="text-white text-xs font-bold">Ananya M.</span>
-                        <span class="text-slate-400 text-[11px]">Verified Review</span>
+                        <span class="text-white text-xs font-bold">Pradeep Gupta</span>
+                        <span class="text-slate-400 text-[11px]">Structural Engineer</span>
                     </div>
                 </div>
 
@@ -814,12 +911,12 @@
                     <div>
                         <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">★★★★★</div>
                         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
-                            "Outstanding turnaround and world-class quality. Sets the gold standard in {loc} without question."
+                            "Best wholesale rates in the area. Their hydraulic trucks make site delivery smooth and effortless."
                         </p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                        <span class="text-white text-xs font-bold">Vikram K.</span>
-                        <span class="text-slate-400 text-[11px]">Verified Patron</span>
+                        <span class="text-white text-xs font-bold">Sunil Kushwaha</span>
+                        <span class="text-slate-400 text-[11px]">Site Developer</span>
                     </div>
                 </div>
 
@@ -849,10 +946,10 @@
                     <div class="space-y-2">
                         <span class="text-xs font-bold text-brand uppercase tracking-wider block">Get In Touch Directly</span>
                         <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight font-serif">
-                            Visit Our Facility or Speak with Our Team
+                            Visit Our Supply Yard or Request Bulk Commercial Pricing
                         </h3>
                         <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                            Modern executive offices, meeting suites, and dedicated client service facilities. Connect directly with our team in Mishripur.
+                            Large-scale structural warehouse, ready stock of 53-grade cement, TMT rebars, and wholesale showroom. Connect directly with our team in Mishripur.
                         </p>
                     </div>
 
@@ -870,7 +967,7 @@
                                         <span class="text-brand text-xs font-semibold group-hover:underline inline-flex items-center gap-0.5">Directions ↗</span>
                                     </div>
                                     <p class="text-sm font-bold text-white mt-0.5 truncate">Kursi Rd, Mishripur, Lucknow, UP 226026</p>
-                                    <p class="text-xs text-slate-400 mt-0.5">Executive Headquarters • Tap to open navigation</p>
+                                    <p class="text-xs text-slate-400 mt-0.5">Wholesale Depot & Materials Yard • Tap to open navigation</p>
                                 </div>
                             </div>
                         </a>
@@ -887,7 +984,7 @@
                                         <span class="text-blue-400 text-xs font-semibold group-hover:underline inline-flex items-center gap-0.5">1-Tap Call ↗</span>
                                     </div>
                                     <p class="text-sm font-bold text-white mt-0.5">+91 98388 32467</p>
-                                    <p class="text-xs text-slate-400 mt-0.5">Direct line to Client Concierge</p>
+                                    <p class="text-xs text-slate-400 mt-0.5">Direct line to Commercial Supply Manager</p>
                                 </div>
                             </div>
                         </a>
@@ -921,7 +1018,7 @@
                                 Open Today
                             </span>
                         </div>
-                        <p class="text-xs sm:text-sm text-slate-300 font-medium">Mon - Sun: 8:00 AM – 10:00 PM</p>
+                        <p class="text-xs sm:text-sm text-slate-300 font-medium">Mon - Sat: 7:30 AM – 8:00 PM | Sun: Priority Dispatch by Order</p>
                         <p class="text-[11px] text-slate-400 mt-1">Special priority slots available outside regular hours upon request.</p>
                     </div>
 
@@ -929,7 +1026,7 @@
                     <div class="bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 p-5 rounded-2xl border border-white/10 shadow-lg relative overflow-hidden">
                         <div class="flex items-center justify-between gap-3 relative z-10">
                             <div>
-                                <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1">Official Headquarters Hub</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1">Commercial Supply Yard & Depot</span>
                                 <h4 class="text-sm font-bold text-white">AR Traders</h4>
                                 <p class="text-xs text-slate-400 mt-0.5">📍 Kursi Rd, Mishripur, Lucknow, UP 226026</p>
                             </div>
@@ -945,8 +1042,8 @@
                 <div class="lg:col-span-7 bg-obsidian-card p-6 sm:p-8 rounded-3xl border border-white/15 shadow-2xl relative overflow-hidden">
                     <div class="mb-6 pb-4 border-b border-white/10">
                         <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1.5">VIP Reservation Suite</span>
-                        <h3 class="text-xl sm:text-2xl font-bold text-white font-serif">Schedule Priority Consultation</h3>
-                        <p class="text-slate-400 text-xs sm:text-sm mt-1">Reserve a one-on-one session or direct priority inquiry with our team.</p>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white font-serif">Request Wholesale Price Quote on WhatsApp</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-1">Submit your project material requirements or tonnage for an instant commercial price quote.</p>
                     </div>
 
                     <form onsubmit="event.preventDefault(); (function(f){
@@ -984,12 +1081,12 @@
                                 <span>⚙️</span> Required Service / Consultation
                             </label>
                             <select name="client_service" class="w-full bg-[#080e1a] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-brand">
-                            <option value="Comprehensive Client Solutions">Comprehensive Client Solutions</option>
-                            <option value="Rapid Operational Support & Delivery">Rapid Operational Support & Delivery</option>
-                            <option value="Dedicated Strategic Consultation">Dedicated Strategic Consultation</option>
-                            <option value="Quality Assurance & Performance Auditing">Quality Assurance & Performance Auditing</option>
-                            <option value="Priority Concierge Service">Priority Concierge Service</option>
-                            <option value="Long-Term Client Partnership & Growth">Long-Term Client Partnership & Growth</option>
+                            <option value="53-Grade OPC & PPC Cement (UltraTech, Ambuja, ACC)">53-Grade OPC & PPC Cement (UltraTech, Ambuja, ACC)</option>
+                            <option value="Wholesale Bulk Site Dispatch & Hydraulic Delivery">Wholesale Bulk Site Dispatch & Hydraulic Delivery</option>
+                            <option value="White Cement & Polymer Wall Care Putty">White Cement & Polymer Wall Care Putty</option>
+                            <option value="High-Yield TMT Rebars & Structural Steel">High-Yield TMT Rebars & Structural Steel</option>
+                            <option value="Ready-Mix Concrete & Mortar Solutions">Ready-Mix Concrete & Mortar Solutions</option>
+                            <option value="Direct Contractor Account & B2B GST Billing">Direct Contractor Account & B2B GST Billing</option>
                             <option value="Other / Bespoke Consultation">Other / Bespoke Consultation</option>
                             </select>
                         </div>
@@ -1031,10 +1128,10 @@
 
                         <button type="submit" class="btn-brand w-full py-3.5 rounded-xl text-xs sm:text-sm font-bold shadow-xl mt-2 flex items-center justify-center gap-2">
                             <span>💬</span>
-                            <span>Confirm & Connect on WhatsApp →</span>
+                            <span>Request Wholesale Price Quote on WhatsApp →</span>
                         </button>
                         <p class="text-[11px] text-center text-slate-400 mt-2">
-                            🔒 256-Bit SSL Encrypted • Zero Spam Guarantee • Direct Staff Confirmation
+                            🔒 Authorized Dealership • Official GST Invoices • Same-Day Bulk Dispatch
                         </p>
                     </form>
                 </div>
@@ -1056,7 +1153,7 @@
                         </div>
                     </div>
                     <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                        Committed to delivering exceptional service, personalized client care, and trusted local results in Mishripur.
+                        Supplying certified, high-strength structural building materials with transparent B2B GST billing and rapid hydraulic site delivery in Mishripur.
                     </p>
                     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-300 text-[11px] font-medium">
                         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -1093,7 +1190,7 @@
                     </div>
                     <div class="pt-2 border-t border-white/10 text-[11px] text-slate-400">
                         <p class="font-semibold text-slate-300">🕒 Operating Hours:</p>
-                        <p class="mt-0.5">Mon - Sun: 8:00 AM – 10:00 PM</p>
+                        <p class="mt-0.5">Mon - Sat: 7:30 AM – 8:00 PM | Sun: Priority Dispatch by Order</p>
                     </div>
                 </div>
 
@@ -1252,6 +1349,15 @@
             guardImages();
         }
     })();
+
+    // 21st.dev Real Spotlight Mouse Tracking
+    document.querySelectorAll('.spotlight-card').forEach(function(card) {
+        card.addEventListener('mousemove', function(e) {
+            var rect = card.getBoundingClientRect();
+            card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
+            card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+        });
+    });
     </script>
 
         <!-- Anti-Theft & Screenshot Resistance Shield -->
