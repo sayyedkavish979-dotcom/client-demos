@@ -19,16 +19,8 @@
 
     <!-- Asynchronous Non-Render-Blocking Google Fonts with display=swap -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
-    <noscript><link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 
     <!-- Synchronous Immediate Tailwind CDN to Prevent FOUC -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -162,9 +154,18 @@
             animation: activeKenBurns 4s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
             will-change: transform;
         }
-        .hero-slide:not(.active) .hero-kenburns {
-            animation: none;
-            transform: scale(1.0);
+        /* 21st.dev Animated Marquee */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 25s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
         }
 
         /* 3D Interactive Card Hover Lift & Glow Borders */
@@ -256,7 +257,7 @@
         <!-- 7-Day Client Auto-Expiry Shield -->
     <script id="demo-expiry-shield">
     (function() {
-        const DEMO_CREATED_TIMESTAMP = 1790952882036;
+        const DEMO_CREATED_TIMESTAMP = 1790963620962;
         const EXPIRY_DAYS = 7;
         const isExpired = (Date.now() - DEMO_CREATED_TIMESTAMP) > (EXPIRY_DAYS * 24 * 60 * 60 * 1000);
 
@@ -382,218 +383,6 @@
         }
     })();
     </script>
-<style id="niche-3d-depth-styles">
-        html, body {
-            margin: 0;
-            padding: 0;
-            background-color: #07131b !important;
-            background-image: 
-                radial-gradient(circle at 18% 15%, rgba(16, 185, 129, 0.20) 0%, transparent 48%),
-                radial-gradient(circle at 82% 82%, rgba(20, 184, 166, 0.20) 0%, transparent 52%),
-                radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px) !important;
-            background-size: 100% 100%, 100% 100%, 32px 32px !important;
-            background-attachment: fixed !important;
-            color: #f1f5f9 !important;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
-            -webkit-user-select: none !important;
-            -moz-user-select: none !important;
-            -ms-user-select: none !important;
-            user-select: none !important;
-            min-height: 100vh;
-        }
-
-        /* Mobile Performance: Hardware Acceleration & Smooth Scrolling */
-        html, body, main, section, .scrollable-container, .glass-card, .service-card {
-            -webkit-overflow-scrolling: touch;
-            transform: translateZ(0);
-        }
-        .glass-card, .service-card, header, .btn-whatsapp, .btn-call {
-            will-change: transform;
-        }
-
-        /* Glassmorphic Navbar */
-        header, nav, .glass-nav {
-            background: rgba(10, 14, 24, 0.75) !important;
-            backdrop-filter: blur(20px) !important;
-            -webkit-backdrop-filter: blur(20px) !important;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6) !important;
-        }
-
-        /* Transparent Main Sections */
-        section {
-            background: transparent !important;
-            border-color: rgba(255, 255, 255, 0.06) !important;
-        }
-
-        /* Glassmorphic Cards & Hero Frame with 3D Depth Shadow */
-        .glass-card, .glass-panel, [data-glass="true"],
-        .bg-white, .bg-slate-50, 
-        div[style*="background-color: #ffffff"], 
-        div[style*="background-color: #f8fafc"] {
-            background: rgba(255, 255, 255, 0.035) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            backdrop-filter: blur(16px) !important;
-            -webkit-backdrop-filter: blur(16px) !important;
-            box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.7), inset 0 1px 1px 0 rgba(255, 255, 255, 0.15) !important;
-            border-radius: 1.25rem !important;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-        }
-
-        /* Hover effects with subtle 3D lift */
-        .glass-card:hover, .service-card:hover, 
-        div[style*="background-color: #f8fafc"]:hover,
-        div[style*="background-color: #ffffff"]:hover {
-            transform: translateY(-4px) !important;
-            border-color: rgba(255, 255, 255, 0.22) !important;
-            box-shadow: 0 32px 72px -10px rgba(0, 0, 0, 0.88), inset 0 1px 2px 0 rgba(255, 255, 255, 0.28) !important;
-        }
-
-        /* Crisp High-Contrast Typography */
-        h1, h2, h3, h4, .text-slate-900 {
-            color: #ffffff !important;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
-        }
-        p, .text-slate-600, .text-slate-500, .text-slate-700 {
-            color: #cbd5e1 !important;
-        }
-        .text-slate-400 {
-            color: #94a3b8 !important;
-        }
-
-        /* Sharp Contrast CTA Buttons */
-        .btn-whatsapp, a[href*="wa.me"], a.bg-emerald-600 {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
-            color: #ffffff !important;
-            font-weight: 700 !important;
-            border: 1px solid rgba(255, 255, 255, 0.25) !important;
-            box-shadow: 0 10px 25px -4px rgba(16, 185, 129, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.35) !important;
-            transition: all 0.25s ease !important;
-        }
-        .btn-whatsapp:hover, a[href*="wa.me"]:hover, a.bg-emerald-600:hover {
-            transform: translateY(-2px) scale(1.02) !important;
-            box-shadow: 0 16px 36px -4px rgba(16, 185, 129, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.45) !important;
-        }
-
-        .btn-call, a[href^="tel:"], a.bg-indigo-600 {
-            background: linear-gradient(135deg, #0d9488 0%, #059669 100%) !important;
-            color: #ffffff !important;
-            font-weight: 700 !important;
-            border: 1px solid rgba(255, 255, 255, 0.22) !important;
-            box-shadow: 0 10px 25px -4px rgba(99, 102, 241, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.3) !important;
-            transition: all 0.25s ease !important;
-        }
-        .btn-call:hover, a[href^="tel:"]:hover, a.bg-indigo-600:hover {
-            transform: translateY(-2px) scale(1.02) !important;
-            box-shadow: 0 16px 36px -4px rgba(99, 102, 241, 0.65) !important;
-        }
-
-        /* Rating & Niche Badges */
-        .bg-indigo-100, .bg-indigo-50, div[class*="bg-indigo-100"], .badge-pill {
-            background: rgba(16, 185, 129, 0.12) !important;
-            border: 1px solid rgba(16, 185, 129, 0.35) !important;
-            color: #34d399 !important;
-            backdrop-filter: blur(8px) !important;
-        }
-        .text-indigo-800, .text-indigo-700, .text-indigo-600, .niche-accent {
-            color: #34d399 !important;
-        }
-
-        /* Footer */
-        footer {
-            background: rgba(5, 7, 12, 0.95) !important;
-            border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-        }
-
-        /* Mobile Performance: Disable expensive backdrop-filter on small screens */
-        @media (max-width: 768px) {
-            header, nav, .glass-nav {
-                backdrop-filter: none !important;
-                -webkit-backdrop-filter: none !important;
-                background: rgba(10, 14, 24, 0.96) !important;
-            }
-            .glass-card, .glass-panel, [data-glass="true"],
-            .bg-white, .bg-slate-50, 
-            div[style*="background-color: #ffffff"], 
-            div[style*="background-color: #f8fafc"],
-            .service-card {
-                backdrop-filter: none !important;
-                -webkit-backdrop-filter: none !important;
-                background: rgba(15, 23, 42, 0.94) !important;
-                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6) !important;
-            }
-            .bg-indigo-100, .bg-indigo-50, div[class*="bg-indigo-100"], .badge-pill {
-                backdrop-filter: none !important;
-                -webkit-backdrop-filter: none !important;
-            }
-        }
-
-
-
-        /* Anti-Capture Focus Blur Shield */
-        body.window-blurred {
-            filter: blur(16px) grayscale(40%) !important;
-            transition: filter 0.15s ease-out !important;
-        }
-
-        /* Preserved Anti-Theft Watermark & Security Shielding */
-        .watermark-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            pointer-events: none;
-            z-index: 99999;
-            opacity: 0;
-            display: none;
-            align-items: center; justify-content: center;
-        }
-        .watermark-text {
-            font-size: 2rem; font-weight: 800;
-            color: rgba(244, 63, 94, 0.75);
-            transform: rotate(-30deg);
-            letter-spacing: 0.2em;
-            pointer-events: none;
-            text-transform: uppercase;
-            text-align: center;
-            padding: 20px;
-        }
-        .capture-blind {
-            filter: blur(28px) grayscale(100%) !important;
-            opacity: 0.15 !important;
-        }
-        body.capture-blind .watermark-overlay,
-        .capture-blind .watermark-overlay {
-            opacity: 1 !important;
-            display: flex !important;
-            background: rgba(5, 7, 12, 0.95) !important;
-        }
-        body.capture-blind .watermark-text,
-        .capture-blind .watermark-text {
-            color: #f43f5e !important;
-            text-shadow: 0 0 25px rgba(244, 63, 94, 0.8) !important;
-        }
-        @media print {
-
-            .watermark-overlay {
-                opacity: 1 !important;
-                display: flex !important;
-                background: repeating-linear-gradient(
-                    -45deg,
-                    rgba(244, 63, 94, 0.08),
-                    rgba(244, 63, 94, 0.08) 100px,
-                    transparent 100px,
-                    transparent 200px
-                );
-            }
-            .watermark-text {
-                display: block !important;
-                font-size: 2rem; font-weight: 800;
-                color: #f43f5e !important;
-                transform: rotate(-30deg);
-                letter-spacing: 0.2em;
-                text-transform: uppercase;
-            }
-        }
-    </style>
 </head>
 <body class="text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 pb-20 sm:pb-0" style="background-color: #071220;">
 
@@ -610,7 +399,7 @@
     <header class="sticky top-0 z-50 bg-[#080e1a]/95 backdrop-blur-md border-b border-white/10 px-4 sm:px-8 py-3.5 transition-all">
         <div class="max-w-7xl mx-auto flex items-center justify-between w-full">
             <div class="flex items-center gap-3 min-w-0 flex-shrink-0 mr-8">
-                <div class="bg-white/10 px-2.5 py-1.5 rounded-xl backdrop-blur-sm border border-white/10 inline-flex items-center"><img src="https://www.atxfamilydental.com/wp-content/uploads/2025/02/Header-logo.png" alt="Atx family dental" class="h-9 w-auto max-w-[200px] object-contain" onerror="this.parentElement.style.display='none'; document.getElementById('logo-fallback-badge').style.display='flex';" / loading="lazy" decoding="async"></div><div id="logo-fallback-badge" class="hidden w-10 h-10 rounded-xl bg-brand items-center justify-center font-bold text-slate-950 text-base shadow-md">AT</div>
+                <div class="bg-white/10 px-2.5 py-1.5 rounded-xl backdrop-blur-sm border border-white/10 inline-flex items-center"><img src="https://www.atxfamilydental.com/wp-content/uploads/2025/02/Header-logo.png" alt="Atx family dental" class="h-9 w-auto max-w-[200px] object-contain" onerror="this.parentElement.style.display='none'; document.getElementById('logo-fallback-badge').style.display='flex';" /></div><div id="logo-fallback-badge" class="hidden w-10 h-10 rounded-xl bg-brand items-center justify-center font-bold text-slate-950 text-base shadow-md">AT</div>
                 <div>
                     <span class="brand-title text-base sm:text-lg font-black tracking-tight text-white block whitespace-nowrap">Atx family dental</span>
                     <span class="text-[10px] text-slate-400 uppercase tracking-widest block font-medium">📍 Austin, USA</span>
@@ -628,7 +417,7 @@
             <div class="flex items-center gap-3 flex-shrink-0 ml-4">
                 <a href="tel:+18685316512" class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-white/5 border border-white/10 px-3.5 py-2 rounded-xl transition">
                     <span>📞</span>
-                    <span>18685316512</span>
+                    <span>+1 (868) 531-6512</span>
                 </a>
                 <a href="#booking-funnel" class="btn-brand px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-lg">
                     Book Online
@@ -639,10 +428,13 @@
 
     <!-- SECTION 2: FULL-BLEED DYNAMIC MULTI-PHOTO AUTO-CROSSFADE HERO -->
     <section class="relative min-h-[85vh] flex items-center justify-center px-4 sm:px-8 py-20 overflow-hidden" id="hero-slider-section">
+        <!-- 21st.dev Ambient Spotlight / Radial Background Glow -->
+        <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-cyan-500/20 to-blue-600/20 blur-[120px] z-10"></div>
+
         <!-- Multi-Photo Auto-Crossfade Hero Background Slides -->
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" id="hero-slider-container">
             <div class="hero-slide active absolute inset-0 w-full h-full opacity-100 z-10 transition-opacity duration-[1200ms] ease-in-out">
-                <img src="https://www.atxfamilydental.com/wp-content/uploads/2025/02/home-banner-desktop.png" alt="Atx family dental 1" fetchpriority="high" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\' loading="lazy"><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
+                <img src="https://www.atxfamilydental.com/wp-content/uploads/2025/02/home-banner-desktop.png" alt="Atx family dental 1" fetchpriority="high" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\'><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
             </div>
             <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
                 <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=85" alt="Atx family dental 2" loading="lazy" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\'><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
@@ -672,7 +464,7 @@
         <div class="relative z-20 max-w-4xl mx-auto text-center space-y-6">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-semibold text-white hero-text-shadow">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>Proudly Serving Austin, USA • Advanced Healthcare & Patient Care</span>
+                <span>Proudly Serving Austin • Advanced Healthcare & Patient Care</span>
             </div>
 
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] font-serif hero-title-shadow">
@@ -715,6 +507,56 @@
         </div>
     </section>
 
+    <!-- 21st.dev INFINITE MARQUEE SOCIAL PROOF BANNER -->
+    <div class="relative w-full overflow-hidden py-3.5 bg-slate-950/90 border-y border-white/10 backdrop-blur-md z-20">
+        <div class="animate-marquee flex whitespace-nowrap will-change-transform items-center">
+            <div class="flex items-center gap-6 text-xs sm:text-sm font-semibold text-slate-200 px-6">
+                <span>⭐ 4.9/5 Rating</span>
+                <span class="text-cyan-400">•</span>
+                <span>Verified Google Reviews</span>
+                <span class="text-cyan-400">•</span>
+                <span>1-Tap Priority Booking</span>
+                <span class="text-cyan-400">•</span>
+                <span>100% Quality Guaranteed</span>
+                <span class="text-cyan-400">•</span>
+                <span>Direct WhatsApp Concierge</span>
+                <span class="text-cyan-400">•</span>
+                <span>⭐ 4.9/5 Rating</span>
+                <span class="text-cyan-400">•</span>
+                <span>Verified Google Reviews</span>
+                <span class="text-cyan-400">•</span>
+                <span>1-Tap Priority Booking</span>
+                <span class="text-cyan-400">•</span>
+                <span>100% Quality Guaranteed</span>
+                <span class="text-cyan-400">•</span>
+                <span>Direct WhatsApp Concierge</span>
+                <span class="text-cyan-400">•</span>
+            </div>
+            <div class="flex items-center gap-6 text-xs sm:text-sm font-semibold text-slate-200 px-6" aria-hidden="true">
+                <span>⭐ 4.9/5 Rating</span>
+                <span class="text-cyan-400">•</span>
+                <span>Verified Google Reviews</span>
+                <span class="text-cyan-400">•</span>
+                <span>1-Tap Priority Booking</span>
+                <span class="text-cyan-400">•</span>
+                <span>100% Quality Guaranteed</span>
+                <span class="text-cyan-400">•</span>
+                <span>Direct WhatsApp Concierge</span>
+                <span class="text-cyan-400">•</span>
+                <span>⭐ 4.9/5 Rating</span>
+                <span class="text-cyan-400">•</span>
+                <span>Verified Google Reviews</span>
+                <span class="text-cyan-400">•</span>
+                <span>1-Tap Priority Booking</span>
+                <span class="text-cyan-400">•</span>
+                <span>100% Quality Guaranteed</span>
+                <span class="text-cyan-400">•</span>
+                <span>Direct WhatsApp Concierge</span>
+                <span class="text-cyan-400">•</span>
+            </div>
+        </div>
+    </div>
+
     <!-- SECTION 3: WHY CHOOSE US (4 CORE VALUE PILLARS WITH 3D LIFT) -->
     <section id="about" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#0a101f]">
         <div class="max-w-7xl mx-auto">
@@ -723,7 +565,7 @@
                     The Atx family dental Standard
                 </span>
                 <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight font-serif">
-                    Why Austin, USA Chooses Us
+                    Why Austin Chooses Us
                 </h2>
                 <p class="text-slate-400 text-sm sm:text-base">
                     Combining clinical excellence, gentle care, and state-of-the-art technology.
@@ -761,8 +603,11 @@
     </section>
 
     <!-- SECTION 4: COMPREHENSIVE FEATURED SERVICES GRID (6 RESPONSIVE CARDS) -->
-    <section id="services" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: #071220;">
-        <div class="max-w-7xl mx-auto">
+    <section id="services" class="relative py-20 px-4 sm:px-8 border-t border-white/10 overflow-hidden" style="background-color: #071220;">
+        <!-- 21st.dev Ambient Spotlight / Radial Background Glow -->
+        <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-cyan-500/20 to-blue-600/20 blur-[120px]"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
                 <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
                     Featured Offerings
@@ -771,7 +616,7 @@
                     Comprehensive Quality Services
                 </h2>
                 <p class="text-slate-400 text-sm sm:text-base">
-                    Tailored specifically to match the distinguished expectations of patrons in Austin, USA.
+                    Tailored specifically to match the distinguished expectations of patrons in Austin.
                 </p>
             </div>
 
@@ -900,7 +745,7 @@
                     Dedicated Masters of the Craft
                 </h2>
                 <p class="text-slate-400 text-sm sm:text-base">
-                    Passionate experts bringing personal care and clinical precision to Austin, USA.
+                    Passionate experts bringing personal care and clinical precision to Austin.
                 </p>
             </div>
 
@@ -926,10 +771,10 @@
                     Patron Testimonials
                 </span>
                 <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight font-serif">
-                    Loved by Clients in Austin, USA
+                    Loved by Clients in Austin
                 </h2>
                 <p class="text-slate-400 text-sm sm:text-base">
-                    Real verified feedback from patrons across Austin, USA.
+                    Real verified feedback from patrons across Austin.
                 </p>
             </div>
 
@@ -990,7 +835,7 @@
                     Ready to Connect with Atx family dental?
                 </h2>
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                    Select your preferred visit time or reach out directly to secure priority scheduling in Austin, USA.
+                    Select your preferred visit time or reach out directly to secure priority scheduling in Austin.
                 </p>
             </div>
 
@@ -1003,7 +848,7 @@
                             Visit Our Clinic Suite or Speak to a Specialist
                         </h3>
                         <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                            Hospital-grade sterile operatories, 3D intraoral digital scanners, and relaxed consultation rooms. Connect directly with our team in Austin, USA.
+                            Hospital-grade sterile operatories, 3D intraoral digital scanners, and relaxed consultation rooms. Connect directly with our team in Austin.
                         </p>
                     </div>
 
@@ -1037,7 +882,7 @@
                                         <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Dedicated Hotline</span>
                                         <span class="text-blue-400 text-xs font-semibold group-hover:underline inline-flex items-center gap-0.5">1-Tap Call ↗</span>
                                     </div>
-                                    <p class="text-sm font-bold text-white mt-0.5">18685316512</p>
+                                    <p class="text-sm font-bold text-white mt-0.5">+1 (868) 531-6512</p>
                                     <p class="text-xs text-slate-400 mt-0.5">Direct line to Clinical Concierge</p>
                                 </div>
                             </div>
@@ -1202,14 +1047,14 @@
                 <!-- Col 1: Brand Profile -->
                 <div class="space-y-4">
                     <div class="flex items-center gap-3">
-                        <div class="bg-white/10 px-2.5 py-1.5 rounded-xl backdrop-blur-sm border border-white/10 inline-flex items-center"><img src="https://www.atxfamilydental.com/wp-content/uploads/2025/02/Header-logo.png" alt="Atx family dental" class="h-9 w-auto max-w-[200px] object-contain" onerror="this.parentElement.style.display='none'; document.getElementById('logo-fallback-badge').style.display='flex';" / loading="lazy" decoding="async"></div><div id="logo-fallback-badge" class="hidden w-10 h-10 rounded-xl bg-brand items-center justify-center font-bold text-slate-950 text-base shadow-md">AT</div>
+                        <div class="bg-white/10 px-2.5 py-1.5 rounded-xl backdrop-blur-sm border border-white/10 inline-flex items-center"><img src="https://www.atxfamilydental.com/wp-content/uploads/2025/02/Header-logo.png" alt="Atx family dental" class="h-9 w-auto max-w-[200px] object-contain" onerror="this.parentElement.style.display='none'; document.getElementById('logo-fallback-badge').style.display='flex';" /></div><div id="logo-fallback-badge" class="hidden w-10 h-10 rounded-xl bg-brand items-center justify-center font-bold text-slate-950 text-base shadow-md">AT</div>
                         <div>
                             <span class="text-base font-black tracking-tight text-white block">Atx family dental</span>
                             <span class="text-[10px] text-slate-400 uppercase tracking-widest block font-medium">📍 Austin, USA</span>
                         </div>
                     </div>
                     <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                        Delivering compassionate, anxiety-free dental and healthcare solutions using 3D digital technology for Austin, USA.
+                        Delivering compassionate, anxiety-free dental and healthcare solutions using 3D digital technology for Austin.
                     </p>
                     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-300 text-[11px] font-medium">
                         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -1237,7 +1082,7 @@
                             <span class="text-brand shrink-0">📍</span>
                             <span>Austin, USA</span>
                         </p>
-                        <p class="flex items-center gap-2"><span class="text-brand shrink-0">📞</span><a href="tel:+18685316512" class="text-white font-semibold hover:underline">18685316512</a></p>
+                        <p class="flex items-center gap-2"><span class="text-brand shrink-0">📞</span><a href="tel:+18685316512" class="text-white font-semibold hover:underline">+1 (868) 531-6512</a></p>
                         <p class="flex items-center gap-2">
                             <span class="text-emerald-400 shrink-0">💬</span>
                             <a href="https://wa.me/18685316512" target="_blank" class="text-emerald-400 font-semibold hover:underline">Verified WhatsApp Concierge</a>
@@ -1283,6 +1128,18 @@
             </div>
         </div>
     </footer>
+
+    <!-- 21st.dev Floating Quick Dock -->
+    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-5 py-3 rounded-full bg-slate-900/80 backdrop-blur-xl border border-white/20 shadow-2xl">
+        <a href="https://wa.me/18685316512" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs shadow-lg transition transform hover:scale-105">
+            <span>💬</span>
+            <span class="whitespace-nowrap">WhatsApp</span>
+        </a>
+        <a href="tel:+18685316512" class="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs border border-white/15 transition transform hover:scale-105">
+            <span>📞</span>
+            <span class="whitespace-nowrap">Call Now</span>
+        </a>
+    </div>
 
     <!-- 2026 STICKY MOBILE QUICK-ACTION BAR -->
     <div class="fixed bottom-0 left-0 right-0 z-40 bg-slate-950/95 backdrop-blur-md border-t border-white/10 px-4 py-2.5 flex items-center justify-between sm:hidden shadow-2xl">
