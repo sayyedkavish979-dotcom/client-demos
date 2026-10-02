@@ -14,35 +14,42 @@
     
 
     <!-- Preload LCP Hero Image (< 0.8s Speed Target) -->
-    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=85" fetchpriority="high">
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=85" fetchpriority="high">
 
     <!-- Asynchronous Non-Render-Blocking Google Fonts with display=swap -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
     <!-- Synchronous Immediate Tailwind CDN to Prevent FOUC -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style id="dynamic-brand-styles">
         :root {
-            --brand-primary: #0ea5e9;
-            --brand-accent: #6366f1;
-            --brand-btn-text: #090e17;
-            --brand-glow: rgba(14, 165, 233, 0.35);
+            --brand-primary: #059669;
+            --brand-accent: #d97706;
+            --brand-btn-text: #ffffff;
+            --brand-glow: rgba(5, 150, 105, 0.4);
+            --font-heading: 'Cinzel', 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', sans-serif;
+            --card-radius: 1.25rem;
+            --card-border: rgba(5, 150, 105, 0.3);
         }
         *, *::before, *::after {
             box-sizing: border-box;
         }
         html, body {
             margin: 0; padding: 0;
-            background-color: #080e1a !important;
+            background-color: #07140e !important;
             color: #f1f5f9 !important;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+            font-family: var(--font-body), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
             scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
             opacity: 1;
             transition: opacity 0.2s ease-in;
+        }
+        h1, h2, h3, .brand-title, .font-heading {
+            font-family: var(--font-heading) !important;
         }
         a {
             text-decoration: none;
@@ -80,27 +87,28 @@
             content-visibility: auto;
         }
         .font-serif {
-            font-family: 'Playfair Display', Georgia, serif !important;
+            font-family: var(--font-heading) !important;
         }
         .bg-obsidian-card {
-            background: rgba(15, 23, 42, 0.78) !important;
-            border: 1px solid rgba(14, 165, 233, 0.22) !important;
+            background: rgba(10, 26, 18, 0.8) !important;
+            border: 1px solid var(--card-border) !important;
+            border-radius: var(--card-radius) !important;
             backdrop-filter: blur(16px) !important;
             -webkit-backdrop-filter: blur(16px) !important;
         }
         .bg-brand {
-            background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%) !important;
-            color: #090e17 !important;
+            background: linear-gradient(135deg, #059669 0%, #d97706 100%) !important;
+            color: #ffffff !important;
         }
         .text-brand {
-            color: #0ea5e9 !important;
+            color: #059669 !important;
         }
         .border-brand {
-            border-color: #0ea5e9 !important;
+            border-color: #059669 !important;
         }
         .btn-brand {
-            background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%) !important;
-            color: #090e17 !important;
+            background: linear-gradient(135deg, #059669 0%, #d97706 100%) !important;
+            color: #ffffff !important;
             font-weight: 700 !important;
             transition: all 0.25s ease !important;
         }
@@ -110,8 +118,8 @@
             box-shadow: 0 12px 30px -5px var(--brand-glow) !important;
         }
         .slot-pill input:checked + span {
-            background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%) !important;
-            color: #090e17 !important;
+            background: linear-gradient(135deg, #059669 0%, #d97706 100%) !important;
+            color: #ffffff !important;
             border-color: transparent !important;
             font-weight: 700 !important;
         }
@@ -199,7 +207,7 @@
             position: absolute;
             top: 15%; left: 15%;
             width: 420px; height: 420px;
-            background: radial-gradient(circle, #0ea5e9 0%, transparent 70%);
+            background: radial-gradient(circle, #059669 0%, transparent 70%);
             filter: blur(80px);
             border-radius: 9999px;
             pointer-events: none;
@@ -210,7 +218,7 @@
             position: absolute;
             top: 30%; right: 12%;
             width: 380px; height: 380px;
-            background: radial-gradient(circle, #6366f1 0%, transparent 70%);
+            background: radial-gradient(circle, #d97706 0%, transparent 70%);
             filter: blur(80px);
             border-radius: 9999px;
             pointer-events: none;
@@ -239,7 +247,7 @@
         <!-- 7-Day Client Auto-Expiry Shield -->
     <script id="demo-expiry-shield">
     (function() {
-        const DEMO_CREATED_TIMESTAMP = 1790950560569;
+        const DEMO_CREATED_TIMESTAMP = 1790951951058;
         const EXPIRY_DAYS = 7;
         const isExpired = (Date.now() - DEMO_CREATED_TIMESTAMP) > (EXPIRY_DAYS * 24 * 60 * 60 * 1000);
 
@@ -366,13 +374,13 @@
     })();
     </script>
 </head>
-<body class="text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 pb-20 sm:pb-0" style="background-color: #080e1a;">
+<body class="text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 pb-20 sm:pb-0" style="background-color: #07140e;">
 
     <!-- SECTION 1: TOP NOTIFICATION BANNER + NAVIGATION HEADER -->
     <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-white/10 px-4 py-2 text-center text-xs sm:text-sm font-medium text-slate-300">
         <span class="inline-flex items-center gap-2">
             <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand">Special Offer</span>
-            <span>✨ Exclusive Welcome Offer: Complimentary Priority Consultation & 10% First Booking Privilege for Priyadarshini Nagar, Nirala Nagar, Unnao, UP 209801 Residents</span>
+            <span>✨ Exclusive Buyer Privilege: Complimentary VIP Private Viewing & Comprehensive Valuation in Priyadarshini Nagar, Nirala Nagar, Unnao, UP 209801</span>
             <a href="#booking-funnel" class="underline font-bold hover:text-white ml-1">Claim Offer →</a>
         </span>
     </div>
@@ -397,11 +405,11 @@
             </nav>
 
             <div class="flex items-center gap-3 flex-shrink-0 ml-4">
-                <a href="tel:+919795350001" class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-white/5 border border-white/10 px-3.5 py-2 rounded-xl transition">
+                <a href="tel:+9197953500010" class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-white/5 border border-white/10 px-3.5 py-2 rounded-xl transition">
                     <span>📞</span>
-                    <span>+91 97953 50001</span>
+                    <span>919795350001.0</span>
                 </a>
-                <a href="https://wa.me/919795350001?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="btn-brand px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-lg">
+                <a href="https://wa.me/9197953500010?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="btn-brand px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-lg">
                     💬 WhatsApp Booking
                 </a>
             </div>
@@ -413,20 +421,20 @@
         <!-- Multi-Photo Auto-Crossfade Hero Background Slides -->
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" id="hero-slider-container">
             <div class="hero-slide active absolute inset-0 w-full h-full opacity-100 z-10 transition-opacity duration-[1200ms] ease-in-out">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=85" alt="Maa Vindhyavasini Properties 1" fetchpriority="high" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\'><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=85" alt="Maa Vindhyavasini Properties 1" fetchpriority="high" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\'><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
             </div>
             <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1920&q=85" alt="Maa Vindhyavasini Properties 2" loading="lazy" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\'><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=85" alt="Maa Vindhyavasini Properties 2" loading="lazy" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\'><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
             </div>
             <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
-                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1920&q=85" alt="Maa Vindhyavasini Properties 3" loading="lazy" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\'><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=85" alt="Maa Vindhyavasini Properties 3" loading="lazy" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\'><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
             </div>
             <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
-                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1920&q=85" alt="Maa Vindhyavasini Properties 4" loading="lazy" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\'><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1920&q=85" alt="Maa Vindhyavasini Properties 4" loading="lazy" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.88) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\'><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
             </div>
 
             <!-- Balanced 40%-45% Vignette Overlay Tailored to Niche Color -->
-            <div class="absolute inset-0 z-20 pointer-events-none" style="background: linear-gradient(to bottom, rgba(8, 14, 26, 0.42) 0%, rgba(8, 14, 26, 0.22) 45%, rgba(8, 14, 26, 0.88) 100%);"></div>
+            <div class="absolute inset-0 z-20 pointer-events-none" style="background: linear-gradient(to bottom, rgba(7, 20, 14, 0.42) 0%, rgba(7, 20, 14, 0.22) 45%, rgba(7, 20, 14, 0.88) 100%);"></div>
             <!-- Ambient Floating Gradient Orbs -->
             <div class="ambient-orb-1"></div>
             <div class="ambient-orb-2"></div>
@@ -443,19 +451,19 @@
         <div class="relative z-20 max-w-4xl mx-auto text-center space-y-6">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-semibold text-white hero-text-shadow">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>Proudly Serving Priyadarshini Nagar, Nirala Nagar, Unnao, UP 209801 • Trusted Local Services & Fast Delivery</span>
+                <span>Proudly Serving Priyadarshini Nagar, Nirala Nagar, Unnao, UP 209801 • Premier Residential & Commercial Properties</span>
             </div>
 
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] font-serif hero-title-shadow">
-                Premier Quality & Distinguished Excellence in Priyadarshini Nagar, Nirala Nagar, Unnao, UP 209801
+                Premier Residential & Luxury Estates in Priyadarshini Nagar, Nirala Nagar, Unnao, UP 209801
             </h1>
 
             <p class="text-slate-100 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal hero-text-shadow">
-                Serving Priyadarshini Nagar, Nirala Nagar, Unnao, UP 209801 with handcrafted excellence, modern convenience, and dedicated client satisfaction. Experience benchmark standards built for lasting trust.
+                Connecting distinguished homeowners and discerning investors with benchmark properties and prime architectural assets across Priyadarshini Nagar, Nirala Nagar, Unnao, UP 209801.
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <a href="https://wa.me/919795350001?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="btn-brand w-full sm:w-auto px-8 py-3.5 rounded-xl text-sm font-bold shadow-xl flex items-center justify-center gap-2">
+                <a href="https://wa.me/9197953500010?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="btn-brand w-full sm:w-auto px-8 py-3.5 rounded-xl text-sm font-bold shadow-xl flex items-center justify-center gap-2">
                     <span>💬 Inquire Directly on WhatsApp</span>
                     <span>→</span>
                 </a>
@@ -504,27 +512,27 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
                 <div class="interactive-card reveal-on-scroll stagger-1 bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
-                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4 shadow-md">🏆</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Master Craftsmanship</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Dedicated practitioners bringing refined expertise, exact standards, and integrity.</p>
+                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4 shadow-md">🏡</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Exclusive Listings</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Access to unlisted off-market homes and high-growth commercial developments.</p>
                 </div>
 
                 <div class="interactive-card reveal-on-scroll stagger-2 bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
-                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4 shadow-md">🔬</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Modern Technology</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Advanced tools and efficient methodologies ensuring precision and rapid turnaround.</p>
+                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4 shadow-md">🤝</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Master Negotiation</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Proven deal structuring securing favorable terms and benchmark closing value.</p>
                 </div>
 
                 <div class="interactive-card reveal-on-scroll stagger-3 bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
-                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4 shadow-md">✨</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Uncompromised Quality</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">A welcoming client experience built on trust, consistency, and attention to detail.</p>
+                    <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4 shadow-md">📜</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Verified Legal Title</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Rigorous due diligence guaranteeing clean ownership and frictionless closing.</p>
                 </div>
 
                 <div class="interactive-card reveal-on-scroll stagger-4 bg-obsidian-card p-6 rounded-2xl border border-white/10 hover:border-brand transition">
                     <div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center text-xl mb-4 shadow-md">⚡</div>
-                    <h3 class="text-lg font-bold text-white mb-2">1-Tap WhatsApp Funnel</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Direct instant messaging, zero waiting room delays, and immediate confirmation.</p>
+                    <h3 class="text-lg font-bold text-white mb-2">1-Tap VIP Viewing</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Book a private estate walkthrough or virtual tour on WhatsApp instantly.</p>
                 </div>
 
             </div>
@@ -532,7 +540,7 @@
     </section>
 
     <!-- SECTION 4: COMPREHENSIVE FEATURED SERVICES GRID (6 RESPONSIVE CARDS) -->
-    <section id="services" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: #080e1a;">
+    <section id="services" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: #07140e;">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
                 <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
@@ -549,17 +557,17 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 <div class="interactive-card reveal-on-scroll stagger-1 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
-                    <div class="relative h-48 w-full overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Comprehensive Client Solutions" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                    <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Luxury Residential Estates & Villas" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Core Offering</span>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider bg-emerald-950/80 text-emerald-300 border border-emerald-500/40">Prime Homes</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Comprehensive Client Solutions</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Tailored premium offerings structured for highest efficiency and long-term client value.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Luxury Residential Estates & Villas</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Prime freehold architectural homes with bespoke interior finishes and panoramic views.</p>
                         </div>
-                        <a href="https://wa.me/919795350001?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                        <a href="https://wa.me/9197953500010?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
                             <span>→</span>
                         </a>
@@ -567,17 +575,17 @@
                 </div>
 
                 <div class="interactive-card reveal-on-scroll stagger-2 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
-                    <div class="relative h-48 w-full overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Rapid Operational Support & Delivery" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                    <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="High-Yield Commercial Assets" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Fast Delivery</span>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider bg-emerald-950/80 text-emerald-300 border border-emerald-500/40">Commercial</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Rapid Operational Support & Delivery</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Streamlined processes ensuring swift turnaround times without compromising accuracy.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">High-Yield Commercial Assets</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Turnkey office towers and retail suites offering institutional lease stability and capital growth.</p>
                         </div>
-                        <a href="https://wa.me/919795350001?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                        <a href="https://wa.me/9197953500010?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
                             <span>→</span>
                         </a>
@@ -585,17 +593,17 @@
                 </div>
 
                 <div class="interactive-card reveal-on-scroll stagger-3 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
-                    <div class="relative h-48 w-full overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="Dedicated Strategic Consultation" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                    <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Private Property Valuation & Portfolio Advisory" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Consultation</span>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider bg-emerald-950/80 text-emerald-300 border border-emerald-500/40">Advisory</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Dedicated Strategic Consultation</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">In-depth evaluations and roadmaps designed around your specific requirements.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Private Property Valuation & Portfolio Advisory</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Comprehensive comparative market analyses and high-yield real estate investment strategies.</p>
                         </div>
-                        <a href="https://wa.me/919795350001?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                        <a href="https://wa.me/9197953500010?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
                             <span>→</span>
                         </a>
@@ -603,17 +611,17 @@
                 </div>
 
                 <div class="interactive-card reveal-on-scroll stagger-4 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
-                    <div class="relative h-48 w-full overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Quality Assurance & Performance Auditing" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                    <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80" alt="Exclusive Waterfront & Penthouse Living" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Quality Check</span>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider bg-emerald-950/80 text-emerald-300 border border-emerald-500/40">Penthouse</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Quality Assurance & Performance Auditing</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Continuous monitoring and benchmark testing to ensure reliable excellence.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Exclusive Waterfront & Penthouse Living</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Boutique high-rise penthouses featuring private plunge pools and concierge service.</p>
                         </div>
-                        <a href="https://wa.me/919795350001?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                        <a href="https://wa.me/9197953500010?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
                             <span>→</span>
                         </a>
@@ -621,17 +629,17 @@
                 </div>
 
                 <div class="interactive-card reveal-on-scroll stagger-5 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
-                    <div class="relative h-48 w-full overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Priority Concierge Service" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                    <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80" alt="Off-Market VIP Property Sourcing" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Concierge</span>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider bg-emerald-950/80 text-emerald-300 border border-emerald-500/40">Exclusive</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Priority Concierge Service</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Direct 1-on-1 contact channel with zero delays and personalized attention.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Off-Market VIP Property Sourcing</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Confidential acquisitions for high-net-worth buyers looking for prime architectural gems.</p>
                         </div>
-                        <a href="https://wa.me/919795350001?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                        <a href="https://wa.me/9197953500010?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
                             <span>→</span>
                         </a>
@@ -639,17 +647,17 @@
                 </div>
 
                 <div class="interactive-card reveal-on-scroll stagger-6 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
-                    <div class="relative h-48 w-full overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Long-Term Client Partnership & Growth" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                    <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80" alt="Seamless Escrow & Legal Conveyancing" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Partnership</span>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider bg-emerald-950/80 text-emerald-300 border border-emerald-500/40">Closing</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Long-Term Client Partnership & Growth</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Reliable ongoing support, updates, and optimization ensuring sustainable success.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Seamless Escrow & Legal Conveyancing</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">End-to-end title verification, contract negotiations, and zero-stress closing guidance.</p>
                         </div>
-                        <a href="https://wa.me/919795350001?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                        <a href="https://wa.me/9197953500010?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
                             <span>→</span>
                         </a>
@@ -677,12 +685,12 @@
 
             
                 <div class="interactive-card reveal-on-scroll stagger-1 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 p-6 flex flex-col sm:flex-row items-center gap-6 hover:border-brand transition max-w-2xl mx-auto shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Executive Leadership Team" loading="lazy" decoding="async" class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl object-cover border-2 border-white/10 shrink-0 shadow-lg" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\' viewBox=\'0 0 400 400\'><rect width=\'400\' height=\'400\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'18\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Leadership</text></svg>';" />
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Principal Real Estate Partners" loading="lazy" decoding="async" class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl object-cover border-2 border-white/10 shrink-0 shadow-lg" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\' viewBox=\'0 0 400 400\'><rect width=\'400\' height=\'400\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'18\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Leadership</text></svg>';" />
                     <div class="text-center sm:text-left">
-                        <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1.5">Trusted Local Services & Fast Delivery</span>
-                        <h3 class="text-xl font-bold text-white font-serif">Executive Leadership Team</h3>
-                        <p class="text-brand text-xs font-semibold mt-0.5">Managing Director & Executive Concierge</p>
-                        <p class="text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">Dedicated to setting benchmark standards of excellence, personalized client attention, and swift results.</p>
+                        <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1.5">Premier Residential & Commercial Properties</span>
+                        <h3 class="text-xl font-bold text-white font-serif">Principal Real Estate Partners</h3>
+                        <p class="text-brand text-xs font-semibold mt-0.5">Managing Broker & Private Client Advisor</p>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">Specializing in prime residential estates, commercial investments, and discreet high-value real estate advisory.</p>
                     </div>
                 </div>
 
@@ -690,7 +698,7 @@
     </section>
 
     <!-- SECTION 6: VERIFIED 5.0 GOOGLE REVIEWS & TESTIMONIALS -->
-    <section id="reviews" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: #080e1a;">
+    <section id="reviews" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: #07140e;">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
                 <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
@@ -710,12 +718,12 @@
                     <div>
                         <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">★★★★★</div>
                         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
-                            "The benchmark for quality in {loc}! Unbelievable attention to detail, welcoming hospitality, and absolute perfection."
+                            "Found our dream property within three weeks. Their market insight and negotiation saved us tens of thousands."
                         </p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                        <span class="text-white text-xs font-bold">Rohan S.</span>
-                        <span class="text-slate-400 text-[11px]">Verified Client</span>
+                        <span class="text-white text-xs font-bold">Jonathan D.</span>
+                        <span class="text-slate-400 text-[11px]">Verified Buyer</span>
                     </div>
                 </div>
 
@@ -723,12 +731,12 @@
                     <div>
                         <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">★★★★★</div>
                         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
-                            "Super impressed by their professionalism and instant WhatsApp booking. Truly agency-grade experience right in {loc}."
+                            "Their portfolio advisory was spot on. Clear metrics, prompt communication, and flawless transaction execution."
                         </p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                        <span class="text-white text-xs font-bold">Ananya M.</span>
-                        <span class="text-slate-400 text-[11px]">Verified Review</span>
+                        <span class="text-white text-xs font-bold">Claire B.</span>
+                        <span class="text-slate-400 text-[11px]">Verified Investor</span>
                     </div>
                 </div>
 
@@ -736,12 +744,12 @@
                     <div>
                         <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">★★★★★</div>
                         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
-                            "Outstanding turnaround and world-class quality. Sets the gold standard in {loc} without question."
+                            "Closed our penthouse sale above asking price with complete privacy. The absolute gold standard."
                         </p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                        <span class="text-white text-xs font-bold">Vikram K.</span>
-                        <span class="text-slate-400 text-[11px]">Verified Patron</span>
+                        <span class="text-white text-xs font-bold">Marcus T.</span>
+                        <span class="text-slate-400 text-[11px]">Verified Seller</span>
                     </div>
                 </div>
 
@@ -771,10 +779,10 @@
                     <div class="space-y-2">
                         <span class="text-xs font-bold text-brand uppercase tracking-wider block">Get In Touch Directly</span>
                         <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight font-serif">
-                            Visit Our Facility or Speak with Our Team
+                            Visit Our Gallery or Speak to an Advisor
                         </h3>
                         <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                            Modern executive offices, meeting suites, and dedicated client service facilities. Connect directly with our team in Priyadarshini Nagar, Nirala Nagar, Unnao, UP 209801.
+                            Architectural model displays, confidential boardroom consultations, and deed verification suites. Connect directly with our team in Priyadarshini Nagar, Nirala Nagar, Unnao, UP 209801.
                         </p>
                     </div>
 
@@ -792,13 +800,13 @@
                                         <span class="text-brand text-xs font-semibold group-hover:underline inline-flex items-center gap-0.5">Directions ↗</span>
                                     </div>
                                     <p class="text-sm font-bold text-white mt-0.5 truncate">Priyadarshini Nagar, Nirala Nagar, Unnao, UP 209801</p>
-                                    <p class="text-xs text-slate-400 mt-0.5">Executive Headquarters • Tap to open navigation</p>
+                                    <p class="text-xs text-slate-400 mt-0.5">Brokerage Gallery & Advisory Hub • Tap to open navigation</p>
                                 </div>
                             </div>
                         </a>
 
                         <!-- Card 2: Dedicated Hotline -->
-                        <a href="tel:+919795350001" class="interactive-card block bg-obsidian-card p-4 sm:p-5 rounded-2xl border border-white/10 hover:border-brand transition shadow-lg group">
+                        <a href="tel:+9197953500010" class="interactive-card block bg-obsidian-card p-4 sm:p-5 rounded-2xl border border-white/10 hover:border-brand transition shadow-lg group">
                             <div class="flex items-start gap-4">
                                 <div class="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-lg shrink-0 text-blue-400">
                                     📞
@@ -808,14 +816,14 @@
                                         <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Dedicated Hotline</span>
                                         <span class="text-blue-400 text-xs font-semibold group-hover:underline inline-flex items-center gap-0.5">1-Tap Call ↗</span>
                                     </div>
-                                    <p class="text-sm font-bold text-white mt-0.5">+91 97953 50001</p>
-                                    <p class="text-xs text-slate-400 mt-0.5">Direct line to Client Concierge</p>
+                                    <p class="text-sm font-bold text-white mt-0.5">919795350001.0</p>
+                                    <p class="text-xs text-slate-400 mt-0.5">Direct line to Property Advisor</p>
                                 </div>
                             </div>
                         </a>
 
                         <!-- Card 3: Verified WhatsApp Channel -->
-                        <a href="https://wa.me/919795350001?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="interactive-card block bg-obsidian-card p-4 sm:p-5 rounded-2xl border border-emerald-500/30 hover:border-emerald-400 transition shadow-lg group">
+                        <a href="https://wa.me/9197953500010?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="interactive-card block bg-obsidian-card p-4 sm:p-5 rounded-2xl border border-emerald-500/30 hover:border-emerald-400 transition shadow-lg group">
                             <div class="flex items-start gap-4">
                                 <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-lg shrink-0 text-emerald-400">
                                     💬
@@ -843,7 +851,7 @@
                                 Open Today
                             </span>
                         </div>
-                        <p class="text-xs sm:text-sm text-slate-300 font-medium">Mon - Sun: 8:00 AM – 10:00 PM</p>
+                        <p class="text-xs sm:text-sm text-slate-300 font-medium">Mon - Sat: 9:00 AM – 7:00 PM | Sun: By Appointment</p>
                         <p class="text-[11px] text-slate-400 mt-1">Special priority slots available outside regular hours upon request.</p>
                     </div>
 
@@ -851,7 +859,7 @@
                     <div class="bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 p-5 rounded-2xl border border-white/10 shadow-lg relative overflow-hidden">
                         <div class="flex items-center justify-between gap-3 relative z-10">
                             <div>
-                                <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1">Official Headquarters Hub</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1">Prime Brokerage Headquarters</span>
                                 <h4 class="text-sm font-bold text-white">Maa Vindhyavasini Properties</h4>
                                 <p class="text-xs text-slate-400 mt-0.5">📍 Priyadarshini Nagar, Nirala Nagar, Unnao, UP 209801</p>
                             </div>
@@ -867,8 +875,8 @@
                 <div class="lg:col-span-7 bg-obsidian-card p-6 sm:p-8 rounded-3xl border border-white/15 shadow-2xl relative overflow-hidden">
                     <div class="mb-6 pb-4 border-b border-white/10">
                         <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1.5">VIP Reservation Suite</span>
-                        <h3 class="text-xl sm:text-2xl font-bold text-white font-serif">Schedule Priority Consultation</h3>
-                        <p class="text-slate-400 text-xs sm:text-sm mt-1">Reserve a one-on-one session or direct priority inquiry with our team.</p>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white font-serif">Schedule Private Property Viewing</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-1">Arrange a discreet walkthrough or comprehensive portfolio investment evaluation.</p>
                     </div>
 
                     <form onsubmit="event.preventDefault(); (function(f){
@@ -884,7 +892,7 @@
                                   '• Service: ' + service + '\n' +
                                   '• Preferred Slot: ' + date + ' (' + slot + ')';
                         if (notes) { msg += '\n• Notes: ' + notes; }
-                        window.open('https://wa.me/919795350001?text=' + encodeURIComponent(msg), '_blank');
+                        window.open('https://wa.me/9197953500010?text=' + encodeURIComponent(msg), '_blank');
                     })(this);" class="space-y-4">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
@@ -906,12 +914,12 @@
                                 <span>⚙️</span> Required Service / Consultation
                             </label>
                             <select name="client_service" class="w-full bg-[#080e1a] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-brand">
-                            <option value="Comprehensive Client Solutions">Comprehensive Client Solutions</option>
-                            <option value="Rapid Operational Support & Delivery">Rapid Operational Support & Delivery</option>
-                            <option value="Dedicated Strategic Consultation">Dedicated Strategic Consultation</option>
-                            <option value="Quality Assurance & Performance Auditing">Quality Assurance & Performance Auditing</option>
-                            <option value="Priority Concierge Service">Priority Concierge Service</option>
-                            <option value="Long-Term Client Partnership & Growth">Long-Term Client Partnership & Growth</option>
+                            <option value="Luxury Residential Estates & Villas">Luxury Residential Estates & Villas</option>
+                            <option value="High-Yield Commercial Assets">High-Yield Commercial Assets</option>
+                            <option value="Private Property Valuation & Portfolio Advisory">Private Property Valuation & Portfolio Advisory</option>
+                            <option value="Exclusive Waterfront & Penthouse Living">Exclusive Waterfront & Penthouse Living</option>
+                            <option value="Off-Market VIP Property Sourcing">Off-Market VIP Property Sourcing</option>
+                            <option value="Seamless Escrow & Legal Conveyancing">Seamless Escrow & Legal Conveyancing</option>
                             <option value="Other / Bespoke Consultation">Other / Bespoke Consultation</option>
                             </select>
                         </div>
@@ -953,10 +961,10 @@
 
                         <button type="submit" class="btn-brand w-full py-3.5 rounded-xl text-xs sm:text-sm font-bold shadow-xl mt-2 flex items-center justify-center gap-2">
                             <span>💬</span>
-                            <span>Confirm & Connect on WhatsApp →</span>
+                            <span>Confirm & Schedule Private Viewing →</span>
                         </button>
                         <p class="text-[11px] text-center text-slate-400 mt-2">
-                            🔒 256-Bit SSL Encrypted • Zero Spam Guarantee • Direct Staff Confirmation
+                            🔒 Confidential VIP Consultation • Direct Broker Access • Zero Obligation
                         </p>
                     </form>
                 </div>
@@ -978,7 +986,7 @@
                         </div>
                     </div>
                     <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                        Committed to delivering exceptional service, personalized client care, and trusted local results in Priyadarshini Nagar, Nirala Nagar, Unnao, UP 209801.
+                        Delivering discreet, high-integrity property acquisition and brokerage services in Priyadarshini Nagar, Nirala Nagar, Unnao, UP 209801.
                     </p>
                     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-300 text-[11px] font-medium">
                         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -1006,16 +1014,16 @@
                             <span class="text-brand shrink-0">📍</span>
                             <span>Priyadarshini Nagar, Nirala Nagar, Unnao, UP 209801</span>
                         </p>
-                        <p class="flex items-center gap-2"><span class="text-brand shrink-0">📞</span><a href="tel:+919795350001" class="text-white font-semibold hover:underline">+91 97953 50001</a></p>
+                        <p class="flex items-center gap-2"><span class="text-brand shrink-0">📞</span><a href="tel:+9197953500010" class="text-white font-semibold hover:underline">919795350001.0</a></p>
                         <p class="flex items-center gap-2">
                             <span class="text-emerald-400 shrink-0">💬</span>
-                            <a href="https://wa.me/919795350001?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="text-emerald-400 font-semibold hover:underline">Verified WhatsApp Concierge</a>
+                            <a href="https://wa.me/9197953500010?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="text-emerald-400 font-semibold hover:underline">Verified WhatsApp Concierge</a>
                         </p>
                         <p class="flex items-center gap-2"><span class="text-brand shrink-0">✉️</span><span class="text-slate-400">Direct Concierge Inquiries</span></p>
                     </div>
                     <div class="pt-2 border-t border-white/10 text-[11px] text-slate-400">
                         <p class="font-semibold text-slate-300">🕒 Operating Hours:</p>
-                        <p class="mt-0.5">Mon - Sun: 8:00 AM – 10:00 PM</p>
+                        <p class="mt-0.5">Mon - Sat: 9:00 AM – 7:00 PM | Sun: By Appointment</p>
                     </div>
                 </div>
 
@@ -1025,7 +1033,7 @@
                     <p class="text-slate-400 text-xs leading-relaxed">
                         Reserve your preferred appointment slot or request directions.
                     </p>
-                    <a href="https://wa.me/919795350001?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="btn-brand w-full py-3 px-4 rounded-xl text-xs font-bold text-center block shadow-lg">
+                    <a href="https://wa.me/9197953500010?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="btn-brand w-full py-3 px-4 rounded-xl text-xs font-bold text-center block shadow-lg">
                         💬 WhatsApp VIP Booking →
                     </a>
                     <div class="pt-2">
@@ -1060,14 +1068,14 @@
             <span class="text-xs font-bold text-slate-200">1-Tap Booking Active</span>
         </div>
         <div class="flex items-center gap-2">
-            <a href="tel:+919795350001" class="px-3 py-1.5 rounded-lg bg-white/10 text-white text-xs font-semibold">📞 Call</a>
-            <a href="https://wa.me/919795350001?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="btn-brand px-3.5 py-1.5 rounded-lg text-xs font-bold shadow-md">💬 WhatsApp</a>
+            <a href="tel:+9197953500010" class="px-3 py-1.5 rounded-lg bg-white/10 text-white text-xs font-semibold">📞 Call</a>
+            <a href="https://wa.me/9197953500010?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="btn-brand px-3.5 py-1.5 rounded-lg text-xs font-bold shadow-md">💬 WhatsApp</a>
         </div>
     </div>
 
     <!-- FLOATING ACTION CTA (Desktop) -->
     <div class="hidden sm:block fixed bottom-6 right-6 z-50">
-        <a href="https://wa.me/919795350001?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="relative flex items-center justify-center w-14 h-14 bg-brand rounded-full shadow-2xl transition hover:scale-105">
+        <a href="https://wa.me/9197953500010?text=Hi%20Maa%20Vindhyavasini%20Properties%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="relative flex items-center justify-center w-14 h-14 bg-brand rounded-full shadow-2xl transition hover:scale-105">
             <span class="absolute -inset-1 rounded-full bg-brand opacity-60 animate-ping"></span>
             <svg class="w-7 h-7 fill-current relative z-10" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.777.814 2.791.814 3.18 0 5.767-2.587 5.768-5.766.001-3.181-2.586-5.767-5.768-5.767zm0 10.355c-.887 0-1.638-.253-2.316-.677l-.166-.104-1.58.414.422-1.54-.109-.174c-.464-.739-.71-1.464-.71-2.272.001-2.53 2.059-4.588 4.59-4.588 2.529 0 4.587 2.058 4.588 4.588.001 2.531-2.057 4.589-4.589 4.589z"/></svg>
         </a>
