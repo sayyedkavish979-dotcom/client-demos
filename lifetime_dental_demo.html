@@ -154,9 +154,18 @@
             animation: activeKenBurns 4s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
             will-change: transform;
         }
-        .hero-slide:not(.active) .hero-kenburns {
-            animation: none;
-            transform: scale(1.0);
+        /* 21st.dev Animated Marquee */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 25s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
         }
 
         /* 3D Interactive Card Hover Lift & Glow Borders */
@@ -248,7 +257,7 @@
         <!-- 7-Day Client Auto-Expiry Shield -->
     <script id="demo-expiry-shield">
     (function() {
-        const DEMO_CREATED_TIMESTAMP = 1790952846897;
+        const DEMO_CREATED_TIMESTAMP = 1790963607046;
         const EXPIRY_DAYS = 7;
         const isExpired = (Date.now() - DEMO_CREATED_TIMESTAMP) > (EXPIRY_DAYS * 24 * 60 * 60 * 1000);
 
@@ -408,7 +417,7 @@
             <div class="flex items-center gap-3 flex-shrink-0 ml-4">
                 <a href="tel:+5128351924" class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-white/5 border border-white/10 px-3.5 py-2 rounded-xl transition">
                     <span>📞</span>
-                    <span>(512) 835-1924</span>
+                    <span>+5128351924</span>
                 </a>
                 <a href="#booking-funnel" class="btn-brand px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-lg">
                     Book Online
@@ -419,6 +428,9 @@
 
     <!-- SECTION 2: FULL-BLEED DYNAMIC MULTI-PHOTO AUTO-CROSSFADE HERO -->
     <section class="relative min-h-[85vh] flex items-center justify-center px-4 sm:px-8 py-20 overflow-hidden" id="hero-slider-section">
+        <!-- 21st.dev Ambient Spotlight / Radial Background Glow -->
+        <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-cyan-500/20 to-blue-600/20 blur-[120px] z-10"></div>
+
         <!-- Multi-Photo Auto-Crossfade Hero Background Slides -->
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" id="hero-slider-container">
             <div class="hero-slide active absolute inset-0 w-full h-full opacity-100 z-10 transition-opacity duration-[1200ms] ease-in-out">
@@ -452,7 +464,7 @@
         <div class="relative z-20 max-w-4xl mx-auto text-center space-y-6">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-semibold text-white hero-text-shadow">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>Proudly Serving Austin, USA • Advanced Healthcare & Patient Care</span>
+                <span>Proudly Serving Austin • Advanced Healthcare & Patient Care</span>
             </div>
 
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] font-serif hero-title-shadow">
@@ -495,6 +507,56 @@
         </div>
     </section>
 
+    <!-- 21st.dev INFINITE MARQUEE SOCIAL PROOF BANNER -->
+    <div class="relative w-full overflow-hidden py-3.5 bg-slate-950/90 border-y border-white/10 backdrop-blur-md z-20">
+        <div class="animate-marquee flex whitespace-nowrap will-change-transform items-center">
+            <div class="flex items-center gap-6 text-xs sm:text-sm font-semibold text-slate-200 px-6">
+                <span>⭐ 4.9/5 Rating</span>
+                <span class="text-cyan-400">•</span>
+                <span>Verified Google Reviews</span>
+                <span class="text-cyan-400">•</span>
+                <span>1-Tap Priority Booking</span>
+                <span class="text-cyan-400">•</span>
+                <span>100% Quality Guaranteed</span>
+                <span class="text-cyan-400">•</span>
+                <span>Direct WhatsApp Concierge</span>
+                <span class="text-cyan-400">•</span>
+                <span>⭐ 4.9/5 Rating</span>
+                <span class="text-cyan-400">•</span>
+                <span>Verified Google Reviews</span>
+                <span class="text-cyan-400">•</span>
+                <span>1-Tap Priority Booking</span>
+                <span class="text-cyan-400">•</span>
+                <span>100% Quality Guaranteed</span>
+                <span class="text-cyan-400">•</span>
+                <span>Direct WhatsApp Concierge</span>
+                <span class="text-cyan-400">•</span>
+            </div>
+            <div class="flex items-center gap-6 text-xs sm:text-sm font-semibold text-slate-200 px-6" aria-hidden="true">
+                <span>⭐ 4.9/5 Rating</span>
+                <span class="text-cyan-400">•</span>
+                <span>Verified Google Reviews</span>
+                <span class="text-cyan-400">•</span>
+                <span>1-Tap Priority Booking</span>
+                <span class="text-cyan-400">•</span>
+                <span>100% Quality Guaranteed</span>
+                <span class="text-cyan-400">•</span>
+                <span>Direct WhatsApp Concierge</span>
+                <span class="text-cyan-400">•</span>
+                <span>⭐ 4.9/5 Rating</span>
+                <span class="text-cyan-400">•</span>
+                <span>Verified Google Reviews</span>
+                <span class="text-cyan-400">•</span>
+                <span>1-Tap Priority Booking</span>
+                <span class="text-cyan-400">•</span>
+                <span>100% Quality Guaranteed</span>
+                <span class="text-cyan-400">•</span>
+                <span>Direct WhatsApp Concierge</span>
+                <span class="text-cyan-400">•</span>
+            </div>
+        </div>
+    </div>
+
     <!-- SECTION 3: WHY CHOOSE US (4 CORE VALUE PILLARS WITH 3D LIFT) -->
     <section id="about" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#0a101f]">
         <div class="max-w-7xl mx-auto">
@@ -503,7 +565,7 @@
                     The Lifetime Dental Standard
                 </span>
                 <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight font-serif">
-                    Why Austin, USA Chooses Us
+                    Why Austin Chooses Us
                 </h2>
                 <p class="text-slate-400 text-sm sm:text-base">
                     Combining clinical excellence, gentle care, and state-of-the-art technology.
@@ -541,8 +603,11 @@
     </section>
 
     <!-- SECTION 4: COMPREHENSIVE FEATURED SERVICES GRID (6 RESPONSIVE CARDS) -->
-    <section id="services" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: #071220;">
-        <div class="max-w-7xl mx-auto">
+    <section id="services" class="relative py-20 px-4 sm:px-8 border-t border-white/10 overflow-hidden" style="background-color: #071220;">
+        <!-- 21st.dev Ambient Spotlight / Radial Background Glow -->
+        <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-cyan-500/20 to-blue-600/20 blur-[120px]"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
                 <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
                     Featured Offerings
@@ -551,7 +616,7 @@
                     Comprehensive Quality Services
                 </h2>
                 <p class="text-slate-400 text-sm sm:text-base">
-                    Tailored specifically to match the distinguished expectations of patrons in Austin, USA.
+                    Tailored specifically to match the distinguished expectations of patrons in Austin.
                 </p>
             </div>
 
@@ -680,7 +745,7 @@
                     Dedicated Masters of the Craft
                 </h2>
                 <p class="text-slate-400 text-sm sm:text-base">
-                    Passionate experts bringing personal care and clinical precision to Austin, USA.
+                    Passionate experts bringing personal care and clinical precision to Austin.
                 </p>
             </div>
 
@@ -706,10 +771,10 @@
                     Patron Testimonials
                 </span>
                 <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight font-serif">
-                    Loved by Clients in Austin, USA
+                    Loved by Clients in Austin
                 </h2>
                 <p class="text-slate-400 text-sm sm:text-base">
-                    Real verified feedback from patrons across Austin, USA.
+                    Real verified feedback from patrons across Austin.
                 </p>
             </div>
 
@@ -770,7 +835,7 @@
                     Ready to Connect with Lifetime Dental?
                 </h2>
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                    Select your preferred visit time or reach out directly to secure priority scheduling in Austin, USA.
+                    Select your preferred visit time or reach out directly to secure priority scheduling in Austin.
                 </p>
             </div>
 
@@ -783,7 +848,7 @@
                             Visit Our Clinic Suite or Speak to a Specialist
                         </h3>
                         <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                            Hospital-grade sterile operatories, 3D intraoral digital scanners, and relaxed consultation rooms. Connect directly with our team in Austin, USA.
+                            Hospital-grade sterile operatories, 3D intraoral digital scanners, and relaxed consultation rooms. Connect directly with our team in Austin.
                         </p>
                     </div>
 
@@ -817,7 +882,7 @@
                                         <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Dedicated Hotline</span>
                                         <span class="text-blue-400 text-xs font-semibold group-hover:underline inline-flex items-center gap-0.5">1-Tap Call ↗</span>
                                     </div>
-                                    <p class="text-sm font-bold text-white mt-0.5">(512) 835-1924</p>
+                                    <p class="text-sm font-bold text-white mt-0.5">+5128351924</p>
                                     <p class="text-xs text-slate-400 mt-0.5">Direct line to Clinical Concierge</p>
                                 </div>
                             </div>
@@ -989,7 +1054,7 @@
                         </div>
                     </div>
                     <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                        Delivering compassionate, anxiety-free dental and healthcare solutions using 3D digital technology for Austin, USA.
+                        Delivering compassionate, anxiety-free dental and healthcare solutions using 3D digital technology for Austin.
                     </p>
                     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-300 text-[11px] font-medium">
                         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -1017,7 +1082,7 @@
                             <span class="text-brand shrink-0">📍</span>
                             <span>Austin, USA</span>
                         </p>
-                        <p class="flex items-center gap-2"><span class="text-brand shrink-0">📞</span><a href="tel:+5128351924" class="text-white font-semibold hover:underline">(512) 835-1924</a></p>
+                        <p class="flex items-center gap-2"><span class="text-brand shrink-0">📞</span><a href="tel:+5128351924" class="text-white font-semibold hover:underline">+5128351924</a></p>
                         <p class="flex items-center gap-2">
                             <span class="text-emerald-400 shrink-0">💬</span>
                             <a href="https://wa.me/5128351924" target="_blank" class="text-emerald-400 font-semibold hover:underline">Verified WhatsApp Concierge</a>
@@ -1063,6 +1128,18 @@
             </div>
         </div>
     </footer>
+
+    <!-- 21st.dev Floating Quick Dock -->
+    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-5 py-3 rounded-full bg-slate-900/80 backdrop-blur-xl border border-white/20 shadow-2xl">
+        <a href="https://wa.me/5128351924" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs shadow-lg transition transform hover:scale-105">
+            <span>💬</span>
+            <span class="whitespace-nowrap">WhatsApp</span>
+        </a>
+        <a href="tel:+5128351924" class="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs border border-white/15 transition transform hover:scale-105">
+            <span>📞</span>
+            <span class="whitespace-nowrap">Call Now</span>
+        </a>
+    </div>
 
     <!-- 2026 STICKY MOBILE QUICK-ACTION BAR -->
     <div class="fixed bottom-0 left-0 right-0 z-40 bg-slate-950/95 backdrop-blur-md border-t border-white/10 px-4 py-2.5 flex items-center justify-between sm:hidden shadow-2xl">
