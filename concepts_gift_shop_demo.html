@@ -17,30 +17,34 @@
     <link rel="preload" as="image" href="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=85" fetchpriority="high">
 
     <!-- Asynchronous Non-Render-Blocking Google Fonts with display=swap -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
     <!-- Synchronous Immediate Tailwind CDN to Prevent FOUC -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style id="dynamic-brand-styles">
         :root {
-            --brand-primary: #0ea5e9;
-            --brand-accent: #6366f1;
-            --brand-btn-text: #090e17;
-            --brand-glow: rgba(14, 165, 233, 0.35);
-            --font-heading: 'Inter', sans-serif;
+            --brand-primary: #2563eb;
+            --brand-accent: #06b6d4;
+            --brand-btn-text: #ffffff;
+            --brand-glow: rgba(37, 99, 235, 0.4);
+            --font-heading: 'Plus Jakarta Sans', 'Inter', sans-serif;
             --font-body: 'Inter', sans-serif;
             --card-radius: 1rem;
-            --card-border: rgba(14, 165, 233, 0.22);
+            --card-border: rgba(37, 99, 235, 0.28);
+            --brand-bg-dark: #0d131f;
+            --brand-bg-rgb: 13, 19, 31;
+            --brand-primary-rgb: 37, 99, 235;
+            --brand-accent-rgb: 6, 182, 212;
         }
         *, *::before, *::after {
             box-sizing: border-box;
         }
         html, body {
             margin: 0; padding: 0;
-            background-color: #080e1a !important;
+            background-color: #0d131f !important;
             color: #f1f5f9 !important;
             font-family: var(--font-body), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
             scroll-behavior: smooth;
@@ -62,7 +66,7 @@
             justify-content: space-between;
             gap: 2rem;
             width: 100%;
-            background-color: rgba(8, 14, 26, 0.95);
+            background-color: rgba(13, 19, 31, 0.95);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         header .brand-title {
@@ -90,25 +94,25 @@
             font-family: var(--font-heading) !important;
         }
         .bg-obsidian-card {
-            background: rgba(15, 23, 42, 0.78) !important;
+            background: rgba(18, 25, 38, 0.85) !important;
             border: 1px solid var(--card-border) !important;
             border-radius: var(--card-radius) !important;
             backdrop-filter: blur(16px) !important;
             -webkit-backdrop-filter: blur(16px) !important;
         }
         .bg-brand {
-            background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%) !important;
-            color: #090e17 !important;
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%) !important;
+            color: #ffffff !important;
         }
         .text-brand {
-            color: #0ea5e9 !important;
+            color: #2563eb !important;
         }
         .border-brand {
-            border-color: #0ea5e9 !important;
+            border-color: #2563eb !important;
         }
         .btn-brand {
-            background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%) !important;
-            color: #090e17 !important;
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%) !important;
+            color: #ffffff !important;
             font-weight: 700 !important;
             transition: all 0.25s ease !important;
         }
@@ -118,8 +122,8 @@
             box-shadow: 0 12px 30px -5px var(--brand-glow) !important;
         }
         .slot-pill input:checked + span {
-            background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%) !important;
-            color: #090e17 !important;
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%) !important;
+            color: #ffffff !important;
             border-color: transparent !important;
             font-weight: 700 !important;
         }
@@ -221,7 +225,7 @@
             position: absolute;
             top: 15%; left: 15%;
             width: 420px; height: 420px;
-            background: radial-gradient(circle, #0ea5e9 0%, transparent 70%);
+            background: radial-gradient(circle, #2563eb 0%, transparent 70%);
             filter: blur(80px);
             border-radius: 9999px;
             pointer-events: none;
@@ -232,7 +236,7 @@
             position: absolute;
             top: 30%; right: 12%;
             width: 380px; height: 380px;
-            background: radial-gradient(circle, #6366f1 0%, transparent 70%);
+            background: radial-gradient(circle, #06b6d4 0%, transparent 70%);
             filter: blur(80px);
             border-radius: 9999px;
             pointer-events: none;
@@ -241,7 +245,7 @@
         }
         .spotlight-card {
             position: relative;
-            background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.06), transparent 40%), rgba(15, 23, 42, 0.78);
+            background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.06), transparent 40%), rgba(18, 25, 38, 0.85);
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
@@ -280,7 +284,7 @@
         <!-- 7-Day Client Auto-Expiry Shield -->
     <script id="demo-expiry-shield">
     (function() {
-        const DEMO_CREATED_TIMESTAMP = 1791403889983;
+        const DEMO_CREATED_TIMESTAMP = 1791407031101;
         const EXPIRY_DAYS = 7;
         const isExpired = (Date.now() - DEMO_CREATED_TIMESTAMP) > (EXPIRY_DAYS * 24 * 60 * 60 * 1000);
 
@@ -407,19 +411,19 @@
     })();
     </script>
 </head>
-<body class="text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 pb-20 sm:pb-0" style="background-color: #080e1a;">
+<body class="text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 pb-20 sm:pb-0" style="background-color: #0d131f;">
 
     <!-- SECTION 1: TOP NOTIFICATION BANNER + NAVIGATION HEADER -->
     <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-white/10 px-4 py-2 text-center text-xs sm:text-sm font-medium text-slate-300">
         <span class="inline-flex items-center gap-2">
             <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand">Special Offer</span>
-            <span>✨ Exclusive Welcome Offer: Complimentary Priority Consultation & 10% First Booking Privilege for Lal Bangla Residents</span>
+            <span>✨ Client Welcome Privilege: Fast Same-Day Service & Direct WhatsApp Confirmation in Lal Bangla</span>
             <a href="#booking-funnel" class="underline font-bold hover:text-white ml-1">Claim Offer →</a>
         </span>
     </div>
 
     <!-- Navigation Header -->
-    <header class="sticky top-0 z-50 bg-[#080e1a]/95 backdrop-blur-md border-b border-white/10 px-4 sm:px-8 py-3.5 transition-all">
+    <header class="sticky top-0 z-50 backdrop-blur-md border-b border-white/10 px-4 sm:px-8 py-3.5 transition-all" style="background-color: rgba(13, 19, 31, 0.95);">
         <div class="max-w-7xl mx-auto flex items-center justify-between w-full">
             <div class="flex items-center gap-3 min-w-0 flex-shrink-0 mr-8">
                 <div class="w-10 h-10 rounded-xl bg-brand flex items-center justify-center font-bold text-slate-950 text-base shadow-md">CO</div>
@@ -466,13 +470,13 @@
         <!-- Multi-Layered Video Showcase Base Layer with Video Masking -->
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" id="hero-slider-container">
             <!-- Base Layer: 21st.dev Ultra-Fast Autoplay Looped Video Stream -->
-            <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=85" class="absolute inset-0 w-full h-full object-cover scale-105 filter brightness-[0.45] contrast-[1.1] transition-transform duration-1000">
+            <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=85" class="absolute inset-0 w-full h-full object-cover scale-105 transition-transform duration-1000" style="filter: brightness(0.65) contrast(1.08); opacity: 1; z-index: 0;">
                 <source src="https://videos.pexels.com/video-files/3129957/3129957-sd_640_360_25fps.mp4" type="video/mp4">
             </video>
 
-            <!-- Multi-Directional Radial Gradient Mask & Balanced Vignette Layer for 100% Text Readability -->
-            <div class="absolute inset-0 z-10 bg-gradient-to-b from-slate-950/80 via-transparent to-slate-950 pointer-events-none"></div>
-            <div class="absolute inset-0 z-15 pointer-events-none" style="background: linear-gradient(to bottom, rgba(8, 14, 26, 0.42) 0%, rgba(8, 14, 26, 0.22) 45%, rgba(8, 14, 26, 0.88) 100%);"></div>
+            <!-- Soft Brand-Aware Gradient Overlay for Text Readability -->
+            <div class="absolute inset-0 z-10 pointer-events-none" style="background: linear-gradient(to top, rgba(13, 19, 31, 0.92) 0%, rgba(13, 19, 31, 0.45) 40%, rgba(13, 19, 31, 0.20) 75%, rgba(13, 19, 31, 0.55) 100%);"></div>
+            <div class="absolute inset-0 z-[11] pointer-events-none" style="background: linear-gradient(to bottom, rgba(13, 19, 31, 0.52) 0%, rgba(13, 19, 31, 0.22) 45%, rgba(13, 19, 31, 0.92) 100%);"></div>
 
             <!-- Fallback Multi-Photo Slides if Video is Paused or Low Bandwidth -->
             <div class="hero-slide active absolute inset-0 w-full h-full opacity-0 pointer-events-none transition-opacity duration-1000 -z-10">
@@ -498,15 +502,15 @@
         <div class="relative z-20 max-w-4xl mx-auto text-center space-y-6">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-semibold text-white hero-text-shadow">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>Proudly Serving Lal Bangla • Trusted Local Services & Fast Delivery</span>
+                <span>Proudly Serving Lal Bangla • Verified Local Service Headquarters</span>
             </div>
 
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] font-serif hero-title-shadow">
-                Premier Quality & Distinguished Excellence in Lal Bangla
+                Direct Local Business Services & Same-Day Operations in Lal Bangla
             </h1>
 
             <p class="text-slate-100 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal hero-text-shadow">
-                Serving Lal Bangla with handcrafted excellence, modern convenience, and dedicated client satisfaction. Experience benchmark standards built for lasting trust.
+                Fast reliable fulfillment, transparent pricing, and instant WhatsApp support for Lal Bangla clients.
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -592,7 +596,7 @@
     </div>
 
     <!-- SECTION 3: 21st.dev BENTO GRID FEATURE ARCHITECTURE -->
-    <section id="about" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#0a101f] relative overflow-hidden">
+    <section id="about" class="py-20 px-4 sm:px-8 border-t border-white/10 relative overflow-hidden" style="background-color: #0d131f;">
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
                 <span class="frosted-badge px-3.5 py-1 rounded-full text-xs font-bold text-slate-300 uppercase tracking-widest inline-block">
@@ -602,7 +606,7 @@
                     Why Lal Bangla Chooses Us
                 </h2>
                 <p class="text-slate-400 text-sm sm:text-base">
-                    Uncompromising craftsmanship, transparent pricing, and instant personalized client attention.
+                    Benchmark standards, authentic quality, and prompt local service.
                 </p>
             </div>
 
@@ -622,10 +626,10 @@
                             🏆
                         </div>
                         <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight mb-3 font-serif">
-                            Master Craftsmanship
+                            Verified Local Reputation
                         </h3>
                         <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
-                            Dedicated practitioners bringing refined expertise, exact standards, and integrity.
+                            Proven track record of dependable service and satisfied clients across {loc}.
                         </p>
                     </div>
                     <div class="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
@@ -660,105 +664,96 @@
                             &ldquo;Crafted for Modern Social &amp; Web Dominance&rdquo;
                         </p>
 
-                        <!-- Realistic Phone Mockup Frame in Vertical Reel Format -->
-                        <div class="relative mx-auto w-44 sm:w-48 aspect-[9/16] rounded-[2.2rem] p-2 bg-gradient-to-b from-slate-700 via-slate-900 to-slate-950 shadow-2xl border-2 border-white/20 overflow-hidden transform group-hover:scale-[1.03] transition duration-500">
-                            <!-- Dynamic Island Notch -->
-                            <div class="absolute top-3 left-1/2 -translate-x-1/2 w-14 h-3 bg-black rounded-full z-30"></div>
-                            
-                            <!-- Inner Reel Screen with Auto-Looping Video Stream -->
-                            <div class="relative w-full h-full rounded-[1.8rem] overflow-hidden bg-black flex flex-col justify-between">
-                                <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=85" class="absolute inset-0 w-full h-full object-cover">
-                                    <source src="https://videos.pexels.com/video-files/3129957/3129957-sd_640_360_25fps.mp4" type="video/mp4">
-                                </video>
-                                <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80 pointer-events-none"></div>
+                        
+                    <!-- Realistic Phone Mockup Frame in Vertical Reel Format -->
+                    <div class="relative mx-auto w-44 sm:w-48 aspect-[9/16] rounded-[2.2rem] p-2 bg-gradient-to-b from-slate-700 via-slate-900 to-slate-950 shadow-2xl border-2 border-white/20 overflow-hidden transform group-hover:scale-[1.03] transition duration-500">
+                        <!-- Dynamic Island Notch -->
+                        <div class="absolute top-3 left-1/2 -translate-x-1/2 w-14 h-3 bg-black rounded-full z-30"></div>
+                        
+                        <!-- Inner Reel Screen with Auto-Looping Video Stream -->
+                        <div class="relative w-full h-full rounded-[1.8rem] overflow-hidden bg-black flex flex-col justify-between">
+                            <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=85" class="absolute inset-0 w-full h-full object-cover">
+                                <source src="https://videos.pexels.com/video-files/3129957/3129957-sd_640_360_25fps.mp4" type="video/mp4">
+                            </video>
+                            <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80 pointer-events-none"></div>
 
-                                <!-- Reel Top Status -->
-                                <div class="relative z-20 p-2.5 pt-4 flex items-center justify-between text-[9px] text-white/90">
-                                    <span class="font-bold flex items-center gap-1 bg-black/40 backdrop-blur-sm px-2 py-0.5 rounded-full">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> REEL
-                                    </span>
-                                    <span class="opacity-80">4K • 60fps</span>
-                                </div>
+                            <!-- Reel Top Status -->
+                            <div class="relative z-20 p-2.5 pt-4 flex items-center justify-between text-[9px] text-white/90">
+                                <span class="font-bold flex items-center gap-1 bg-black/40 backdrop-blur-sm px-2 py-0.5 rounded-full">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> REEL
+                                </span>
+                                <span class="opacity-80">4K • 60fps</span>
+                            </div>
 
-                                <!-- Reel Right Action Bar -->
-                                <div class="absolute right-2 bottom-12 z-20 flex flex-col items-center gap-3 text-white text-[9px]">
-                                    <div class="flex flex-col items-center">
-                                        <span class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-xs">❤️</span>
-                                        <span class="font-bold text-[8px] mt-0.5">3.1K</span>
-                                    </div>
-                                    <div class="flex flex-col items-center">
-                                        <span class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-xs">💬</span>
-                                        <span class="font-bold text-[8px] mt-0.5">120</span>
-                                    </div>
-                                    <div class="flex flex-col items-center">
-                                        <span class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-xs">🚀</span>
-                                        <span class="font-bold text-[8px] mt-0.5">450</span>
-                                    </div>
+                            <!-- Reel Right Action Bar -->
+                            <div class="absolute right-2 bottom-12 z-20 flex flex-col items-center gap-3 text-white text-[9px]">
+                                <div class="flex flex-col items-center">
+                                    <span class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-xs">❤️</span>
+                                    <span class="font-bold text-[8px] mt-0.5">3.1K</span>
                                 </div>
+                                <div class="flex flex-col items-center">
+                                    <span class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-xs">💬</span>
+                                    <span class="font-bold text-[8px] mt-0.5">120</span>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <span class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-xs">🚀</span>
+                                    <span class="font-bold text-[8px] mt-0.5">450</span>
+                                </div>
+                            </div>
 
-                                <!-- Reel Bottom Meta Info -->
-                                <div class="relative z-20 p-2.5 pb-3 text-left">
-                                    <p class="text-[10px] font-bold text-white flex items-center gap-1">
-                                        <span>@conceptsgiftshop</span>
-                                        <span class="text-cyan-400 text-[9px]">✓</span>
-                                    </p>
-                                    <p class="text-[8px] text-slate-300 line-clamp-1 mt-0.5">
-                                        Executive Business Architecture & Strategic Operations
-                                    </p>
-                                    <div class="flex items-center gap-1 text-[7px] text-slate-400 mt-1">
-                                        <span>🎵</span>
-                                        <span class="truncate">Original Audio • Concepts Gift Shop</span>
-                                    </div>
-                                </div>
+                            <!-- Reel Bottom Caption -->
+                            <div class="relative z-20 p-2.5 pb-3 text-left">
+                                <p class="text-[10px] font-bold text-white drop-shadow truncate">@Concepts Gift Shop</p>
+                                <p class="text-[8px] text-slate-200 opacity-90 line-clamp-1 drop-shadow">● Verified Benchmark in Lal Bangla</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between">
-                        <span class="text-[11px] text-slate-400 font-medium">Auto-looping motion Twin</span>
-                        <a href="https://wa.me/919044345677?text=Hi%20Concepts%20Gift%20Shop%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="text-xs font-bold text-brand hover:underline inline-flex items-center gap-1">
-                            <span>Experience Motion</span>
-                            <span>→</span>
-                        </a>
+                    </div>
+
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+                        <span>● Live Stream Active</span>
+                        <a href="https://wa.me/919044345677?text=Hi%20Concepts%20Gift%20Shop%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="text-brand font-bold hover:underline">Watch In HD →</a>
                     </div>
                 </div>
 
-                <!-- Bento Row 2: 2 Stacked/Side-by-side Medium Cards -->
-                <div class="spotlight-card lg:col-span-1 p-6 sm:p-7 rounded-3xl relative overflow-hidden flex flex-col justify-between shadow-xl border border-white/10">
+                <!-- Bento Card 3: Medium Feature Card 1 -->
+                <div class="spotlight-card p-6 sm:p-8 rounded-3xl relative overflow-hidden shadow-2xl border border-white/10 flex flex-col justify-between group">
                     <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="w-11 h-11 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-2xl">
-                                🔬
-                            </div>
-                            <span class="frosted-badge px-2.5 py-1 rounded-full text-[10px] font-bold text-cyan-300 uppercase tracking-wider">
-                                Speed & Precision
+                        <div class="w-12 h-12 rounded-2xl bg-brand/15 border border-brand/30 flex items-center justify-center text-2xl mb-4">
+                            ⚡
+                        </div>
+                        <div class="mb-3">
+                            <span class="frosted-badge px-2.5 py-1 rounded-full text-[10px] font-bold text-brand uppercase tracking-wider">
+                                Precision Protocol
                             </span>
                         </div>
-                        <h4 class="text-lg font-bold text-white mb-2">Modern Technology</h4>
-                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Advanced tools and efficient methodologies ensuring precision and rapid turnaround.</p>
+                        <h4 class="text-lg font-bold text-white mb-2">Fast Same-Day Turnaround</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Direct inquiry routing ensuring prompt intake, scheduling, and swift project fulfillment.</p>
                     </div>
                 </div>
 
-                <div class="spotlight-card lg:col-span-2 p-6 sm:p-7 rounded-3xl relative overflow-hidden flex flex-col justify-between shadow-xl border border-white/10">
+                <!-- Bento Card 4: Medium Feature Card 2 -->
+                <div class="spotlight-card p-6 sm:p-8 rounded-3xl relative overflow-hidden shadow-2xl border border-white/10 flex flex-col justify-between group">
                     <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="w-11 h-11 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-2xl">
-                                ✨
-                            </div>
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-2xl mb-4">
+                            💬
+                        </div>
+                        <div class="mb-3">
                             <span class="frosted-badge px-2.5 py-1 rounded-full text-[10px] font-bold text-amber-300 uppercase tracking-wider">
                                 Verified Quality
                             </span>
                         </div>
-                        <h4 class="text-lg font-bold text-white mb-2">Uncompromised Quality</h4>
-                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">A welcoming client experience built on trust, consistency, and attention to detail.</p>
+                        <h4 class="text-lg font-bold text-white mb-2">Direct WhatsApp Dispatch</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Connect directly with our team on WhatsApp for instantaneous status updates and support.</p>
                     </div>
                 </div>
 
-                <!-- Bento Card 3: 1 Interactive Stat & Trust Card (Full Width at bottom) -->
+                <!-- Bento Card 5: Interactive Stat & Trust Card (Full Width at bottom) -->
                 <div class="spotlight-card col-span-1 md:col-span-2 lg:col-span-3 p-6 sm:p-8 rounded-3xl relative overflow-hidden shadow-2xl border border-white/10 bg-gradient-to-r from-slate-900/90 via-slate-900/50 to-slate-950/90 flex flex-col md:flex-row items-center justify-between gap-6">
                     <div class="flex items-center gap-4 text-left w-full md:w-auto">
                         <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-3xl shrink-0 shadow-md">
-                            ⚡
+                            📊
                         </div>
                         <div>
                             <div class="flex items-center gap-2 mb-1">
@@ -767,8 +762,8 @@
                                     1-Tap Fast Response
                                 </span>
                             </div>
-                            <h4 class="text-lg sm:text-xl font-black text-white">1-Tap WhatsApp Funnel</h4>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-0.5">Direct instant messaging, zero waiting room delays, and immediate confirmation.</p>
+                            <h4 class="text-lg sm:text-xl font-black text-white">Transparent Fixed Estimates</h4>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-0.5">Clear upfront pricing breakdowns with zero hidden add-ons or unexpected charges.</p>
                         </div>
                     </div>
 
@@ -794,7 +789,7 @@
     </section>
 
     <!-- SECTION 4: COMPREHENSIVE FEATURED SERVICES GRID (6 RESPONSIVE CARDS) -->
-    <section id="services" class="relative py-20 px-4 sm:px-8 border-t border-white/10 overflow-hidden" style="background-color: #080e1a;">
+    <section id="services" class="relative py-20 px-4 sm:px-8 border-t border-white/10 overflow-hidden" style="background-color: #0d131f;">
         <!-- 21st.dev Ambient Spotlight / Radial Background Glow -->
         <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-cyan-500/20 to-blue-600/20 blur-[120px]"></div>
 
@@ -815,14 +810,14 @@
                 
                 <div class="interactive-card reveal-on-scroll stagger-1 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
                     <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Comprehensive Client Solutions" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Direct Local Service Dispatch" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Core Offering</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Core Service</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Comprehensive Client Solutions</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Tailored premium offerings structured for highest efficiency and long-term client value.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Direct Local Service Dispatch</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Prompt on-demand customer service and project execution tailored for clients in our local area.</p>
                         </div>
                         <a href="https://wa.me/919044345677?text=Hi%20Concepts%20Gift%20Shop%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
@@ -851,14 +846,14 @@
 
                 <div class="interactive-card reveal-on-scroll stagger-3 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
                     <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="Dedicated Strategic Consultation" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="Transparent Upfront Cost Estimates" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Consultation</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Clear Pricing</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Dedicated Strategic Consultation</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">In-depth evaluations and roadmaps designed around your specific requirements.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Transparent Upfront Cost Estimates</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Clear itemized pricing breakdowns with zero hidden fees and direct WhatsApp milestone updates.</p>
                         </div>
                         <a href="https://wa.me/919044345677?text=Hi%20Concepts%20Gift%20Shop%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
@@ -869,14 +864,14 @@
 
                 <div class="interactive-card reveal-on-scroll stagger-4 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
                     <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Quality Assurance & Performance Auditing" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Quality Auditing & Workmanship Warranty" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
                         <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Quality Check</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Quality Assurance & Performance Auditing</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Continuous monitoring and benchmark testing to ensure reliable excellence.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Quality Auditing & Workmanship Warranty</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Rigorous multi-point quality check following every completed project with full customer sign-off.</p>
                         </div>
                         <a href="https://wa.me/919044345677?text=Hi%20Concepts%20Gift%20Shop%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
@@ -887,14 +882,14 @@
 
                 <div class="interactive-card reveal-on-scroll stagger-5 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
                     <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Priority Concierge Service" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Direct 1-on-1 WhatsApp Support" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Concierge</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Direct WhatsApp</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Priority Concierge Service</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Direct 1-on-1 contact channel with zero delays and personalized attention.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Direct 1-on-1 WhatsApp Support</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Immediate messaging channel with zero call center transfers and direct staff attention.</p>
                         </div>
                         <a href="https://wa.me/919044345677?text=Hi%20Concepts%20Gift%20Shop%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
@@ -905,14 +900,14 @@
 
                 <div class="interactive-card reveal-on-scroll stagger-6 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
                     <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Long-Term Client Partnership & Growth" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Ongoing Maintenance & Account Care" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
                         <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-md border border-white/10">Partnership</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Long-Term Client Partnership & Growth</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Reliable ongoing support, updates, and optimization ensuring sustainable success.</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Ongoing Maintenance & Account Care</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Reliable ongoing support, updates, and optimization ensuring long-term satisfaction.</p>
                         </div>
                         <a href="https://wa.me/919044345677?text=Hi%20Concepts%20Gift%20Shop%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
                             <span>Inquire on WhatsApp</span>
@@ -926,7 +921,7 @@
     </section>
 
     <!-- SECTION 5: TEAM / LEADERSHIP SPOTLIGHT -->
-    <section id="team" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#0a101f]">
+    <section id="team" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: rgba(13, 19, 31, 0.97);">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
                 <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
@@ -942,12 +937,12 @@
 
             
                 <div class="interactive-card reveal-on-scroll stagger-1 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 p-6 flex flex-col sm:flex-row items-center gap-6 hover:border-brand transition max-w-2xl mx-auto shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Executive Leadership Team" loading="lazy" decoding="async" class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl object-cover border-2 border-white/10 shrink-0 shadow-lg" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\' viewBox=\'0 0 400 400\'><rect width=\'400\' height=\'400\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'18\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Leadership</text></svg>';" />
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Management & Client Operations" loading="lazy" decoding="async" class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl object-cover border-2 border-white/10 shrink-0 shadow-lg" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\' viewBox=\'0 0 400 400\'><rect width=\'400\' height=\'400\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'18\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Leadership</text></svg>';" />
                     <div class="text-center sm:text-left">
-                        <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1.5">Trusted Local Services & Fast Delivery</span>
-                        <h3 class="text-xl font-bold text-white font-serif">Executive Leadership Team</h3>
-                        <p class="text-brand text-xs font-semibold mt-0.5">Managing Director & Executive Concierge</p>
-                        <p class="text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">Dedicated to setting benchmark standards of excellence, personalized client attention, and swift results.</p>
+                        <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1.5">Verified Local Service Headquarters</span>
+                        <h3 class="text-xl font-bold text-white font-serif">Management & Client Operations</h3>
+                        <p class="text-brand text-xs font-semibold mt-0.5">Operations Director & Service Lead</p>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">Dedicated to setting benchmark standards of reliable service, prompt customer attention, and transparent local value.</p>
                     </div>
                 </div>
 
@@ -955,7 +950,7 @@
     </section>
 
     <!-- SECTION 6: VERIFIED 5.0 GOOGLE REVIEWS & TESTIMONIALS -->
-    <section id="reviews" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: #080e1a;">
+    <section id="reviews" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: #0d131f;">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
                 <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
@@ -1015,7 +1010,7 @@
     </section>
 
     <!-- SECTION 7: HIGH-END 2-COLUMN LUXURY AGENCY SUITE (CONTACT & PRIORITY SCHEDULING) -->
-    <section id="booking-funnel" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#0a101f] relative">
+    <section id="booking-funnel" class="py-20 px-4 sm:px-8 border-t border-white/10 relative" style="background-color: #0d131f;">
         <div class="max-w-7xl mx-auto">
             <div class="max-w-3xl mx-auto text-center space-y-3 mb-14">
                 <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
@@ -1108,7 +1103,7 @@
                                 Open Today
                             </span>
                         </div>
-                        <p class="text-xs sm:text-sm text-slate-300 font-medium">Mon - Sun: 8:00 AM – 10:00 PM</p>
+                        <p class="text-xs sm:text-sm text-slate-300 font-medium">Mon - Sun: 8:00 AM – 9:00 PM</p>
                         <p class="text-[11px] text-slate-400 mt-1">Special priority slots available outside regular hours upon request.</p>
                     </div>
 
@@ -1170,13 +1165,13 @@
                             <label class="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1.5">
                                 <span>⚙️</span> Required Service / Consultation
                             </label>
-                            <select name="client_service" class="w-full bg-[#080e1a] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-brand">
-                            <option value="Comprehensive Client Solutions">Comprehensive Client Solutions</option>
+                            <select name="client_service" class="w-full border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-brand" style="background-color: #0d131f;">
+                            <option value="Direct Local Service Dispatch">Direct Local Service Dispatch</option>
                             <option value="Rapid Operational Support & Delivery">Rapid Operational Support & Delivery</option>
-                            <option value="Dedicated Strategic Consultation">Dedicated Strategic Consultation</option>
-                            <option value="Quality Assurance & Performance Auditing">Quality Assurance & Performance Auditing</option>
-                            <option value="Priority Concierge Service">Priority Concierge Service</option>
-                            <option value="Long-Term Client Partnership & Growth">Long-Term Client Partnership & Growth</option>
+                            <option value="Transparent Upfront Cost Estimates">Transparent Upfront Cost Estimates</option>
+                            <option value="Quality Auditing & Workmanship Warranty">Quality Auditing & Workmanship Warranty</option>
+                            <option value="Direct 1-on-1 WhatsApp Support">Direct 1-on-1 WhatsApp Support</option>
+                            <option value="Ongoing Maintenance & Account Care">Ongoing Maintenance & Account Care</option>
                             <option value="Other / Bespoke Consultation">Other / Bespoke Consultation</option>
                             </select>
                         </div>
@@ -1230,7 +1225,7 @@
     </section>
 
     <!-- SECTION 8: 4-COLUMN PROFESSIONAL ARCHITECTURE FOOTER -->
-    <footer class="pt-16 pb-12 border-t border-white/10 bg-[#060a14] relative z-20">
+    <footer class="pt-16 pb-12 border-t border-white/10 relative z-20" style="background-color: #0d131f;">
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
                 <!-- Col 1: Brand Profile -->
@@ -1243,7 +1238,7 @@
                         </div>
                     </div>
                     <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                        Committed to delivering exceptional service, personalized client care, and trusted local results in Lal Bangla.
+                        Providing prompt, high-integrity service and dedicated local customer care with zero unnecessary overhead.
                     </p>
                     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-300 text-[11px] font-medium">
                         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -1280,7 +1275,7 @@
                     </div>
                     <div class="pt-2 border-t border-white/10 text-[11px] text-slate-400">
                         <p class="font-semibold text-slate-300">🕒 Operating Hours:</p>
-                        <p class="mt-0.5">Mon - Sun: 8:00 AM – 10:00 PM</p>
+                        <p class="mt-0.5">Mon - Sun: 8:00 AM – 9:00 PM</p>
                     </div>
                 </div>
 
@@ -1319,7 +1314,7 @@
     </footer>
 
     <!-- 21st.dev Floating Quick Dock -->
-    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-5 py-3 rounded-full bg-slate-900/80 backdrop-blur-xl border border-white/20 shadow-2xl">
+    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-5 py-3 rounded-full backdrop-blur-xl border shadow-2xl" style="background-color: rgba(13, 19, 31, 0.88); border-color: rgba(37, 99, 235, 0.35); box-shadow: 0 10px 30px -5px rgba(37, 99, 235, 0.35);">
         <a href="https://wa.me/919044345677?text=Hi%20Concepts%20Gift%20Shop%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs shadow-lg transition transform hover:scale-105">
             <span>💬</span>
             <span class="whitespace-nowrap">WhatsApp</span>
@@ -1331,7 +1326,7 @@
     </div>
 
     <!-- 2026 STICKY MOBILE QUICK-ACTION BAR -->
-    <div class="fixed bottom-0 left-0 right-0 z-40 bg-slate-950/95 backdrop-blur-md border-t border-white/10 px-4 py-2.5 flex items-center justify-between sm:hidden shadow-2xl">
+    <div class="fixed bottom-0 left-0 right-0 z-40 backdrop-blur-md border-t border-white/10 px-4 py-2.5 flex items-center justify-between sm:hidden shadow-2xl" style="background-color: rgba(13, 19, 31, 0.96);">
         <div class="flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
             <span class="text-xs font-bold text-slate-200">1-Tap Booking Active</span>

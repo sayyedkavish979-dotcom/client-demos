@@ -17,30 +17,34 @@
     <link rel="preload" as="image" href="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=85" fetchpriority="high">
 
     <!-- Asynchronous Non-Render-Blocking Google Fonts with display=swap -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
     <!-- Synchronous Immediate Tailwind CDN to Prevent FOUC -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style id="dynamic-brand-styles">
         :root {
-            --brand-primary: #d97706;
-            --brand-accent: #0284c7;
+            --brand-primary: #f59e0b;
+            --brand-accent: #ea580c;
             --brand-btn-text: #090e17;
-            --brand-glow: rgba(217, 119, 6, 0.45);
-            --font-heading: 'Plus Jakarta Sans', 'Inter', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --card-radius: 0.75rem;
-            --card-border: rgba(217, 119, 6, 0.35);
+            --brand-glow: rgba(245, 158, 11, 0.45);
+            --font-heading: 'Chakra Petch', 'Space Grotesk', monospace, sans-serif;
+            --font-body: 'Space Grotesk', 'Inter', sans-serif;
+            --card-radius: 0.5rem;
+            --card-border: rgba(245, 158, 11, 0.25);
+            --brand-bg-dark: #0d0f12;
+            --brand-bg-rgb: 13, 15, 18;
+            --brand-primary-rgb: 245, 158, 11;
+            --brand-accent-rgb: 234, 88, 12;
         }
         *, *::before, *::after {
             box-sizing: border-box;
         }
         html, body {
             margin: 0; padding: 0;
-            background-color: #0a0e17 !important;
+            background-color: #0d0f12 !important;
             color: #f1f5f9 !important;
             font-family: var(--font-body), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
             scroll-behavior: smooth;
@@ -62,7 +66,7 @@
             justify-content: space-between;
             gap: 2rem;
             width: 100%;
-            background-color: rgba(8, 14, 26, 0.95);
+            background-color: rgba(13, 15, 18, 0.95);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         header .brand-title {
@@ -90,24 +94,24 @@
             font-family: var(--font-heading) !important;
         }
         .bg-obsidian-card {
-            background: rgba(15, 23, 42, 0.85) !important;
+            background: rgba(22, 27, 34, 0.85) !important;
             border: 1px solid var(--card-border) !important;
             border-radius: var(--card-radius) !important;
             backdrop-filter: blur(16px) !important;
             -webkit-backdrop-filter: blur(16px) !important;
         }
         .bg-brand {
-            background: linear-gradient(135deg, #d97706 0%, #0284c7 100%) !important;
+            background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%) !important;
             color: #090e17 !important;
         }
         .text-brand {
-            color: #d97706 !important;
+            color: #f59e0b !important;
         }
         .border-brand {
-            border-color: #d97706 !important;
+            border-color: #f59e0b !important;
         }
         .btn-brand {
-            background: linear-gradient(135deg, #d97706 0%, #0284c7 100%) !important;
+            background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%) !important;
             color: #090e17 !important;
             font-weight: 700 !important;
             transition: all 0.25s ease !important;
@@ -118,7 +122,7 @@
             box-shadow: 0 12px 30px -5px var(--brand-glow) !important;
         }
         .slot-pill input:checked + span {
-            background: linear-gradient(135deg, #d97706 0%, #0284c7 100%) !important;
+            background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%) !important;
             color: #090e17 !important;
             border-color: transparent !important;
             font-weight: 700 !important;
@@ -221,7 +225,7 @@
             position: absolute;
             top: 15%; left: 15%;
             width: 420px; height: 420px;
-            background: radial-gradient(circle, #d97706 0%, transparent 70%);
+            background: radial-gradient(circle, #f59e0b 0%, transparent 70%);
             filter: blur(80px);
             border-radius: 9999px;
             pointer-events: none;
@@ -232,7 +236,7 @@
             position: absolute;
             top: 30%; right: 12%;
             width: 380px; height: 380px;
-            background: radial-gradient(circle, #0284c7 0%, transparent 70%);
+            background: radial-gradient(circle, #ea580c 0%, transparent 70%);
             filter: blur(80px);
             border-radius: 9999px;
             pointer-events: none;
@@ -241,7 +245,7 @@
         }
         .spotlight-card {
             position: relative;
-            background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.06), transparent 40%), rgba(15, 23, 42, 0.85);
+            background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.06), transparent 40%), rgba(22, 27, 34, 0.85);
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
@@ -280,7 +284,7 @@
         <!-- 7-Day Client Auto-Expiry Shield -->
     <script id="demo-expiry-shield">
     (function() {
-        const DEMO_CREATED_TIMESTAMP = 1791403889969;
+        const DEMO_CREATED_TIMESTAMP = 1791407031086;
         const EXPIRY_DAYS = 7;
         const isExpired = (Date.now() - DEMO_CREATED_TIMESTAMP) > (EXPIRY_DAYS * 24 * 60 * 60 * 1000);
 
@@ -407,19 +411,19 @@
     })();
     </script>
 </head>
-<body class="text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 pb-20 sm:pb-0" style="background-color: #0a0e17;">
+<body class="text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 pb-20 sm:pb-0" style="background-color: #0d0f12;">
 
     <!-- SECTION 1: TOP NOTIFICATION BANNER + NAVIGATION HEADER -->
     <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-white/10 px-4 py-2 text-center text-xs sm:text-sm font-medium text-slate-300">
         <span class="inline-flex items-center gap-2">
             <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand">Special Offer</span>
-            <span>🏗️ Commercial Supply Privilege: Flat Wholesale Contractor Rates & Same-Day Bulk Site Dispatch in Panki</span>
+            <span>🏗️ Commercial Supply Privilege: Wholesale Contractor Rates & Same-Day Bulk Site Dispatch in Panki</span>
             <a href="#booking-funnel" class="underline font-bold hover:text-white ml-1">Claim Offer →</a>
         </span>
     </div>
 
     <!-- Navigation Header -->
-    <header class="sticky top-0 z-50 bg-[#080e1a]/95 backdrop-blur-md border-b border-white/10 px-4 sm:px-8 py-3.5 transition-all">
+    <header class="sticky top-0 z-50 backdrop-blur-md border-b border-white/10 px-4 sm:px-8 py-3.5 transition-all" style="background-color: rgba(13, 15, 18, 0.95);">
         <div class="max-w-7xl mx-auto flex items-center justify-between w-full">
             <div class="flex items-center gap-3 min-w-0 flex-shrink-0 mr-8">
                 <div class="w-10 h-10 rounded-xl bg-brand flex items-center justify-center font-bold text-slate-950 text-base shadow-md">SH</div>
@@ -466,13 +470,13 @@
         <!-- Multi-Layered Video Showcase Base Layer with Video Masking -->
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" id="hero-slider-container">
             <!-- Base Layer: 21st.dev Ultra-Fast Autoplay Looped Video Stream -->
-            <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=85" class="absolute inset-0 w-full h-full object-cover scale-105 filter brightness-[0.45] contrast-[1.1] transition-transform duration-1000">
+            <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=85" class="absolute inset-0 w-full h-full object-cover scale-105 transition-transform duration-1000" style="filter: brightness(0.65) contrast(1.08); opacity: 1; z-index: 0;">
                 <source src="https://videos.pexels.com/video-files/853889/853889-sd_640_360_25fps.mp4" type="video/mp4">
             </video>
 
-            <!-- Multi-Directional Radial Gradient Mask & Balanced Vignette Layer for 100% Text Readability -->
-            <div class="absolute inset-0 z-10 bg-gradient-to-b from-slate-950/80 via-transparent to-slate-950 pointer-events-none"></div>
-            <div class="absolute inset-0 z-15 pointer-events-none" style="background: linear-gradient(to bottom, rgba(10, 14, 23, 0.42) 0%, rgba(10, 14, 23, 0.22) 45%, rgba(10, 14, 23, 0.88) 100%);"></div>
+            <!-- Soft Brand-Aware Gradient Overlay for Text Readability -->
+            <div class="absolute inset-0 z-10 pointer-events-none" style="background: linear-gradient(to top, rgba(13, 15, 18, 0.92) 0%, rgba(13, 15, 18, 0.45) 40%, rgba(13, 15, 18, 0.20) 75%, rgba(13, 15, 18, 0.55) 100%);"></div>
+            <div class="absolute inset-0 z-[11] pointer-events-none" style="background: linear-gradient(to bottom, rgba(13, 15, 18, 0.55) 0%, rgba(13, 15, 18, 0.25) 45%, rgba(13, 15, 18, 0.92) 100%);"></div>
 
             <!-- Fallback Multi-Photo Slides if Video is Paused or Low Bandwidth -->
             <div class="hero-slide active absolute inset-0 w-full h-full opacity-0 pointer-events-none transition-opacity duration-1000 -z-10">
@@ -502,11 +506,11 @@
             </div>
 
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] font-serif hero-title-shadow">
-                Authorized Wholesale Cement, Aggregates & Construction Supplies in Panki
+                Authorized Wholesale Cement, TMT Steel & Building Supplies in Panki
             </h1>
 
             <p class="text-slate-100 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal hero-text-shadow">
-                Direct authorized distributor of UltraTech, Ambuja, Fe-550D TMT rebars, and commercial hardware with guaranteed same-day site dispatch across Panki.
+                Direct-to-site truckload delivery across Panki. UltraTech, ACC, Birla A1 & Ambuja with genuine B2B GST invoices.
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -592,7 +596,7 @@
     </div>
 
     <!-- SECTION 3: 21st.dev BENTO GRID FEATURE ARCHITECTURE -->
-    <section id="about" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#0a101f] relative overflow-hidden">
+    <section id="about" class="py-20 px-4 sm:px-8 border-t border-white/10 relative overflow-hidden" style="background-color: #0d0f12;">
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
                 <span class="frosted-badge px-3.5 py-1 rounded-full text-xs font-bold text-slate-300 uppercase tracking-widest inline-block">
@@ -602,7 +606,7 @@
                     Why Panki Chooses Us
                 </h2>
                 <p class="text-slate-400 text-sm sm:text-base">
-                    Uncompromising craftsmanship, transparent pricing, and instant personalized client attention.
+                    Benchmark standards, authentic quality, and prompt local service.
                 </p>
             </div>
 
@@ -622,10 +626,10 @@
                             🏗️
                         </div>
                         <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight mb-3 font-serif">
-                            Authorized Direct Dealership
+                            Direct Manufacturer Sourcing
                         </h3>
                         <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
-                            100% genuine factory-fresh cement and primary steel brands with test certificates.
+                            Authorized wholesale dealer for UltraTech, Ambuja, ACC, and primary steel plants with batch test certificates.
                         </p>
                     </div>
                     <div class="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
@@ -660,105 +664,96 @@
                             &ldquo;Crafted for Modern Social &amp; Web Dominance&rdquo;
                         </p>
 
-                        <!-- Realistic Phone Mockup Frame in Vertical Reel Format -->
-                        <div class="relative mx-auto w-44 sm:w-48 aspect-[9/16] rounded-[2.2rem] p-2 bg-gradient-to-b from-slate-700 via-slate-900 to-slate-950 shadow-2xl border-2 border-white/20 overflow-hidden transform group-hover:scale-[1.03] transition duration-500">
-                            <!-- Dynamic Island Notch -->
-                            <div class="absolute top-3 left-1/2 -translate-x-1/2 w-14 h-3 bg-black rounded-full z-30"></div>
-                            
-                            <!-- Inner Reel Screen with Auto-Looping Video Stream -->
-                            <div class="relative w-full h-full rounded-[1.8rem] overflow-hidden bg-black flex flex-col justify-between">
-                                <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=85" class="absolute inset-0 w-full h-full object-cover">
-                                    <source src="https://videos.pexels.com/video-files/853889/853889-sd_640_360_25fps.mp4" type="video/mp4">
-                                </video>
-                                <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80 pointer-events-none"></div>
+                        
+                    <!-- Realistic Phone Mockup Frame in Vertical Reel Format -->
+                    <div class="relative mx-auto w-44 sm:w-48 aspect-[9/16] rounded-[2.2rem] p-2 bg-gradient-to-b from-slate-700 via-slate-900 to-slate-950 shadow-2xl border-2 border-white/20 overflow-hidden transform group-hover:scale-[1.03] transition duration-500">
+                        <!-- Dynamic Island Notch -->
+                        <div class="absolute top-3 left-1/2 -translate-x-1/2 w-14 h-3 bg-black rounded-full z-30"></div>
+                        
+                        <!-- Inner Reel Screen with Auto-Looping Video Stream -->
+                        <div class="relative w-full h-full rounded-[1.8rem] overflow-hidden bg-black flex flex-col justify-between">
+                            <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=85" class="absolute inset-0 w-full h-full object-cover">
+                                <source src="https://videos.pexels.com/video-files/853889/853889-sd_640_360_25fps.mp4" type="video/mp4">
+                            </video>
+                            <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80 pointer-events-none"></div>
 
-                                <!-- Reel Top Status -->
-                                <div class="relative z-20 p-2.5 pt-4 flex items-center justify-between text-[9px] text-white/90">
-                                    <span class="font-bold flex items-center gap-1 bg-black/40 backdrop-blur-sm px-2 py-0.5 rounded-full">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> REEL
-                                    </span>
-                                    <span class="opacity-80">4K • 60fps</span>
-                                </div>
+                            <!-- Reel Top Status -->
+                            <div class="relative z-20 p-2.5 pt-4 flex items-center justify-between text-[9px] text-white/90">
+                                <span class="font-bold flex items-center gap-1 bg-black/40 backdrop-blur-sm px-2 py-0.5 rounded-full">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> REEL
+                                </span>
+                                <span class="opacity-80">4K • 60fps</span>
+                            </div>
 
-                                <!-- Reel Right Action Bar -->
-                                <div class="absolute right-2 bottom-12 z-20 flex flex-col items-center gap-3 text-white text-[9px]">
-                                    <div class="flex flex-col items-center">
-                                        <span class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-xs">❤️</span>
-                                        <span class="font-bold text-[8px] mt-0.5">4.5K</span>
-                                    </div>
-                                    <div class="flex flex-col items-center">
-                                        <span class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-xs">💬</span>
-                                        <span class="font-bold text-[8px] mt-0.5">350</span>
-                                    </div>
-                                    <div class="flex flex-col items-center">
-                                        <span class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-xs">🚀</span>
-                                        <span class="font-bold text-[8px] mt-0.5">920</span>
-                                    </div>
+                            <!-- Reel Right Action Bar -->
+                            <div class="absolute right-2 bottom-12 z-20 flex flex-col items-center gap-3 text-white text-[9px]">
+                                <div class="flex flex-col items-center">
+                                    <span class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-xs">❤️</span>
+                                    <span class="font-bold text-[8px] mt-0.5">4.5K</span>
                                 </div>
+                                <div class="flex flex-col items-center">
+                                    <span class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-xs">💬</span>
+                                    <span class="font-bold text-[8px] mt-0.5">350</span>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <span class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-xs">🚀</span>
+                                    <span class="font-bold text-[8px] mt-0.5">920</span>
+                                </div>
+                            </div>
 
-                                <!-- Reel Bottom Meta Info -->
-                                <div class="relative z-20 p-2.5 pb-3 text-left">
-                                    <p class="text-[10px] font-bold text-white flex items-center gap-1">
-                                        <span>@shreeshaktienterprises</span>
-                                        <span class="text-cyan-400 text-[9px]">✓</span>
-                                    </p>
-                                    <p class="text-[8px] text-slate-300 line-clamp-1 mt-0.5">
-                                        High-Precision Industrial Architecture & Bulk Dispatch
-                                    </p>
-                                    <div class="flex items-center gap-1 text-[7px] text-slate-400 mt-1">
-                                        <span>🎵</span>
-                                        <span class="truncate">Original Audio • Shree Shakti Enterprises</span>
-                                    </div>
-                                </div>
+                            <!-- Reel Bottom Caption -->
+                            <div class="relative z-20 p-2.5 pb-3 text-left">
+                                <p class="text-[10px] font-bold text-white drop-shadow truncate">@Shree Shakti Enterprises</p>
+                                <p class="text-[8px] text-slate-200 opacity-90 line-clamp-1 drop-shadow">● Verified Benchmark in Panki</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between">
-                        <span class="text-[11px] text-slate-400 font-medium">Auto-looping motion Twin</span>
-                        <a href="https://wa.me/919250619127?text=Hi%20Shree%20Shakti%20Enterprises%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="text-xs font-bold text-brand hover:underline inline-flex items-center gap-1">
-                            <span>Experience Motion</span>
-                            <span>→</span>
-                        </a>
+                    </div>
+
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+                        <span>● Live Stream Active</span>
+                        <a href="https://wa.me/919250619127?text=Hi%20Shree%20Shakti%20Enterprises%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="text-brand font-bold hover:underline">Watch In HD →</a>
                     </div>
                 </div>
 
-                <!-- Bento Row 2: 2 Stacked/Side-by-side Medium Cards -->
-                <div class="spotlight-card lg:col-span-1 p-6 sm:p-7 rounded-3xl relative overflow-hidden flex flex-col justify-between shadow-xl border border-white/10">
+                <!-- Bento Card 3: Medium Feature Card 1 -->
+                <div class="spotlight-card p-6 sm:p-8 rounded-3xl relative overflow-hidden shadow-2xl border border-white/10 flex flex-col justify-between group">
                     <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="w-11 h-11 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-2xl">
-                                💼
-                            </div>
-                            <span class="frosted-badge px-2.5 py-1 rounded-full text-[10px] font-bold text-cyan-300 uppercase tracking-wider">
-                                Speed & Precision
+                        <div class="w-12 h-12 rounded-2xl bg-brand/15 border border-brand/30 flex items-center justify-center text-2xl mb-4">
+                            🚚
+                        </div>
+                        <div class="mb-3">
+                            <span class="frosted-badge px-2.5 py-1 rounded-full text-[10px] font-bold text-brand uppercase tracking-wider">
+                                Precision Protocol
                             </span>
                         </div>
-                        <h4 class="text-lg font-bold text-white mb-2">Wholesale Contractor Pricing</h4>
-                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Unbeatable wholesale bulk rates, transparent GST invoices, and running ledger credit.</p>
+                        <h4 class="text-lg font-bold text-white mb-2">Same-Day Site Dispatch</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Dedicated fleet of hydraulic tippers and flatbeds delivering directly to your site unloading point.</p>
                     </div>
                 </div>
 
-                <div class="spotlight-card lg:col-span-2 p-6 sm:p-7 rounded-3xl relative overflow-hidden flex flex-col justify-between shadow-xl border border-white/10">
+                <!-- Bento Card 4: Medium Feature Card 2 -->
+                <div class="spotlight-card p-6 sm:p-8 rounded-3xl relative overflow-hidden shadow-2xl border border-white/10 flex flex-col justify-between group">
                     <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="w-11 h-11 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-2xl">
-                                🚚
-                            </div>
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-2xl mb-4">
+                            ⚖️
+                        </div>
+                        <div class="mb-3">
                             <span class="frosted-badge px-2.5 py-1 rounded-full text-[10px] font-bold text-amber-300 uppercase tracking-wider">
                                 Verified Quality
                             </span>
                         </div>
-                        <h4 class="text-lg font-bold text-white mb-2">Guaranteed Same-Day Dispatch</h4>
-                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Dedicated fleet of hydraulic tippers delivering right to your construction site.</p>
+                        <h4 class="text-lg font-bold text-white mb-2">Verified Weighbridge Slips</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">100% accurate weight verification slips and compliant GST input-tax credit commercial billing.</p>
                     </div>
                 </div>
 
-                <!-- Bento Card 3: 1 Interactive Stat & Trust Card (Full Width at bottom) -->
+                <!-- Bento Card 5: Interactive Stat & Trust Card (Full Width at bottom) -->
                 <div class="spotlight-card col-span-1 md:col-span-2 lg:col-span-3 p-6 sm:p-8 rounded-3xl relative overflow-hidden shadow-2xl border border-white/10 bg-gradient-to-r from-slate-900/90 via-slate-900/50 to-slate-950/90 flex flex-col md:flex-row items-center justify-between gap-6">
                     <div class="flex items-center gap-4 text-left w-full md:w-auto">
                         <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-3xl shrink-0 shadow-md">
-                            ⚡
+                            💼
                         </div>
                         <div>
                             <div class="flex items-center gap-2 mb-1">
@@ -767,8 +762,8 @@
                                     1-Tap Fast Response
                                 </span>
                             </div>
-                            <h4 class="text-lg sm:text-xl font-black text-white">Complete Structural Portfolio</h4>
-                            <p class="text-slate-400 text-xs sm:text-sm mt-0.5">Single-point source for cement, TMT rebars, sand, aggregates, and hardware.</p>
+                            <h4 class="text-lg sm:text-xl font-black text-white">Wholesale Contractor Rates</h4>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-0.5">Competitive tiered volume pricing slabs and flexible running ledger credit for approved builders.</p>
                         </div>
                     </div>
 
@@ -794,7 +789,7 @@
     </section>
 
     <!-- SECTION 4: COMPREHENSIVE FEATURED SERVICES GRID (6 RESPONSIVE CARDS) -->
-    <section id="services" class="relative py-20 px-4 sm:px-8 border-t border-white/10 overflow-hidden" style="background-color: #0a0e17;">
+    <section id="services" class="relative py-20 px-4 sm:px-8 border-t border-white/10 overflow-hidden" style="background-color: #0d0f12;">
         <!-- 21st.dev Ambient Spotlight / Radial Background Glow -->
         <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-cyan-500/20 to-blue-600/20 blur-[120px]"></div>
 
@@ -817,7 +812,7 @@
                     <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
                         <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="53-Grade OPC & PPC Cement (UltraTech, Ambuja, ACC)" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded text-[10px] font-black uppercase tracking-wider bg-amber-950/80 text-amber-400 border border-amber-500/30">Authorized Cement</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-sm text-[10px] font-black uppercase tracking-widest bg-amber-950/90 text-amber-400 border-l-2 border-amber-500">Authorized Cement</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
@@ -835,7 +830,7 @@
                     <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
                         <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=800&q=80" alt="Wholesale Bulk Site Dispatch & Hydraulic Delivery" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded text-[10px] font-black uppercase tracking-wider bg-amber-950/80 text-amber-400 border border-amber-500/30">Bulk Logistics</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-sm text-[10px] font-black uppercase tracking-widest bg-amber-950/90 text-amber-400 border-l-2 border-amber-500">Bulk Logistics</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
@@ -853,7 +848,7 @@
                     <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
                         <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80" alt="White Cement & Polymer Wall Care Putty" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded text-[10px] font-black uppercase tracking-wider bg-amber-950/80 text-amber-400 border border-amber-500/30">Finishing Solutions</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-sm text-[10px] font-black uppercase tracking-widest bg-amber-950/90 text-amber-400 border-l-2 border-amber-500">Finishing Solutions</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
@@ -871,7 +866,7 @@
                     <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
                         <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80" alt="High-Yield TMT Rebars & Structural Steel" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded text-[10px] font-black uppercase tracking-wider bg-amber-950/80 text-amber-400 border border-amber-500/30">Fe-550D Steel</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-sm text-[10px] font-black uppercase tracking-widest bg-amber-950/90 text-amber-400 border-l-2 border-amber-500">Fe-550D Steel</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
@@ -889,7 +884,7 @@
                     <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
                         <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Ready-Mix Concrete & Mortar Solutions" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded text-[10px] font-black uppercase tracking-wider bg-amber-950/80 text-amber-400 border border-amber-500/30">Engineered Concrete</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-sm text-[10px] font-black uppercase tracking-widest bg-amber-950/90 text-amber-400 border-l-2 border-amber-500">Engineered Concrete</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
@@ -907,7 +902,7 @@
                     <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
                         <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Direct Contractor Account & B2B GST Billing" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded text-[10px] font-black uppercase tracking-wider bg-amber-950/80 text-amber-400 border border-amber-500/30">Contractor B2B</span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-sm text-[10px] font-black uppercase tracking-widest bg-amber-950/90 text-amber-400 border-l-2 border-amber-500">Contractor B2B</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
@@ -926,7 +921,7 @@
     </section>
 
     <!-- SECTION 5: TEAM / LEADERSHIP SPOTLIGHT -->
-    <section id="team" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#0a101f]">
+    <section id="team" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: rgba(13, 15, 18, 0.97);">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
                 <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
@@ -955,7 +950,7 @@
     </section>
 
     <!-- SECTION 6: VERIFIED 5.0 GOOGLE REVIEWS & TESTIMONIALS -->
-    <section id="reviews" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: #0a0e17;">
+    <section id="reviews" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: #0d0f12;">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
                 <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
@@ -1015,7 +1010,7 @@
     </section>
 
     <!-- SECTION 7: HIGH-END 2-COLUMN LUXURY AGENCY SUITE (CONTACT & PRIORITY SCHEDULING) -->
-    <section id="booking-funnel" class="py-20 px-4 sm:px-8 border-t border-white/10 bg-[#0a101f] relative">
+    <section id="booking-funnel" class="py-20 px-4 sm:px-8 border-t border-white/10 relative" style="background-color: #0d0f12;">
         <div class="max-w-7xl mx-auto">
             <div class="max-w-3xl mx-auto text-center space-y-3 mb-14">
                 <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
@@ -1170,7 +1165,7 @@
                             <label class="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1.5">
                                 <span>⚙️</span> Required Service / Consultation
                             </label>
-                            <select name="client_service" class="w-full bg-[#080e1a] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-brand">
+                            <select name="client_service" class="w-full border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-brand" style="background-color: #0d0f12;">
                             <option value="53-Grade OPC & PPC Cement (UltraTech, Ambuja, ACC)">53-Grade OPC & PPC Cement (UltraTech, Ambuja, ACC)</option>
                             <option value="Wholesale Bulk Site Dispatch & Hydraulic Delivery">Wholesale Bulk Site Dispatch & Hydraulic Delivery</option>
                             <option value="White Cement & Polymer Wall Care Putty">White Cement & Polymer Wall Care Putty</option>
@@ -1230,7 +1225,7 @@
     </section>
 
     <!-- SECTION 8: 4-COLUMN PROFESSIONAL ARCHITECTURE FOOTER -->
-    <footer class="pt-16 pb-12 border-t border-white/10 bg-[#060a14] relative z-20">
+    <footer class="pt-16 pb-12 border-t border-white/10 relative z-20" style="background-color: #0d0f12;">
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
                 <!-- Col 1: Brand Profile -->
@@ -1243,7 +1238,7 @@
                         </div>
                     </div>
                     <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                        Supplying certified, high-strength structural building materials with transparent B2B GST billing and rapid hydraulic site delivery in Panki.
+                        Single-point authorized distributor supplying 53-grade OPC/PPC cement, Fe-550D TMT bars, and structural hardware with weighbridge slips.
                     </p>
                     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-300 text-[11px] font-medium">
                         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -1319,7 +1314,7 @@
     </footer>
 
     <!-- 21st.dev Floating Quick Dock -->
-    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-5 py-3 rounded-full bg-slate-900/80 backdrop-blur-xl border border-white/20 shadow-2xl">
+    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-5 py-3 rounded-full backdrop-blur-xl border shadow-2xl" style="background-color: rgba(13, 15, 18, 0.88); border-color: rgba(245, 158, 11, 0.35); box-shadow: 0 10px 30px -5px rgba(245, 158, 11, 0.35);">
         <a href="https://wa.me/919250619127?text=Hi%20Shree%20Shakti%20Enterprises%2C%20I%20saw%20your%20online%20concept%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs shadow-lg transition transform hover:scale-105">
             <span>💬</span>
             <span class="whitespace-nowrap">Wholesale Quote</span>
@@ -1331,7 +1326,7 @@
     </div>
 
     <!-- 2026 STICKY MOBILE QUICK-ACTION BAR -->
-    <div class="fixed bottom-0 left-0 right-0 z-40 bg-slate-950/95 backdrop-blur-md border-t border-white/10 px-4 py-2.5 flex items-center justify-between sm:hidden shadow-2xl">
+    <div class="fixed bottom-0 left-0 right-0 z-40 backdrop-blur-md border-t border-white/10 px-4 py-2.5 flex items-center justify-between sm:hidden shadow-2xl" style="background-color: rgba(13, 15, 18, 0.96);">
         <div class="flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
             <span class="text-xs font-bold text-slate-200">1-Tap Booking Active</span>
