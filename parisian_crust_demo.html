@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parisian Crust | Premier Bakery/Cafe in Austin, USA</title>
+    
+    <!-- Ultra-Fast DNS Prefetch & Resource Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    
+
+    <!-- Preload LCP Hero Image (< 0.8s Speed Target) -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1920&q=85" fetchpriority="high">
+
+    <!-- Asynchronous Non-Render-Blocking Google Fonts with display=swap -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Synchronous Immediate Tailwind CDN to Prevent FOUC -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style id="dynamic-brand-styles">
+        :root {
+            --brand-primary: #c27803;
+            --brand-accent: #b45309;
+            --brand-btn-text: #090e17;
+            --brand-glow: rgba(194, 120, 3, 0.45);
+            --font-heading: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Cormorant Garamond', 'Inter', serif;
+            --card-radius: 1.5rem;
+            --card-border: rgba(194, 120, 3, 0.28);
+            --brand-bg-dark: #1a120b;
+            --brand-bg-rgb: 26, 18, 11;
+            --brand-primary-rgb: 194, 120, 3;
+            --brand-accent-rgb: 180, 83, 9;
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        html, body {
+            margin: 0; padding: 0;
+            background-color: #1a120b !important;
+            color: #f1f5f9 !important;
+            font-family: var(--font-body), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            opacity: 1;
+            transition: opacity 0.2s ease-in;
+        }
+        h1, h2, h3, .brand-title, .font-heading {
+            font-family: var(--font-heading) !important;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        /* Critical Above-the-Fold Layout Protection to Eliminate FOUC */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            width: 100%;
+            background-color: rgba(26, 18, 11, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        header .brand-title {
+            margin-right: 2rem;
+            white-space: nowrap;
+        }
+        header nav a {
+            margin-left: 0.75rem;
+            margin-right: 0.75rem;
+        }
+        nav {
+            display: none;
+        }
+        @media (min-width: 1024px) {
+            nav {
+                display: flex !important;
+                align-items: center;
+                gap: 1.5rem;
+            }
+        }
+        img {
+            content-visibility: auto;
+        }
+        .font-serif {
+            font-family: var(--font-heading) !important;
+        }
+        .bg-obsidian-card {
+            background: rgba(38, 26, 17, 0.82) !important;
+            border: 1px solid var(--card-border) !important;
+            border-radius: var(--card-radius) !important;
+            backdrop-filter: blur(16px) !important;
+            -webkit-backdrop-filter: blur(16px) !important;
+        }
+        .bg-brand {
+            background: linear-gradient(135deg, #c27803 0%, #b45309 100%) !important;
+            color: #090e17 !important;
+        }
+        .text-brand {
+            color: #c27803 !important;
+        }
+        .border-brand {
+            border-color: #c27803 !important;
+        }
+        .btn-brand {
+            background: linear-gradient(135deg, #c27803 0%, #b45309 100%) !important;
+            color: #090e17 !important;
+            font-weight: 700 !important;
+            transition: all 0.25s ease !important;
+        }
+        .btn-brand:hover {
+            opacity: 0.92 !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 12px 30px -5px var(--brand-glow) !important;
+        }
+        .slot-pill input:checked + span {
+            background: linear-gradient(135deg, #c27803 0%, #b45309 100%) !important;
+            color: #090e17 !important;
+            border-color: transparent !important;
+            font-weight: 700 !important;
+        }
+
+        /* High-Definition Text Protection Shadows */
+        .hero-title-shadow {
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 4px 24px rgba(0, 0, 0, 0.85), 0 1px 3px rgba(0, 0, 0, 0.95);
+        }
+        .hero-text-shadow {
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95), 0 4px 18px rgba(0, 0, 0, 0.85);
+        }
+
+        /* Faster Dynamic Ken-Burns Zoom: 1.0 to 1.07 in 4.0s */
+        @keyframes activeKenBurns {
+            0% {
+                transform: scale(1.0) translate3d(0, 0, 0);
+            }
+            100% {
+                transform: scale(1.07) translate3d(-0.8%, -0.5%, 0);
+            }
+        }
+        .hero-slide {
+            transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: opacity;
+        }
+        .hero-slide.active {
+            opacity: 1 !important;
+            z-index: 10 !important;
+        }
+        .hero-slide.active .hero-kenburns {
+            animation: activeKenBurns 4s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
+            will-change: transform;
+        }
+        /* 21st.dev Animated Marquee */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 25s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        /* 3D Interactive Card Hover Lift & Glow Borders */
+        .interactive-card {
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+            will-change: transform, box-shadow;
+        }
+        .interactive-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 20px 35px -10px var(--brand-glow), 0 0 0 1px var(--brand-primary);
+            border-color: var(--brand-primary) !important;
+        }
+        .interactive-card:hover .card-img-zoom {
+            transform: scale(1.08);
+        }
+        .card-img-zoom {
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+        }
+
+        /* Staggered Scroll Entrance Animations */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal-on-scroll.is-revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger-1 { transition-delay: 0.08s; }
+        .stagger-2 { transition-delay: 0.16s; }
+        .stagger-3 { transition-delay: 0.24s; }
+        .stagger-4 { transition-delay: 0.32s; }
+        .stagger-5 { transition-delay: 0.40s; }
+        .stagger-6 { transition-delay: 0.48s; }
+
+        /* Ambient Floating Orbs */
+        @keyframes floatSlow1 {
+            0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.35; }
+            50% { transform: translate3d(35px, -25px, 0) scale(1.12); opacity: 0.55; }
+        }
+        @keyframes floatSlow2 {
+            0%, 100% { transform: translate3d(0, 0, 0) scale(1.05); opacity: 0.3; }
+            50% { transform: translate3d(-30px, 20px, 0) scale(0.95); opacity: 0.5; }
+        }
+        .ambient-orb-1 {
+            position: absolute;
+            top: 15%; left: 15%;
+            width: 420px; height: 420px;
+            background: radial-gradient(circle, #c27803 0%, transparent 70%);
+            filter: blur(80px);
+            border-radius: 9999px;
+            pointer-events: none;
+            animation: floatSlow1 18s ease-in-out infinite;
+            z-index: 1;
+        }
+        .ambient-orb-2 {
+            position: absolute;
+            top: 30%; right: 12%;
+            width: 380px; height: 380px;
+            background: radial-gradient(circle, #b45309 0%, transparent 70%);
+            filter: blur(80px);
+            border-radius: 9999px;
+            pointer-events: none;
+            animation: floatSlow2 22s ease-in-out infinite;
+            z-index: 1;
+        }
+        .spotlight-card {
+            position: relative;
+            background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.06), transparent 40%), rgba(38, 26, 17, 0.82);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .spotlight-card:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 12px 35px -10px rgba(0, 0, 0, 0.5);
+        }
+        .frosted-badge {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-slide.active .hero-kenburns, .ambient-orb-1, .ambient-orb-2 {
+                animation: none !important;
+                transform: none !important;
+            }
+            .interactive-card:hover {
+                transform: none !important;
+            }
+            .card-img-zoom {
+                transform: none !important;
+            }
+            .reveal-on-scroll {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+        <!-- 7-Day Client Auto-Expiry Shield -->
+    <script id="demo-expiry-shield">
+    (function() {
+        const DEMO_CREATED_TIMESTAMP = 1791406259930;
+        const EXPIRY_DAYS = 7;
+        const isExpired = (Date.now() - DEMO_CREATED_TIMESTAMP) > (EXPIRY_DAYS * 24 * 60 * 60 * 1000);
+
+        if (isExpired) {
+            const style = document.createElement('style');
+            style.id = 'demo-expiry-shield-styles';
+            style.innerHTML = `
+                html, body {
+                    overflow: hidden !important;
+                    height: 100% !important;
+                }
+                body > *:not(#demo-expiry-overlay) {
+                    filter: blur(14px) brightness(0.25) !important;
+                    pointer-events: none !important;
+                    user-select: none !important;
+                }
+                #demo-expiry-overlay {
+                    position: fixed !important;
+                    inset: 0 !important;
+                    z-index: 2147483647 !important;
+                    background: radial-gradient(circle at 50% 30%, rgba(15, 23, 42, 0.97), rgba(3, 7, 18, 0.99)) !important;
+                    backdrop-filter: blur(28px) !important;
+                    -webkit-backdrop-filter: blur(28px) !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    padding: 24px !important;
+                    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+                }
+                .expiry-card {
+                    max-width: 560px !important;
+                    width: 100% !important;
+                    background: rgba(255, 255, 255, 0.04) !important;
+                    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+                    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 45px rgba(239, 68, 68, 0.18) !important;
+                    border-radius: 24px !important;
+                    padding: 40px 32px !important;
+                    text-align: center !important;
+                    backdrop-filter: blur(20px) !important;
+                    -webkit-backdrop-filter: blur(20px) !important;
+                    color: #ffffff !important;
+                    animation: expiryFadeIn 0.35s ease-out !important;
+                }
+                @keyframes expiryFadeIn {
+                    from { opacity: 0; transform: scale(0.96) translateY(10px); }
+                    to { opacity: 1; transform: scale(1) translateY(0); }
+                }
+                .expiry-badge {
+                    display: inline-flex !important;
+                    align-items: center !important;
+                    gap: 8px !important;
+                    background: rgba(239, 68, 68, 0.15) !important;
+                    border: 1px solid rgba(239, 68, 68, 0.35) !important;
+                    color: #f87171 !important;
+                    padding: 6px 16px !important;
+                    border-radius: 9999px !important;
+                    font-size: 12px !important;
+                    font-weight: 700 !important;
+                    letter-spacing: 0.5px !important;
+                    text-transform: uppercase !important;
+                    margin-bottom: 20px !important;
+                }
+                .expiry-title {
+                    font-size: 22px !important;
+                    font-weight: 800 !important;
+                    color: #ffffff !important;
+                    margin: 0 0 12px 0 !important;
+                    line-height: 1.3 !important;
+                }
+                .expiry-message {
+                    font-size: 14px !important;
+                    color: #94a3b8 !important;
+                    line-height: 1.6 !important;
+                    margin: 0 0 28px 0 !important;
+                }
+                .expiry-btn {
+                    display: inline-flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    gap: 10px !important;
+                    width: 100% !important;
+                    padding: 15px 24px !important;
+                    border-radius: 14px !important;
+                    background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+                    color: #ffffff !important;
+                    text-decoration: none !important;
+                    font-weight: 700 !important;
+                    font-size: 14px !important;
+                    box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4) !important;
+                    transition: transform 0.2s, box-shadow 0.2s !important;
+                }
+                .expiry-btn:hover {
+                    transform: translateY(-2px) !important;
+                    box-shadow: 0 15px 30px -5px rgba(16, 185, 129, 0.55) !important;
+                }
+            `;
+            document.head.appendChild(style);
+
+            function showExpiryModal() {
+                if (document.getElementById('demo-expiry-overlay')) return;
+                const overlay = document.createElement('div');
+                overlay.id = 'demo-expiry-overlay';
+                overlay.innerHTML = `
+                    <div class="expiry-card">
+                        <div class="expiry-badge">
+                            <span>⏳ Trial Expired</span>
+                        </div>
+                        <h2 class="expiry-title">Demo Preview Period Ended (7 Days Completed)</h2>
+                        <p class="expiry-message">This customized demonstration concept for <strong>Parisian Crust</strong> has completed its 7-day trial preview.</p>
+                        <a href="https://wa.me/917355568493?text=Hello%20Kavish,%20we%20want%20to%20activate%20our%20website" target="_blank" class="expiry-btn">
+                            <span>💬</span> Connect on WhatsApp with Kavish Murtuja to Launch Official Website
+                        </a>
+                    </div>
+                `;
+                document.body.appendChild(overlay);
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', showExpiryModal);
+            } else {
+                showExpiryModal();
+            }
+        }
+    })();
+    </script>
+</head>
+<body class="text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 pb-20 sm:pb-0" style="background-color: #1a120b;">
+
+    <!-- SECTION 1: TOP NOTIFICATION RIBBON + MULTI-LOCATION HEADER -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-white/10 px-4 py-2 text-center text-xs sm:text-sm font-medium text-slate-300">
+        <span class="inline-flex items-center gap-2">
+            <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand">Special Offer</span>
+            <span>✨ Fresh Morning Batch: Complimentary Warm Butter Croissant with Any Specialty Brew in Austin</span>
+            <a href="#booking-funnel" class="underline font-bold hover:text-white ml-1">Claim Offer →</a>
+        </span>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-md border-b border-white/10 px-4 sm:px-8 py-3.5 transition-all" style="background-color: rgba(26, 18, 11, 0.95);">
+        <div class="max-w-7xl mx-auto flex items-center justify-between w-full">
+            <div class="flex items-center gap-3 min-w-0 flex-shrink-0 mr-8">
+                <div class="w-10 h-10 rounded-xl bg-brand flex items-center justify-center font-bold text-slate-950 text-base shadow-md">PA</div>
+                <div>
+                    <span class="brand-title text-base sm:text-lg font-black tracking-tight text-white block whitespace-nowrap">Parisian Crust</span>
+                    <span class="text-[10px] text-slate-400 uppercase tracking-widest block font-medium">📍 Austin, USA</span>
+                </div>
+            </div>
+            
+            <nav class="hidden lg:flex items-center gap-6 ml-auto mr-8 flex-shrink-0 text-xs uppercase tracking-wider font-semibold text-slate-300">
+                <a href="#about" class="hover:text-white transition">About</a>
+                <a href="#services" class="hover:text-white transition">Services</a>
+                <a href="#team" class="hover:text-white transition">Team</a>
+                <a href="#reviews" class="hover:text-white transition">Reviews</a>
+                <a href="#booking-funnel" class="hover:text-white transition">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-3 flex-shrink-0 ml-4">
+                <a href="tel:+15125550199" class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-white/5 border border-white/10 px-3.5 py-2 rounded-xl transition">
+                    <span>📞</span>
+                    <span>+15125550199</span>
+                </a>
+                <a href="#booking-funnel" class="btn-brand px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-lg">
+                    Book Online
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 2: 21st.dev MULTI-LAYERED VIDEO SHOWCASE HERO -->
+    <section class="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-8 py-20 overflow-hidden" id="hero-slider-section">
+        <!-- 21st.dev Ambient Spotlight / Radial Background Glow -->
+        <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[650px] h-[650px] rounded-full bg-gradient-to-tr from-cyan-500/20 via-brand/20 to-blue-600/20 blur-[130px] z-10"></div>
+
+        <!-- 21st.dev 4K Cinematic Pulse Badge (Top Right) -->
+        <div class="absolute top-6 right-6 z-30 hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-950/80 border border-white/15 backdrop-blur-md shadow-2xl text-[11px] font-bold text-slate-200">
+            <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span class="tracking-wider uppercase">● 4K CINEMATIC PREVIEW</span>
+        </div>
+
+        <!-- Multi-Layered Video Showcase Base Layer with Video Masking -->
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" id="hero-slider-container">
+            <!-- Base Layer: 21st.dev Ultra-Fast Autoplay Looped Video Stream -->
+            <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1920&q=85" class="absolute inset-0 w-full h-full object-cover scale-105 filter brightness-[0.45] contrast-[1.1] transition-transform duration-1000">
+                <source src="https://videos.pexels.com/video-files/3015494/3015494-sd_640_360_24fps.mp4" type="video/mp4">
+            </video>
+
+            <!-- Multi-Directional Radial Gradient Mask & Balanced Vignette Layer for 100% Text Readability -->
+            <div class="absolute inset-0 z-10 bg-gradient-to-b from-slate-950/80 via-transparent to-slate-950 pointer-events-none"></div>
+            <div class="absolute inset-0 z-15 pointer-events-none" style="background: linear-gradient(to bottom, rgba(26, 18, 11, 0.55) 0%, rgba(26, 18, 11, 0.25) 45%, rgba(26, 18, 11, 0.92) 100%);"></div>
+
+            <!-- Fallback Multi-Photo Slides if Video is Paused or Low Bandwidth -->
+            <div class="hero-slide active absolute inset-0 w-full h-full opacity-0 pointer-events-none transition-opacity duration-1000 -z-10">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1920&q=85" alt="Parisian Crust 1" fetchpriority="high" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.65) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\'><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
+            </div>
+            <div class="hero-slide absolute inset-0 w-full h-full opacity-0 pointer-events-none transition-opacity duration-1000 -z-10">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1920&q=85" alt="Parisian Crust 2" loading="lazy" decoding="async" class="hero-kenburns w-full h-full object-cover object-center" style="filter: brightness(0.65) contrast(1.05);" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1920\' height=\'1080\' viewBox=\'0 0 1920 1080\'><rect width=\'1920\' height=\'1080\' fill=\'%230b1329\'/><text x=\'50%\' y=\'50%\' fill=\'%2338bdf8\' font-size=\'36\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Premier Experience</text></svg>';" />
+            </div>
+
+            <!-- Ambient Floating Gradient Orbs -->
+            <div class="ambient-orb-1"></div>
+            <div class="ambient-orb-2"></div>
+        </div>
+
+        <!-- Active Pagination Indicator Dots at Bottom of Hero -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10" id="hero-slider-dots">
+            <button type="button" aria-label="Slide 1" onclick="switchHeroSlide(0)" class="hero-dot w-7 h-2 rounded-full bg-white transition-all duration-300"></button>
+            <button type="button" aria-label="Slide 2" onclick="switchHeroSlide(1)" class="hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white/80 transition-all duration-300"></button>
+            <button type="button" aria-label="Slide 3" onclick="switchHeroSlide(2)" class="hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white/80 transition-all duration-300"></button>
+            <button type="button" aria-label="Slide 4" onclick="switchHeroSlide(3)" class="hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white/80 transition-all duration-300"></button>
+        </div>
+
+        <div class="relative z-20 max-w-4xl mx-auto text-center space-y-6">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-semibold text-white hero-text-shadow">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Proudly Serving Austin • Handcrafted Artisanal Bakes & Micro-Roastery</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] font-serif hero-title-shadow">
+                Fresh Sourdough Bakes, Handcrafted Pastries & Specialty Roast Coffee Daily in Austin
+            </h1>
+
+            <p class="text-slate-100 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal hero-text-shadow">
+                Baked every morning at 6:00 AM using 100% natural butter, 24-hour slow cold fermentation, and stone-ground flour in Austin.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="#booking-funnel" class="btn-brand w-full sm:w-auto px-8 py-3.5 rounded-xl text-sm font-bold shadow-xl flex items-center justify-center gap-2">
+                    <span>Schedule Your Consultation</span>
+                    <span>→</span>
+                </a>
+                <a href="#services" class="w-full sm:w-auto px-6 py-3.5 rounded-xl text-sm font-semibold text-white bg-slate-900/60 hover:bg-slate-900/80 border border-white/20 backdrop-blur-md transition shadow-lg">
+                    Explore Offerings ↓
+                </a>
+            </div>
+
+            <!-- Trust Metrics Bar -->
+            <div class="pt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto border-t border-white/15 mt-8">
+                <div class="text-center p-3 rounded-xl bg-slate-950/60 border border-white/10 backdrop-blur-md shadow-lg">
+                    <p class="text-xl sm:text-2xl font-black text-white">⭐ 5.0</p>
+                    <p class="text-[11px] text-slate-300 mt-0.5 font-medium">500+ Verified Reviews</p>
+                </div>
+                <div class="text-center p-3 rounded-xl bg-slate-950/60 border border-white/10 backdrop-blur-md shadow-lg">
+                    <p class="text-xl sm:text-2xl font-black text-white">20+</p>
+                    <p class="text-[11px] text-slate-300 mt-0.5 font-medium">Years Serving Austin</p>
+                </div>
+                <div class="text-center p-3 rounded-xl bg-slate-950/60 border border-white/10 backdrop-blur-md shadow-lg">
+                    <p class="text-xl sm:text-2xl font-black text-white">100%</p>
+                    <p class="text-[11px] text-slate-300 mt-0.5 font-medium">Digital Care Quality</p>
+                </div>
+                <div class="text-center p-3 rounded-xl bg-slate-950/60 border border-white/10 backdrop-blur-md shadow-lg">
+                    <p class="text-xl sm:text-2xl font-black text-white">Certified</p>
+                    <p class="text-[11px] text-slate-300 mt-0.5 font-medium">Top-Rated in Austin</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 21st.dev INFINITE MARQUEE SOCIAL PROOF BANNER -->
+    <div class="relative w-full overflow-hidden py-3.5 bg-slate-950/90 border-y border-white/10 backdrop-blur-md z-20">
+        <div class="animate-marquee flex whitespace-nowrap will-change-transform items-center">
+            <div class="flex items-center gap-6 text-xs sm:text-sm font-semibold text-slate-200 px-6">
+                <span>⭐ 4.9/5 Rating</span>
+                <span class="text-cyan-400">•</span>
+                <span>Verified Google Reviews</span>
+                <span class="text-cyan-400">•</span>
+                <span>1-Tap Priority Booking</span>
+                <span class="text-cyan-400">•</span>
+                <span>100% Quality Guaranteed</span>
+                <span class="text-cyan-400">•</span>
+                <span>Direct WhatsApp Concierge</span>
+                <span class="text-cyan-400">•</span>
+                <span>⭐ 4.9/5 Rating</span>
+                <span class="text-cyan-400">•</span>
+                <span>Verified Google Reviews</span>
+                <span class="text-cyan-400">•</span>
+                <span>1-Tap Priority Booking</span>
+                <span class="text-cyan-400">•</span>
+                <span>100% Quality Guaranteed</span>
+                <span class="text-cyan-400">•</span>
+                <span>Direct WhatsApp Concierge</span>
+                <span class="text-cyan-400">•</span>
+            </div>
+            <div class="flex items-center gap-6 text-xs sm:text-sm font-semibold text-slate-200 px-6" aria-hidden="true">
+                <span>⭐ 4.9/5 Rating</span>
+                <span class="text-cyan-400">•</span>
+                <span>Verified Google Reviews</span>
+                <span class="text-cyan-400">•</span>
+                <span>1-Tap Priority Booking</span>
+                <span class="text-cyan-400">•</span>
+                <span>100% Quality Guaranteed</span>
+                <span class="text-cyan-400">•</span>
+                <span>Direct WhatsApp Concierge</span>
+                <span class="text-cyan-400">•</span>
+                <span>⭐ 4.9/5 Rating</span>
+                <span class="text-cyan-400">•</span>
+                <span>Verified Google Reviews</span>
+                <span class="text-cyan-400">•</span>
+                <span>1-Tap Priority Booking</span>
+                <span class="text-cyan-400">•</span>
+                <span>100% Quality Guaranteed</span>
+                <span class="text-cyan-400">•</span>
+                <span>Direct WhatsApp Concierge</span>
+                <span class="text-cyan-400">•</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 3: 21st.dev BENTO GRID FEATURE ARCHITECTURE -->
+    <section id="about" class="py-20 px-4 sm:px-8 border-t border-white/10 relative overflow-hidden" style="background-color: #1a120b;">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
+                <span class="frosted-badge px-3.5 py-1 rounded-full text-xs font-bold text-slate-300 uppercase tracking-widest inline-block">
+                    The Parisian Crust Standard
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight font-serif">
+                    Why Austin Chooses Us
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Benchmark standards, authentic quality, and prompt local service.
+                </p>
+            </div>
+
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <!-- Left Column: Numbered Craft Chapters (7 cols) -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="border-b border-white/10 pb-6 mb-8">
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand block mb-1">Artisanal Chapters & Standards</span>
+                        <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight font-serif">
+                            The Philosophy of Pure Craftsmanship in Austin, USA
+                        </h3>
+                    </div>
+
+                    <!-- Chapter 01 -->
+                    <div class="group p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-brand/40 transition duration-300">
+                        <div class="flex items-start gap-4">
+                            <span class="text-2xl sm:text-3xl font-black text-brand/60 font-serif group-hover:text-brand transition shrink-0">01</span>
+                            <div>
+                                <h4 class="text-lg font-bold text-white mb-1 font-serif group-hover:text-brand transition">24-Hour Slow Cold Ferment</h4>
+                                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">Natural sourdough starters slow-proved for 24 hours creating deep complex aroma and crisp blistered crusts.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chapter 02 -->
+                    <div class="group p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-brand/40 transition duration-300">
+                        <div class="flex items-start gap-4">
+                            <span class="text-2xl sm:text-3xl font-black text-brand/60 font-serif group-hover:text-brand transition shrink-0">02</span>
+                            <div>
+                                <h4 class="text-lg font-bold text-white mb-1 font-serif group-hover:text-brand transition">Fresh Morning Oven Dispatch</h4>
+                                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">Loaves and laminated croissants pulled fresh from the deck oven daily at 6:00 AM.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chapter 03 -->
+                    <div class="group p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-brand/40 transition duration-300">
+                        <div class="flex items-start gap-4">
+                            <span class="text-2xl sm:text-3xl font-black text-brand/60 font-serif group-hover:text-brand transition shrink-0">03</span>
+                            <div>
+                                <h4 class="text-lg font-bold text-white mb-1 font-serif group-hover:text-brand transition">Direct Trade Micro-Lot Arabica</h4>
+                                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">Single-origin beans dialed in every morning for silky micro-foam flat whites and velvety pour-overs.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chapter 04 -->
+                    <div class="group p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-brand/40 transition duration-300">
+                        <div class="flex items-start gap-4">
+                            <span class="text-2xl sm:text-3xl font-black text-brand/60 font-serif group-hover:text-brand transition shrink-0">04</span>
+                            <div>
+                                <h4 class="text-lg font-bold text-white mb-1 font-serif group-hover:text-brand transition">Pure European Butter Laminations</h4>
+                                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">100% natural Normandy-style butter layering giving authentic honeycomb interior flakiness.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex items-center justify-between gap-4 border-t border-white/10">
+                        <span class="text-xs text-slate-400 font-medium">✨ Authentic Local Mastery in Austin, USA</span>
+                        <a href="https://wa.me/15125550199" target="_blank" class="text-xs font-bold text-brand hover:underline inline-flex items-center gap-1.5">
+                            <span>Direct Order Concierge</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Editorial Visual Showcase Frame (5 cols) -->
+                <div class="lg:col-span-5">
+                    <div class="spotlight-card p-6 sm:p-8 rounded-3xl relative overflow-hidden shadow-2xl border border-white/10 text-center group">
+                        <div class="pointer-events-none absolute -right-10 -top-10 w-48 h-48 rounded-full bg-brand/15 blur-2xl group-hover:bg-brand/25 transition duration-500"></div>
+                        <div class="mb-4">
+                            <span class="frosted-badge px-3 py-1 rounded-full text-[10px] font-bold text-amber-300 uppercase tracking-widest inline-block mb-2">
+                                Editorial Live Showcase
+                            </span>
+                            <h4 class="text-lg sm:text-xl font-bold text-white font-serif">Behind The Scenes Craft</h4>
+                            <p class="text-xs text-slate-400 mt-1">Live from our Austin, USA workshop</p>
+                        </div>
+
+                        
+                    <!-- Realistic Phone Mockup Frame in Vertical Reel Format -->
+                    <div class="relative mx-auto w-44 sm:w-48 aspect-[9/16] rounded-[2.2rem] p-2 bg-gradient-to-b from-slate-700 via-slate-900 to-slate-950 shadow-2xl border-2 border-white/20 overflow-hidden transform group-hover:scale-[1.03] transition duration-500">
+                        <!-- Dynamic Island Notch -->
+                        <div class="absolute top-3 left-1/2 -translate-x-1/2 w-14 h-3 bg-black rounded-full z-30"></div>
+                        
+                        <!-- Inner Reel Screen with Auto-Looping Video Stream -->
+                        <div class="relative w-full h-full rounded-[1.8rem] overflow-hidden bg-black flex flex-col justify-between">
+                            <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1920&q=85" class="absolute inset-0 w-full h-full object-cover">
+                                <source src="https://videos.pexels.com/video-files/3015494/3015494-sd_640_360_24fps.mp4" type="video/mp4">
+                            </video>
+                            <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80 pointer-events-none"></div>
+
+                            <!-- Reel Top Status -->
+                            <div class="relative z-20 p-2.5 pt-4 flex items-center justify-between text-[9px] text-white/90">
+                                <span class="font-bold flex items-center gap-1 bg-black/40 backdrop-blur-sm px-2 py-0.5 rounded-full">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> REEL
+                                </span>
+                                <span class="opacity-80">4K • 60fps</span>
+                            </div>
+
+                            <!-- Reel Right Action Bar -->
+                            <div class="absolute right-2 bottom-12 z-20 flex flex-col items-center gap-3 text-white text-[9px]">
+                                <div class="flex flex-col items-center">
+                                    <span class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-xs">❤️</span>
+                                    <span class="font-bold text-[8px] mt-0.5">3.8K</span>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <span class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-xs">💬</span>
+                                    <span class="font-bold text-[8px] mt-0.5">184</span>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <span class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-xs">🚀</span>
+                                    <span class="font-bold text-[8px] mt-0.5">612</span>
+                                </div>
+                            </div>
+
+                            <!-- Reel Bottom Caption -->
+                            <div class="relative z-20 p-2.5 pb-3 text-left">
+                                <p class="text-[10px] font-bold text-white drop-shadow truncate">@Parisian Crust</p>
+                                <p class="text-[8px] text-slate-200 opacity-90 line-clamp-1 drop-shadow">● Verified Benchmark in Austin</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                        <div class="mt-6 pt-4 border-t border-white/10">
+                            <a href="https://wa.me/15125550199" target="_blank" class="btn-brand w-full py-3 rounded-xl text-xs font-bold shadow-lg inline-flex items-center justify-center gap-2">
+                                <span>💬</span>
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 4: COMPREHENSIVE FEATURED SERVICES GRID (6 RESPONSIVE CARDS) -->
+    <section id="services" class="relative py-20 px-4 sm:px-8 border-t border-white/10 overflow-hidden" style="background-color: #1a120b;">
+        <!-- 21st.dev Ambient Spotlight / Radial Background Glow -->
+        <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-cyan-500/20 to-blue-600/20 blur-[120px]"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
+                    Featured Offerings
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight font-serif">
+                    Comprehensive Quality Services
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Tailored specifically to match the distinguished expectations of patrons in Austin.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="interactive-card reveal-on-scroll stagger-1 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                    <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="Stone-Deck Sourdough Loaves Daily" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-amber-950/90 text-amber-300 border border-amber-600/40 backdrop-blur-md">Signature Bake</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Stone-Deck Sourdough Loaves Daily</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Natural 24-hour slow cold fermentation with organic stone-ground flour and blistered mahogany crust.</p>
+                        </div>
+                        <a href="#booking-funnel" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                            <span>Book Consultation</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="interactive-card reveal-on-scroll stagger-2 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                    <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1530610476181-d83430b64dcd?auto=format&fit=crop&w=800&q=80" alt="French Viennoiserie & Butter Croissants" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-amber-950/90 text-amber-300 border border-amber-600/40 backdrop-blur-md">Fresh at 6 AM</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">French Viennoiserie & Butter Croissants</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Laminated with 100% Normandy-style butter yielding crisp honeycomb interior and rich golden glaze.</p>
+                        </div>
+                        <a href="#booking-funnel" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                            <span>Book Consultation</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="interactive-card reveal-on-scroll stagger-3 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                    <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=800&q=80" alt="Single-Origin Espresso & Micro-Roast Pour-Overs" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-amber-950/90 text-amber-300 border border-amber-600/40 backdrop-blur-md">Barista Craft</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Single-Origin Espresso & Micro-Roast Pour-Overs</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Direct-trade micro-lot arabica dialed in every morning for silky flat whites and velvet crema extraction.</p>
+                        </div>
+                        <a href="#booking-funnel" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                            <span>Book Consultation</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="interactive-card reveal-on-scroll stagger-4 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                    <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80" alt="Tiered Celebration Cakes & Patisserie" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-amber-950/90 text-amber-300 border border-amber-600/40 backdrop-blur-md">Custom Order</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Tiered Celebration Cakes & Patisserie</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Bespoke handcrafted layered sponge cakes, delicate macarons, and seasonal fruit tarts for celebrations.</p>
+                        </div>
+                        <a href="#booking-funnel" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                            <span>Book Consultation</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="interactive-card reveal-on-scroll stagger-5 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                    <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80" alt="Warm Brioche Breakfast & Poached Eggs" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-amber-950/90 text-amber-300 border border-amber-600/40 backdrop-blur-md">Morning Kitchen</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Warm Brioche Breakfast & Poached Eggs</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Farm-fresh organic eggs, house-made fruit preserves, and toasted brioche buns served all morning.</p>
+                        </div>
+                        <a href="#booking-funnel" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                            <span>Book Consultation</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="interactive-card reveal-on-scroll stagger-6 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand transition duration-300 group flex flex-col justify-between shadow-xl">
+                    <div class="service-image relative h-48 w-full overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&w=800&q=80" alt="Direct Oven-to-Door Delivery & Hampers" loading="lazy" decoding="async" class="card-img-zoom w-full h-48 object-cover transition duration-500" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'><rect width=\'800\' height=\'500\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Professional Service</text></svg>';" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none"></div>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-amber-950/90 text-amber-300 border border-amber-600/40 backdrop-blur-md">Doorstep Delivery</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand transition">Direct Oven-to-Door Delivery & Hampers</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">Warm freshly baked sourdough loaves, butter cookies, and roasted bean jars delivered across town.</p>
+                        </div>
+                        <a href="#booking-funnel" class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline">
+                            <span>Book Consultation</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: TEAM / LEADERSHIP SPOTLIGHT -->
+    <section id="team" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: rgba(26, 18, 11, 0.97);">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
+                    Meet Our Leadership
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight font-serif">
+                    Dedicated Masters of the Craft
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Passionate experts bringing personal care and clinical precision to Austin.
+                </p>
+            </div>
+
+            
+                <div class="interactive-card reveal-on-scroll stagger-1 bg-obsidian-card rounded-2xl overflow-hidden border border-white/10 p-6 flex flex-col sm:flex-row items-center gap-6 hover:border-brand transition max-w-2xl mx-auto shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=600&q=80" alt="Artisanal Baking Council" loading="lazy" decoding="async" class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl object-cover border-2 border-white/10 shrink-0 shadow-lg" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\' viewBox=\'0 0 400 400\'><rect width=\'400\' height=\'400\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'%2394a3b8\' font-size=\'18\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>Leadership</text></svg>';" />
+                    <div class="text-center sm:text-left">
+                        <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1.5">Handcrafted Artisanal Bakes & Micro-Roastery</span>
+                        <h3 class="text-xl font-bold text-white font-serif">Artisanal Baking Council</h3>
+                        <p class="text-brand text-xs font-semibold mt-0.5">Master Baker & Head of Roasting</p>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">Over 18 years perfecting slow natural sourdough fermentation, pure butter lamination, and micro-lot coffee roasting.</p>
+                    </div>
+                </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 6: VERIFIED 5.0 GOOGLE REVIEWS & TESTIMONIALS -->
+    <section id="reviews" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: #1a120b;">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
+                    Patron Testimonials
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight font-serif">
+                    Loved by Clients in Austin
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Real verified feedback from patrons across Austin.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="interactive-card reveal-on-scroll stagger-1 bg-obsidian-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">★★★★★</div>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
+                            "The sourdough and almond croissants here are simply unmatched! Real European bakery standard with welcoming warmth right in our neighborhood."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-white text-xs font-bold">Rohan S.</span>
+                        <span class="text-slate-400 text-[11px]">Verified Google Review</span>
+                    </div>
+                </div>
+
+                <div class="interactive-card reveal-on-scroll stagger-2 bg-obsidian-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">★★★★★</div>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
+                            "Their cold brew and pour-overs are exceptional. Perfect place for quiet meetings and picking up fresh loaves every weekend."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-white text-xs font-bold">Ananya M.</span>
+                        <span class="text-slate-400 text-[11px]">Verified Customer</span>
+                    </div>
+                </div>
+
+                <div class="interactive-card reveal-on-scroll stagger-3 bg-obsidian-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">★★★★★</div>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
+                            "Ordered a 3-tier custom cake for our celebration — stunning design and incredible rich flavor. Absolute 5-star experience."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-white text-xs font-bold">Vikram K.</span>
+                        <span class="text-slate-400 text-[11px]">Verified Patron</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: HIGH-END 2-COLUMN LUXURY AGENCY SUITE (CONTACT & PRIORITY SCHEDULING) -->
+    <section id="booking-funnel" class="py-20 px-4 sm:px-8 border-t border-white/10 relative" style="background-color: #1a120b;">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl mx-auto text-center space-y-3 mb-14">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    ● Available Today • Priority Online Scheduling
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight font-serif">
+                    Ready to Connect with Parisian Crust?
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    Select your preferred visit time or reach out directly to secure priority scheduling in Austin.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- LEFT COLUMN: DIRECT CONTACT, VERIFIED HOURS & LOCATION HUB -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="space-y-2">
+                        <span class="text-xs font-bold text-brand uppercase tracking-wider block">Get In Touch Directly</span>
+                        <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight font-serif">
+                            Visit Our Patisserie or Speak to an Artisan
+                        </h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                            Fresh morning bakes, hand-laminated viennoiserie, and single-origin coffee tastings. Connect directly with our team in Austin.
+                        </p>
+                    </div>
+
+                    <!-- 3 Interactive Contact Cards -->
+                    <div class="space-y-3">
+                        <!-- Card 1: Physical Address -->
+                        <a href="https://www.google.com/maps/search/?api=1&query=Parisian%20Crust%20Austin%2C%20USA" target="_blank" class="interactive-card block bg-obsidian-card p-4 sm:p-5 rounded-2xl border border-white/10 hover:border-brand transition shadow-lg group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-brand/20 border border-brand/30 flex items-center justify-center text-lg shrink-0 text-brand">
+                                    📍
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between gap-2">
+                                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Physical Address</span>
+                                        <span class="text-brand text-xs font-semibold group-hover:underline inline-flex items-center gap-0.5">Directions ↗</span>
+                                    </div>
+                                    <p class="text-sm font-bold text-white mt-0.5 truncate">Austin, USA</p>
+                                    <p class="text-xs text-slate-400 mt-0.5">Artisanal Patisserie & Cafe • Tap to open navigation</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card 2: Dedicated Hotline -->
+                        <a href="tel:+15125550199" class="interactive-card block bg-obsidian-card p-4 sm:p-5 rounded-2xl border border-white/10 hover:border-brand transition shadow-lg group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-lg shrink-0 text-blue-400">
+                                    📞
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between gap-2">
+                                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Dedicated Hotline</span>
+                                        <span class="text-blue-400 text-xs font-semibold group-hover:underline inline-flex items-center gap-0.5">1-Tap Call ↗</span>
+                                    </div>
+                                    <p class="text-sm font-bold text-white mt-0.5">+15125550199</p>
+                                    <p class="text-xs text-slate-400 mt-0.5">Direct line to Tasting & Order Concierge</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card 3: Verified WhatsApp Channel -->
+                        <a href="https://wa.me/15125550199" target="_blank" class="interactive-card block bg-obsidian-card p-4 sm:p-5 rounded-2xl border border-emerald-500/30 hover:border-emerald-400 transition shadow-lg group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-lg shrink-0 text-emerald-400">
+                                    💬
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between gap-2">
+                                        <span class="text-[11px] font-bold text-emerald-400 uppercase tracking-wider">Verified WhatsApp</span>
+                                        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">⚡ &lt; 15 Mins</span>
+                                    </div>
+                                    <p class="text-sm font-bold text-white mt-0.5">Instant WhatsApp Concierge</p>
+                                    <p class="text-xs text-slate-400 mt-0.5">Fastest response channel for priority reservations</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Business Operating Hours Card -->
+                    <div class="bg-obsidian-card p-4 sm:p-5 rounded-2xl border border-white/10 shadow-lg">
+                        <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-white/10">
+                            <span class="text-xs font-bold text-white flex items-center gap-2">
+                                <span>🕒</span> Operating & Consultation Hours
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 text-[11px] text-emerald-400 font-semibold">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                Open Today
+                            </span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-300 font-medium">Mon - Sun: 6:30 AM – 9:30 PM</p>
+                        <p class="text-[11px] text-slate-400 mt-1">Special priority slots available outside regular hours upon request.</p>
+                    </div>
+
+                    <!-- Multi-Location Branches or Location Extra Component -->
+                    
+                    <div class="bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 p-5 rounded-2xl border border-white/10 shadow-lg relative overflow-hidden">
+                        <div class="flex items-center justify-between gap-3 relative z-10">
+                            <div>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1">Artisanal Hub & Bakery</span>
+                                <h4 class="text-sm font-bold text-white">Parisian Crust</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">📍 Austin, USA</p>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Parisian%20Crust%20Austin%2C%20USA" target="_blank" class="btn-brand px-3.5 py-2 rounded-xl text-xs font-bold shrink-0 shadow-md flex items-center gap-1.5">
+                                <span>🗺️</span>
+                                <span>Directions ↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT COLUMN: INTERACTIVE VIP RESERVATION & INQUIRY SUITE -->
+                <div class="lg:col-span-7 bg-obsidian-card p-6 sm:p-8 rounded-3xl border border-white/15 shadow-2xl relative overflow-hidden">
+                    <div class="mb-6 pb-4 border-b border-white/10">
+                        <span class="px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-brand inline-block mb-1.5">VIP Reservation Suite</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white font-serif">Reserve Table or Custom Order</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-1">Select your desired patisserie collection, custom cake tasting, or table reservation.</p>
+                    </div>
+
+                    <form onsubmit="event.preventDefault(); (function(f){
+                        var name = f.client_name.value.trim() || 'Guest';
+                        var phone = f.client_phone.value.trim() || 'Not Provided';
+                        var service = f.client_service.value;
+                        var date = f.client_date.value ? f.client_date.value : 'First Available Date';
+                        var slot = f.querySelector('input[name=client_slot]:checked') ? f.querySelector('input[name=client_slot]:checked').value : 'Preferred Time';
+                        var notes = f.client_notes.value.trim();
+                        var msg = 'Hi Parisian Crust, I would like to schedule an appointment via your digital booking portal:\n' +
+                                  '• Name: ' + name + '\n' +
+                                  '• Phone: ' + phone + '\n' +
+                                  '• Service: ' + service + '\n' +
+                                  '• Preferred Slot: ' + date + ' (' + slot + ')';
+                        if (notes) { msg += '\n• Notes: ' + notes; }
+                        window.open('https://wa.me/15125550199?text=' + encodeURIComponent(msg), '_blank');
+                    })(this);" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1.5">
+                                    <span>👤</span> Your Full Name
+                                </label>
+                                <input type="text" name="client_name" required placeholder="Jane Doe" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand" />
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1.5">
+                                    <span>📱</span> WhatsApp Phone Number
+                                </label>
+                                <input type="tel" name="client_phone" required placeholder="e.g. +1 (555) 000-0000" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1.5">
+                                <span>⚙️</span> Required Service / Consultation
+                            </label>
+                            <select name="client_service" class="w-full border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-brand" style="background-color: #1a120b;">
+                            <option value="Stone-Deck Sourdough Loaves Daily">Stone-Deck Sourdough Loaves Daily</option>
+                            <option value="French Viennoiserie & Butter Croissants">French Viennoiserie & Butter Croissants</option>
+                            <option value="Single-Origin Espresso & Micro-Roast Pour-Overs">Single-Origin Espresso & Micro-Roast Pour-Overs</option>
+                            <option value="Tiered Celebration Cakes & Patisserie">Tiered Celebration Cakes & Patisserie</option>
+                            <option value="Warm Brioche Breakfast & Poached Eggs">Warm Brioche Breakfast & Poached Eggs</option>
+                            <option value="Direct Oven-to-Door Delivery & Hampers">Direct Oven-to-Door Delivery & Hampers</option>
+                            <option value="Other / Bespoke Consultation">Other / Bespoke Consultation</option>
+                            </select>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1.5">
+                                    <span>📅</span> Preferred Date
+                                </label>
+                                <input type="date" name="client_date" class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-brand transition" />
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1.5">
+                                    <span>⏰</span> Preferred Time Slot
+                                </label>
+                                <div class="grid grid-cols-3 gap-1.5">
+                                    <label class="slot-pill cursor-pointer">
+                                        <input type="radio" name="client_slot" value="Morning (9 AM - 12 PM)" class="sr-only" checked />
+                                        <span class="block py-2 px-1 text-center rounded-xl border border-white/10 bg-white/5 text-[10px] sm:text-[11px] font-semibold text-slate-300 transition hover:border-brand">Morning</span>
+                                    </label>
+                                    <label class="slot-pill cursor-pointer">
+                                        <input type="radio" name="client_slot" value="Afternoon (12 PM - 4 PM)" class="sr-only" />
+                                        <span class="block py-2 px-1 text-center rounded-xl border border-white/10 bg-white/5 text-[10px] sm:text-[11px] font-semibold text-slate-300 transition hover:border-brand">Afternoon</span>
+                                    </label>
+                                    <label class="slot-pill cursor-pointer">
+                                        <input type="radio" name="client_slot" value="Evening (4 PM - 8 PM)" class="sr-only" />
+                                        <span class="block py-2 px-1 text-center rounded-xl border border-white/10 bg-white/5 text-[10px] sm:text-[11px] font-semibold text-slate-300 transition hover:border-brand">Evening</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1.5">
+                                <span>📝</span> Special Notes / Requirements (Optional)
+                            </label>
+                            <textarea name="client_notes" rows="2" placeholder="Any specific requirements, questions, or visit notes..." class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-brand w-full py-3.5 rounded-xl text-xs sm:text-sm font-bold shadow-xl mt-2 flex items-center justify-center gap-2">
+                            <span>💬</span>
+                            <span>Confirm & Send to Bakery Concierge →</span>
+                        </button>
+                        <p class="text-[11px] text-center text-slate-400 mt-2">
+                            🔒 Direct Artisan Confirmation • Fresh Daily Guarantee • Instant Response
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: 4-COLUMN PROFESSIONAL ARCHITECTURE FOOTER -->
+    <footer class="pt-16 pb-12 border-t border-white/10 relative z-20" style="background-color: #1a120b;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+                <!-- Col 1: Brand Profile -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-brand flex items-center justify-center font-bold text-slate-950 text-base shadow-md">PA</div>
+                        <div>
+                            <span class="text-base font-black tracking-tight text-white block">Parisian Crust</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-widest block font-medium">📍 Austin, USA</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                        Serving Austin with stone-oven crusts, flaky viennoiserie, and direct-trade micro-lot espresso extracted with barista precision.
+                    </p>
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-300 text-[11px] font-medium">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>Verified Bakery/Cafe in Austin, USA</span>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Navigation -->
+                <div class="space-y-4">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider">Quick Navigation</h4>
+                    <ul class="space-y-2.5 text-xs text-slate-300">
+                        <li><a href="#services" class="hover:text-brand transition flex items-center gap-1.5"><span>→</span> <span>Featured Services</span></a></li>
+                        <li><a href="#about" class="hover:text-brand transition flex items-center gap-1.5"><span>→</span> <span>Why Choose Us</span></a></li>
+                        <li><a href="#team" class="hover:text-brand transition flex items-center gap-1.5"><span>→</span> <span>Leadership & Team</span></a></li>
+                        <li><a href="#reviews" class="hover:text-brand transition flex items-center gap-1.5"><span>→</span> <span>Client Testimonials</span></a></li>
+                        <li><a href="#booking-funnel" class="hover:text-brand transition flex items-center gap-1.5"><span>→</span> <span>Online Consultation Booking</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Direct Contact & Working Hours -->
+                <div class="space-y-4">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider">Direct Contact & Hours</h4>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <p class="text-slate-400 flex items-start gap-2">
+                            <span class="text-brand shrink-0">📍</span>
+                            <span>Austin, USA</span>
+                        </p>
+                        <p class="flex items-center gap-2"><span class="text-brand shrink-0">📞</span><a href="tel:+15125550199" class="text-white font-semibold hover:underline">+15125550199</a></p>
+                        <p class="flex items-center gap-2">
+                            <span class="text-emerald-400 shrink-0">💬</span>
+                            <a href="https://wa.me/15125550199" target="_blank" class="text-emerald-400 font-semibold hover:underline">Verified WhatsApp Concierge</a>
+                        </p>
+                        <p class="flex items-center gap-2"><span class="text-brand shrink-0">✉️</span><span class="text-slate-400">Direct Concierge Inquiries</span></p>
+                    </div>
+                    <div class="pt-2 border-t border-white/10 text-[11px] text-slate-400">
+                        <p class="font-semibold text-slate-300">🕒 Operating Hours:</p>
+                        <p class="mt-0.5">Mon - Sun: 6:30 AM – 9:30 PM</p>
+                    </div>
+                </div>
+
+                <!-- Col 4: VIP Booking & Google Map -->
+                <div class="space-y-4">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider">VIP Booking & Location</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Reserve your preferred appointment slot or request directions.
+                    </p>
+                    <a href="https://wa.me/15125550199" target="_blank" class="btn-brand w-full py-3 px-4 rounded-xl text-xs font-bold text-center block shadow-lg">
+                        📅 Schedule VIP Appointment →
+                    </a>
+                    <div class="pt-2">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Parisian%20Crust%20Austin%2C%20USA" target="_blank" class="inline-flex items-center gap-2 text-xs text-slate-300 hover:text-white bg-white/5 border border-white/10 px-3.5 py-2.5 rounded-xl w-full justify-center transition">
+                            <span>🗺️</span>
+                            <span>Open in Google Maps Directions ↗</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright Bar (100% Sanitized, Zero 'nan') -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs text-slate-400">
+                <p>© 2026 Parisian Crust. All rights reserved.</p>
+                <div class="flex flex-wrap items-center justify-center gap-4 text-[11px] text-slate-400">
+                    <span>Privacy Shield</span>
+                    <span>•</span>
+                    <span>Terms of Service</span>
+                    <span>•</span>
+                    <span>256-Bit SSL Protection</span>
+                    <span>•</span>
+                    <span>Verified Quality Standards</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 21st.dev Floating Quick Dock -->
+    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-5 py-3 rounded-full backdrop-blur-xl border shadow-2xl" style="background-color: rgba(26, 18, 11, 0.88); border-color: rgba(194, 120, 3, 0.35); box-shadow: 0 10px 30px -5px rgba(194, 120, 3, 0.35);">
+        <a href="https://wa.me/15125550199" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs shadow-lg transition transform hover:scale-105">
+            <span>💬</span>
+            <span class="whitespace-nowrap">WhatsApp</span>
+        </a>
+        <a href="tel:+15125550199" class="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs border border-white/15 transition transform hover:scale-105">
+            <span>📞</span>
+            <span class="whitespace-nowrap">Call Now</span>
+        </a>
+    </div>
+
+    <!-- 2026 STICKY MOBILE QUICK-ACTION BAR -->
+    <div class="fixed bottom-0 left-0 right-0 z-40 backdrop-blur-md border-t border-white/10 px-4 py-2.5 flex items-center justify-between sm:hidden shadow-2xl" style="background-color: rgba(26, 18, 11, 0.96);">
+        <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-xs font-bold text-slate-200">Instant Booking Active</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <a href="tel:+15125550199" class="px-3 py-1.5 rounded-lg bg-white/10 text-white text-xs font-semibold">📞 Call</a>
+            <a href="https://wa.me/15125550199" target="_blank" class="btn-brand px-3.5 py-1.5 rounded-lg text-xs font-bold shadow-md">💬 Book Online</a>
+        </div>
+    </div>
+
+    <!-- FLOATING ACTION CTA (Desktop/Tablet) -->
+    <div class="hidden sm:block fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/15125550199" target="_blank" class="relative flex items-center justify-center w-14 h-14 bg-brand rounded-full shadow-2xl transition hover:scale-105">
+            <span class="absolute -inset-1 rounded-full bg-brand opacity-60 animate-ping"></span>
+            <svg class="w-7 h-7 fill-current relative z-10" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.777.814 2.791.814 3.18 0 5.767-2.587 5.768-5.766.001-3.181-2.586-5.767-5.768-5.767zm0 10.355c-.887 0-1.638-.253-2.316-.677l-.166-.104-1.58.414.422-1.54-.109-.174c-.464-.739-.71-1.464-.71-2.272.001-2.53 2.059-4.588 4.59-4.588 2.529 0 4.587 2.058 4.588 4.588.001 2.531-2.057 4.589-4.589 4.589z"/></svg>
+        </a>
+    </div>
+
+    <!-- SCRIPTS: 4.0s Auto-Crossfade Hero Slider + Scroll Reveal + Image Watchdog -->
+    <script>
+    // Hero Auto-Crossfade Slider (4.0s change, 1.2s crossfade, Ken-Burns active zoom)
+    (function() {
+        var slides = document.querySelectorAll('.hero-slide');
+        var dots = document.querySelectorAll('.hero-dot');
+        if (!slides.length) return;
+        var current = 0;
+        var timer = null;
+
+        function showSlide(idx) {
+            current = (idx + slides.length) % slides.length;
+            for (var i = 0; i < slides.length; i++) {
+                if (i === current) {
+                    slides[i].classList.add('active');
+                    slides[i].style.opacity = '1';
+                    slides[i].style.zIndex = '10';
+                } else {
+                    slides[i].classList.remove('active');
+                    slides[i].style.opacity = '0';
+                    slides[i].style.zIndex = '0';
+                }
+            }
+            for (var d = 0; d < dots.length; d++) {
+                if (d === current) {
+                    dots[d].className = 'hero-dot w-7 h-2 rounded-full bg-white transition-all duration-300 shadow';
+                } else {
+                    dots[d].className = 'hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white/80 transition-all duration-300';
+                }
+            }
+        }
+
+        window.switchHeroSlide = function(idx) {
+            showSlide(idx);
+            restartTimer();
+        };
+
+        function restartTimer() {
+            if (timer) clearInterval(timer);
+            timer = setInterval(function() {
+                showSlide(current + 1);
+            }, 4000);
+        }
+
+        restartTimer();
+    })();
+
+    // Staggered Scroll Entrance Animations
+    (function() {
+        var items = document.querySelectorAll('.reveal-on-scroll');
+        if (!('IntersectionObserver' in window)) {
+            for (var i = 0; i < items.length; i++) {
+                items[i].classList.add('is-revealed');
+            }
+            return;
+        }
+        var observer = new IntersectionObserver(function(entries) {
+            for (var j = 0; j < entries.length; j++) {
+                if (entries[j].isIntersecting) {
+                    entries[j].target.classList.add('is-revealed');
+                    observer.unobserve(entries[j].target);
+                }
+            }
+        }, { threshold: 0.1 });
+        for (var k = 0; k < items.length; k++) {
+            observer.observe(items[k]);
+        }
+    })();
+
+    // Safe Image Fallback Guard (Guarantees zero grey circles or broken layouts)
+    (function() {
+        var fallbackSvg = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'><rect width='800' height='500' fill='%231e293b'/><text x='50%' y='50%' fill='%2394a3b8' font-size='24' font-family='sans-serif' text-anchor='middle' dominant-baseline='middle'>Professional Service</text></svg>";
+        function guardImages() {
+            var imgs = document.querySelectorAll('img');
+            imgs.forEach(function(img) {
+                img.addEventListener('error', function() {
+                    if (this.src !== fallbackSvg) {
+                        this.onerror = null;
+                        this.src = fallbackSvg;
+                    }
+                }, { once: true });
+            });
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', guardImages);
+        } else {
+            guardImages();
+        }
+    })();
+
+    // 21st.dev Real Spotlight Mouse Tracking
+    document.querySelectorAll('.spotlight-card').forEach(function(card) {
+        card.addEventListener('mousemove', function(e) {
+            var rect = card.getBoundingClientRect();
+            card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
+            card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+        });
+    });
+    </script>
+
+        <!-- Anti-Theft & Screenshot Resistance Shield -->
+    <script id="anti-theft-shield">
+    (function() {
+        document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
+        document.addEventListener('selectstart', function(e) { e.preventDefault(); return false; });
+        document.addEventListener('dragstart', function(e) { e.preventDefault(); return false; });
+        document.addEventListener('keydown', function(e) {
+            const key = (e.key || '').toUpperCase();
+            const isCtrlOrMeta = e.ctrlKey || e.metaKey;
+            if (
+                e.key === 'F12' ||
+                (isCtrlOrMeta && ['S', 'P', 'U'].includes(key)) ||
+                (isCtrlOrMeta && e.shiftKey && ['I', 'J', 'C'].includes(key))
+            ) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.key === 'PrintScreen') {
+                document.body.classList.add('capture-blind');
+                setTimeout(function() { document.body.classList.remove('capture-blind'); }, 2000);
+            }
+        });
+        window.addEventListener('blur', function() {
+            document.body.classList.add('window-blurred');
+        });
+        window.addEventListener('focus', function() {
+            document.body.classList.remove('window-blurred');
+        });
+        document.addEventListener('mouseenter', function() {
+            if (document.hasFocus()) {
+                document.body.classList.remove('window-blurred');
+            }
+        });
+    })();
+    </script>
+</body>
+</html>
