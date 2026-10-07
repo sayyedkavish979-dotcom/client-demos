@@ -26,17 +26,17 @@
 
     <style id="dynamic-brand-styles">
         :root {
-            --brand-primary: #c27803;
+            --brand-primary: #d97706;
             --brand-accent: #b45309;
             --brand-btn-text: #090e17;
-            --brand-glow: rgba(194, 120, 3, 0.45);
+            --brand-glow: rgba(217, 119, 6, 0.45);
             --font-heading: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
             --font-body: 'Cormorant Garamond', 'Inter', serif;
             --card-radius: 1.5rem;
-            --card-border: rgba(194, 120, 3, 0.28);
-            --brand-bg-dark: #1a120b;
-            --brand-bg-rgb: 26, 18, 11;
-            --brand-primary-rgb: 194, 120, 3;
+            --card-border: rgba(217, 119, 6, 0.25);
+            --brand-bg-dark: #17110c;
+            --brand-bg-rgb: 23, 17, 12;
+            --brand-primary-rgb: 217, 119, 6;
             --brand-accent-rgb: 180, 83, 9;
         }
         *, *::before, *::after {
@@ -44,7 +44,7 @@
         }
         html, body {
             margin: 0; padding: 0;
-            background-color: #1a120b !important;
+            background-color: #17110c !important;
             color: #f1f5f9 !important;
             font-family: var(--font-body), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
             scroll-behavior: smooth;
@@ -66,7 +66,7 @@
             justify-content: space-between;
             gap: 2rem;
             width: 100%;
-            background-color: rgba(26, 18, 11, 0.95);
+            background-color: rgba(23, 17, 12, 0.95);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         header .brand-title {
@@ -94,24 +94,24 @@
             font-family: var(--font-heading) !important;
         }
         .bg-obsidian-card {
-            background: rgba(38, 26, 17, 0.82) !important;
+            background: rgba(35, 25, 18, 0.82) !important;
             border: 1px solid var(--card-border) !important;
             border-radius: var(--card-radius) !important;
             backdrop-filter: blur(16px) !important;
             -webkit-backdrop-filter: blur(16px) !important;
         }
         .bg-brand {
-            background: linear-gradient(135deg, #c27803 0%, #b45309 100%) !important;
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
             color: #090e17 !important;
         }
         .text-brand {
-            color: #c27803 !important;
+            color: #d97706 !important;
         }
         .border-brand {
-            border-color: #c27803 !important;
+            border-color: #d97706 !important;
         }
         .btn-brand {
-            background: linear-gradient(135deg, #c27803 0%, #b45309 100%) !important;
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
             color: #090e17 !important;
             font-weight: 700 !important;
             transition: all 0.25s ease !important;
@@ -122,7 +122,7 @@
             box-shadow: 0 12px 30px -5px var(--brand-glow) !important;
         }
         .slot-pill input:checked + span {
-            background: linear-gradient(135deg, #c27803 0%, #b45309 100%) !important;
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
             color: #090e17 !important;
             border-color: transparent !important;
             font-weight: 700 !important;
@@ -220,7 +220,7 @@
             position: absolute;
             top: 15%; left: 15%;
             width: 420px; height: 420px;
-            background: radial-gradient(circle, #c27803 0%, transparent 70%);
+            background: radial-gradient(circle, #d97706 0%, transparent 70%);
             filter: blur(80px);
             border-radius: 9999px;
             pointer-events: none;
@@ -240,7 +240,7 @@
         }
         .spotlight-card {
             position: relative;
-            background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.06), transparent 40%), rgba(38, 26, 17, 0.82);
+            background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.06), transparent 40%), rgba(35, 25, 18, 0.82);
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
@@ -279,7 +279,7 @@
         <!-- 7-Day Client Auto-Expiry Shield -->
     <script id="demo-expiry-shield">
     (function() {
-        const DEMO_CREATED_TIMESTAMP = 1791406259930;
+        const DEMO_CREATED_TIMESTAMP = 1791406480987;
         const EXPIRY_DAYS = 7;
         const isExpired = (Date.now() - DEMO_CREATED_TIMESTAMP) > (EXPIRY_DAYS * 24 * 60 * 60 * 1000);
 
@@ -406,7 +406,7 @@
     })();
     </script>
 </head>
-<body class="text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 pb-20 sm:pb-0" style="background-color: #1a120b;">
+<body class="text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 pb-20 sm:pb-0" style="background-color: #17110c;">
 
     <!-- SECTION 1: TOP NOTIFICATION RIBBON + MULTI-LOCATION HEADER -->
     <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-white/10 px-4 py-2 text-center text-xs sm:text-sm font-medium text-slate-300">
@@ -418,7 +418,7 @@
     </div>
 
     <!-- Navigation Header -->
-    <header class="sticky top-0 z-50 backdrop-blur-md border-b border-white/10 px-4 sm:px-8 py-3.5 transition-all" style="background-color: rgba(26, 18, 11, 0.95);">
+    <header class="sticky top-0 z-50 backdrop-blur-md border-b border-white/10 px-4 sm:px-8 py-3.5 transition-all" style="background-color: rgba(23, 17, 12, 0.95);">
         <div class="max-w-7xl mx-auto flex items-center justify-between w-full">
             <div class="flex items-center gap-3 min-w-0 flex-shrink-0 mr-8">
                 <div class="w-10 h-10 rounded-xl bg-brand flex items-center justify-center font-bold text-slate-950 text-base shadow-md">PA</div>
@@ -465,13 +465,13 @@
         <!-- Multi-Layered Video Showcase Base Layer with Video Masking -->
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" id="hero-slider-container">
             <!-- Base Layer: 21st.dev Ultra-Fast Autoplay Looped Video Stream -->
-            <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1920&q=85" class="absolute inset-0 w-full h-full object-cover scale-105 filter brightness-[0.45] contrast-[1.1] transition-transform duration-1000">
+            <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1920&q=85" class="absolute inset-0 w-full h-full object-cover scale-105 transition-transform duration-1000" style="filter: brightness(0.65) contrast(1.08); opacity: 1; z-index: 0;">
                 <source src="https://videos.pexels.com/video-files/3015494/3015494-sd_640_360_24fps.mp4" type="video/mp4">
             </video>
 
-            <!-- Multi-Directional Radial Gradient Mask & Balanced Vignette Layer for 100% Text Readability -->
-            <div class="absolute inset-0 z-10 bg-gradient-to-b from-slate-950/80 via-transparent to-slate-950 pointer-events-none"></div>
-            <div class="absolute inset-0 z-15 pointer-events-none" style="background: linear-gradient(to bottom, rgba(26, 18, 11, 0.55) 0%, rgba(26, 18, 11, 0.25) 45%, rgba(26, 18, 11, 0.92) 100%);"></div>
+            <!-- Soft Brand-Aware Gradient Overlay for Text Readability -->
+            <div class="absolute inset-0 z-10 pointer-events-none" style="background: linear-gradient(to top, rgba(23, 17, 12, 0.92) 0%, rgba(23, 17, 12, 0.45) 40%, rgba(23, 17, 12, 0.20) 75%, rgba(23, 17, 12, 0.55) 100%);"></div>
+            <div class="absolute inset-0 z-[11] pointer-events-none" style="background: linear-gradient(to bottom, rgba(23, 17, 12, 0.55) 0%, rgba(23, 17, 12, 0.25) 45%, rgba(23, 17, 12, 0.92) 100%);"></div>
 
             <!-- Fallback Multi-Photo Slides if Video is Paused or Low Bandwidth -->
             <div class="hero-slide active absolute inset-0 w-full h-full opacity-0 pointer-events-none transition-opacity duration-1000 -z-10">
@@ -509,7 +509,7 @@
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <a href="#booking-funnel" class="btn-brand w-full sm:w-auto px-8 py-3.5 rounded-xl text-sm font-bold shadow-xl flex items-center justify-center gap-2">
+                <a href="#booking-funnel"  class="btn-brand w-full sm:w-auto px-8 py-3.5 rounded-xl text-sm font-bold shadow-xl flex items-center justify-center gap-2">
                     <span>Schedule Your Consultation</span>
                     <span>→</span>
                 </a>
@@ -591,7 +591,7 @@
     </div>
 
     <!-- SECTION 3: 21st.dev BENTO GRID FEATURE ARCHITECTURE -->
-    <section id="about" class="py-20 px-4 sm:px-8 border-t border-white/10 relative overflow-hidden" style="background-color: #1a120b;">
+    <section id="about" class="py-20 px-4 sm:px-8 border-t border-white/10 relative overflow-hidden" style="background-color: #17110c;">
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
                 <span class="frosted-badge px-3.5 py-1 rounded-full text-xs font-bold text-slate-300 uppercase tracking-widest inline-block">
@@ -741,7 +741,7 @@
     </section>
 
     <!-- SECTION 4: COMPREHENSIVE FEATURED SERVICES GRID (6 RESPONSIVE CARDS) -->
-    <section id="services" class="relative py-20 px-4 sm:px-8 border-t border-white/10 overflow-hidden" style="background-color: #1a120b;">
+    <section id="services" class="relative py-20 px-4 sm:px-8 border-t border-white/10 overflow-hidden" style="background-color: #17110c;">
         <!-- 21st.dev Ambient Spotlight / Radial Background Glow -->
         <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-cyan-500/20 to-blue-600/20 blur-[120px]"></div>
 
@@ -873,7 +873,7 @@
     </section>
 
     <!-- SECTION 5: TEAM / LEADERSHIP SPOTLIGHT -->
-    <section id="team" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: rgba(26, 18, 11, 0.97);">
+    <section id="team" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: rgba(23, 17, 12, 0.97);">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
                 <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
@@ -902,7 +902,7 @@
     </section>
 
     <!-- SECTION 6: VERIFIED 5.0 GOOGLE REVIEWS & TESTIMONIALS -->
-    <section id="reviews" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: #1a120b;">
+    <section id="reviews" class="py-20 px-4 sm:px-8 border-t border-white/10" style="background-color: #17110c;">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
                 <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
@@ -962,7 +962,7 @@
     </section>
 
     <!-- SECTION 7: HIGH-END 2-COLUMN LUXURY AGENCY SUITE (CONTACT & PRIORITY SCHEDULING) -->
-    <section id="booking-funnel" class="py-20 px-4 sm:px-8 border-t border-white/10 relative" style="background-color: #1a120b;">
+    <section id="booking-funnel" class="py-20 px-4 sm:px-8 border-t border-white/10 relative" style="background-color: #17110c;">
         <div class="max-w-7xl mx-auto">
             <div class="max-w-3xl mx-auto text-center space-y-3 mb-14">
                 <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/15 text-slate-300 uppercase tracking-widest">
@@ -1119,7 +1119,7 @@
                             <label class="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1.5">
                                 <span>⚙️</span> Required Service / Consultation
                             </label>
-                            <select name="client_service" class="w-full border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-brand" style="background-color: #1a120b;">
+                            <select name="client_service" class="w-full border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-brand" style="background-color: #17110c;">
                             <option value="Stone-Deck Sourdough Loaves Daily">Stone-Deck Sourdough Loaves Daily</option>
                             <option value="French Viennoiserie & Butter Croissants">French Viennoiserie & Butter Croissants</option>
                             <option value="Single-Origin Espresso & Micro-Roast Pour-Overs">Single-Origin Espresso & Micro-Roast Pour-Overs</option>
@@ -1179,7 +1179,7 @@
     </section>
 
     <!-- SECTION 8: 4-COLUMN PROFESSIONAL ARCHITECTURE FOOTER -->
-    <footer class="pt-16 pb-12 border-t border-white/10 relative z-20" style="background-color: #1a120b;">
+    <footer class="pt-16 pb-12 border-t border-white/10 relative z-20" style="background-color: #17110c;">
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
                 <!-- Col 1: Brand Profile -->
@@ -1268,7 +1268,7 @@
     </footer>
 
     <!-- 21st.dev Floating Quick Dock -->
-    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-5 py-3 rounded-full backdrop-blur-xl border shadow-2xl" style="background-color: rgba(26, 18, 11, 0.88); border-color: rgba(194, 120, 3, 0.35); box-shadow: 0 10px 30px -5px rgba(194, 120, 3, 0.35);">
+    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-5 py-3 rounded-full backdrop-blur-xl border shadow-2xl" style="background-color: rgba(23, 17, 12, 0.88); border-color: rgba(217, 119, 6, 0.35); box-shadow: 0 10px 30px -5px rgba(217, 119, 6, 0.35);">
         <a href="https://wa.me/15125550199" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs shadow-lg transition transform hover:scale-105">
             <span>💬</span>
             <span class="whitespace-nowrap">WhatsApp</span>
@@ -1280,7 +1280,7 @@
     </div>
 
     <!-- 2026 STICKY MOBILE QUICK-ACTION BAR -->
-    <div class="fixed bottom-0 left-0 right-0 z-40 backdrop-blur-md border-t border-white/10 px-4 py-2.5 flex items-center justify-between sm:hidden shadow-2xl" style="background-color: rgba(26, 18, 11, 0.96);">
+    <div class="fixed bottom-0 left-0 right-0 z-40 backdrop-blur-md border-t border-white/10 px-4 py-2.5 flex items-center justify-between sm:hidden shadow-2xl" style="background-color: rgba(23, 17, 12, 0.96);">
         <div class="flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
             <span class="text-xs font-bold text-slate-200">Instant Booking Active</span>
