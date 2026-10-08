@@ -280,6 +280,124 @@
                 transition: none !important;
             }
         }
+    
+        /* ==========================================================================
+           Mobile UI/UX Responsiveness & Layout Protection Fixes (max-width: 768px)
+           ========================================================================== */
+        @media (max-width: 768px) {
+            /* 1. Body & Main Wrapper Padding (Prevents overlap with fixed floating bar) */
+            body {
+                padding-bottom: 110px !important;
+            }
+
+            /* Fixed Mobile Bottom Bar: Proper z-index (1000) and safe-area inset */
+            .mobile-bottom-bar {
+                position: fixed !important;
+                bottom: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                width: 100% !important;
+                z-index: 1000 !important;
+                padding-bottom: max(0.625rem, env(safe-area-inset-bottom)) !important;
+                box-shadow: 0 -8px 25px -4px rgba(0, 0, 0, 0.5) !important;
+                pointer-events: auto !important;
+            }
+
+            /* Hide Desktop Floating Dock on Mobile to eliminate double-dock collision */
+            .floating-quick-dock {
+                display: none !important;
+            }
+
+            /* 2. Form Container Width & Horizontal Padding */
+            #booking-funnel {
+                padding-left: 1rem !important;  /* 16px */
+                padding-right: 1rem !important; /* 16px */
+                padding-top: 3rem !important;
+                padding-bottom: 3.5rem !important;
+                overflow-x: hidden !important;
+            }
+            #booking-funnel .max-w-7xl {
+                width: 100% !important;
+                max-width: 100% !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            .booking-form-card,
+            #booking-funnel .bg-obsidian-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 1.25rem 1rem !important; /* 20px 16px */
+                border-radius: 1.25rem !important;
+                box-sizing: border-box !important;
+            }
+            #booking-funnel form {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            #booking-funnel input,
+            #booking-funnel select,
+            #booking-funnel textarea {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+                font-size: 0.8125rem !important; /* 13px */
+            }
+            /* Time slot pills in 3 columns */
+            .slot-pill span {
+                padding: 0.5rem 0.25rem !important;
+                font-size: 0.6875rem !important; /* 11px */
+            }
+
+            /* 3. Header & Special Offer Ribbon Mobile Spacing */
+            .top-special-offer-banner {
+                padding: 0.5rem 0.875rem !important;
+                font-size: 0.75rem !important;
+                line-height: 1.35 !important;
+            }
+            .top-special-offer-banner .offer-inner {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 0.375rem !important;
+                text-align: center !important;
+            }
+            header {
+                gap: 0.5rem !important;
+                padding: 0.625rem 1rem !important; /* 10px 16px */
+            }
+            header .brand-title {
+                margin-right: 0 !important;
+                font-size: 0.875rem !important; /* 14px */
+                line-height: 1.2 !important;
+                max-width: 165px !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+                white-space: nowrap !important;
+            }
+            header .header-brand-wrap {
+                margin-right: 0 !important;
+                gap: 0.5rem !important;
+                min-width: 0 !important;
+                flex: 1 1 auto !important;
+            }
+            header .header-actions {
+                margin-left: 0.25rem !important;
+                flex-shrink: 0 !important;
+            }
+            header .header-btn {
+                padding: 0.45rem 0.75rem !important;
+                font-size: 0.75rem !important;
+                border-radius: 0.625rem !important;
+            }
+        }
+
+        /* Strict Modal & Popup Layering: Always z-index: 2000 */
+        .modal, .popup, [role="dialog"], .ai-chat-modal, #ai-lead-widget-modal {
+            z-index: 2000 !important;
+        }
+
     </style>
         <!-- 7-Day Client Auto-Expiry Shield -->
     <script id="demo-expiry-shield">
@@ -411,7 +529,7 @@
     })();
     </script>
 </head>
-<body class="text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 pb-20 sm:pb-0" style="background-color: #0d131f;">
+<body class="text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 pb-20 sm:pb-0 pb-28 sm:pb-0" style="background-color: #0d131f;">
 
     <!-- SECTION 1: TOP NOTIFICATION BANNER + NAVIGATION HEADER -->
     <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-white/10 px-4 py-2 text-center text-xs sm:text-sm font-medium text-slate-300">
@@ -1446,6 +1564,717 @@
     </script>
 
         <!-- Anti-Theft & Screenshot Resistance Shield -->
+    <!-- ==========================================================================
+     EMBEDDED AI LEAD CAPTURE & QUALIFICATION WIDGET (Typebot/Voiceflow Style)
+     ========================================================================== -->
+<div id="ai-lead-concierge-root" class="ai-lead-widget" data-bname="Customized Giftlogs" data-niche="General Commercial" data-loc="Kanpur">
+    <style>
+        /* --------------------------------------------------------------------------
+           AI Widget Core Styles (Obsidian Glassmorphism & Micro-Interactions)
+           -------------------------------------------------------------------------- */
+        #ai-lead-concierge-root {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #f1f5f9;
+        }
+        .ai-chat-launcher-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1001;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+            outline: none;
+            padding: 0;
+        }
+        .ai-chat-launcher-btn:hover {
+            transform: scale(1.08) translateY(-2px);
+            box-shadow: 0 14px 30px -4px rgba(37, 99, 235, 0.65), 0 10px 12px -6px rgba(0, 0, 0, 0.5);
+        }
+        .ai-chat-launcher-btn:active {
+            transform: scale(0.95);
+        }
+        .ai-launcher-ping {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 13px;
+            height: 13px;
+            background-color: #10b981;
+            border: 2px solid #0f172a;
+            border-radius: 50%;
+        }
+        .ai-launcher-ping::after {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background-color: #10b981;
+            opacity: 0.75;
+            animation: ai-pulse 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+        @keyframes ai-pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            70% { transform: scale(2.4); opacity: 0; }
+            100% { transform: scale(2.4); opacity: 0; }
+        }
+        /* Teaser Bubble */
+        .ai-teaser-badge {
+            position: fixed;
+            bottom: 32px;
+            right: 92px;
+            z-index: 1001;
+            background: rgba(15, 23, 42, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #f8fafc;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            animation: ai-float 3s ease-in-out infinite;
+            white-space: nowrap;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        @keyframes ai-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+        /* AI Modal & Dialogue Container */
+        .ai-chat-modal {
+            position: fixed;
+            bottom: 92px;
+            right: 24px;
+            z-index: 2000 !important;
+            width: 375px;
+            max-width: calc(100vw - 32px);
+            height: 540px;
+            max-height: calc(100vh - 120px);
+            background: rgba(15, 23, 42, 0.96);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 22px;
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            opacity: 0;
+            transform: scale(0.92) translateY(12px);
+            transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .ai-chat-modal.is-open {
+            display: flex;
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+        /* Header */
+        .ai-modal-header {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        .ai-modal-header-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .ai-avatar-box {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #2563eb, #6366f1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+        }
+        .ai-header-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.2;
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .ai-header-status {
+            font-size: 11px;
+            color: #34d399;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 2px;
+            font-weight: 500;
+        }
+        .ai-header-status-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .ai-close-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+        .ai-close-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+        }
+        /* Chat Body */
+        .ai-chat-body {
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.08), transparent 60%);
+        }
+        .ai-chat-body::-webkit-scrollbar {
+            width: 5px;
+        }
+        .ai-chat-body::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 4px;
+        }
+        /* Message Bubbles */
+        .ai-bubble {
+            max-width: 86%;
+            padding: 10px 14px;
+            border-radius: 16px;
+            font-size: 13px;
+            line-height: 1.45;
+            position: relative;
+            word-wrap: break-word;
+        }
+        .ai-bubble-bot {
+            align-self: flex-start;
+            background: rgba(30, 41, 59, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #e2e8f0;
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+        .ai-bubble-user {
+            align-self: flex-end;
+            background: linear-gradient(135deg, #2563eb, #4338ca);
+            color: #ffffff;
+            border-bottom-right-radius: 4px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        .ai-bubble-time {
+            font-size: 10px;
+            color: #64748b;
+            margin-top: 4px;
+            display: block;
+            text-align: right;
+        }
+        /* Quick Option Chips */
+        .ai-chips-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            margin-top: 4px;
+        }
+        .ai-chip-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #f1f5f9;
+            padding: 8px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .ai-chip-btn:hover {
+            background: rgba(37, 99, 235, 0.2);
+            border-color: rgba(37, 99, 235, 0.45);
+            color: #ffffff;
+            transform: translateX(2px);
+        }
+        .ai-chip-btn span.arrow {
+            color: #2563eb;
+            font-weight: 700;
+        }
+        /* Typing Dots */
+        .ai-typing-indicator {
+            align-self: flex-start;
+            background: rgba(30, 41, 59, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 10px 14px;
+            border-radius: 16px;
+            border-bottom-left-radius: 4px;
+            display: none;
+            align-items: center;
+            gap: 4px;
+        }
+        .ai-typing-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #94a3b8;
+            animation: ai-dot-bounce 1.4s infinite ease-in-out both;
+        }
+        .ai-typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .ai-typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes ai-dot-bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+        /* Footer Input */
+        .ai-modal-footer {
+            padding: 12px 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(15, 23, 42, 0.98);
+        }
+        .ai-input-form {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+        }
+        .ai-chat-input {
+            flex: 1;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 10px 12px;
+            font-size: 13px;
+            color: #ffffff;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .ai-chat-input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+        }
+        .ai-chat-input::placeholder {
+            color: #64748b;
+        }
+        .ai-send-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: #2563eb;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+        .ai-send-btn:hover {
+            filter: brightness(1.15);
+            transform: scale(1.04);
+        }
+        .ai-footer-note {
+            font-size: 10px;
+            color: #64748b;
+            text-align: center;
+            margin-top: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        /* ==========================================================================
+           Mobile Responsiveness (max-width: 768px): Sits Above Fixed Bottom Bar
+           ========================================================================== */
+        @media (max-width: 768px) {
+            /* Lift launcher and teaser above the 50px fixed bottom bar */
+            .ai-chat-launcher-btn {
+                bottom: 74px !important;
+                right: 16px !important;
+                width: 52px !important;
+                height: 52px !important;
+            }
+            .ai-teaser-badge {
+                bottom: 80px !important;
+                right: 76px !important;
+                padding: 5px 10px !important;
+                font-size: 11px !important;
+            }
+            /* Mobile Chat Modal: Full width container with safe margins, high z-index (2000) */
+            .ai-chat-modal {
+                bottom: 74px !important;
+                right: 12px !important;
+                left: 12px !important;
+                width: auto !important;
+                max-width: calc(100vw - 24px) !important;
+                height: 480px !important;
+                max-height: calc(100vh - 140px) !important;
+                border-radius: 18px !important;
+            }
+        }
+    </style>
+
+    <!-- Floating Teaser Pill -->
+    <div id="ai-teaser-pill" class="ai-teaser-badge" onclick="window.toggleAiLeadModal()">
+        <span>✨</span>
+        <span id="ai-teaser-text">Ask AI Assistant</span>
+    </div>
+
+    <!-- Floating Action Launcher Button -->
+    <button id="ai-launcher-trigger" class="ai-chat-launcher-btn" onclick="window.toggleAiLeadModal()" aria-label="Open AI Concierge Chat">
+        <span class="ai-launcher-ping"></span>
+        <svg id="ai-launcher-icon-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #ffffff;">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            <circle cx="9" cy="10" r="1" fill="currentColor"></circle>
+            <circle cx="15" cy="10" r="1" fill="currentColor"></circle>
+            <path d="M9.5 13.5c.83.67 2.17.67 3 0"></path>
+        </svg>
+        <svg id="ai-launcher-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #ffffff; display: none;">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+    </button>
+
+    <!-- AI Chat & Lead Qualification Modal -->
+    <div id="ai-lead-widget-modal" class="ai-chat-modal" role="dialog" aria-modal="true" aria-labelledby="ai-chat-heading">
+        <!-- Header -->
+        <div class="ai-modal-header">
+            <div class="ai-modal-header-info">
+                <div class="ai-avatar-box">🤖</div>
+                <div>
+                    <h3 id="ai-chat-heading" class="ai-header-title">Customized Giftlogs</h3>
+                    <div class="ai-header-status">
+                        <span class="ai-header-status-dot"></span>
+                        <span>AI Concierge Active • Instant Replies</span>
+                    </div>
+                </div>
+            </div>
+            <button class="ai-close-btn" onclick="window.toggleAiLeadModal()" aria-label="Close Chat">✕</button>
+        </div>
+
+        <!-- Scrollable Message Body -->
+        <div id="ai-chat-messages" class="ai-chat-body">
+            <div id="ai-typing" class="ai-typing-indicator">
+                <span class="ai-typing-dot"></span>
+                <span class="ai-typing-dot"></span>
+                <span class="ai-typing-dot"></span>
+            </div>
+        </div>
+
+        <!-- Bottom Input & Controls -->
+        <div class="ai-modal-footer">
+            <form id="ai-chat-form" class="ai-input-form" onsubmit="window.handleAiUserSubmit(event)">
+                <input type="text" id="ai-user-input" class="ai-chat-input" placeholder="Type your inquiry or message..." autocomplete="off">
+                <button type="submit" id="ai-send-button" class="ai-send-btn" aria-label="Send">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </form>
+            <div class="ai-footer-note">
+                <span>⚡ 24/7 AI Lead Assistant</span>
+                <span>•</span>
+                <span>Direct WhatsApp Sync</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    // Typebot & Voiceflow Integration Hooks (Loads external widget if configured)
+    if (window.TYPEBOT_ID) {
+        var s = document.createElement("script");
+        s.type = "module";
+        s.src = "https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js";
+        s.onload = function() {
+            if (window.Typebot) window.Typebot.initStandard({ typebot: window.TYPEBOT_ID });
+        };
+        document.head.appendChild(s);
+        return;
+    }
+    if (window.VOICEFLOW_PROJECT_ID) {
+        var vs = document.createElement("script");
+        vs.type = "text/javascript";
+        vs.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+        vs.onload = function() {
+            if (window.voiceflow) {
+                window.voiceflow.chat.load({
+                    verify: { projectID: window.VOICEFLOW_PROJECT_ID },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production'
+                });
+            }
+        };
+        document.head.appendChild(vs);
+        return;
+    }
+
+    // Native High-Performance AI Lead Qualification Controller
+    var root = document.getElementById('ai-lead-concierge-root');
+    if (!root) return;
+
+    var bName = root.getAttribute('data-bname') || (document.querySelector('header .brand-title') ? document.querySelector('header .brand-title').innerText.trim() : (document.title ? document.title.split('|')[0].trim() : 'Our Business'));
+    var niche = (root.getAttribute('data-niche') || '').toLowerCase();
+    var loc = root.getAttribute('data-loc') || 'Local Area';
+    var waUrl = "https://wa.me/917355568493?text=Hello%20Kavish,%20we%20want%20to%20activate%20our%20website" || "https://wa.me/";
+    var telUrl = "tel:+918840350716" || "tel:";
+
+    var modal = document.getElementById('ai-lead-widget-modal');
+    var messagesContainer = document.getElementById('ai-chat-messages');
+    var typingIndicator = document.getElementById('ai-typing');
+    var userInput = document.getElementById('ai-user-input');
+    var teaserPill = document.getElementById('ai-teaser-pill');
+    var iconOpen = document.getElementById('ai-launcher-icon-open');
+    var iconClose = document.getElementById('ai-launcher-icon-close');
+
+    var isOpen = false;
+    var conversationStep = 'welcome';
+    var leadData = {
+        requirement: '',
+        name: '',
+        contact: ''
+    };
+
+    // Determine Industry-Tailored Welcome Copy
+    var isRealEstate = niche.indexOf('real estate') !== -1 || niche.indexOf('property') !== -1 || niche.indexOf('realtor') !== -1 || document.title.toLowerCase().indexOf('real estate') !== -1 || document.title.toLowerCase().indexOf('property') !== -1;
+    var isDental = niche.indexOf('dental') !== -1 || niche.indexOf('clinic') !== -1 || niche.indexOf('teeth') !== -1 || document.title.toLowerCase().indexOf('dental') !== -1;
+    var isBakery = niche.indexOf('bakery') !== -1 || niche.indexOf('cafe') !== -1 || niche.indexOf('bakes') !== -1 || document.title.toLowerCase().indexOf('crust') !== -1 || document.title.toLowerCase().indexOf('bakes') !== -1;
+    var isBuilding = niche.indexOf('hardware') !== -1 || niche.indexOf('building') !== -1 || niche.indexOf('sariya') !== -1 || niche.indexOf('tiles') !== -1 || niche.indexOf('sanitary') !== -1 || niche.indexOf('construction') !== -1 || document.title.toLowerCase().indexOf('hardware') !== -1 || document.title.toLowerCase().indexOf('traders') !== -1;
+    var isDesign = niche.indexOf('interior') !== -1 || niche.indexOf('design') !== -1 || niche.indexOf('architect') !== -1 || document.title.toLowerCase().indexOf('design') !== -1;
+    var isGift = niche.indexOf('gift') !== -1 || niche.indexOf('craft') !== -1 || document.title.toLowerCase().indexOf('gift') !== -1;
+
+    var welcomeGreeting = "👋 Hello! Welcome to " + bName + ". How can our senior team assist you today in " + loc + "?";
+    var chips = [
+        { label: "📅 Book VIP Consultation", action: "book" },
+        { label: "💰 Request Instant Quote", action: "quote" },
+        { label: "💬 Connect on WhatsApp", action: "whatsapp" },
+        { label: "📞 Speak With Expert", action: "call" }
+    ];
+
+    if (isRealEstate) {
+        welcomeGreeting = "👋 Welcome to " + bName + "! Looking to buy, sell, or schedule a VIP property tour in " + loc + "? I can check premier listings or connect you with our senior property advisors.";
+        chips = [
+            { label: "📅 Schedule VIP Property Tour", action: "book" },
+            { label: "🏡 Request Available Listings", action: "quote" },
+            { label: "💬 Instant WhatsApp Concierge", action: "whatsapp" },
+            { label: "📞 Call Agency Direct", action: "call" }
+        ];
+    } else if (isDental) {
+        welcomeGreeting = "👋 Welcome to " + bName + "! Need to book an appointment, consult on dental treatments, or check teeth whitening packages? I'm here to help you reserve your priority slot.";
+        chips = [
+            { label: "📅 Book Dental Consultation", action: "book" },
+            { label: "✨ Treatment Cost Guide", action: "quote" },
+            { label: "💬 WhatsApp Clinic Direct", action: "whatsapp" },
+            { label: "📞 Call Clinic Now", action: "call" }
+        ];
+    } else if (isBakery) {
+        welcomeGreeting = "👋 Welcome to " + bName + "! Craving our fresh artisanal specials, looking for custom celebration cakes, or catering for an event? Let me assist you!";
+        chips = [
+            { label: "🎂 Order Custom Cake / Pastry", action: "quote" },
+            { label: "📅 Reserve Table / Tasting", action: "book" },
+            { label: "💬 WhatsApp Bakery Team", action: "whatsapp" },
+            { label: "📞 Call Bakery Direct", action: "call" }
+        ];
+    } else if (isBuilding) {
+        welcomeGreeting = "👋 Welcome to " + bName + "! Looking for wholesale building material pricing, bulk dispatch rates, or hardware supplies in " + loc + "? Let me know your requirements!";
+        chips = [
+            { label: "💰 Request Wholesale Quote", action: "quote" },
+            { label: "🚚 Bulk Dispatch Availability", action: "book" },
+            { label: "💬 WhatsApp Sales Team", action: "whatsapp" },
+            { label: "📞 Call Supply Desk", action: "call" }
+        ];
+    } else if (isDesign) {
+        welcomeGreeting = "👋 Welcome to " + bName + "! Planning to design or renovate your space in " + loc + "? I can share our recent portfolio or arrange a design consultation.";
+        chips = [
+            { label: "🎨 Book Design Consultation", action: "book" },
+            { label: "📸 View Recent Projects", action: "quote" },
+            { label: "💬 WhatsApp Designer", action: "whatsapp" },
+            { label: "📞 Call Studio Direct", action: "call" }
+        ];
+    } else if (isGift) {
+        welcomeGreeting = "👋 Welcome to " + bName + "! Looking for unique personalized gifts, bulk corporate hampers, or express delivery in " + loc + "? Let me know what you'd like to create!";
+        chips = [
+            { label: "🎁 Custom Gift Ideas", action: "quote" },
+            { label: "🏢 Corporate Bulk Orders", action: "book" },
+            { label: "💬 WhatsApp Support", action: "whatsapp" },
+            { label: "📞 Call Store Direct", action: "call" }
+        ];
+    }
+
+    function scrollToBottom() {
+        setTimeout(function() {
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }, 50);
+    }
+
+    function showTyping(show) {
+        if (show) {
+            typingIndicator.style.display = 'flex';
+            messagesContainer.appendChild(typingIndicator);
+        } else {
+            typingIndicator.style.display = 'none';
+        }
+        scrollToBottom();
+    }
+
+    function addBotMessage(text, callback) {
+        showTyping(true);
+        setTimeout(function() {
+            showTyping(false);
+            var bubble = document.createElement('div');
+            bubble.className = 'ai-bubble ai-bubble-bot';
+            bubble.innerHTML = text;
+            messagesContainer.insertBefore(bubble, typingIndicator);
+            scrollToBottom();
+            if (callback) callback();
+        }, 450);
+    }
+
+    function addUserMessage(text) {
+        var bubble = document.createElement('div');
+        bubble.className = 'ai-bubble ai-bubble-user';
+        bubble.textContent = text;
+        messagesContainer.insertBefore(bubble, typingIndicator);
+        scrollToBottom();
+    }
+
+    function renderChips(chipList) {
+        var wrap = document.createElement('div');
+        wrap.className = 'ai-chips-wrap';
+        chipList.forEach(function(item) {
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'ai-chip-btn';
+            btn.innerHTML = '<span>' + item.label + '</span><span class="arrow">→</span>';
+            btn.onclick = function() {
+                handleChipClick(item);
+                wrap.remove();
+            };
+            wrap.appendChild(btn);
+        });
+        messagesContainer.insertBefore(wrap, typingIndicator);
+        scrollToBottom();
+    }
+
+    function handleChipClick(item) {
+        addUserMessage(item.label);
+        if (item.action === 'whatsapp') {
+            addBotMessage("Connecting you directly to our WhatsApp concierge for instant response! 💬", function() {
+                window.open(waUrl, '_blank');
+            });
+        } else if (item.action === 'call') {
+            addBotMessage("Initiating direct call to our team! 📞", function() {
+                window.location.href = telUrl;
+            });
+        } else if (item.action === 'book' || item.action === 'quote') {
+            leadData.requirement = item.label;
+            conversationStep = 'collecting_contact';
+            addBotMessage("Great! Please provide your **Name** and **Phone Number** (or WhatsApp) so our team can immediately confirm your request and details.");
+        }
+    }
+
+    window.handleAiUserSubmit = function(e) {
+        if (e) e.preventDefault();
+        var val = (userInput.value || '').trim();
+        if (!val) return;
+        userInput.value = '';
+        addUserMessage(val);
+
+        if (conversationStep === 'welcome') {
+            leadData.requirement = val;
+            conversationStep = 'collecting_contact';
+            addBotMessage("Understood! What **Phone Number** or **WhatsApp** can our manager contact you at with full details and pricing?");
+        } else if (conversationStep === 'collecting_contact') {
+            leadData.contact = val;
+            conversationStep = 'completed';
+            try {
+                localStorage.setItem('lead_' + encodeURIComponent(bName), JSON.stringify({
+                    lead: leadData,
+                    timestamp: new Date().toISOString()
+                }));
+            } catch(err) {}
+
+            var waPreload = waUrl + (waUrl.indexOf('?') === -1 ? '?text=' : '&text=') + encodeURIComponent("Hi " + bName + ", I submitted an inquiry via your AI Assistant for: " + (leadData.requirement || "Services") + " (Contact: " + val + ")");
+
+            addBotMessage("🎉 **Thank you!** Your request has been sent to the priority queue. Our specialist will contact you shortly.<br><br><a href='" + waPreload + "' target='_blank' style='display:inline-flex;align-items:center;gap:6px;background:#10b981;color:#fff;font-weight:700;padding:8px 14px;border-radius:10px;text-decoration:none;margin-top:6px;'>💬 Connect Instantly on WhatsApp →</a>");
+        } else {
+            addBotMessage("Thank you! Our senior team is notified. For instant priority assistance, please tap below to message on WhatsApp:<br><br><a href='" + waUrl + "' target='_blank' style='display:inline-flex;align-items:center;gap:6px;background:#10b981;color:#fff;font-weight:700;padding:8px 14px;border-radius:10px;text-decoration:none;margin-top:4px;'>💬 Open WhatsApp Chat →</a>");
+        }
+    };
+
+    window.toggleAiLeadModal = function() {
+        isOpen = !isOpen;
+        if (isOpen) {
+            modal.classList.add('is-open');
+            iconOpen.style.display = 'none';
+            iconClose.style.display = 'block';
+            if (teaserPill) teaserPill.style.display = 'none';
+            if (conversationStep === 'welcome' && messagesContainer.children.length <= 1) {
+                addBotMessage(welcomeGreeting, function() {
+                    renderChips(chips);
+                });
+            }
+            setTimeout(function() {
+                if (userInput) userInput.focus();
+            }, 200);
+        } else {
+            modal.classList.remove('is-open');
+            iconOpen.style.display = 'block';
+            iconClose.style.display = 'none';
+        }
+    };
+
+    // Gentle Auto-Prompt teaser after 2.5s
+    setTimeout(function() {
+        if (teaserPill && !isOpen) {
+            teaserPill.style.opacity = '1';
+        }
+    }, 2500);
+
+})();
+</script>
+<!-- END EMBEDDED AI LEAD CAPTURE WIDGET -->
+
     <script id="anti-theft-shield">
     (function() {
         document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
